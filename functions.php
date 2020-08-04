@@ -1,6 +1,6 @@
 <?php
 
-class deal
+class functions
 {
     /*
     作用：根据二维数组中的部分键值判断二维数组中是否有重复值
@@ -24,5 +24,23 @@ class deal
             }
         }
         return $repeat_arr;
+    }
+
+    /**
+     * Notes:去掉参数中多余的字段
+     * User: Yqx
+     * @param $table
+     * @param $data
+     * @return array
+     */
+    static function delRedundantFields($table, $data)
+    {
+        $allFields = db($table)->getTableFields();
+        foreach ($data as $key => $value) {
+            if (!in_array($key, $allFields)) {
+                unset($data[ $key ]);
+            }
+        }
+        return $data;
     }
 }
