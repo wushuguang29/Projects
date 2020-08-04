@@ -1,2 +1,2 @@
 # Projects
-add new Projects
+study of Projects
