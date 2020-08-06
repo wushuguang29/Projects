@@ -1,0 +1,26 @@
+(1)SSH Key
+1.生成SSH Key
+ssh-keygen -t rsa -C "githup项目地址.git"
+2.验证SSH Key是否添加到githup设置
+ssh -T git@github.com
+
+(2)git操作
+------ 第一次提交 --------
+1.初始化初始化本地仓库[版本库]
+git init
+2.添加提交文件到暂存区
+git add .
+3.提交到本地仓库[版本库]
+git commit -m "日志信息"
+4.从本地仓库推送到远程仓库
+git remote add origin githup项目地址
+5.将代码提交到远程仓库
+git push -u origin master
+
+git init：初始化本地仓库[版本库]
+git clone githup项目地址：将项目从远程仓库克隆到本地仓库[版本库]
+git status：查看修改的文件
+git add .：添加提交文件到暂存区
+git commit -m "日志信息"：提交到本地仓库[版本库]
+git pull：更新本地文件
+git push：将代码提交到远程仓库

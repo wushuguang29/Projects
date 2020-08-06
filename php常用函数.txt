@@ -1,0 +1,31 @@
+一、常用数组函数
+array_keys()：返回数组中所有的键名
+array_values()：返回数组中所有的值
+array_column()：返回数组中指定的一列
+array_search()：在数组中搜索给定的值，如果成功则返回首个相应的键名
+array_push()：将一个或多个单元压入数组的末尾（入栈）
+array_pop()：弹出数组最后一个单元（出栈）
+array_merge()：合并一个或多个数组
+array_unique()：移除数组中重复的值
+in_array()：检查数组中是否存在某个值
+count()：计算数组中元素个数
+array_splice()：去掉数组中的某一部分并用其它值取代
+sort()：对数组排序
+rsort()：对数组逆向排序
+array_diff()：计算数组的差集
+array_intersect()：计算数组的交集
+
+二、常用字符串函数
+join/implode()：将一个一维数组的值转化为字符串
+explode()：使用一个字符串分割另一个字符串为数组
+str_replace()：子字符串替换
+strstr()：查找字符串的首次出现
+substr()：返回字符串子串
+strlen()：获取字符串长度
+trim()：删除字符串作用两边的空白字符（或其他字符）
+ltrim()：删除字符串开头的空白字符（或其他字符）
+rtrim()：删除字符串结尾的空白字符（或其他字符）
+strtolower()：将字符串转化为小写
+strtoupper()：将字符串转化为大写
+htmlspecialchars_decode()：将特殊的 HTML 实体转换回普通字符
+strip_tags()：从字符串中去除 HTML 和 PHP 标记
