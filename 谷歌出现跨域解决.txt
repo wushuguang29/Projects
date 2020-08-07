@@ -1,0 +1,5 @@
+Chrom浏览器或者使用chromium引擎的浏览器在80以上的版本，对于前后端分离的项目可能会
+出现登录失败的问题，具体场景是验证码会一直验证失败。在高版本中（80以上）跨域的请求会
+丢失cookie，导致请求失败。本地的解决办法是设置SameSite by default cookies和Cookies 
+without SameSite must be secure这两个属性为Disabled   浏览器地址栏打开 chrome://flags/ 
+地址更改配置。
