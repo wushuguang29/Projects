@@ -1,2 +1,2 @@
 # Projects
-study of Projects!
+Learn new things!
