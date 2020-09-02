@@ -1,2 +1,2 @@
 # Projects
-Learn new things!
+->Learn new things!
