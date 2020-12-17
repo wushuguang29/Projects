@@ -1,2 +1,2 @@
 # Projects
-->Learn this projects!
+->Learn projects!
