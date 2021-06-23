@@ -1,0 +1,173 @@
+<?php
+
+namespace app\common\model;
+
+use service\rewrite\RewriteModel;
+use think\Db;
+use app\common\model\QuestionsModel;
+
+/**
+ * 评测管理
+ * @package app\common\model
+ */
+class EvaluatingModel extends RewriteModel
+{
+    /**
+     * 获取订阅人订阅的领域方面
+     */
+    public function getMemberSideList($param)
+    {
+        $data = Db::table('app_user_member_subscription')->field('domain')->where('app_user_member_id', $param['app_user_member_id'])->group('domain')->select();
+        foreach ($data as $ko => $vo) {
+            $data[$ko]['domain'] = config('config.DOMAIN')[$vo['domain']];
+            $data[$ko]['side'] = Db::table('app_user_member_subscription')->field('side')->where('app_user_member_id', $param['app_user_member_id'])->select();
+        }
+        return $data;
+    }
+
+    /**
+     * 获取题库
+     */
+    public function getQuestionsList($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = QuestionsModel::delRedundantFields('evaluating', $param);//除去多余字段
+            $data['create_time'] = $date;
+//            $eval_id = Db::table('evaluating')->insertGetId($data);//添加到评测表
+            $question = Db::table('questions')->field('id,question_title')->where(array('domain'=> $param['domain'],'side'=> $param['side']))->select();
+            foreach ($question as $ko => $vo) {
+                $question[$ko]['children'] = Db::table('questions_option')->field('index,option_title,score')->where('questions_id', $vo['id'])->select();
+                $detail['questions_id'] = $vo['id'];
+                $detail['domain']        = $param['domain'];
+                $detail['domain']        = $param['domain'];
+                $detail['domain']        = $param['domain'];
+            }
+//            if ($last_id) {
+//                Db::commit();
+//                return msgReturn(45003,['evaluating_score'=> $score,'evaluating_result'=> $result]);
+//            } else {
+//                Db::rollback();
+//                return msgReturn(46002);
+//            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 评测
+     */
+    public function evaluate($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = QuestionsModel::delRedundantFields('evaluating', $param);//除去多余字段
+            ##处理评测
+            $data['evaluating_date']          = date('Y-m-d');
+            $data['evaluating_finish_time']  = $date;
+            $data['create_time']               = $date;
+            $last_id = Db::table('evaluating')->insertGetId($data);//添加到评测表
+            $detail = json_decode($param['question'], true);
+            $detail_data = [];
+            foreach ($detail as $ko => $vo) {
+                $details['evaluating_id']  = $last_id;
+                $details['questions_id']   = $vo['questions_id'];
+                $details['domain']          = $param['domain'];
+                $details['side']            = $param['side'];
+                $details['question_title'] = trim(explode('、',$vo['question_title'])[1]);
+                $details['option_detail']  = is_array($vo['option_detail']) ? json_encode($vo['option_detail']) : $vo['option_detail'];
+                $details['answer']          = $vo['answer'];
+                $details['score']           = $vo['score'];
+                $details['create_time']    = $date;
+                array_push($detail_data, $details);
+            }
+            $detail_res = Db::table('evaluating_question_detail')->insertAll($detail_data);;//添加到评测详情表
+            ##根据分数得到评测结果
+            $score = Db::table('evaluating_question_detail')->where('evaluating_id', $last_id)->sum('score');
+            $result = '';
+            //获取得分范围
+            $range = Db::table('evaluating_score_ranges')->where(array('domain'=> $param['domain'],'side'=> $param['side']))->value('score_range');
+            if (!empty($range)) { //通过判断范围得到结果
+                $range = json_decode($range, true);
+                foreach ($range as $k => $v) {
+                    if ($v['begin'] <= $score && $v['end'] >= $score) {
+                        $result = $v['result'];
+                    }
+                }
+            }
+            Db::table('evaluating')->where('id', $last_id)->update(['evaluating_result'=> $result, 'evaluating_score'=> $score]);//保存结果和总分
+            if ($last_id && $detail_res) {
+                Db::commit();
+                return msgReturn(45003,['evaluating_score'=> $score,'evaluating_result'=> $result]);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 评测人员
+     */
+    public function getAssessorList()
+    {
+        $data = Db::table('evaluating')->alias('e')
+            ->join('app_user_member aum', 'aum.id = e.app_user_member_id', 'left')
+            ->field([
+                'aum.id AS app_user_member_id',
+                'aum.name',
+                'aum.phone',
+            ])
+            ->where('aum.app_user_id', APP_USER_ID)
+            ->group('aum.id')
+            ->select();
+        return $data;
+    }
+
+    /**
+     * 评测记录
+     */
+    public function getEvaluateRecord($param)
+    {
+        $data = Db::table('evaluating')
+            ->field([
+                'side',
+                'evaluating_score',
+                'evaluating_result',
+            ])
+            ->where('app_user_member_id', $param['app_user_member_id'])
+            ->select();
+        return $data;
+    }
+
+    /**
+     * 查看
+     */
+    public function browse($param)
+    {
+        $data = Db::table('evaluating')->alias('e')
+            ->join('app_user_member aum', 'aum.id = e.app_user_member_id', 'left')
+            ->join('app_users au', 'au.id = aum.app_user_id', 'left')
+            ->field([
+                'e.id',
+                'au.name AS user_name',
+                'au.phone',
+                'aum.name AS member_name',
+                'e.domain',
+                'e.side',
+                'e.evaluating_result',
+                'e.push_status',
+                'e.push_message',
+            ])
+            ->where('e.id', $param['id'])
+            ->find();
+        return $data;
+    }
+}

@@ -1,0 +1,579 @@
+<template>
+	<view>
+		<input-box leftText="姓名:" ref="name" :inputValue="form.name" :verification="['isNull']" @input="testInput"
+		 :verificationTip="['姓名不能为空']" v-model="form.name" placeholder="请输入姓名" class="input-style"></input-box>
+		<input-box leftText="年龄:" ref="age" :inputValue="form.age" :verification="['isNull','isInt']" :verificationTip="['年龄不能为空','年龄必须是数字']"
+		 v-model="form.age" placeholder="请输入年龄"></input-box>
+		<input-box leftText="联系电话:" ref="input1" :verification="['isNull','isPhoneNum']" v-model="form.phone" :inputValue="form.phone"
+		 :verificationTip="['手机号码不能为空','请输入正确的手机号']" placeholder="请输入联系电话" maBtm="10" maxLength="11"></input-box>
+		<input-box leftText="联系邮箱:" ref="input2" v-model="form.email" :inputValue="form.email" placeholder="请输入联系邮箱"></input-box>
+		<view class="uni-form-item uni-column">
+			<!-- <view class="title"><span class="uni-name">性别:</span></view>
+			<view class="u-input">
+				<view>
+					<label class="radio">
+						<radio value="1" :checked="flag==='1'" @click="ageclick('1')" />男</label>
+					<label class="radio">
+						<radio value="2" :checked="flag==='2'" @click="ageclick('2')" />女</label>
+				</view>
+			</view> -->
+			<u-form-item label="性别:" style="padding: 0 0 0 3%;" v-model="form.sex">
+				<template v-for="item in sexList">
+					<text :key="item.value" :class="[form.sex == item.value?'sex-active':'','sex-box']" @tap="sexActive(item.value)">
+						{{item.label}}</text>
+				</template>
+			</u-form-item>
+		</view>
+		<view class="uni-form-item uni-column">
+			<picker @change="degreeEducationType" :range="degreeEducation" class="uni_picke">
+
+				<label class="title" style="padding-left: 0.5rem;float:left">文化程度：</label>
+				<label class="">{{ degreeEducationTypeArrayType }}</label>
+			</picker>
+		</view>
+
+		<view class="uni-form-item uni-column">
+			<picker @change="marriagetionType" :range="marriagetion" class="uni_picke">
+
+				<label class="title" style="padding-left: 0.5rem;float:left">婚姻状况：</label>
+				<label class="">{{ marriagetionTypeArrayType }}</label>
+			</picker>
+		</view>
+		<view class="uni-form-item uni-column">
+			<picker @change="childType" :range="child" class="uni_picke">
+
+				<label class="title" style="padding-left: 0.5rem;    float: left;">子女状况：</label>
+				<label class="">{{ childTypeArrayType }}</label>
+			</picker>
+		</view>
+		<view class="uni-form-item uni-column" id="showFlag" @click="showtuclick">
+			<label class="title" style="padding-left: 0.5rem;">所属疾病：</label>
+			<label class="" id="showFlag" @click="showtuclick" style="text-align: center;">{{ diseaseTypeArrayType }}</label>
+			<tki-tree ref="tkitree" :range="diseasetion" @cancel="cancel" @confirm="confirm" :multiple="false" :rangeKey="'name'"
+			 :idKey="'id'" confirmColor="#4e8af7" />
+		</view>
+		<view class="uni-form-item uni-column">
+			<view class="title"><span class="uni-name">所患疾病:</span></view>
+			<view class="u-input"><input class="uni-input" v-model="form.critical_disease" name="input" /></view>
+
+		</view>
+		<view class="uni-form-item uni-column">
+			<picker @change="bodyType" :range="body" class="uni_picke">
+
+				<label class="title" style="padding-left: 0.5rem;float:left">身体状况：</label>
+				<label class="">{{ bodyTypeArrayType }}</label>
+			</picker>
+		</view>
+
+		<view class="uni-form-item uni-column">
+			<picker @change="liveType" :range="live" class="uni_picke">
+
+				<label class="title" style="padding-left: 0.5rem;float:left">居住环境：</label>
+				<label class="">{{ liveTypeArrayType }}</label>
+			</picker>
+		</view>
+		<view class="uni-form-item uni-column">
+			<picker @change="healthType" :range="health" class="uni_picke">
+
+				<label class="title" style="padding-left: 0.5rem;float:left">医保类型：</label>
+				<label class="">{{ healthTypeArrayType }}</label>
+			</picker>
+		</view>
+		<view class="uni-form-item uni-column">
+			<picker @change="economicType" v-model="form.source_finance" :range="economic" class="uni_picke">
+
+				<label class="title" style="padding-left: 0.5rem;float:left">经济来源：</label>
+				<label class="">{{ economicTypeArrayType }}</label>
+			</picker>
+		</view>
+		<!--  <input-box ref="input2" type="password" :verification="['isNull','isChineseEnlishAndNumber']" :verificationTip="['密码不能为空','']"  placeholder="请输入密码" maBtm="10"></input-box> -->
+		<button class="uni-btn" @click="submit">保存</button>
+		<!-- <button @click="onerification">校验</button> -->
+	</view>
+</template>
+
+<script>
+	import inputBox from '@/components/input-box/input-box';
+	import tkiTree from "@/components/tki-tree/tki-tree.vue"
+	export default {
+		components: {
+			tkiTree,
+			inputBox
+		},
+		data() {
+			return {
+				zhuangtai: false,
+				show: false,
+				type: true,
+				flag: false,
+
+				sexList: [{
+						value: '1',
+						label: '男'
+					},
+					{
+						value: '2',
+						label: '女'
+					}
+				],
+				degreeEducation: ['---请选择---', '未上学', '小学', '初中', '中专', '高中', '大专', '本科', '硕士', '博士'],
+				degreeEducationTypeIndex: 0,
+				degreeEducationTypeArrayType: '---请选择---',
+
+				diseasetion: [{
+						id: 1,
+						name: '未患病',
+						children: []
+					},
+					{
+						id: 2,
+						name: '心血管疾病',
+						children: []
+					}, {
+						id: 3,
+						name: '呼吸系统疾病',
+						children: []
+					}, {
+						id: 4,
+						name: '泌尿系统疾病',
+						children: []
+					}, {
+						id: 5,
+						name: '内分泌系统疾病',
+						children: []
+					}, {
+						id: 6,
+						name: '消化道疾病',
+						children: []
+					}, {
+						id: 7,
+						name: '神经系统疾病',
+						children: []
+					}, {
+						id: 8,
+						name: '肿瘤',
+						children: []
+					}, {
+						id: 9,
+						name: '其他',
+						children: []
+					}
+				],
+				diseaseTypeIndex: 0,
+				diseaseTypeArrayType: '---请选择---',
+
+				marriagetion: ['---请选择---', '未婚', '有配偶', '离异', '丧偶'],
+				marriagetionTypeIndex: 0,
+				marriagetionTypeArrayType: '---请选择---',
+
+				child: ['---请选择---', '无', '1个', '2个', '3个', '4个及以上'],
+				childTypeIndex: 0,
+				childTypeArrayType: '---请选择---',
+
+				body: ['---请选择---', '非常好', '较好', '一般', '较差', '非常差'],
+				bodyTypeIndex: 0,
+				bodyTypeArrayType: '---请选择---',
+
+				live: ['---请选择---', '独居', '夫妻', '子女或家人', '保姆', '其他'],
+				liveTypeIndex: 0,
+				liveTypeArrayType: '---请选择---',
+
+				health: ['---请选择---', '公费医疗', '城镇居民医疗保险', '农村合作医疗保险', '商业医疗保险', '自费', '其他'],
+				healthTypeIndex: 0,
+				healthTypeArrayType: '---请选择---',
+
+				economic: ['---请选择---', '储蓄', '退休金', '政府补助', '子女亲戚提供', '朋友提供', '其他'],
+				economicTypeIndex: 0,
+				economicTypeArrayType: '---请选择---',
+
+				validate: {},
+				showtu: false,
+				form: {
+					sex: '1'
+				}
+			}
+		},
+
+		onLoad: function(option) {
+
+			console.log("option", option);
+			if (option.flag == "false") {
+				this.zhuangtai = false
+			} else if (option.flag == "true") {
+				this.zhuangtai = true
+			}
+
+			if (option.id) {
+				this.$ajax.get({
+					url: '/api/AppUserMember/browse',
+					param: {
+						id: option.id
+					},
+					header: {
+						'Content-Type': 'application/json;charset=UTF-8',
+						'x-requested-with': "XMLHttpRequest",
+
+					},
+				}).then((res) => {
+					console.log("res", res.data.data);
+					const data = Object.assign({},res.data.data);
+					data.age = data.age +'';
+					this.form = data;
+					console.log("ref", this.$refs.name)
+					// this.$refs.name.setValue(res.data.data.name)
+					// this.$refs.age.setValue(res.data.data.age)
+					// this.$refs.email.setValue(res.data.data.email)
+					// this.$refs.phone.setValue(res.data.data.phone)
+					console.log("form", this.form)
+					this.degreeEducationTypeArrayType = this.degreeEducation[this.form.degree_education]
+					this.marriagetionTypeArrayType = this.marriagetion[this.form.marital_condition]
+					this.childTypeArrayType = this.child[this.form.children_condition];
+					this.bodyTypeArrayType = this.body[this.form.physical_condition];
+					this.liveTypeArrayType = this.live[this.form.living_condition];
+					this.healthTypeArrayType = this.health[this.form.health_insurance_type];
+					this.economicTypeArrayType = this.economic[this.form.source_finance];
+
+
+					this.diseaseTypeArrayType = this.diseasetion[this.form.affiliated_disease].name;
+
+				})
+			}
+		},
+		onShow: function() {
+			// console.log("option",option);
+		},
+		methods: {
+			sexActive(index) {
+				this.form.sex = index
+			},
+			testInput(e) {
+				console.log("触发", e)
+			},
+			onerification() {
+
+			},
+			cancel(e) {
+				e.stopPropagation()
+				// this.showtu= false
+				this.$refs.tkitree._hide()
+
+			},
+			showtuclick(e) {
+				console.log(e)
+				if (e.target.id != "showFlag") return
+				e.stopPropagation()
+				// this.showtu= true
+				this.$refs.tkitree._show()
+				console.log("show", this.$refs.tkitree)
+			},
+			confirm(data) {
+				let a = [],
+					b = []
+				data.forEach(item => {
+					a.push(item.id)
+					b.push(item.name)
+				})
+				this.diseaseTypeArrayType = b.toString();
+				console.log(a.toString());
+				this.form.affiliated_disease = a.toString();
+				// this.showtu= false
+				this.$refs.tkitree._hide()
+			},
+			edit() {
+
+				this.$ajax.post({
+					url: '/api/AppUserMember/edit',
+					data: this.form,
+					header: {
+						'Content-Type': 'application/json;charset=UTF-8',
+						'x-requested-with': "XMLHttpRequest",
+					},
+				}).then((res) => {
+					console.log("res", res)
+					uni.redirectTo({
+						url: '/pages/views/member/memberTable',
+					});
+					uni.showToast({
+						title: res.data.msg,
+						icon: "none"
+					})
+
+				})
+
+			},
+			add() {
+
+
+
+				this.$ajax.post({
+					url: '/api/AppUserMember/add',
+					data: this.form,
+					header: {
+						'Content-Type': 'application/json;charset=UTF-8',
+						'x-requested-with': "XMLHttpRequest",
+
+					},
+				}).then((res) => {
+					console.log("res", res)
+					uni.redirectTo({
+						url: '/pages/views/member/memberTable',
+					});
+					uni.showToast({
+						title: res.data.msg,
+						icon: "none"
+					})
+
+				})
+			},
+			submit() {
+				console.log("1111", this.form)
+				if (this.$refs.input1.getValue() && this.$refs.name.getValue() && this.$refs.age.getValue()) {
+					console.log(this.form.sex)
+					if (!this.form.sex) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择性别',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					if (!this.form.degree_education) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择文化程度',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					if (!this.form.marital_condition) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择婚姻状况',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+
+					// if(!this.form.critical_disease){
+					// 	uni.showToast({
+					// 		icon: 'none',
+					// 		title: '输入所患疾病,没有输入无',
+					// 		// #ifdef MP-WEIXIN
+					// 		duration: 2000,
+					// 		// #endif
+					// 		// mask: true
+					// 	});
+					// 	return
+					// }
+					if (!this.form.children_condition) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择子女状况',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					if (!this.form.affiliated_disease) {
+						uni.showToast({
+							icon: 'none',
+							title: '所属疾病',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					if (!this.form.physical_condition) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择身体状况',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					if (!this.form.living_condition) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择居住环境',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					if (!this.form.health_insurance_type) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择医保类型',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					if (!this.form.source_finance) {
+						uni.showToast({
+							icon: 'none',
+							title: '请选择经济来源',
+							// #ifdef MP-WEIXIN
+							duration: 2000,
+							// #endif
+							// mask: true
+						});
+						return
+					}
+					console.log("1546");
+					// uni.showToast({
+					// 	icon: 'none',
+					// 	title: '校验通过',
+					// 	// #ifdef MP-WEIXIN
+					// 	duration: 2000,
+					// 	// #endif
+					// 	// mask: true
+					// });
+					if (this.zhuangtai == true) {
+						console.log("1", this.zhuangtai)
+						this.edit();
+
+					} else {
+						console.log("2", this.zhuangtai)
+						this.add();
+
+					}
+				}
+
+
+			},
+
+			diseaseType(e) {
+				this.form.affiliated_disease = e.target.value;
+				this.diseaseTypeArrayType = this.diseasetion[this.form.affiliated_disease];
+			},
+			degreeEducationType(e) {
+				console.log("dddd", e);
+				this.form.degree_education = e.target.value;
+				this.degreeEducationTypeArrayType = this.degreeEducation[this.form.degree_education]
+				console.log("2", this.form.degree_education, this.degreeEducationTypeArrayType);
+
+			},
+			marriagetionType(e) {
+				this.form.marital_condition = e.target.value;
+				this.marriagetionTypeArrayType = this.marriagetion[this.form.marital_condition]
+				console.log("2", this.form.marital_condition, this.marriagetionTypeArrayType);
+
+			},
+			childType(e) {
+				this.form.children_condition = e.target.value;
+				this.childTypeArrayType = this.child[this.form.children_condition];
+				console.log("3", this.form.children_condition, this.childTypeArrayType);
+
+			},
+			bodyType(e) {
+				this.form.physical_condition = e.target.value;
+				this.bodyTypeArrayType = this.body[this.form.physical_condition];
+				console.log("4", this.form.physical_condition, this.bodyTypeArrayType);
+
+			},
+			liveType(e) {
+				this.form.living_condition = e.target.value;
+				this.liveTypeArrayType = this.live[this.form.living_condition];
+				console.log("5", this.form.living_condition, this.liveTypeArrayType);
+
+			},
+
+			healthType(e) {
+				this.form.health_insurance_type = e.target.value;
+				this.healthTypeArrayType = this.health[this.form.health_insurance_type];
+				console.log("6", this.form.health_insurance_type, this.healthTypeArrayType);
+
+			},
+			economicType(e) {
+				this.form.source_finance = e.target.value;
+				this.economicTypeArrayType = this.economic[this.form.source_finance];
+				console.log("7", this.form.source_finance, this.economicTypeArrayType);
+
+			},
+			ii() {
+				return 1
+			}
+		},
+
+	}
+</script>
+
+<style lang="scss">
+	.uni_picke {
+		width: 100%;
+		text-align: center;
+	}
+
+	.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+	}
+
+	.uni-name {
+		float: right
+	}
+
+	.input-style {
+		font-size: 20rpx;
+	}
+
+	.uni-column {
+
+		border-bottom: 1px solid #333333;
+		display: flex;
+		font-size: 28rpx;
+		justify-content: space-between;
+		padding: 20rpx 0;
+		margin: 0 40rpx;
+		align-items: center;
+		border-bottom: 1rpx solid #e5e5e5;
+	}
+
+	.u-input {
+		width: 76%;
+		text-align: center
+	}
+
+	.title {
+		width: 21%
+	}
+
+	.uni-yzm {
+		width: 22%
+	}
+
+	.sex-box {
+		padding: 5px 20px;
+		border: 1px solid #eee;
+		margin-left: 10px;
+		border-radius: 3px;
+	}
+
+	.sex-active {
+		border-color: #46c4a7;
+		background-color: #46c4a7;
+		color: #fff;
+	}
+</style>

@@ -1,0 +1,386 @@
+<?php
+
+namespace service\jwt;
+
+use app\common\model\ConfigurationModel;
+use app\common\model\UsersModel;
+use Exception;
+use Lcobucci\JWT\Builder;
+use Lcobucci\JWT\Signer\Key;
+use Lcobucci\JWT\Token;
+use Lcobucci\JWT\ValidationData;
+use think\Exception\DbException;
+use think\facade\Cache;
+use think\facade\Config;
+use think\facade\Env;
+use Lcobucci\JWT\Signer\Rsa\Sha256;
+use Lcobucci\JWT\Signer\Rsa\Sha384;
+use Lcobucci\JWT\Signer\Rsa\Sha512;
+use Lcobucci\JWT\Signer\Hmac\Sha256 AS Hmac256;
+use Lcobucci\JWT\Signer\Hmac\Sha384 AS Hmac384;
+use Lcobucci\JWT\Signer\Hmac\Sha512 AS Hmac512;
+use Lcobucci\JWT\Signer\Ecdsa\Sha256 AS Ecdsa256;
+use Lcobucci\JWT\Signer\Ecdsa\Sha384 AS Ecdsa384;
+use Lcobucci\JWT\Signer\Ecdsa\Sha512 AS Ecdsa512;
+use service\jwt\exception\TokenBlacklistException;
+use service\jwt\exception\JwtException;
+
+/**
+ * JWT基类
+ * @package service\jwt
+ * @author Zhang zw
+ * @date 2020/9/22 14:44
+ */
+class JwtAuth
+{
+
+    private $password;
+
+    private $ttl;
+
+    private $refreshTtl;
+
+    private $leeway;
+
+    private $privateKey;
+
+    private $publicKey;
+
+    private $parserToken;
+
+    private $token;
+
+    private $builder;
+
+    private $keyFilePath = 'extend' . DIRECTORY_SEPARATOR . 'service' . DIRECTORY_SEPARATOR . 'jwt' . DIRECTORY_SEPARATOR . 'keyFile' . DIRECTORY_SEPARATOR;
+
+    private $blackListToken;
+
+    private $claims;
+
+    /**
+     * 算法类
+     * @var string[][]
+     */
+    private $classConfig = [
+        'sha'   =>  [
+            '256'   =>  Sha256::class,
+            '384'   =>  Sha384::class,
+            '512'   =>  Sha512::class,
+        ],
+        'hmac'   =>  [
+            '256'   =>  Hmac256::class,
+            '384'   =>  Hmac384::class,
+            '512'   =>  Hmac512::class,
+        ],
+        'ecdsa'   =>  [
+            '256'   =>  Ecdsa256::class,
+            '384'   =>  Ecdsa384::class,
+            '512'   =>  Ecdsa512::class,
+        ],
+    ];
+
+    /**
+     * 算法对象
+     * @var object
+     */
+    private $signerObject;
+    /**
+     * 默认算法
+     * @var string
+     */
+    private $signerObjectDefault = Sha256::class;
+
+    /**
+     * JwtAuth constructor.
+     * @param ParserToken $parserToken
+     * @param Builder $builder
+     */
+    public function __construct(ParserToken $parserToken, Builder $builder)
+    {
+
+        $this->parserToken = $parserToken;
+
+        $this->builder = $builder;
+
+        // 获取token加密配置 默认为rsa256
+        // 根据配置获取算法类
+        $this->buildAlgoClass(Env::get('JWT_ALGO', 'rsa256'));
+
+        // 秘钥密码  默认为空
+        $this->password = Env::get('JWT_PASSWORD', null);
+
+        // token过期时间 默认3小时
+        $this->ttl = Env::get('JWT_TTL', '10800');
+
+        // token刷新时间 默认14天
+        $this->refreshTtl = Env::get('JWT_REFRESH_TTL', '20160');
+
+        // 时钟偏斜 默认300秒
+        // 如果令牌的声明时间无效，但与验证时间之差小于$leeway 那么令牌仍然被认为是有效的 防止并发请求时刷新token导致的问题
+        $this->leeway = 300;
+
+        // 设置私钥
+        $this->privateKey = new Key('file://' . Env::get('root_path') . $this->keyFilePath . 'private.pem', $this->password);
+
+        // 设置公钥
+        $this->publicKey = new Key('file://' . Env::get('root_path') . $this->keyFilePath . 'public_key.pem', $this->password);
+
+    }
+
+    /**
+     * 创建算法对象
+     * @param $algo
+     * @author Zhang zw
+     * @date 2020/9/22 14:47
+     */
+    private function buildAlgoClass($algo): void
+    {
+
+        $signer = mb_strtolower(mb_substr($algo,0,-3));
+
+        $signerNum = mb_strtolower(mb_substr($algo,-3));
+
+        // 配置不存在则使用默认的算法
+        if (is_string($algo) && !empty($this->classConfig[$signer][$signerNum])) {
+            $this->signerObject = new $this->classConfig[$signer][$signerNum];
+        } else {
+            $this->signerObject = new $this->signerObjectDefault;
+        }
+    }
+
+    /**
+     * 构建Token
+     * @param array $claim 配置声明 建议只存放user_id或非敏感信息
+     * @return Token
+     * @author Zhang zw
+     * @date 2020/9/22 14:46
+     */
+    public function builder(array $claim = []): Token
+    {
+        $time = time();
+
+        $claim = !empty($claim) ? $claim : $this->claims;
+
+        $token = $this->builder->issuedBy(Config::get('app_name', 'lhsoft')) // 配置发行者 (iss claim)
+        ->issuedAt($time) // 配置令牌发布的时间（iat声明）
+        ->canOnlyBeUsedAfter($time) // 配置令牌可以使用的时间（nbf声明）
+        ->expiresAt($time + $this->ttl); // 配置令牌的过期时间（exp声明）
+
+        foreach ($claim AS $key => $value) {
+            $token->withClaim($key, $value);
+        }
+
+        return $this->token = $token->getToken($this->signerObject, $this->privateKey);
+    }
+
+    /**
+     * 构建一次性token 参数可以放在请求头的 X-CSRF-TOKEN 字段  <meta name="csrf-token" content="{csrf_token}">
+     * @param null $jtiClaim jit声明，唯一字符串
+     * @return Token
+     * @throws Exception
+     * @author Zhang zw
+     * @date 2020/9/22 14:44
+     */
+    public function builderCSRFToken($jtiClaim = null): Token
+    {
+        $jtiClaim = $jtiClaim ?? str_random();
+
+        return $this->builder->issuedBy(Config::get('app_name', 'lhsoft')) // 配置发行者 (iss claim)
+        ->identifiedBy($jtiClaim,true)
+        ->getToken($this->signerObject, $this->privateKey);
+    }
+
+    /**
+     * 解析token
+     * @throws JwtException
+     * @throws TokenBlacklistException
+     * @author Zhang zw
+     * @date 2020/9/22 21:46
+     */
+    public function decode()
+    {
+        $this->token = $this->parserToken->parseToken();
+
+        // 验证是否登录超时和被强制下线
+        if (!$this->validate()) {
+            // token加入黑名单
+            $this->destroy($this->token);
+
+            throw new JwtException('登录超时',40002);
+        }
+
+        return $this->token;
+    }
+
+    /**
+     * 验证是否过期
+     * @return bool
+     * @throws TokenBlacklistException|JwtException
+     * @author Zhang zw
+     * @date 2020/9/22 21:46
+     */
+    public function validate(): bool
+    {
+        // 验证是否加入黑名单
+        $this->ifBlackList();
+
+        $validationData = new ValidationData();
+
+        return $this->token->validate($validationData);
+    }
+
+    /**
+     * 是否允许刷新token
+     * @return bool 返回true不允许刷新 false允许刷新
+     * @author Zhang zw
+     * @date 2020/9/23 10:42
+     */
+    public function ifRefresh(): bool
+    {
+        // 是否允许刷新
+        if (($this->blackListToken['destroy_time'] + $this->refreshTtl) < time()) {
+            // token 是否已经刷新过一次
+            // token 是否在刷新时间内 (销毁时间 + 时钟偏斜) < 当前时间
+            if (($this->blackListToken['if_refresh'] === false)) {
+                if ((($this->blackListToken['destroy_time'] + $this->leeway)) < time()) {
+                    // 刷新状态更改为 1
+                    $this->blackListToken['if_refresh'] = true;
+                    // 更新缓存
+                    Cache::set((string)$this->token, $this->blackListToken,0);
+                    return false;
+                }
+                return true;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 是否加入黑名单
+     * @param null $token
+     * @return bool false为已加入黑名单 true为未加入黑名单
+     * @throws JwtException|TokenBlacklistException
+     * @author Zhang zw
+     * @date 2020/9/23 17:57
+     */
+    public function ifBlackList($token = null): bool
+    {
+
+        if ($this->blackListToken = Cache::get($token ?? (string)$this->token)) {
+            if ($this->blackListToken['force'] === true) {
+                throw new TokenBlacklistException('账户在其他地方登录，您已被强制下线', 40006);
+            }
+            throw new JwtException('登录超时',40002);
+        }
+
+        return true;
+    }
+
+    /**
+     * 销毁token
+     * @param $token
+     * @param bool $force
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/23 10:43
+     */
+    public function destroy($token = null, $force = false)
+    {
+        $this->blackListToken = [
+            'force'         =>  $force,
+            'destroy_time'  =>  time(),
+            'if_refresh'    =>  false,
+        ];
+
+        return Cache::set((string)$token, $this->blackListToken,0);
+    }
+
+    /**
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/23 16:33
+     */
+    public function getToken()
+    {
+        return $this->parserToken->parseToken();
+    }
+
+    /**
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/23 20:54
+     */
+    public function getClaims(): array
+    {
+        $claims = [];
+
+        $this->token = $this->parserToken->parseToken();
+
+        foreach($this->token->getClaims() AS $key => $value) {
+            $claims[$key] = $value->getValue();
+        }
+
+        return $claims;
+    }
+
+    /**
+     * 获取单个载荷
+     * @param $name
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/10/13 11:19
+     */
+    public function getClaim($name)
+    {
+        return $this->token->getClaim($name);
+    }
+
+    /**
+     * 设置载荷
+     * @param $user
+     * @return JwtAuth
+     * @throws DbException
+     * @author Zhang zw
+     * @date 2020/10/26 14:40
+     */
+    public function setClaims($user): JwtAuth
+    {
+        if (!Cache::get('config_key')) {
+            $configuration = new ConfigurationModel;
+
+            $configuration->getConfiguration();
+        }
+
+        $this->claims = [
+            'user_id'       =>  $user['id'],  // 参数不允许更改
+            'config_key'    =>  Cache::get('config_key'),   // 参数不允许更改
+        ];
+
+        return $this;
+    }
+
+    /**
+     * 设置业务数据常量
+     * @throws Exception
+     * @author Zhang zw
+     * @date 2020/9/23 18:21
+     */
+    public function setDefine(): void
+    {
+        $claims = $this->getClaims();
+
+        define('USER_ID', (int)$claims['user_id']);
+        define('CONFIG_KEY', (string)$claims['config_key']);
+
+        $userCollection = UsersModel::where('id','=',USER_ID)->findOrEmpty();
+
+        if (empty($userCollection)) {
+            throw new \RuntimeException('用户不存在');
+        }
+
+        define('USER_NAME', $userCollection->username);
+        define('USER_ARR', $userCollection->toArray());
+    }
+}

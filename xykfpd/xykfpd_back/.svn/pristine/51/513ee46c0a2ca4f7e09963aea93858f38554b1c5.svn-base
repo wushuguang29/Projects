@@ -1,0 +1,2956 @@
+---------------------------------------------------------------
+
+[2020-03-25T13:57:52+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/unlockUser?id=1
+[运行时间：0.890656s] [吞吐率：1.12req/s] [内存消耗：2,695.69kb] [文件加载：110]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------076825908424634824006302',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7996a386-dde2-46a5-9922-07185bb8daf8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ error ] [0]致命错误: Using $this when not in object context[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:72]
+---------------------------------------------------------------
+
+[2020-03-25T13:59:14+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/unlockUser?id=1
+[运行时间：0.058122s] [吞吐率：17.21req/s] [内存消耗：2,695.70kb] [文件加载：110]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------141923248591096174894645',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ebb728c0-ac07-4a05-9953-c2f79eeb7b75',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ error ] [0]致命错误: Using $this when not in object context[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:72]
+---------------------------------------------------------------
+
+[2020-03-25T13:59:39+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/unlockUser?id=1
+[运行时间：0.060147s] [吞吐率：16.63req/s] [内存消耗：2,695.70kb] [文件加载：110]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------742921354440950211463265',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '66ccf6c3-52c5-47bb-82c5-67ab365aade7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ error ] [0]致命错误: Using $this when not in object context[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:72]
+---------------------------------------------------------------
+
+[2020-03-25T13:59:41+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/unlockUser?id=1
+[运行时间：0.046091s] [吞吐率：21.70req/s] [内存消耗：2,695.70kb] [文件加载：110]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------286772305799295085140967',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b15b5c85-4cfc-4ce8-8d58-192d22a139d2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ error ] [0]致命错误: Using $this when not in object context[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:72]
+---------------------------------------------------------------
+
+[2020-03-25T14:00:58+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/unlockUser?id=1
+[运行时间：0.194745s] [吞吐率：5.13req/s] [内存消耗：2,697.14kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------152435136815546805288978',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c5b48d60-42c1-41cb-855b-9d20d9418c73',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ error ] [8]未定义变量: request[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:72]
+---------------------------------------------------------------
+
+[2020-03-25T14:01:10+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/unlockUser?id=1
+[运行时间：0.333776s] [吞吐率：3.00req/s] [内存消耗：3,738.80kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------273098426886964019068386',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '874c6f2b-0d25-4d04-b730-020ce40b1c30',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.031668s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003076s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = 5 , `status` = 1  WHERE  `id` = 5 [ RunTime:0.006742s ]
+---------------------------------------------------------------
+
+[2020-03-25T14:11:03+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.201309s] [吞吐率：4.97req/s] [内存消耗：2,709.80kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------294836364337778127782626',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '1f8a3c20-21f1-406f-94a4-5d88ddea51ee',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ error ] [64]Cannot make non static method think\Model::delete() static in class app\index\model\User[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:8]
+---------------------------------------------------------------
+
+[2020-03-25T14:12:32+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.156106s] [吞吐率：6.41req/s] [内存消耗：2,699.53kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------409375115017354344641906',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'd76d0922-caa7-408f-8d99-a5f98efd2a68',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ error ] [8192]Non-static method think\Model::allowField() should not be called statically[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:117]
+---------------------------------------------------------------
+
+[2020-03-25T14:13:06+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.089525s] [吞吐率：11.17req/s] [内存消耗：3,773.60kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------116237551597888564629896',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a349e36a-7b48-41b2-8418-f2f24a1192f7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012636s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.001365s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.001044s ]
+---------------------------------------------------------------
+
+[2020-03-25T14:20:45+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.093748s] [吞吐率：10.67req/s] [内存消耗：3,773.05kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------360536564611581024606266',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0cb4e365-b773-4b06-9b9b-5b83859a14f8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002878s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002299s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.001292s ]
+---------------------------------------------------------------
+
+[2020-03-25T14:43:38+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.426096s] [吞吐率：2.35req/s] [内存消耗：2,380.48kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------301692178677463617100100',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9d25955c-40a0-4012-a8ea-8dc9e53947b0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'id' => '5',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T14:46:10+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.220800s] [吞吐率：4.53req/s] [内存消耗：2,380.22kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------218262368635957700502792',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5a3b0447-4d82-480e-b243-d13511d6c1c6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'id' => '5',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T14:47:24+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.056711s] [吞吐率：17.63req/s] [内存消耗：2,380.56kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------189157726035747884569885',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'aacb0fbd-4565-4f37-bee6-71c6010c2b9f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'id' => '5',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T14:57:26+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.099545s] [吞吐率：10.05req/s] [内存消耗：2,446.79kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '830',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------246336507306554029598340',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '29b94ccc-f377-48fa-aa0b-28b3cb9ab6d1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '朗慧12999',
+  'account' => 'lhsoft9999',
+  'password' => '123456',
+  'id' => '5',
+  'gender' => '1',
+  'phone' => '13755020164',
+  'email' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T15:08:35+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.068844s] [吞吐率：14.53req/s] [内存消耗：2,265.88kb] [文件加载：100]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------296012108607192018958850',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4c7e9d04-f277-476e-915f-5abfc4ba5d11',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+---------------------------------------------------------------
+
+[2020-03-25T15:08:48+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.184864s] [吞吐率：5.41req/s] [内存消耗：2,360.19kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a4a55bb1-984a-4938-ae8e-6f0442b2029f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T15:08:53+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.044920s] [吞吐率：22.26req/s] [内存消耗：2,265.95kb] [文件加载：100]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------641233364450828854061651',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'd4b1091b-eaa6-45d1-b475-b294e55890c6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+---------------------------------------------------------------
+
+[2020-03-25T15:31:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.060766s] [吞吐率：16.46req/s] [内存消耗：2,276.35kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0307e8ac-a380-4f21-8a97-4a1d2514d721',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected '=', expecting ']'[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:41]
+---------------------------------------------------------------
+
+[2020-03-25T15:31:41+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.064568s] [吞吐率：15.49req/s] [内存消耗：2,381.48kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'd5cadd5a-4158-43e2-b90c-7814f3cc3ee1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T15:58:35+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.089178s] [吞吐率：11.21req/s] [内存消耗：2,382.21kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b3cd99d4-64c0-434e-9379-f916da69708e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:02:14+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.077186s] [吞吐率：12.96req/s] [内存消耗：2,281.11kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '00e1ea8d-f1c7-434a-a0db-5dec049f7128',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected '=', expecting ']'[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:43]
+---------------------------------------------------------------
+
+[2020-03-25T16:02:31+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.202270s] [吞吐率：4.94req/s] [内存消耗：2,382.70kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '42491053-cd9d-4b4f-9a88-7d6ddbed0bf9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:03:05+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.150319s] [吞吐率：6.65req/s] [内存消耗：2,331.50kb] [文件加载：102]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------780723839275985512683523',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '91eb5dcb-4ae3-42e8-9d39-196f4214bfbf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+[ error ] [0]致命错误: Class 'app\index\controller\app\index\model\User' not found[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:63]
+---------------------------------------------------------------
+
+[2020-03-25T16:03:20+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.055590s] [吞吐率：17.99req/s] [内存消耗：2,680.22kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------903314666307431348010010',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'eee762be-d1db-45c1-aa5f-e2ec510b1cd3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+[ error ] [0]类型错误: Too few arguments to function app\index\model\User::account(), 0 passed in E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php on line 64 and exactly 1 expected[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:129]
+---------------------------------------------------------------
+
+[2020-03-25T16:03:38+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.049825s] [吞吐率：20.07req/s] [内存消耗：2,618.73kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------424511686187297625812352',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dbae0bf6-185b-4c5e-891f-1d7cd2a8f499',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:27:40+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.065436s] [吞吐率：15.28req/s] [内存消耗：2,331.47kb] [文件加载：102]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------625600224001424243465650',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4dedd35a-ad44-44fd-9761-3fd29bbb5ea7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+[ error ] [0]语法解析错误: syntax error, unexpected ';'[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:140]
+---------------------------------------------------------------
+
+[2020-03-25T16:28:59+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.049718s] [吞吐率：20.11req/s] [内存消耗：2,331.47kb] [文件加载：102]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------291214572494432123950257',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '83ca02ba-5a06-488f-94bf-32d3de6da502',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+[ error ] [0]语法解析错误: syntax error, unexpected ';'[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:140]
+---------------------------------------------------------------
+
+[2020-03-25T16:29:34+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.048827s] [吞吐率：20.48req/s] [内存消耗：2,331.53kb] [文件加载：102]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------014016121850363321500459',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '108f1bce-63f0-431c-9ba5-48d0ed8be4bc',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+[ error ] [0]语法解析错误: syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:142]
+---------------------------------------------------------------
+
+[2020-03-25T16:29:55+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.080338s] [吞吐率：12.45req/s] [内存消耗：3,744.35kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------113650781649900716206970',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '51cdc095-e667-48bd-8010-ccffd263c328',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002490s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.001799s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` IS NULL LIMIT 1 [ RunTime:0.000857s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:30:19+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.066897s] [吞吐率：14.95req/s] [内存消耗：3,765.23kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '167',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------093540699203246573767184',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c1ec35b4-617e-43d0-8f37-b3b0b3a0478e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha' => '99999',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011593s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002440s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` IS NULL LIMIT 1 [ RunTime:0.001179s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:31:14+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.084616s] [吞吐率：11.82req/s] [内存消耗：2,647.36kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '497',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------854380058283990955163816',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '64af1799-774b-48d1-adfe-6cf195d0ec5e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => '',
+  'captcha_code' => '123456',
+  'username' => '',
+  'password' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:31:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.184855s] [吞吐率：5.41req/s] [内存消耗：2,382.76kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5df3ad0a-cafb-48bb-a02d-8546f9566613',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:31:43+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.059172s] [吞吐率：16.90req/s] [内存消耗：2,647.55kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '537',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------983761694201241427320701',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '89adf227-c18f-4c00-9261-dce542f9bebc',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_d2705793284df95325188ae18caa552c',
+  'captcha_code' => '123456',
+  'username' => '',
+  'password' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:32:33+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.189563s] [吞吐率：5.28req/s] [内存消耗：2,382.76kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '1059c1fe-115c-478f-b750-adeed6f54c33',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:32:55+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.044593s] [吞吐率：22.43req/s] [内存消耗：2,647.55kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '537',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------503463078156377701638375',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '995d4331-2bb4-4785-977d-7f64a426d798',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_627ecee86760a2e37884942d1b366470',
+  'captcha_code' => '123456',
+  'username' => '',
+  'password' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:33:03+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.068680s] [吞吐率：14.56req/s] [内存消耗：2,647.55kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '535',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------277263647567145497536178',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '949d9243-a225-4e2f-867b-e628dc8c19b7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_627ecee86760a2e37884942d1b366470',
+  'captcha_code' => 'kn4f',
+  'username' => '',
+  'password' => '',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:33:11+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.076611s] [吞吐率：13.05req/s] [内存消耗：3,767.78kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '535',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------548708963735122225956961',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '313a26c0-573f-414d-a1a3-e4c77a5351f7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_627ecee86760a2e37884942d1b366470',
+  'captcha_code' => 'kN4f',
+  'username' => '',
+  'password' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012539s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002833s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = '' LIMIT 1 [ RunTime:0.005285s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:33:54+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.070233s] [吞吐率：14.24req/s] [内存消耗：3,766.95kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '535',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------011736033349993301133794',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8172df09-5167-41ae-a80c-5d6ee5893830',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_627ecee86760a2e37884942d1b366470',
+  'captcha_code' => 'kN4f',
+  'username' => '',
+  'password' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011614s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.001587s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = '' LIMIT 1 [ RunTime:0.001130s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:34:06+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.059737s] [吞吐率：16.74req/s] [内存消耗：3,773.69kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------300845223469342856158271',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a66a4336-f02f-4e76-9921-f0d34d54ea0d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_627ecee86760a2e37884942d1b366470',
+  'captcha_code' => 'kN4f',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002493s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.001938s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001428s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:37:39+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.065872s] [吞吐率：15.18req/s] [内存消耗：2,331.84kb] [文件加载：102]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------179240470920517745008284',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b7ea37a5-c5e2-4ebb-9ada-021097622b4e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_627ecee86760a2e37884942d1b366470',
+  'captcha_code' => 'kN4f',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ error ] [0]语法解析错误: syntax error, unexpected ',', expecting ']'[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:146]
+---------------------------------------------------------------
+
+[2020-03-25T16:37:57+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.054341s] [吞吐率：18.40req/s] [内存消耗：2,645.87kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------274287987947437914105477',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2c927fb9-0c76-4791-ba93-5ac8c9b73e4e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_627ecee86760a2e37884942d1b366470',
+  'captcha_code' => 'kN4f',
+  'username' => 'xuming',
+  'password' => '111',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:38:02+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.088673s] [吞吐率：11.28req/s] [内存消耗：2,382.76kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2e8792a7-d810-4065-97a7-dc3cfc3e0f3c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:38:20+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.050742s] [吞吐率：19.71req/s] [内存消耗：2,645.87kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------146823881787050242297313',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3c4b6346-add9-43e5-958e-dcd114ff0048',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_b2ff6ae12ad9763723277df82c5e2ed7',
+  'captcha_code' => '4bpv',
+  'username' => 'xuming',
+  'password' => '111',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:38:25+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.089029s] [吞吐率：11.23req/s] [内存消耗：3,733.45kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------556223662152635812471560',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'be20c692-96e1-473a-9a6c-df2d18819798',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_b2ff6ae12ad9763723277df82c5e2ed7',
+  'captcha_code' => '4bPV',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013748s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003134s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001483s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = `remain` - 1  WHERE  `id` = 2 [ RunTime:0.011145s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:38:37+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.076729s] [吞吐率：13.03req/s] [内存消耗：3,733.45kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------275132193609378765403165',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ca62f867-55d9-43c6-91d5-c382d1626315',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_b2ff6ae12ad9763723277df82c5e2ed7',
+  'captcha_code' => '4bPV',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011621s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.001492s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001075s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = `remain` - 1  WHERE  `id` = 2 [ RunTime:0.006224s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:42:04+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.079270s] [吞吐率：12.62req/s] [内存消耗：2,646.34kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------256537958698796387620698',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0c77ba53-d857-48b4-804d-425527b778ca',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_b2ff6ae12ad9763723277df82c5e2ed7',
+  'captcha_code' => '4bPV',
+  'username' => 'xuming',
+  'password' => '111',
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:42:30+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.077445s] [吞吐率：12.91req/s] [内存消耗：2,382.76kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6a3a8ccb-8d76-45ae-9d34-84a1d174672e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T16:42:59+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.087154s] [吞吐率：11.47req/s] [内存消耗：3,733.95kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------753514292697690537268468',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '95c1eb0e-a30f-42aa-9357-2a6d4e590832',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012387s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002367s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001983s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = `remain` - 1  WHERE  `id` = 2 [ RunTime:0.004921s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:44:14+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.090583s] [吞吐率：11.04req/s] [内存消耗：3,733.93kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------109084587110046734249380',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '1bd1d2e2-1be1-49d7-9691-919fa704e979',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011633s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.001480s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001343s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = `remain` - 1  WHERE  `id` = 2 [ RunTime:0.011927s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:44:18+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.074393s] [吞吐率：13.44req/s] [内存消耗：3,733.95kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------559375259356354928315810',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a100f048-2b9e-4b2f-ad39-d1ce0cbc3b52',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012140s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002486s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001628s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = `remain` - 1  WHERE  `id` = 2 [ RunTime:0.004001s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:44:21+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.078433s] [吞吐率：12.75req/s] [内存消耗：3,733.95kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------909404294007707843091895',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6f5a8008-5123-4a76-82fc-310e27be1b83',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012307s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003059s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.002013s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = `remain` - 1  WHERE  `id` = 2 [ RunTime:0.006083s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:44:22+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.073438s] [吞吐率：13.62req/s] [内存消耗：3,734.87kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------408926338311014906443178',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '87510b8f-dd2c-44d4-a9c6-042e935de73b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012364s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.001975s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001689s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = `remain` - 1  WHERE  `id` = 2 [ RunTime:0.004013s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `status` = 2  WHERE  `id` = 2 [ RunTime:0.006890s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:44:26+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.062837s] [吞吐率：15.91req/s] [内存消耗：3,767.18kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '544',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------492955997790873124533910',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8357ac15-e81c-46c1-bf96-12bf9fa2a496',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '111',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012254s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002956s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001588s ]
+---------------------------------------------------------------
+
+[2020-03-25T16:44:56+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/account
+[运行时间：0.535700s] [吞吐率：1.87req/s] [内存消耗：3,868.29kb] [文件加载：132]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/account',
+  'route' => 'index/Login/account',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------550648520760848929261702',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '76ed2969-ac89-47f8-8428-f58983ff6c5a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011988s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002483s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming' LIMIT 1 [ RunTime:0.001439s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = 5  WHERE  `id` = 2 [ RunTime:0.001049s ]
+---------------------------------------------------------------
+
+[2020-03-25T17:27:58+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.115864s] [吞吐率：8.63req/s] [内存消耗：2,284.09kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '86b52f84-78a5-498e-9038-a4ec28d9b208',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected '}', expecting ';'[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:95]
+---------------------------------------------------------------
+
+[2020-03-25T17:28:21+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.076975s] [吞吐率：12.99req/s] [内存消耗：2,496.69kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5227d316-964b-4afb-9a96-14a3782134bb',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Call to undefined function app\index\controller\now()[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:36]
+---------------------------------------------------------------
+
+[2020-03-25T17:28:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.055334s] [吞吐率：18.07req/s] [内存消耗：2,496.83kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '97fadb75-67e7-4951-89ca-f1a3eab5335b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Call to undefined function app\index\controller\now()[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:36]
+---------------------------------------------------------------
+
+[2020-03-25T17:29:11+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.060031s] [吞吐率：16.66req/s] [内存消耗：2,495.77kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '1a1cdb95-c913-40d4-a34f-5a2d31d1b565',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Call to undefined function app\index\controller\nowDate()[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:36]
+---------------------------------------------------------------
+
+[2020-03-25T17:29:32+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.059697s] [吞吐率：16.75req/s] [内存消耗：2,497.27kb] [文件加载：108]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8ed936f2-a28d-4eb4-ab03-916fcec75915',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [2]date() expects at least 1 parameter, 0 given[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:36]
+---------------------------------------------------------------
+
+[2020-03-25T17:38:25+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/sendMessages
+[运行时间：0.073548s] [吞吐率：13.60req/s] [内存消耗：2,297.61kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------479237345999082328523807',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'aea80cfa-15d4-4ec6-9dc3-04ce48753f54',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T17:38:36+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.047935s] [吞吐率：20.86req/s] [内存消耗：2,297.61kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------652965133340667692615025',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'de83fb27-971c-450e-81f8-3e02cda28468',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T17:43:20+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.070627s] [吞吐率：14.16req/s] [内存消耗：2,297.89kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------836288689539712680437822',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '04f9dfec-494a-4664-afb2-921ee79e6a4b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T17:43:47+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.038540s] [吞吐率：25.95req/s] [内存消耗：2,295.82kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------671033276610581873448345',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'eedea4a1-e6c2-422c-b15a-d12ff2e377a1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T17:43:48+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.039351s] [吞吐率：25.41req/s] [内存消耗：2,295.82kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------934581868381272888229458',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'bbe81c47-85eb-4185-83c0-16cad65cd5bf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T17:46:13+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.060676s] [吞吐率：16.48req/s] [内存消耗：2,292.91kb] [文件加载：100]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------767388801630930575128749',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0a82ff4d-e3b2-4100-90b6-04713db91095',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T17:46:28+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.049067s] [吞吐率：20.38req/s] [内存消耗：2,295.70kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------957921315299266139244579',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '32fecaed-8d1b-4695-91f8-7099c862b85e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T17:51:13+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.073351s] [吞吐率：13.63req/s] [内存消耗：2,359.52kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------785413442904280173450915',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'af38dff7-9b37-417d-9701-b8621f3eefbc',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+[ error ] [0]致命错误: Class 'app\index\controller\Config' not found[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:82]
+---------------------------------------------------------------
+
+[2020-03-25T17:51:47+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.045348s] [吞吐率：22.05req/s] [内存消耗：2,295.65kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------474813049707720299026151',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ee814626-7a71-4b72-bcf8-ae94a71013eb',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T21:46:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.673619s] [吞吐率：1.48req/s] [内存消耗：2,334.88kb] [文件加载：103]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '43d858e5-bf16-48e7-9d2d-1fb971c7bec8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Call to undefined function app\index\controller\str_random()[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:23]
+---------------------------------------------------------------
+
+[2020-03-25T21:50:13+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.011533s] [吞吐率：86.71req/s] [内存消耗：423.43kb] [文件加载：23]
+[ error ] [0]Parse error: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file[E:\phpStudy\WWW\lhsoft_back\application\common.php:69]
+---------------------------------------------------------------
+
+[2020-03-25T21:50:58+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.185408s] [吞吐率：5.39req/s] [内存消耗：2,266.12kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '82f4cb9f-48f1-4ac2-81fb-831564ea927d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-25T21:59:07+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.193961s] [吞吐率：5.16req/s] [内存消耗：2,363.91kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------603327669248150469072033',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2fb8b01d-c120-473e-8b6f-f842cd1a4972',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+[ error ] [1]app\index\controller\Login cannot use think\facade\Config - it is not a trait[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:13]
+---------------------------------------------------------------
+
+[2020-03-25T22:00:18+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.056466s] [吞吐率：17.71req/s] [内存消耗：2,293.05kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------406942129458852971161802',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f9ae176b-a416-4738-8425-82a23d0003e2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:00:43+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.041083s] [吞吐率：24.34req/s] [内存消耗：2,292.86kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------118207000928917145167697',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ff46b7c5-8191-44ed-8b0a-a7328ba06294',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:01:21+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.056485s] [吞吐率：17.70req/s] [内存消耗：2,293.02kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------420632140490522527811304',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9bd331b8-51b4-4ecf-8b5f-0083c3856b5f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:03:09+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.048033s] [吞吐率：20.82req/s] [内存消耗：2,292.98kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------239116247857628563848535',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '24ae218c-5241-44ba-ba4e-efea3b311042',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:03:10+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.041709s] [吞吐率：23.98req/s] [内存消耗：2,292.98kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------180179601561538675276026',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '33acfb4e-722f-4ce1-a74f-63654f39513a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:03:24+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.059211s] [吞吐率：16.89req/s] [内存消耗：2,293.02kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------877135494694718864367643',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '00345195-9809-4d09-b4c1-78b422b0db43',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:03:53+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.048595s] [吞吐率：20.58req/s] [内存消耗：2,292.95kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------034333895957304949143589',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ca1f932f-6990-4769-b3a7-1a8cb6fffcb6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:04:22+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.073047s] [吞吐率：13.69req/s] [内存消耗：2,293.36kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------856560551828638632342987',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8cb9614a-2090-4727-a196-61175d161703',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:04:32+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.041713s] [吞吐率：23.97req/s] [内存消耗：2,293.33kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------460237684789576084694102',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'de7df806-352f-4321-82d0-bcecc3ee621a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:04:43+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.038936s] [吞吐率：25.68req/s] [内存消耗：2,295.40kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------751495067098949967903516',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0196d635-e7e5-496e-aef5-3544820f3daa',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:28:18+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/Login/sendMessages
+[运行时间：0.198411s] [吞吐率：5.04req/s] [内存消耗：2,885.11kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------138389114743419762070941',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '48393a71-a153-4404-b9e3-692ce412cce8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'captcha_key' => 'captcha_eb68ace9f2a4755bf11f25fa385c82df',
+  'captcha_code' => 't7k8',
+  'username' => 'xuming',
+  'password' => '123456',
+)
+[ error ] [0]类型错误: Too few arguments to function app\index\controller\Login::sendMessages(), 0 passed in E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php on line 92 and exactly 1 expected[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:82]
+---------------------------------------------------------------
+
+[2020-03-25T22:29:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.057804s] [吞吐率：17.30req/s] [内存消耗：2,888.65kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------332194321410225520655854',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e66dc9c0-2ff1-41bf-bede-b1c35b189d6f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+[ error ] [0]类型错误: Argument 1 passed to app\index\controller\Login::sendMessages() must be an instance of think\Request, array given, called in E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php on line 92[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:82]
+---------------------------------------------------------------
+
+[2020-03-25T22:30:44+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：21.501744s] [吞吐率：0.05req/s] [内存消耗：3,745.48kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------872668031599848814521276',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6a55c3bf-a79e-4052-ba91-194cc429706f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\db\Connection.php:528]
+---------------------------------------------------------------
+
+[2020-03-25T22:38:30+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.669069s] [吞吐率：1.49req/s] [内存消耗：3,657.16kb] [文件加载：151]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------468306944335267305727018',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '407cdd2f-1a4c-4f11-b40f-c1aa750b1026',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:40:06+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.152498s] [吞吐率：6.56req/s] [内存消耗：3,659.62kb] [文件加载：151]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------528278147523739972486465',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '110eea72-80cc-4d11-aaf7-6c007f3fc258',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T22:59:03+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.452218s] [吞吐率：2.21req/s] [内存消耗：3,701.89kb] [文件加载：154]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------435664383454855275905918',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '422ed316-c0c0-4c63-b70a-d358247b43c4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:10:17+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：1.315772s] [吞吐率：0.76req/s] [内存消耗：3,701.91kb] [文件加载：154]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------061937045137371212024280',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a24d183b-2346-44d7-89ad-a9a1c1bf8616',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:10:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.054526s] [吞吐率：18.34req/s] [内存消耗：2,695.36kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------148697412430664571638275',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e65a68dc-9acd-465e-acf7-946e2ef27cbe',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:11:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.057472s] [吞吐率：17.40req/s] [内存消耗：2,695.35kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------830546019073991012991101',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c9a74385-2aa5-48da-8221-c4766adafe5a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:11:40+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.238526s] [吞吐率：4.19req/s] [内存消耗：3,701.89kb] [文件加载：154]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------971616413681346250549599',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '00b0a9f2-da78-4be2-8587-1692df9bac06',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:15:16+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.402204s] [吞吐率：2.49req/s] [内存消耗：3,701.91kb] [文件加载：154]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------783640358915847077295834',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ed867598-9939-40db-998b-bba51e20179f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:16:12+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.991043s] [吞吐率：1.01req/s] [内存消耗：3,701.99kb] [文件加载：154]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------733440958507807730025787',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '00cf234d-b0f1-4da0-bb30-b1ed5977e521',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:17:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.468198s] [吞吐率：2.14req/s] [内存消耗：4,205.86kb] [文件加载：155]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------873890572036261322698258',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'deb80bd8-8a69-4dca-9496-0bcb62812773',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:18:31+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.124340s] [吞吐率：8.04req/s] [内存消耗：2,661.30kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------464345808562723439265657',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8d018f98-65d3-467c-8b9c-26806967ea5c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:20:33+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.177135s] [吞吐率：5.65req/s] [内存消耗：2,661.31kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------891295695592658158299383',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4a7e4f7d-1e06-4cc9-b3f1-17607ab69d97',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:20:54+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.109381s] [吞吐率：9.14req/s] [内存消耗：2,665.30kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------743477536398922252000326',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2b27fe5a-ccd8-404e-a30a-054cd1b68163',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:21:59+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.100121s] [吞吐率：9.99req/s] [内存消耗：2,665.30kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------329595696887269431513731',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6d735d96-457f-4033-9290-94327a02f7ba',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:22:47+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.144398s] [吞吐率：6.93req/s] [内存消耗：2,665.30kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------523982478683446326718224',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '564751a2-b49d-4ca7-bf91-1dacd04ba100',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:23:11+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.100131s] [吞吐率：9.99req/s] [内存消耗：2,665.30kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------941584355144601635514747',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '068303b7-9dd5-4c2e-8bb6-1831247387ac',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:23:40+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：1.363566s] [吞吐率：0.73req/s] [内存消耗：3,695.19kb] [文件加载：152]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------425598203227087060084015',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5d73ac20-3905-4aae-b38e-6f2598319c0c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:25:20+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：0.174402s] [吞吐率：5.73req/s] [内存消耗：2,661.37kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------862272575200278679555827',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3e91ad02-4bbb-41c0-b462-1ee58ed1f8fe',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+---------------------------------------------------------------
+
+[2020-03-25T23:26:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/sendMessages?phone=18073186136
+[运行时间：2.020521s] [吞吐率：0.49req/s] [内存消耗：3,694.13kb] [文件加载：152]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------399977749010259181991544',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b318e0c7-f0de-4343-b27c-a191e8efe191',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)

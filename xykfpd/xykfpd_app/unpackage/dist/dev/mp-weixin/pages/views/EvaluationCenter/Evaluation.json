@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "评测记录",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "u-table": "/node-modules/uview-ui/components/u-table/u-table",
+    "u-tr": "/node-modules/uview-ui/components/u-tr/u-tr",
+    "u-th": "/node-modules/uview-ui/components/u-th/u-th",
+    "u-td": "/node-modules/uview-ui/components/u-td/u-td",
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal"
+  }
+}

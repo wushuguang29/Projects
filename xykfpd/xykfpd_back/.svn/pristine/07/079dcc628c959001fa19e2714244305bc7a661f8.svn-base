@@ -1,0 +1,17 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 17:16:15
+ * @LastEditTime: 2020-12-22 17:30:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\route\api.php
+ */
+
+
+//登录
+Route::get('api/Login/login','api/Login/login');
+// 发送手机验证码
+Route::get('index/login/sendCode', 'app\common\service\Sms@sendVerificationCode');
+// 消息推送
+Route::get('index/Evaluating/send', 'app\common\service\Sms@send');

@@ -1,0 +1,44 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2021-01-07 11:19:25
+ * @LastEditTime: 2021-01-26 09:34:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\application\http\middleware\AppJWTAuthAndRefresh.php
+ */
+/**
+ *
+ * @author Zhang zw
+ * @date 2020/9/25 15:37
+ */
+
+namespace app\http\middleware;
+use Closure;
+use service\jwt\exception\JwtException;
+use service\jwt\exception\TokenBlacklistException;
+
+class AppJWTAuthAndRefresh extends \service\jwt\middleware\JWTMiddleware
+{
+    /**
+     * token验证
+     * @param $request
+     * @param Closure $next
+     * @return mixed
+     * @throws TokenBlacklistException
+     * @author Zhang zw
+     * @date 2020/9/25 16:21
+     */
+    public function handle($request, Closure $next)
+    {   
+        // dump($request);die;
+        try {
+            $this->jwtAuth->decode();
+            $this->jwtAuth->setAppDefine();
+        } catch (JwtException $exception) {
+            $token = $this->setAppAuthentication();
+            return $next($request)->header(['Authorization' => 'Bearer ' . $token, 'Access-Control-Expose-Headers' => 'Authorization']);
+        }
+        return $next($request);
+    }
+}

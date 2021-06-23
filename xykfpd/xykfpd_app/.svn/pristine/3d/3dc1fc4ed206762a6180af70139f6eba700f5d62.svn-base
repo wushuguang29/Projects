@@ -1,0 +1,686 @@
+<template>
+
+	<view v-if="type===true">
+		<view style="width: 100%;height: 16rem;">
+			<view style="height: 75%;width:100%;text-align:center;vertical-align:baseline;padding:4% 0 0 0;">
+				<image src="../../static/logokf.png" style="width: 50%;"></image>
+			</view>
+		</view>
+		<view class="update-message">
+			<view class="update-text">手机号:</view>
+			<view class="u-input" style="width: 74%;">
+				<input class="uni-input" type="number" @input="phoneChange" @blur="doInput(form.phone)" v-model="form.phone"
+				 placeholder="请输入手机号码" maxlength="11" />
+			</view>
+
+		</view>
+		<view class="update-message">
+
+			<view class="update-text">验证码：</view>
+			<view class="update-input">
+				<input class="uni-input" maxlength="6" @input="codeInput" v-model="form.phone_code" type="number" />
+				<input class="code" @click="codeChange" disabled="true" type="button" :style="{'background-color':lineColor}"
+				 v-model="code">
+			</view>
+
+		</view>
+		<view style="margin-bottom: 1em;">
+			<button class="uni-btns" :style="{'background-color':btnsColor}" @click="login">登录</button>
+		</view>
+		<view>
+			<view style="display: flex;padding: 0 0 0 10%;font-size: 30rpx;">
+				<view style="width: 250rpx;height: 1px;background: #EEEEEE;border: 1px solid #DFDFDF;margin-top: 15rpx;"></view>
+				<view>其他方式</view>
+				<view style="width:250rpx;height: 1px;background: #EEEEEE;border: 1px solid #DFDFDF;margin-top: 15rpx;"></view>
+			</view>
+
+		</view>
+		<view class="qitalogin">
+			<!-- #ifdef MP-WEIXIN -->
+			<view style="text-align: center;"><button class="uni-btn-vx" open-type="getUserInfo" @getuserinfo="appLoginWx"
+				 :style='{"background-image":"url("+vx+")"}'></button>
+				<view>微信登录</view>
+			</view>
+			<!-- #endif -->
+			<!-- #ifdef APP-PLUS -->
+			<view style="text-align: center; " @click="appWx"><button class="uni-btn-vx" :style='{"background-image":"url("+vx+")"}'></button>
+				<view>微信登录</view>
+			</view>
+			<view style="text-align: center; " @click="appZfb"><button class="uni-btn-vx" :style='{"background-image":"url("+zfb+")"}'></button>
+				<view>支付宝登录</view>
+			</view>
+			<!-- #endif -->
+		</view>
+	</view>
+	<view v-else-if="type===false" style="text-align: center;">
+		<image src="../../static/logo.png"></image>
+	</view>
+	</view>
+
+</template>
+
+<script>
+	import config from '../../api/config.js'
+	import logo from '../../static/logokf.png'
+	import vx from '../../static/vxt.jpg'
+	import zfb from '../../static/zfb.jpg'
+	export default {
+		data() {
+			return {
+				lineColor: '#adadad',
+				btnsColor: '#adadad',
+				flag: false,
+				code: "获取验证码",
+				type: true,
+				tips: '',
+				vx,
+				src: "../../static/logokf.png",
+				storeUrl: null,
+				seconds: 60,
+				logo,
+				form: {
+
+				},
+				device: false,
+				zfb,
+			}
+		},
+		// onReady() {
+			// console.log(this.$u.config.v);
+			// 注意这里不能将一个组件赋值给data的一个变量，否则在微信小程序会
+			// 造成循环引用而报错，如果你想这样做，请在非data中定义refCode变量
+			// this.refCode = this.$refs.uCode;
+		// },
+		created() {
+			console.log('应用版本：', uni.getSystemInfoSync().platform);
+			var platform = uni.getSystemInfoSync().platform;
+			if (platform === 'android' || platform === 'ios') {
+				this.device = true;
+			}
+		},
+		onReady(){
+			console.log('onready');
+		},
+		mounted(){
+			console.log('mounted');
+		},
+		onLoad: function(option) {
+			console.log('加载');
+			// var auth_code = uni.getStorageSync("AUTH_CODE");
+			// console.log("从缓存获取AUTH_CODE：",auth_code);
+			console.log(option);
+				// if(option.auth_code){
+				// 	console.log('AUTH_CODE:',option.auth_code);
+				// 	// this.alipayLogin(option.auth_code);
+					
+				// }
+			if (option.storeUrl) {
+				this.storeUrl = option.storeUrl 
+			}
+			console.log("复制", this.storeUrl)
+		},
+		onShow(){
+			var args = plus.runtime.arguments;
+			console.log("支付宝OnShow参数",args);
+			var b = args.replace(/hbuilder:\/\//, "");
+			var alidata = eval('(' + b + ')');
+			console.log(alidata);
+			// #ifdef APP-PLUS
+				//支付宝授权成功
+				if(alidata.auth_code){
+					this.alipayLogin(alidata.auth_code);
+				}
+			// #endif
+		},
+		methods: {
+			test(){
+				const PPAliPay = uni.requireNativePlugin('PP-Alipay');
+				console.log(PPAliPay);
+				    //authInfo 为了用户方便，android提供生成方法，见下方
+				PPAliPay.login({ authInfo: authInfo,appScheme:'alipays://platformapi/startapp?appId=20000067' }, result => {
+					//result 返回结果 
+							//{"code":200,"data":{"alipayOpenId":"xx","authCode":"xx","resultCode":"xx","userId":"xxx"},"msg":"登录完成"}
+				});
+			},
+			appWx() {
+				uni.getProvider({
+					service: 'oauth',
+					success(res) {
+						console.log("RES:", res);
+						if (~res.provider.indexOf('weixin')) {
+							uni.login({
+								provider: "weixin",
+								success(res2) {
+									console.log(res2);
+									uni.getUserInfo({
+										provider: 'weixin',
+										success: (info) => { //这里请求接口
+											console.log(info);
+											console.log(info.userInfo.nickName);
+											console.log('now:' + config.host);
+											const url = config.host + '/api/Login/login';
+											uni.request({
+												url: url,
+												header: {
+													'content-type': 'application/x-www-form-urlencoded'
+												},
+												data: {
+													login_type: 4,
+													openId: info.userInfo.openId,
+													nickName: info.userInfo.nickName,
+													avatarUrl: info.userInfo.avatarUrl
+												},
+												method: 'GET',
+												dataType: 'json',
+												success: function(res) {
+													console.log('成功');
+													console.log(res);
+													res.data.data.flag = true;
+													uni.setStorageSync('rowData', res.data.data);
+													uni.setStorageSync('userToken', "Bearer " + res.data.data.token);
+													console.log("uni", uni.getStorageSync('userToken'))
+													if (res.data.data.phone == null) {
+														uni.redirectTo({
+															url: '/pages/index/updatePhone',
+														});
+													} else {
+														uni.switchTab({
+															url: '/pages/index/index'
+														});
+													}
+
+												},
+												fail: function(err) {
+													console.log('失败');
+													console.log(err);
+												}
+											})
+
+										},
+										fail: () => {
+											uni.showToast({
+												title: "微信登录授权失败",
+												icon: "none"
+											});
+										}
+									})
+								},
+								fail() {
+									uni.showToast({
+										title: "请先安装微信或升级版本",
+										icon: "none"
+									})
+								}
+							})
+						}
+					},
+					fail() {
+						uni.showToast({
+							title: "请先安装微信或升级版本3",
+							icon: "none"
+						})
+					}
+				})
+			},
+			appZfb() {
+				console.log('点击支付宝登录');
+				//沙箱网关
+				//let alipayUrl ='https://openauth.alipaydev.com/oauth2/appToAppAuth.htm?app_id=2021000116687911&scope=auth_user&redirect_uri=https://www.baidu.com';
+				let alipayUrl =
+					'https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=2021002121607078&scope=auth_user&redirect_uri=https://xykfpdafter.demo.lhsoft.net/alipayAuth';
+
+				//let alipayUrl1 = "https://openauth.alipay.com/oauth2/appToAppAuth.htm?app_id=2021000116687911&redirect_uri=https://www.baidu.com"; 
+				let openURL = 'alipays://platformapi/startapp?appId=20000067&url=' + encodeURIComponent(alipayUrl);
+				console.log('openURL:' + alipayUrl);
+				plus.runtime.openURL(openURL, err => {
+					uni.showToast({
+						title: '打开支付宝失败！请检查是否已安装？',
+						icon: 'none'
+					});
+				});
+			},
+			codeInput(e) {
+				if (this.form.phone_code != undefined && this.form.phone != undefined) {
+					console.log(this.form.phone, this.form.phone_code)
+					this.btnsColor = '#47C3A8'
+				} else {
+					this.btnsColor = '#adadad'
+				}
+			},
+			phoneChange(e) {
+				if (this.form.phone != undefined && this.form.phone_code != undefined) {
+					console.log(this.form.phone, this.form.phone_code)
+					this.btnsColor = '#47C3A8'
+				} else {
+					this.btnsColor = '#adadad'
+				}
+				console.log("e", e);
+				let a = e.detail.value.split('');
+				console.log("a", a)
+				if (a.length == 11) {
+					var regPhone = (/^(13[0-9]|14[1579]|15[0-3,5-9]|16[6]|17[0123456789]|18[0-9]|19[89])\d{8}$/);
+					if (!regPhone.test(e.detail.value)) {
+						this.lineColor = '#adadad'
+
+						uni.showToast({
+							title: '手机号格式错误',
+							icon: 'none'
+						});
+					} else {
+
+						this.lineColor = '#47C3A8'
+
+					}
+				} else {
+					this.lineColor = '#adadad'
+				}
+				// var regPhone = (/^(13[0-9]|14[1579]|15[0-3,5-9]|16[6]|17[0123456789]|18[0-9]|19[89])\d{8}$/); 
+				// if(!regPhone.test(e)){
+				// 	this.lineColor='#adadad'
+				// }else{
+				// 	this.lineColor='#47C3A8'
+				// }
+
+			},
+			doInput(val) {
+
+				// var regPhone = (/^(13[0-9]|14[1579]|15[0-3,5-9]|16[6]|17[0123456789]|18[0-9]|19[89])\d{8}$/); //手机号码
+
+				// if(!regPhone.test(val)){
+				// 	this.lineColor='#adadad'
+				// this.codeType=false;
+				// uni.showToast({
+				// title: '手机号格式错误',
+				// icon: 'none'
+				// });
+				// return;
+				// }else{
+				// 	this.lineColor='#47C3A8'
+				// 	this.codeType=true;
+				// }
+			},
+			alipayLogin(auth_code){
+				console.log("进入AlipayLogin方法");
+				var param = {
+					login_type:2,
+					auth_code:auth_code
+				};
+				console.log('登录界面AUTH_CODE：',auth_code);
+				const url = config.host + '/api/Login/login';
+				uni.request({
+					url: url,
+					header: {
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					data: param,
+					method: 'GET',
+					dataType: 'json',
+					success(res) {
+						console.log('支付宝授权成功',res);
+						res.data.data.flag = true;
+						uni.setStorageSync('rowData', res.data.data);
+						uni.setStorageSync('userToken', "Bearer " + res.data.data.token);
+						console.log("uni", uni.getStorageSync('userToken'))
+						if (res.data.data.phone == null) {
+							uni.redirectTo({
+								url: '/pages/index/updatePhone',
+							});
+						} else {
+							uni.switchTab({
+								url: '/pages/index/index'
+							});
+						}
+					},
+					fail(res) {
+						console.log('支付宝授权失败：',res);
+					}
+				});
+			},
+			//login登录
+			login() {
+				var that = this;
+				that.form.login_type = 3;
+				that.$ajax.get({
+					url: '/api/login/login',
+					param: that.form,
+					header: {
+						'Content-Type': 'application/json;charset=UTF-8',
+						'x-requested-with': "XMLHttpRequest"
+					},
+				}).then((res) => {
+					console.log(res)
+					this.form.phone_code = '';
+					if (res.data.code == 0) {
+						res.data.data.flag = true;
+						console.log(res.data.data)
+						uni.setStorageSync('rowData', res.data.data);
+						uni.setStorageSync('userToken', "Bearer " + res.data.data.token);
+						const url = this.storeUrl?this.storeUrl == 'undefined'?'pages/index/index':this.storeUrl.replace(/^\/|\/$/g, ""):'pages/index/index';
+						if(url == 'pages/index/index'||url=='pages/views/EvaluationCenter/CenterIndex'||url == 'pages/views/member/file' || url == 'pages/views/PersonalCenter/PersonalCenter'){
+							uni.switchTab({
+								url: '/' + url
+							});
+						}else{
+							uni.redirectTo({
+								url: '/' + url
+							});
+						}
+						setTimeout(this.tishi, 3000);
+					} else {
+						uni.showToast({
+							title: res.data.msg,
+							icon: "none"
+						})
+					}
+
+				})
+			},
+			tishi() {
+				uni.showToast({
+					title: "登录成功",
+					icon: "none"
+				})
+			},
+			//验证码
+			codeChange() {
+				console.log()
+				if (this.code !== 0 && this.code != "获取验证码") {
+					return
+				}
+				var regPhone = (/^(13[0-9]|14[1579]|15[0-3,5-9]|16[6]|17[0123456789]|18[0-9]|19[89])\d{8}$/); //手机号码
+
+				if (!regPhone.test(this.form.phone)) {
+					uni.showToast({
+						title: '请正确输入手机号',
+						icon: "none"
+					})
+				} else {
+					if (this.form.phone) {
+						if (this.code != "获取验证码") {
+							uni.showToast({
+								title: '请稍后再试',
+								icon: "none"
+							})
+						} else {
+							this.code = 60;
+							var jian = setInterval(() => {
+								this.code--
+								if (this.code == 0) {
+									clearInterval(jian)
+									this.code = "获取验证码"
+								}
+							}, 1000)
+							this.$ajax.get({
+								url: '/index/login/sendCode',
+								param: {
+									phone: this.form.phone
+								},
+								header: {
+									'Content-Type': 'application/json;charset=UTF-8',
+									'x-requested-with': "XMLHttpRequest"
+								},
+							}).then((res) => {
+								console.log(res)
+								this.form.phone_key = res.data.data.phone_key;
+
+								console.log("this.form", this.form);
+							})
+						}
+					} else {
+						uni.showToast({
+							title: '手机号不能为空',
+							icon: "none"
+						})
+					}
+				}
+
+			},
+			getCode() {
+				let that = this;
+				if (this.$refs.uCode.canGetCode) {
+					that.$ajax.get({
+						url: '/index/login/sendCode',
+						param: {
+							phone: that.form.phone
+						},
+						header: {
+							'Content-Type': 'application/json;charset=UTF-8',
+							'x-requested-with': "XMLHttpRequest"
+						},
+					}).then((res) => {
+						console.log(res)
+						that.form.phone_key = res.data.phone_key;
+						that.form.phone_code = res.data.phone_code;
+					})
+					uni.showLoading({
+						title: '正在获取验证码'
+					})
+					setTimeout(() => {
+						console.log("进入")
+						uni.hideLoading();
+						// 这里此提示会被this.start()方法中的提示覆盖
+						this.$u.toast('验证码已发送');
+						// 通知验证码组件内部开始倒计时
+						this.$refs.uCode.start();
+					}, 2000);
+				} else {
+					this.$u.toast('倒计时结束后再发送');
+				}
+			},
+			end() {
+				this.$u.toast('倒计时结束');
+			},
+			start() {
+				this.$u.toast('倒计时开始');
+			},
+			weixindenglu: function() {
+				console.log('点击微信登录');
+			},
+			appLoginWx(e) {
+				let that = this;
+				// #ifdef MP-WEIXIN
+
+				if (e.detail.userInfo) {
+					uni.login({
+						provider: 'weixin',
+						success: (res2) => {
+							console.log("res2", res2)
+							// const url = config.host + '/api/Login/login';
+
+							uni.getUserInfo({
+								provider: 'weixin',
+								success: (info) => { //这里请求接口
+									console.log(res2);
+									console.log(info);
+									console.log('now:' + config.host);
+									const url = config.host + '/api/Login/login';
+									uni.request({
+										url: url,
+										header: {
+											'content-type': 'application/x-www-form-urlencoded'
+										},
+										data: {
+											login_type: 1,
+											encryptedData: info.encryptedData,
+											signature: info.signature,
+											rawData: info.rawData,
+											iv: info.iv,
+											code: res2.code
+										},
+										method: 'GET',
+										dataType: 'json',
+										success: function(res) {
+											console.log('成功');
+											console.log(res);
+											res.data.data.flag = true;
+											uni.setStorageSync('rowData', res.data.data);
+											uni.setStorageSync('userToken', "Bearer " + res.data.data.token);
+											console.log("uni", uni.getStorageSync('userToken'))
+											if (res.data.data.phone == null) {
+												uni.redirectTo({
+													url: '/pages/index/updatePhone',
+												});
+											} else {
+												uni.switchTab({
+													url: '/pages/index/index'
+												});
+											}
+
+										},
+										fail: function(err) {
+											console.log('失败');
+											console.log(err);
+										}
+									})
+
+								},
+								fail: () => {
+									uni.showToast({
+										title: "微信登录授权失败",
+										icon: "none"
+									});
+								}
+							})
+
+						},
+						fail: () => {
+							uni.showToast({
+								title: "微信登录授权失败",
+								icon: "none"
+							});
+						}
+					})
+
+				} else {
+					uni.showToast({
+						title: '微信拒绝登录',
+						icon: "none"
+					});
+				}
+
+				//#endif
+			}
+		}
+	}
+</script>
+
+<style>
+	/* input {
+	width: 100%;
+	
+	border: 2rpx solid red;
+	} */
+	.uni-btn-vx {
+		margin: 59rpx 40rpx 0;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+
+		font-family: -webkit-body;
+		font-family: -webkit-body;
+		font-family: -webkit-body;
+		font-family: -webkit-body;
+		font-family: -webkit-body;
+		background: #47C3A8;
+		color: #fff;
+
+		font: status-bar;
+		outline: none;
+		background-size: 100%;
+	}
+
+	.qitalogin {
+		display: flex;
+		padding: 0 0 0 26%;
+	}
+
+	.wrap {
+		padding: 24rpx;
+	}
+
+	.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+	}
+
+	.uni-btns {
+		margin: 59rpx 40rpx 0;
+
+		color: #fff;
+	}
+
+	.uni-name {
+		float: left
+	}
+
+	.uni-column {
+
+		border-bottom: 1px solid #333333;
+		display: flex;
+		font-size: 28rpx;
+		justify-content: space-between;
+		padding: 20rpx 0;
+		margin: 0 40rpx;
+		align-items: center;
+		border-bottom: 1rpx solid #e5e5e5;
+	}
+
+	.u-input {
+		width: 58%;
+
+	}
+
+	.title {
+		width: 20%
+	}
+
+	.uni-yzm {
+		width: 22%
+	}
+
+	/* 更改手机号 */
+	.update-message {
+		background-color: #fff;
+		height: 95upx;
+		line-height: 95upx;
+		font-size: 32upx;
+		display: flex;
+		border-bottom: 2upx solid #e4e4e4;
+	}
+
+	/* 文字 */
+	.update-text {
+		flex: 3;
+		text-align: right;
+		font-size: 43rpx;
+		font-weight: 500;
+	}
+
+	/* 右侧input框 */
+	.update-input {
+		flex: 7;
+		display: flex;
+	}
+
+	/* .codefalse:{flex: 3;font-size: 25upx;text-align: center;background:#ADADAD;height:95upx;line-height:95upx;color: #fff;float: right;} */
+	/* 获取验证码 */
+	.code {
+		flex: 3;
+		font-size: 25upx;
+		text-align: center;
+		background: #47C3A8;
+		height: 95upx;
+		line-height: 95upx;
+		color: #fff;
+		float: right;
+	}
+
+	/* 验证码 */
+	.uni-input {
+		flex: 7;
+		padding: 4%;
+		font-size: 43rpx;
+		font-weight: 500;
+	}
+</style>

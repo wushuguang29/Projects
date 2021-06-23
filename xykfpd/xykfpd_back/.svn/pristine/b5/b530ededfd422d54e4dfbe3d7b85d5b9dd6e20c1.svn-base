@@ -1,0 +1,32 @@
+2020-12-26 14:38:24 pid:1 Worker process terminated
+2020-12-26 14:44:37 pid:1 Worker process terminated
+2020-12-26 15:05:37 pid:1 Bad request for Register service. Request info(IP:127.0.0.1, Request Buffer:GET / HTTP/1.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-12-26 15:06:25 pid:1 Bad request for Register service. Request info(IP:127.0.0.1, Request Buffer:GET / HTTP/1.1). See http://doc2.workerman.net/register-auth-timeout.html
+2020-12-26 15:10:15 pid:1 Worker process terminated
+2020-12-26 15:11:13 pid:1 Worker process terminated
+2020-12-26 15:11:37 pid:1 Worker process terminated
+2020-12-26 15:58:20 pid:1 Worker process terminated
+2020-12-26 15:58:26 pid:1 Worker process terminated
+2020-12-26 15:58:29 pid:1 Worker process terminated
+2020-12-26 15:58:57 pid:1 Worker process terminated
+2020-12-26 16:05:21 pid:1 Worker process terminated
+2021-01-29 09:59:55 pid:1 Worker process terminated
+2021-01-29 09:59:58 pid:1 Worker process terminated
+2021-01-29 10:00:00 pid:1 Worker process terminated
+2021-01-29 10:00:14 pid:1 Worker process terminated
+2021-01-29 10:00:16 pid:1 Worker process terminated
+2021-01-29 10:00:18 pid:1 Worker process terminated
+2021-01-29 10:00:20 pid:1 Worker process terminated
+2021-01-29 10:00:22 pid:1 Worker process terminated
+2021-01-29 10:00:25 pid:1 Worker process terminated
+2021-01-29 10:00:27 pid:1 Worker process terminated
+2021-01-29 10:00:29 pid:1 Worker process terminated
+2021-01-29 10:00:31 pid:1 Worker process terminated
+2021-01-29 10:00:33 pid:1 Worker process terminated
+2021-01-29 10:00:37 pid:1 Worker process terminated
+2021-01-29 10:00:39 pid:1 Worker process terminated
+2021-01-29 10:00:41 pid:1 Worker process terminated
+2021-01-29 10:00:44 pid:1 Worker process terminated
+2021-01-29 10:00:47 pid:1 Worker process terminated
+2021-01-29 10:00:49 pid:1 Worker process terminated
+2021-01-29 10:00:51 pid:1 Worker process terminated

@@ -1,0 +1,59 @@
+<?php
+
+namespace service\exception;
+
+use service\jwt\exception\JwtException;
+use service\jwt\exception\TokenBlacklistException;
+use think\facade\Config;
+use think\facade\Log;
+use think\exception\Handle;
+use think\facade\Response;
+use \Exception;
+
+/**
+ * 接管框架所有异常 自定义返回信息
+ * @package app\common\exception
+ */
+class AssumeControlException extends Handle
+{
+    public function render(Exception $exception)
+    {
+
+        if ($exception instanceof  JwtException || $exception instanceof TokenBlacklistException || $exception instanceof ConfigException) {
+//
+            return $this->error($exception);
+//
+        }else {
+//             系统的异常,判断是不是调试模式:是,显示tp5的异常,否则显示封装接口的异常
+            if(Config::get('app.app_debug')){
+//                使用tp5默认的错误提示
+                return parent::render($exception);
+//
+            }else{
+
+                //错误写入日志
+                Log::record($exception->getMessage(),'error');
+
+                return $this->error($exception);
+            }
+        }
+    }
+
+    /**
+     * 自定义错误输出
+     *
+     * @param Exception $exception
+     *
+     * @return \think\Response
+     */
+    private function error(Exception $exception)
+    {
+
+        $code = $exception->getCode() ? $exception->getCode() : -1;
+
+        $message = $code ? $exception->getMessage() : '';
+
+        return Response::create(msgReturn($code, [], $message), 'json');
+
+    }
+}

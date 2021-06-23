@@ -1,0 +1,141 @@
+<template>
+	<view style="width: 100%;">
+		<view class="uni-form-item uni-column" @click="upload">
+			<view class="title">
+				<p class="uni-name" style="font-size: 18px;"><u-avatar :src="fromData.avatar" size="large"></u-avatar></p>
+			</view>
+			<view class="u-input">
+				<u-icon name="arrow-right" color="#C0C0C0" width="200" height="200"></u-icon>
+			</view>
+		
+		</view>
+		<view class="uni-form-item uni-column"  @click="userName">
+			<view class="title">
+				<p class="uni-name" style="font-size: 18px;">用户名:{{fromData.name==null?"无":fromData.name}}</p>
+			</view>
+			<view class="u-input">
+				<u-icon name="arrow-right" color="#C0C0C0" width="200" height="200"></u-icon>
+			</view>
+		
+		</view>
+		<view class="uni-form-item uni-column" @click="userPhone">
+			<view class="title">
+				<p class="uni-name" style="font-size: 18px;">手机号:{{fromData.phone==null?"无":fromData.phone}}</p>
+			</view>
+			<view class="u-input">
+				<u-icon name="arrow-right" color="#C0C0C0" width="200" height="200" ></u-icon>
+			</view>
+		
+		</view>
+		<!-- <view class="uni-icon" @click="member"><u-icon name="plus-circle" color="#47C3A8" width="200" height="200"></u-icon>添加成员</view> -->
+	</view>
+</template>
+
+<script>
+	export default {
+		data(){
+			return{
+				fromData:{
+					
+				}
+			}
+		},
+		methods:{
+			upload(){
+				uni.redirectTo({
+				             url: '/pages/views/PersonalCenter/upload?upload='+this.fromData,
+				         });
+			},
+			userPhone(){
+				uni.redirectTo({
+				             url: '/pages/views/PersonalCenter/phone?phone='+this.fromData.phone,
+				         });
+			},
+			userName(){
+				uni.redirectTo({
+				             url: '/pages/views/PersonalCenter/name?name='+this.fromData.name,
+				         });
+			},
+			member(){
+				uni.redirectTo({
+				             url: '/pages/index/member',
+				         });
+			}
+		},
+		onShow:function(option){
+			// this.fromData=uni.getStorageSync('rowData');
+			this.$ajax.get({
+				url: '/api/AppUsers/getUserInfo',
+				param: {},
+				header: {
+					'Content-Type':'application/json;charset=UTF-8',
+								'x-requested-with':"XMLHttpRequest"
+				},
+			}).then((res) => {
+				if(res.data.code==0){
+					this.fromData=res.data.data;
+					this.flag=true
+				}
+				
+			}) 
+			}
+		}
+</script>
+
+<style>
+	
+		  .uni-icon{
+			  color: #47C3A8;
+			      display: -webkit-box;
+			     /* display: -webkit-flex;
+			      display: flex; */
+			      font-size: 28rpx;
+			      -webkit-box-pack: justify;
+			      -webkit-justify-content: space-between;
+			      justify-content: space-between;
+			      padding: 20rpx 0;
+			      margin: 0 40rpx;
+			      -webkit-box-align: center;
+			      -webkit-align-items: center;
+			      align-items: center;
+		  }
+		
+			.wrap {
+				padding: 24rpx;
+			}
+		
+			.uni-btn {
+				margin: 59rpx 40rpx 0;
+				background: #47C3A8;
+				color: #fff;
+			}
+		
+			.uni-name {
+				float: left
+			}
+		
+			.uni-column {
+		
+				border-bottom: 1px solid #333333;
+				display: flex;
+				font-size: 28rpx;
+				justify-content: space-between;
+				padding: 20rpx 0;
+				margin: 0 40rpx;
+				align-items: center;
+				border-bottom: 1rpx solid #e5e5e5;
+			}
+		
+			.u-input {
+				width: 5%;
+		
+			}
+		
+			.title {
+				width: 100%
+			}
+		
+			.uni-yzm {
+				width: 22%
+			}
+</style>

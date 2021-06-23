@@ -1,0 +1,444 @@
+<template>
+	<view class="main">
+		<view class="header">
+			<view class="uni_voice">
+				<view style="display: flex;margin: 5% 0 0 0;    font-size: 44rpx;">
+					<view style="color:#999999; ">评测人</view>
+					<view style="margin-left: 4%;font-size: 40rpx;width: 50%;">{{xg.name}}</view>
+					<view v-if="!aishow">
+
+						<!-- <unibadge text="1" v-if="!flag"></unibadge> 
+					  						         <unibadge text="2" v-if="flag"  type="success" @click="bindClick"></unibadge>  -->
+						<view v-if="flag" @tap="start">播放<u-icon name="volume-up" color="#47C3A8" size="40"></u-icon>
+						</view>
+						<view v-if="!flag" @tap="stop">暂停<u-icon name="pause" color="#47C3A8" size="40"></u-icon>
+						</view>
+					</view>
+					<view v-if="aishow" style="text-align: center;">
+
+						<!-- <unibadge text="1" v-if="!flag"></unibadge> 
+																	         <unibadge text="2" v-if="flag"  type="success" @click="bindClick"></unibadge>  -->
+						<view @click="goto('/pages/views/advisory/index')" style="font-size: 28rpx;"><view><u-icon name="chat" color="#47C3A8" size="40"></u-icon></view><view>咨询</view>
+						</view>
+						
+					</view>
+				</view>
+
+
+
+				<view class="instruction" v-if="!aishow"> {{xg.instruction}}</view>
+			</view>
+		</view>
+		<view class="content">
+			<view class="uni_question">
+				<view>计时:{{totalTime}}</view>
+				<view class="uni_Qucontent" v-if="!aishow">
+					<h1>{{index+1}}、{{xg.question_title}}</h1>
+					<view style="height: 50%;">
+						<u-checkbox-group wrap="true" :max="xg.question_type=='单选'?1:10" shape="circle" @change="checkboxGroupChange">
+							<u-checkbox @change="checkboxChange" v-model="item.checked" v-for="(item, index) in xg.children" :key="index"
+							 :name="item.index" style="    font-size: 35rpx;font-weight: 800;">{{item.index}}、{{item.option_title}}</u-checkbox>
+						</u-checkbox-group>
+					</view>
+
+					<view class="bottom">
+						<view style="color:#000000;font-size: 32rpx;text-align: center;">第{{index+1}}题 <span style="color:#999999; margin-left: 4%;">共
+								{{count}}题</span></view>
+						<view style="display: flex;">
+							<button class="uni-btn" @click="previousQuestion" v-if="index!=0">上一题</button>
+							<button class="uni-btn" @click="nextQuestion">下一题</button>
+
+						</view>
+					</view>
+				</view>
+				<u-popup v-model="show" mode="center" border-radius="10" width="450rpx" height="400rpx">
+
+
+					<view style="    width: 100%; padding: 16% 0 0 0; text-align: center;overflow: auto;">确定提交此次评测？</view>
+					<view style="display: flex;width: 100%;">
+
+						<u-button type="success" size="default" class="custom-style" @click="Backtoanswer">返回继续</u-button>
+						<u-button type="success" size="default" class="custom-style" @click="Endanswer">结束答题</u-button>
+					</view>
+				</u-popup>
+				<view class="uni_Qucontent" v-if="aishow">
+					<view style="height: 50%;">
+						<view>
+							<!-- <view style="width: 11rem;height: 11rem;margin: 11% auto;">
+								<image src="../../../static/46.png" mode="" style="width: 100%;height: 100%;"></image>
+								</view> -->
+							<view style="text-align: center;">
+								<p>您此次得分{{log.evaluating_score}}</p>
+								<p>{{log.evaluating_result}}</p>
+							</view>
+						</view>
+
+					</view>
+					<view class="bottom">
+						<!-- 	<view style="color:#000000;font-size: 26rpx;">第{{index+1}}题 <span style="color:#999999; margin-left: 4%;">共 {{count}}题</span></view> -->
+						<view style="display: flex;text-align: center;    margin: 0 auto;">
+							<!-- <button class="uni-btn" @tap="determine">确定</button> -->
+							<button class="uni-btns" @tap="revert">确定</button>
+
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+</template>
+
+<script>
+	// import unibadge from '../../../computed/index.vue'
+
+
+	export default {
+		//    components:{
+		// 	unibadge
+		// },
+		data() {
+			return {
+				show: false,
+				value: 0,
+				totalTime: 0, //计时秒
+				option: {},
+				log: {}, //答题完显示返回数据
+				aishow: false,
+				flag: false,
+				formData: [], //所有数据对象
+				xg: {}, //实际渲染对象
+				text: 'uni-app',
+				voicePath: '',
+				index: 0,
+				jishiqi: null,
+				duibiArry: [],
+				ai: [],
+				count: 0,
+				xze: [], //单选按钮保存数组
+				current: {
+					poster: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7fbf26a0-4f4a-11eb-b680-7980c8a877b8.png',
+					name: '语音播放',
+					author: '',
+					src: '../../../static/obj_wo3DlMOGwrbDjj7DisKw_4259241408_f04a_60d8_0a5e_ee8366475cc11dbe82d466f8f9c36f0b.mp3',
+				},
+				audioAction: {
+					method: 'pause'
+				}
+			}
+		},
+		onUnload: function() {
+			if (this.totalTime) {
+				clearInterval(this.totalTime);
+				this.totalTime = null;
+			}
+		},
+		onLoad: function(option) { //option为object类型，会序列化上个页面传递的参数
+			// console.log(option.id); //打印出上个页面传递的参数。
+			// console.log(option.name); //打印出上个页面传递的参数。
+			// var data=JSON.parse(option.param)
+			console.log("option", option);
+			this.option = option;
+			this.$ajax.get({
+				url: '/api/Evaluating/getQuestionsList',
+				param: {
+					domain: this.option.domain,
+					side: this.option.side,
+					app_user_member_id: this.option.type
+				},
+				header: {
+					'Content-Type': 'application/json;charset=UTF-8',
+					'x-requested-with': "XMLHttpRequest"
+				},
+			}).then((res) => {
+				console.log("rescode", res);
+				this.formData = res.data.data.result;
+				let count = 0;
+				this.formData.forEach((item, index) => {
+					count = count + 1;
+					if (index == this.index) {
+						console.log("进来了", index, this.index)
+						this.xg = item;
+
+					}
+				})
+
+				this.count = count;
+
+				if (this.xg.instruction.length > 80) {
+					let ad = null;
+					ad = this.xg.instruction.substring(0, 80) + "...";
+					this.xg.instruction = ad;
+				}
+
+				console.log("xg", this.xg, count)
+				this.bofang(this.flag);
+			})
+		},
+		mounted() {
+
+
+			this.jishiqi = setInterval(() => {
+
+				this.totalTime++; // this.value ++;
+				console.log(this.totalTime);
+			}, 1000)
+
+		},
+		// beforeDestroy() {
+		//       clearInterval(this.timer);
+		//     },
+		methods: {
+			goto(url) {
+			               uni.redirectTo({
+			                   url:url
+			               })
+			           },
+			//返回继续答题
+			Backtoanswer() {
+				this.show = false;
+
+			},
+			//结束答题
+			Endanswer() {
+				this.$ajax.post({
+					url: '/api/Evaluating/evaluate',
+					data: {
+						answer: JSON.stringify(this.ai),
+						evaluating_how_long: this.totalTime
+					},
+					header: {
+						'Content-Type': 'application/json;charset=UTF-8',
+						'x-requested-with': "XMLHttpRequest"
+					},
+				}).then((res) => {
+					console.log("res", res)
+					this.log = res.data.data;
+					this.aishow = true;
+					this.bofang(this.flag)
+
+				})
+				this.show = false;
+				clearInterval(this.jishiqi);
+			},
+			bofang(e) {
+				console.log("eeeeeeeee", e, this.xg.voice);
+				if (e != true) {
+					console.log("etwo", this.xg.voice)
+					this.music = uni.createInnerAudioContext(); //创建播放器对象
+					this.music.src = this.xg.voice; //选择播放的音频
+					this.music.play(); //执行播放
+
+				} else {
+					console.log("one")
+					this.music.stop();
+				}
+
+			},
+			bindClick() {},
+			get() {
+				this.value++;
+				console.log(this.value);
+			},
+			start() {
+				this.flag = false;
+				this.bofang(this.flag);
+
+			},
+			stop() {
+				this.flag = true;
+				this.bofang(this.flag);
+			},
+			checkboxChange(e) {
+				console.log("res", e);
+				// e.
+				this.xze.push(e);
+
+			},
+			// 选中任一checkbox时，由checkbox-group触发
+			checkboxGroupChange(e) {
+
+				console.log(e);
+				let a = {};
+				a.id = this.xg.id;
+				a.answer = e.toString();
+				console.log("e", e.toString(), a);
+				this.ai[this.index] = a;
+
+
+				console.log("ai", this.ai)
+			},
+			determine(e) {
+				console.log("跳转确定", e)
+				uni.redirectTo({
+					url: 'uni.navigateTo'
+				})
+			},
+			revert(e) {
+				console.log("跳转返回", e)
+				uni.switchTab({
+					url: '/pages/views/EvaluationCenter/CenterIndex'
+				})
+			},
+			previousQuestion() {
+
+				this.duibiArry = this.ai;
+				if (this.index > 0) {
+					this.bofang(true);
+					this.flag = true
+					this.index = this.index - 1;
+					console.log("1", this.index)
+					this.formData.forEach((item, index) => {
+						if (index == this.index) {
+							console.log("进来了", index, this.index, )
+							this.xg = item
+
+						}
+					})
+					this.flag = false
+					this.bofang(false);
+					console.log(this.xg.voice)
+
+				}
+
+			},
+			nextQuestion() {
+				console.log("ai", this.ai, this.index)
+				this.bofang(true);
+				this.flag = true
+				if (this.ai.length > this.index && this.ai[this.index].answer !== "") {
+
+					if (this.count - 1 > this.index) {
+						this.index = this.index + 1;
+						console.log("1", this.index)
+						this.formData.forEach((item, index) => {
+							if (index == this.index) {
+								console.log("进来了", index, this.index)
+								this.xg = item
+							}
+						})
+						if (this.xg.instruction.length > 80) {
+							let ad = null;
+							ad = this.xg.instruction.substring(0, 80) + "...";
+							this.xg.instruction = ad;
+						}
+						this.bofang(false);
+						this.flag = false
+						console.log("xg", this.xg, this.xg.voice)
+					} else {
+						this.bofang(true);
+						this.flag = true
+						//打开弹窗
+						this.show = true;
+					}
+				} else {
+					uni.showToast({
+						title: "选项不能为空",
+						icon: "none"
+					})
+
+				}
+
+
+			},
+
+		},
+		created() {
+			console.log("option1111");
+
+		}
+	}
+</script>
+
+<style>
+	.instruction {
+		color: #999999;
+		font-size: 32rpx;
+		/* white-space: nowrap;overflow: hidden;text-overflow: ellipsis; */
+	}
+
+	.custom-style {
+		width: 40%;
+		padding-left: 6%;
+		padding-top: 11%;
+	}
+
+	.uni_Qucontent {
+		line-height: 80rpx;
+		height: 100%;
+	}
+
+	.uni_question {
+		padding-top: 5%;
+		font-size: 45rpx;
+		height: 100%;
+		min-height: 25rem;
+	}
+
+	audio {
+		width: 12rem;
+	}
+
+	.bottom {}
+
+	.u-checkbox {
+		float: inherit !important;
+	}
+
+	.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+		width: 40%;
+	}
+
+	.uni-btns {
+		background: #47C3A8;
+		color: #fff;
+		width: 40%;
+	}
+
+	.footer {
+		background-color: #F8F8FF;
+		color: #fff;
+		line-height: 100rpx;
+		flex: 0 0 100rpx;
+		/* 不放大不缩小固定100rpx */
+	}
+
+	.main {
+		display: block;
+		min-height: 49rem;
+		background-color: #F8F8FF;
+	}
+
+	.header {
+		overflow: hidden;
+		height: 25%;
+	}
+
+	.uni_question {
+		border: 11rpx solid #FFFFFF;
+		height: 95%;
+		border-radius: 51rpx;
+		background-color: #ffffff;
+		margin: 0% auto;
+
+		width: 90%
+	}
+
+	.uni_voice {
+		border: 11rpx solid #FFFFFF;
+		height: 80%;
+		border-radius: 51rpx;
+		background-color: #ffffff;
+		margin: 5% auto;
+		margin-bottom: 5%;
+		width: 90%
+	}
+
+	.content {
+		min-height: 30rem;
+		height: 75%;
+	}
+</style>

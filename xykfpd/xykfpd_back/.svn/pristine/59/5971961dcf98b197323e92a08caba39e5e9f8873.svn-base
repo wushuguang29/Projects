@@ -1,0 +1,61 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-23 09:57:47
+ * @LastEditTime: 2021-01-26 09:57:06
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\config\easysms.php
+ */
+return [
+    // HTTP 请求的超时时间（秒）
+    'timeout' => 5.0,
+
+    // 默认发送配置
+    'default' => [
+        // 网关调用策略，默认：顺序调用
+        'strategy' => \Overtrue\EasySms\Strategies\OrderStrategy::class,
+
+        // 默认可用的发送网关
+        'gateways' => [
+            'aliyun'
+        ],
+    ],
+    // 可用的网关配置
+    'gateways' => [
+        'errorlog' => [
+            'file' => '/tmp/easy-sms.log',
+        ],
+        'yunpian' => [
+            'api_key' => env('YUNPIAN_API_KEY'),
+            'sign_name' => "【徐明测试】"
+        ],
+        'aliyun' => [
+            'access_key_id' => 'SToxooSAsWMo9mW0',
+            'access_key_secret' => 'elLYOm8EFT0UolgQcbTUA5yrEPPu6t',
+            'sign_name' => '朗慧科技',
+        ],
+    ],
+    'template' => [
+        1 => [
+            'index'=>'SMS_169870420',
+            'msg'=>'资金预警${name}，您所负责的${project}项目资金已经低于预警值，请及时关注'
+        ],  
+		2  => [
+            'index' => 'SMS_169895288',
+            'msg' => '城区资金下拔提示 ${name}您好，项目：${project}, ${date}已拨付征地款 ${money}元'
+        ], 
+		3  => [
+            'index' => 'SMS_169895267',
+            'msg' => '${name}你好,项目:${project},申请单:${no},金额:${money},需要你处理.谢谢!'
+        ], 
+		4  => [
+            'index' => 'SMS_169870420',
+            'msg' => '退款提示: 您好,户主姓名：${name} 在 ${date} 退款操作成功,金额：${money} 元。'
+        ],	
+        5  => [
+            'index' => 'SMS_173762236',
+            'msg' => '退款提示: 您好,户主姓名：${name} 在 ${date} 退款操作成功,金额：${money} 元。'
+        ],  
+    ]
+];

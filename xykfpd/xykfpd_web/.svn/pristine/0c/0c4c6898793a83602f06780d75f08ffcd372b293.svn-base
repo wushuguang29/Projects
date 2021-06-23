@@ -1,0 +1,509 @@
+<template>
+  <div >
+    <el-form
+      :model="formData"
+      ref="ruleForm"
+      :rules="rules"
+      class="demo-form-inline"
+      label-width="60px"
+      :disabled="isLook"
+      v-if="hidden"
+    >
+      <el-row>
+        <el-col :span="12">
+        
+          <el-form-item label="领域"  prop="domain">
+            <el-select
+              style="width: 100%"
+              v-model="formData.domain"
+              @change="domainChange"
+              placeholder="请选择领域"
+            >
+              <el-option
+                v-for="item in domain"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id"
+              >
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="方面" prop="side">
+            <el-input
+              v-model="formData.side"
+              placeholder="请输入方面"
+            ></el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="12">
+          <el-form-item label="标识码"  prop="identification_code">
+            <el-input
+              v-model="formData.identification_code"
+              placeholder="请输入标识码"
+            ></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="题目类型"  prop="question_type">
+            <el-select
+              style="width: 100%"
+              v-model="formData.question_type"
+              placeholder="请选择题目类型"
+            >
+              <el-option
+                v-for="item in questionType"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id"
+              >
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+      </el-row>
+
+      <el-row>
+        <el-col :span="24">
+          <el-form-item label="指导语">
+            <el-input type="textarea" v-model="formData.instruction"></el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <!-- 题目 -->
+        <el-col :span="24">
+              <div v-for="(item, index) in formData.question" :key="index" >
+          <div class="div-inline" style="display:flex">
+            <el-form-item
+            style="width:35%"
+             :label="index === 0 ? '题目' : ''"
+               :prop="'question.' + index + '.serial_number'"
+               :rules="{
+               required: true, message: '不能为空', trigger: 'blur'
+              }"  >
+
+               <el-input v-model="item.serial_number"  placeholder="请输入题目序号" ></el-input>
+             </el-form-item>
+            <el-form-item
+             style="width:65%"
+              :prop="'question.' + index + '.question_title'"
+              :rules="{
+                  required: true, message: '不能为空', trigger: 'blur'
+                 }"  class="input_width_300">
+
+              <el-input v-model="item.question_title" placeholder="请输入题目内容" ></el-input>
+            </el-form-item>
+             
+             <el-col
+              :span="2"
+              class="line"
+              v-show="formData.question.length > 1"
+             
+            >
+              <el-button   type="text" @click.prevent="removeQuestion(item)">
+                <i class="el-icon-close"></i>
+              </el-button>
+            </el-col>
+          </div>
+          </div>
+             <el-form-item  v-show="!isLook&&editStatus==false&&formData.type === 2">
+            <el-button type="text" @click="addQuestion" >
+              <i class="el-icon-plus"></i>
+              添加题目
+            </el-button>
+          </el-form-item>
+
+          <!-- <el-form-item
+            v-show="formData.type === 2"
+            v-for="(item, index) in formData.question"
+            :key="index"
+            :label="index === 0 ? '题目' : ''"
+            :prop="'question.' + index + '.question_title'"
+            :rules="{
+              required: formData.type === 2,
+              message: '题目不能为空',
+              trigger: 'blur',
+            }"
+          >
+            <el-col :span="formData.question.length > 1 ? 22 : 24">
+              <el-input v-model="item.serial_number"  style="width:20%;padding-right: 10px;"  placeholder="请填写序号"></el-input>
+              <el-input v-model="item.question_title"  style="width:70%"  placeholder="请填写题目"></el-input>
+            </el-col>
+            <el-col
+              :span="2"
+              class="line"
+              v-show="formData.question.length > 1"
+            >
+              <el-button type="text" @click.prevent="removeQuestion(item)">
+                <i class="el-icon-close"></i>
+              </el-button>
+            </el-col>
+          </el-form-item>
+          <el-form-item v-show="!isLook&&editStatus==false&&formData.type === 2">
+            <el-button type="text" @click="addQuestion">
+              <i class="el-icon-plus"></i>
+              添加题目
+            </el-button>
+          </el-form-item> -->
+
+
+           
+        </el-col>
+      </el-row>
+     <el-row>
+        <!-- 选项 -->
+        <el-col :span="24">
+          <div v-for="(item, index) in formData.option" :key="index" >
+          <div class="div-inline" style="display:flex">
+            <el-form-item
+              style="width:60%"
+             :label="index === 0 ? '选项' : ''"
+               :prop="'option.' + index + '.index'"
+               :rules="{
+               required: true, message: '不能为空', trigger: 'blur'
+              }"  >
+
+               <el-input v-model="item.index"    placeholder="请输入选项" ></el-input>
+             </el-form-item>
+            <el-form-item
+             style="width:60%"
+              :prop="'option.' + index + '.option_title'"
+              :rules="{
+                  required: true, message: '不能为空', trigger: 'blur'
+                 }"  class="input_width_300">
+
+              <el-input v-model="item.option_title"  placeholder="请输入选项内容"></el-input>
+            </el-form-item>
+              <el-form-item
+               style="width:60%"
+              :prop="'option.' + index + '.score'"
+              :rules="{
+                  required: true, message: '得分不能为空', trigger: 'blur'
+                 }"  class="input_width_300">
+
+              <el-input v-model.number="item.score"  placeholder="请输入选项得分"></el-input>
+            </el-form-item>
+             <el-col
+              :span="2"
+              class="line"
+              v-show="formData.option.length > 1"
+            >
+              <el-button v-if="!isLook" type="text" @click.prevent="removeOptions(item)">
+                <i class="el-icon-close"></i>
+              </el-button>
+            </el-col>
+          </div>
+          </div>
+          <!-- <el-form-item
+            v-show="formData.type === 2"
+            v-for="(item, index) in formData.option"
+            :key="index"
+            :label="index === 0 ? '选项' : ''"
+            :prop="'option.' + index + '.option_title'"
+            :rules="{
+              required: formData.type === 2,
+              message: '选项不能为空',
+              trigger: 'blur',
+            }"
+          >
+            <el-col :span="formData.option.length > 1 ? 22 : 24">
+              <el-input v-model="item.index" style="width:30%;padding-right: 10px;" placeholder="请填写选项" ></el-input>
+              <el-input v-model="item.option_title" style="width:30%;padding-right: 10px;" placeholder="请填写选项" ></el-input>
+              <el-input v-model="item.score" style="width:30%;" placeholder="请填写得分"></el-input>
+            </el-col>
+            <el-col
+              :span="2"
+              class="line"
+              v-show="formData.option.length > 1"
+            >
+              <el-button type="text" @click.prevent="removeOptions(item)">
+                <i class="el-icon-close"></i>
+              </el-button>
+            </el-col>
+          </el-form-item> -->
+          <el-form-item v-show="!isLook&&formData.type === 2">
+            <el-button type="text" @click="addOptions">
+              <i class="el-icon-plus"></i>
+              添加选项
+            </el-button>
+          </el-form-item>
+        </el-col>
+      </el-row>
+    </el-form>
+    <div class="bottom-btn" v-if="hidden">
+      <el-button @click="handleConfirm" type="primary" v-if="!isLook">保存</el-button>
+      <el-button @click="cancel" v-if="!isLook">取消</el-button>
+    </div>
+  </div>
+</template>
+<script>
+import {
+  QuestionsEdit,
+  QuestionsAdd,
+  QuestionsBrowse,
+  Questionsdelete,
+  QuestionsGetList,
+} from "@/api/evaluation";
+import { mapActions } from "vuex";
+import { getBaseConfig } from "@/utils/common";
+// import { getProjectLandArea,updateProjectLandArea } from "@/api/projectLandArea.js";
+// import {
+//   getProjectApprovalList
+// } from "@/api/project.js";
+// import { addInfo,editInfo } from "@/api/fund.js";
+
+export default {
+  name: "projectWindow",
+  props: {
+    hidden:{
+        type: Boolean,
+      default: false,
+      required: true,
+    },
+    editStatus: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    isLook:{
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    rowData: {
+      type: Object,
+    },
+  },
+
+  data() {
+    return {
+      region:"",
+      formData: {
+        type: 2,
+        reviewRecordDialogVisible:false,
+        question: [{}],
+        option:[{}]
+      },
+      width: {
+        width: "300px",
+      },
+      rules: {
+        domain: [{ required: true, message: "请选择领域", trigger: "blur" }],
+
+        side: [{ required: true, message: "请输入方面", trigger: "blur" }],
+
+        identification_code: [
+          { required: true, message: "请输入标识码", trigger: "blur" },
+        ],
+        question_type: [
+          { required: true, message: "请选择题目类型", trigger: "blur" },
+        ],
+        instruction: [
+          { required: true, message: "请选择指导语", trigger: "blur" },
+        ],
+      },
+
+      questionType: [], //题目
+      domain: [], //领域
+      options: [],
+      optionsData: [],
+      policy: [],
+      formInline: {
+        user: "",
+        region: "",
+      },
+      isSee: {
+        type: Boolean,
+        default: true,
+        required: true,
+      },
+    };
+  },
+  methods: {
+    // 添加题目
+    addQuestion(){
+      // 添加之前先判断前面的是否都已录入
+      this.$refs["ruleForm"].validateField(
+        `question.${this.formData.question.length - 1}.question_title`,
+        (errMsg) => {
+          if (errMsg != "") {
+            return false;
+          } else {
+            this.formData.question.push({
+              serial_number:"",
+              question_title: "",
+            });
+
+          }
+        }
+      );
+    },
+    addOptions() {
+     // 添加之前先判断前面的是否都已录入
+     
+      this.$refs["ruleForm"].validateField(
+        `option.${this.formData.option.length - 1}.score`,
+        (errMsg) => {
+          if (errMsg != "") {
+            return false;
+          } else {
+                this.formData.option.push({
+              option_title:"",
+              index: "",
+              score:""
+            });
+          }
+        }
+      );
+    },
+    // 移除题目
+    removeQuestion(item) {
+      console.log("item",item)
+      let index = this.formData.question.indexOf(item);
+      if (index !== -1) {
+        this.formData.question.splice(index, 1);
+      }
+    },
+     // 移除选项
+    removeOptions(item){
+    
+      let index = this.formData.option.indexOf(item);
+      if (index !== -1) {
+        this.formData.option.splice(index, 1);
+      }
+    },
+    submit() {},
+    cancel() {
+      this.$emit("handleClose");
+    },
+    ...mapActions({
+      getGridData: "evaluation/list/getGridData",
+    }),
+    domainChange(val) {},
+    handleAddConfirm: function () {
+      console.log("打印值", this.formData);
+      let params = Object.assign({},this.formData);
+       this.$refs["ruleForm"].validate(async (valid) => {
+          if (valid) {
+            params.option=JSON.stringify(this.formData.option);
+            params.question=JSON.stringify(this.formData.question);
+            console.log(params,this.formData)
+             const { code, msg } = await QuestionsAdd(params);
+             if (code == 0) {
+            this.$message({
+              message: msg,
+              type: "success",
+              duration: 3 * 1000,
+            });
+            this.loading = false;
+            this.$parent.$emit("updateList");
+            this.$parent.$emit("handleClose", false);
+          } else {
+            this.loading = false;
+            this.$message({
+              message: msg,
+              type: "error",
+              duration: 3 * 1000,
+            });
+          }
+          }else {
+
+          }
+       })
+       
+    },
+    handleEditConfirm: function () {
+      let params = Object.assign({},this.formData);
+      this.$refs["ruleForm"].validate(async (valid) => {
+        if (valid) {
+           this.formData.serial_number=this.formData.question[0].serial_number;
+          params.question_title=this.formData.question[0].question_title;
+          params.option=JSON.stringify(this.formData.option);
+            params.question=JSON.stringify(this.formData.question);
+          const { code, msg } = await QuestionsEdit(params);
+          if (code == 0) {
+            this.$message({
+              message: msg,
+              type: "success",
+              duration: 3 * 1000,
+            });
+            this.loading = false;
+            this.$parent.$emit("updateList");
+            this.$parent.$emit("handleClose", false);
+             this.$emit("reset")
+          } else {
+            this.loading = false;
+            this.$message({
+              message: msg,
+              type: "error",
+              duration: 3 * 1000,
+            });
+          }
+        } else {
+          // this.$message({
+          //     message: "填写信息格式错误！",
+          //     type: "error",
+          //     duration: 3 * 1000
+          // })
+        }
+      });
+    },
+    async project_rangeChange(value) {
+      console.log("value", value);
+    },
+    handleConfirm: function () {
+      if (this.editStatus) {
+        console.log("进入");
+        this.handleEditConfirm();
+      } else {
+        console.log("进入2");
+        this.handleAddConfirm();
+      }
+    },
+  },
+
+  async created() {
+    console.log("进入", this.rowData);
+    this.loading = true;
+    //  const { data } = await getProjectApprovalList();
+    this.domain = getBaseConfig("DOMAIN", true);
+    this.questionType = getBaseConfig("QUESTION_TYPE", true);
+    console.log("data", this.editStatus,this.isLook);
+    if (this.editStatus) {
+     
+    const {data} = await QuestionsBrowse({id:this.rowData.id});
+    data.question=[{question_title:"",serial_number:""}]
+    data.question[0].question_title=data.question_title;
+    data.question[0].serial_number=data.serial_number;
+    // data.option.forEach(element => {
+    //   element.option=element.index+'、'+element.option_title;
+    // });
+    this.formData=data;
+    this.formData.type=2;
+    console.log("formdata",this.formData)   
+    }
+    this.loading = false;
+  },
+};
+</script>
+<style scoped>
+/* .bottom-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+} */
+.ts >>> .el-input {
+  width: 80%;
+}
+.tsa >>> .el-input {
+  width: 40%;
+  margin-left: 3px;
+}
+.el-input--mini {
+  float: left;
+}
+</style>

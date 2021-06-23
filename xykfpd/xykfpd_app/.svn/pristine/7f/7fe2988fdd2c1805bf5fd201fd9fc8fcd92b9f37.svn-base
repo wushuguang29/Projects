@@ -1,0 +1,389 @@
+<template>
+	<view>
+		<view class="container" :style="{'padding-bottom': `${52+inputBottom}px`}">
+			<!-- <view class="header">我是头部</view> -->
+			<scroll-view class="content" :scroll-y="true" :scroll-top="scrollTop">
+				<view v-for="(item,index) in message_array" :key="index">
+					
+					<!-- <view class="message" v-if="item.id==1">
+            <view class="message-content" v-html="item.content"></view>
+            <view class="message-time">{{item.updateTime}}</view>
+          </view>
+		  <view class="messagetwo" v-else-if="item.id!=1">
+		    <view class="message-content" v-html="item.content"></view>
+		    <view class="message-time">{{item.updateTime}}</view>
+		  </view> -->
+					<view v-if="item.from_id==999999" class="ht">
+						<view >
+							<u-avatar :src="avatar!=''?avatar:src"></u-avatar>
+						</view>
+						<view style="
+						max-width: 100%;
+						margin-left: 40rpx;
+						margin-top: 1%;
+						border: 1px solid #dbdbdb;
+						border-radius: 12rpx;
+						padding: 10rpx;
+						line-height: 44rpx;
+						background-color: #fff;
+						position: relative;
+						">
+						<!-- 	<view>{{item.from_name}}</view> -->
+						  <i class="b_ico_b"><em class="b_ico_b1"></em></i>
+							<view style="margin: 0 auto;">{{item.content}}</view>
+						</view>
+					</view>
+					<view v-else-if="item.id!=999999" style="width:100%; height: 3.5rem;">
+						<view style="float: right">
+							<u-avatar :src="src"></u-avatar>
+						</view>
+						<view class="qt">
+						<!-- 	<view style="line-height: 43rpx;">{{item.from_name}}</view> -->
+							<view style="    float: right;
+       
+        max-width: 100%;
+        margin-right: 40rpx;
+        margin-top: 1%;
+        border: 1px solid #dbdbdb;
+        border-radius: 12rpx;
+        padding: 10rpx;
+        line-height: 44rpx;
+        background-color: #fff;
+        position: relative;">
+		  <i class="a_ico_b"><em class="a_ico_b1"></em></i>
+		{{item.content}}</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="bottom-textarea" :style="{bottom: inputBottom+'px'}">
+			<view class="textarea-container">
+				<textarea v-model="formData.recordInput" :maxlength="-1" :auto-height="true" :show-confirm-bar="false"
+				 :cursor-spacing="10" :fixed="true" :adjust-position="false" @focus="focusTextarea" @blur="blurTextarea" />
+				</view>
+      <button @click="sendMessage" class="primary-btn">发送</button>
+    </view>
+  </view>
+</template>
+
+<script>
+	import img from '../../../static/bottom_us1.png'
+export default {
+  data() {
+    return {
+		avatar:'',
+		src: img,
+		message_array: [],
+		recordInput: "",
+		itemAverageHeight: 500, //每条数据平均高度，为确保能滚到底部，可以设置大一些
+		scrollTop: 1000,
+		inputBottom: 0,
+		formData:{},
+		flag:false,
+    };
+  },
+  methods: {
+	
+	//发送消息
+	sendMessage: function () {
+		console.log("id",this.formData)
+		let params = {
+			'sender':this.formData.id,
+			'sender_name':this.formData.name,
+			'receiver':999999,
+			'receiver_name':'湘雅康复评定中心',
+			'message':this.formData.recordInput,
+	
+		}
+		this.$ajax.post({
+			url: '/chat/sendMessage',
+			data: params,
+			header: {
+				'Content-Type':'application/json;charset=UTF-8',
+							'x-requested-with':"XMLHttpRequest"
+			},
+		}).then((res) => {
+			console.log(this.formData.id+'发送消息给管理员');
+			this.setMessage(this.formData.id);
+			params={
+				'from_id':this.formData.id,
+				'from_name':this.formData.name,
+				'to_id':999999,
+				'to_name':'湘雅康复评定中心',
+				'content':this.formData.recordInput,
+				'updateTime':1,
+				send_time:new Date(),
+			}
+			this.message_array.push(params)
+			this.formData.recordInput = '';
+		}) 
+	
+	},
+	setMessage: function(app_user_id) {
+		let setMessageParams = {
+		   'app_user_id': app_user_id
+		};
+			
+		this.$ajax.get({
+			url: '/chat/getUserMessage',
+			param: setMessageParams,
+			header: {
+				'Content-Type':'application/json;charset=UTF-8',
+							'x-requested-with':"XMLHttpRequest"
+			},
+		}).then((res) => {
+			console.log(res.data.data);
+			this.message_array = res.data.data.data;
+		}) 
+	},
+	getUserMessage(user_id){
+		let params = {app_user_id:user_id};
+		console.log(params);
+		this.$ajax.get({
+			url: '/chat/getUserMessage',
+			param: params,
+			header: {
+				'Content-Type':'application/json;charset=UTF-8',
+							'x-requested-with':"XMLHttpRequest"
+			},
+		}).then((res) => {
+			console.log('获取用户消息成功');
+			console.log(res)
+		})
+	},
+    focusTextarea(e) {
+      this.inputBottom = e.detail.height;
+      this.scrollTop += 1; //滚到底部
+    },
+    blurTextarea(e) {
+      this.inputBottom = 0;
+      this.scrollTop += 1; //滚到底部
+    },
+  },
+  mounted(){
+	  
+  },
+  beforeCreate(){
+	  
+  },
+created() { 
+	  var that=this;
+	  let formData={}
+	  formData=uni.getStorageSync('rowData');
+	  this.formData = formData;
+	     console.log('mydata',formData)
+		 this.avatar=this.formData.avatar
+	   try {
+			//链接WebSocket服务器
+	  		
+			uni.connectSocket({
+			  url: 'ws://192.168.0.24:8282', //仅为示例，并非真实接口地址。
+			});
+			// this.socketOpen = true;
+			//查看链接是否已打开
+			uni.onSocketOpen(function (res) {
+				console.log('监听到WebSocket链接已打开');
+			});
+			
+			//监听链接是出错吴
+			uni.onSocketError(function (res) {
+			  console.log('WebSocket连接打开失败，请检查！');
+			  console.log(res);
+			  
+			});
+			
+			//监听消息
+			uni.onSocketMessage(function (res) {
+			  console.log('收到服务器内容：' + res.data);
+			  
+			  // console.log(''+JSON.parse(res.data));
+			  var data = JSON.parse(res.data);
+			  var params = {
+				unique_uid: formData.id,
+				client_id: data.client_id,
+			  };
+			  // 
+			  console.log(data.type);
+			  switch (data.type) {
+				case "init":
+					that.$ajax.post({
+						url: '/chat/boundClient',
+						data: params,
+						header: {
+							'Content-Type':'application/json;charset=UTF-8',
+										'x-requested-with':"XMLHttpRequest"
+						},
+					}).then((res) => {
+						console.log('用户客户端绑定成功');
+					}) 
+				  break;
+				case "message":
+				  
+				  console.log('接收到了消息');
+				  that.setMessage(formData.id);
+				  
+				  break;
+				  
+				default:
+				console.log('走了默认');
+				  // console.log(data);
+				  console.log('接收消息时打印');
+				  // this.setMessage(formData.id)
+				  break;
+			  }
+			});
+			console.log('aaa');
+			//将历史聊天消息加载进去
+			// this.getUserMessage(this.formData.id);
+			this.setMessage(this.formData.id);
+			//进入聊天窗口，标记所有消息已读
+			var readParam = {
+			  'app_user_id':this.formData.id,
+			  'type':1
+			};
+			that.$ajax.post({
+				url: '/chat/markRead',
+				data: readParam,	
+				header: {
+					'Content-Type':'application/json;charset=UTF-8',
+								'x-requested-with':"XMLHttpRequest"
+				},
+			}).then((res) => {
+				 console.log(this.formData.name+'的消息都已读');
+			}); 
+			
+			
+			
+	       } catch (error) {
+	         console.log("异常");
+	         console.log(error);
+	       }
+   },
+};
+</script>
+
+<style lang="less">
+	.a_ico_b{border-width:16rpx; border-style:solid; border-color:transparent #dbdbdb; border-right-color:transparent; position:absolute; top:14rpx; right:-32rpx}
+	
+	.a_ico_b1{    border-width: 14rpx;
+    border-style: solid;
+    border-color: transparent #fff;
+    border-right-color: transparent;
+    position: absolute;
+    top: -14rpx;
+    right: -9rpx;}
+	.b_ico_b{    border-width: 16rpx;
+    border-style: solid;
+    border-color: transparent #dbdbdb;
+    border-left-color: transparent;
+    position: absolute;
+    top: 14rpx;
+    left: -32rpx;}
+	
+	.b_ico_b1{       border-width: 14rpx;
+    border-style: solid;
+    border-color: transparent #fff;
+    border-left-color: transparent;
+    position: absolute;
+    top: -14rpx;
+    left: -9rpx;}
+	.ht{
+		width: 100%;
+		height: 80rpx;
+		display: flex;
+		
+	}
+	.qt{
+		float: right;
+	}
+@left-right-margin: 40rpx;
+.container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 52px;
+  display: flex;
+  flex-direction: column;
+  .header {
+    flex-shrink: 0;
+    padding: 0px @left-right-margin 32rpx @left-right-margin;
+  }
+  .content {
+    flex-grow: 1;
+    overflow: auto;
+	.messagetwo{
+      margin: 0px @left-right-margin 32rpx;
+      display: flex;
+      flex-direction: inherit;
+      align-items: flex-end;
+      .message-content {
+        width: auto;
+        max-width: calc(100vw - 80rpx);
+        word-wrap: break-word;
+        box-sizing: border-box;
+        padding: 32rpx;
+        line-height: 48rpx;
+        background: pink;
+        border-radius: 16rpx 0px 16rpx 16rpx;
+      }
+      .message-time {
+        line-height: 32rpx;
+        margin-top: 16rpx;
+      }
+    }
+    .message {
+      margin: 0px @left-right-margin 32rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .message-content {
+        width: auto;
+        max-width: calc(100vw - 80rpx);
+        word-wrap: break-word;
+        box-sizing: border-box;
+        padding: 32rpx;
+        line-height: 48rpx;
+        background: pink;
+        border-radius: 16rpx 0px 16rpx 16rpx;
+      }
+      .message-time {
+        line-height: 32rpx;
+        margin-top: 16rpx;
+      }
+    }
+  }
+}
+.bottom-textarea {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #f2f2f2;
+  border-top: 2rpx solid rgba(226, 226, 226, 1);
+  padding: 6px 20px;
+  display: flex;
+  align-items: flex-end;
+  .textarea-container {
+    flex: 1;
+    min-height: 80rpx;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    padding: 20rpx 16rpx;
+    > textarea {
+      max-height: 250rpx;
+      font-size: 36rpx;
+      color: rgba(8, 8, 8, 1);
+      width: auto;
+    }
+  }
+
+  > button {
+    flex-shrink: 0;
+    height: 80rpx;
+    margin: 0;
+    margin-left: 16rpx;
+  }
+}
+</style>

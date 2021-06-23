@@ -1,0 +1,17 @@
+<?php
+#获取大小
+function getSize(){
+
+}
+#获取类型
+function getExt(){
+
+}
+#获取高
+function getHeight(){
+
+}
+#获取宽
+function getWidth(){
+
+}

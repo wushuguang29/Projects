@@ -1,0 +1,55 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 17:16:15
+ * @LastEditTime: 2021-01-04 17:29:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\route\api.php
+ */
+
+
+//登录
+Route::get('api/Login/login','api/Login/login');
+// 发送手机验证码
+Route::get('index/login/sendCode', 'app\common\service\Sms@sendVerificationCode');
+// 消息推送
+Route::get('index/Evaluating/send', 'app\common\service\Sms@send');
+//手机号绑定
+Route::post('api/Login/phoneBind','api/Login/phoneBind');
+//用户管理
+Route::get('api/AppUsers/getUserInfo','api/AppUsers/getUserInfo');//用户信息
+Route::post('api/AppUsers/changeName','api/AppUsers/changeName');//修改用户名
+Route::post('api/AppUsers/changePhone','api/AppUsers/changePhone');//修改手机号
+//成员管理
+Route::get('api/AppUserMember/getMemberInfo','api/AppUserMember/getMemberInfo');//成员信息【订阅人】
+Route::post('api/AppUserMember/add','api/AppUserMember/add');//添加成员
+Route::post('api/AppUserMember/edit','api/AppUserMember/edit');//编辑成员
+Route::get('api/AppUserMember/browse','api/AppUserMember/browse');//预览成员
+//订阅中心
+Route::get('api/AppUserMember/getSideList','api/AppUserMember/getSideList');//获取领域下方面列表
+Route::post('api/AppUserMember/subscribe','api/AppUserMember/subscribe');//订阅
+//评测中心
+Route::get('api/Evaluating/getMemberSideList','api/Evaluating/getMemberSideList');//获取订阅人订阅的领域方面
+Route::get('api/Evaluating/getQuestionsList','api/Evaluating/getQuestionsList');//获取题库
+Route::post('api/Evaluating/evaluate','api/Evaluating/evaluate');//评测
+
+Route::group('index', function(){
+	Route::rule('api/Login/phoneBind','api/Login/phoneBind');//手机号绑定
+    //用户管理
+    Route::rule('api/AppUsers/getUserInfo','api/AppUsers/getUserInfo');//用户信息
+    Route::rule('api/AppUsers/changeName','api/AppUsers/changeName');//修改用户名
+    Route::rule('api/AppUsers/changePhone','api/AppUsers/changePhone');//修改手机号
+    //成员管理
+    Route::rule('api/AppUserMember/getMemberInfo','api/AppUserMember/getMemberInfo');//成员信息【订阅人】
+    Route::rule('api/AppUserMember/add','api/AppUserMember/add');//添加成员
+    Route::rule('api/AppUserMember/edit','api/AppUserMember/edit');//编辑成员
+    Route::rule('api/AppUserMember/browse','api/AppUserMember/browse');//预览成员
+    //订阅中心
+    Route::rule('api/AppUserMember/getSideList','api/AppUserMember/getSideList');//获取领域下方面列表
+    Route::rule('api/AppUserMember/subscribe','api/AppUserMember/subscribe');//订阅
+    //评测中心
+    Route::rule('api/Evaluating/getMemberSideList','api/Evaluating/getMemberSideList');//获取订阅人订阅的领域方面
+    Route::rule('api/Evaluating/getQuestionsList','api/Evaluating/getQuestionsList');//获取题库
+    Route::rule('api/Evaluating/evaluate','api/Evaluating/evaluate');//评测
+})->middleware(['PhoneAuthVerify']);

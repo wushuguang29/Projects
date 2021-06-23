@@ -1,0 +1,62 @@
+
+.uni_Qucontent{
+		line-height: 166rpx;    height: 100%;
+}
+.uni_question{
+		padding-top: 5%;font-size: 45rpx;height: 100%;
+}
+audio{
+	width: 12rem;
+}
+.bottom{
+}
+.u-checkbox{
+		    float: inherit !important;
+}
+.uni-btn {
+		margin: 59rpx 40rpx 0;
+		    background: #47C3A8;
+		    color: #fff;
+		    width: 40%;
+}
+.footer {
+		background-color: #F8F8FF;
+		color: #fff;
+		line-height: 100rpx;
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 100rpx;
+		        flex: 0 0 100rpx;
+		/* 不放大不缩小固定100rpx */
+}
+.main{
+		 display: block;
+		 height: 49rem;
+		 background-color:  #F8F8FF;
+}
+.header{
+		 overflow: hidden;
+		 height: 25%;
+}
+.uni_question{
+		 border: 11rpx solid #FFFFFF;
+		 height: 95%;
+		 border-radius: 51rpx;
+		 background-color: #ffffff;
+		 margin: 0% auto;
+		 
+		 width:90%
+}
+.uni_voice{
+		      border: 11rpx solid #FFFFFF;
+		      height: 80%;
+		      border-radius: 51rpx;
+		      background-color: #ffffff;
+		      margin: 5% auto;
+		      margin-bottom: 5%;
+			   width:90%
+}
+.content{
+		
+		 height: 75%;
+}
+

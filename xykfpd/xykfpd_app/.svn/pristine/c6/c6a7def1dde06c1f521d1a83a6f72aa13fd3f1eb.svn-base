@@ -1,0 +1,79 @@
+<template>
+	<view>
+		<u-table>
+			<u-tr>
+				<u-th>评测方面</u-th>
+				<u-th>分数</u-th>
+				<u-th>结果</u-th>
+			</u-tr>
+			<u-tr v-for="(item,index) in formData" :key="index" @click.native="openTips(item.evaluating_result)">
+				<u-td>{{item.side}}</u-td>
+				<u-td>{{Math.floor(item.evaluating_score)}}</u-td>
+				<u-td class="show-tips" >{{item.evaluating_result?item.evaluating_result:'&nbsp;'}}</u-td>
+			</u-tr>
+
+		</u-table>
+		<u-modal v-model="showInstruction" :content="instruction"></u-modal>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				formData:{},
+				instruction:'',
+				showInstruction:false
+			}
+		},
+		onLoad: function(option) {
+
+
+
+			this.$ajax.get({
+				url: '/api/Evaluating/getEvaluateRecord',
+				param: {
+					app_user_member_id: option.id
+				},
+				header: {
+					'Content-Type': 'application/json;charset=UTF-8',
+					'x-requested-with': "XMLHttpRequest"
+				},
+			}).then((res) => {
+				console.log("res", res)
+				// console.log("rescode",res);
+				this.formData = res.data.data;
+				// let count=0;
+				// this.formData.forEach((item,index)=>{
+				// 	count=count+1;
+				// 	if(index==this.index){
+				// 	 console.log("进来了",index,this.index)
+				// 	 this.xg=item;
+
+				// 	}
+				// })
+				// this.count=count;
+				// console.log("xg",this.xg,count)
+			})
+		},
+		methods: {
+			onBackPress(event) {
+				uni.switchTab({
+					url: '/pages/subscription/subscription'
+				});
+			},
+			openTips(item) {
+				this.instruction = item;
+				this.showInstruction = true;
+			}
+		}
+	}
+</script>
+
+<style>
+	.show-tips {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+</style>

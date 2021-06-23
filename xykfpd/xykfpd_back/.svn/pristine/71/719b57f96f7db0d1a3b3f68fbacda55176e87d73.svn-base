@@ -1,0 +1,3517 @@
+---------------------------------------------------------------
+
+[2020-03-26T09:16:14+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/phone
+[运行时间：1.017684s] [吞吐率：0.98req/s] [内存消耗：2,299.02kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------483810621565904378149817',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9c103219-474d-43f3-b67a-718f26775e51',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:04:17+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/sendMessages?phone=18073186136
+[运行时间：2.051498s] [吞吐率：0.49req/s] [内存消耗：3,803.98kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7861f651-6313-49c2-affc-5b34e41519e7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.115708s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.032161s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.006177s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:05:22+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/sendMessages?phone=18073186136
+[运行时间：0.227879s] [吞吐率：4.39req/s] [内存消耗：3,841.04kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c9c38adc-7906-49d3-a0cf-54e97bf0aeef',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18073186136',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025690s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.015732s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.006474s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:05:59+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone
+[运行时间：0.048556s] [吞吐率：20.59req/s] [内存消耗：2,293.92kb] [文件加载：100]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f3716e18-8d2a-4bb3-942e-749f6e61dc70',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:06:34+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone
+[运行时间：0.070124s] [吞吐率：14.26req/s] [内存消耗：2,686.10kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'bb67c0d6-9127-4437-9fb8-2ad51bb64017',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:07:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0
+[运行时间：0.473488s] [吞吐率：2.11req/s] [内存消耗：3,804.46kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b6a106f7-c270-49d1-8581-ea3ca9530375',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025624s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.014680s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` IS NULL LIMIT 1 [ RunTime:0.038681s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:07:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0&phone=18073186136
+[运行时间：0.130017s] [吞吐率：7.69req/s] [内存消耗：3,807.51kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '447109e2-9fe8-45e8-a388-1e2ff7e828e0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+  'phone' => '18073186136',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026803s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.011763s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.023362s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:07:57+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0&phone=18073186136
+[运行时间：0.115113s] [吞吐率：8.69req/s] [内存消耗：3,807.51kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dbb5775f-0bdc-49fa-abff-0ebb8a053da3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+  'phone' => '18073186136',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024078s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.007997s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.006156s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:09:09+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0&phone=18073186136
+[运行时间：0.188107s] [吞吐率：5.32req/s] [内存消耗：3,807.51kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '57b80e6a-faea-40cb-adb5-0b65eb480d41',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+  'phone' => '18073186136',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.052004s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.026575s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.018462s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:09:21+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0&phone=18073186136&phone_code=6666
+[运行时间：0.108912s] [吞吐率：9.18req/s] [内存消耗：3,807.52kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '1938ab80-1845-417d-b190-26075e8af529',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+  'phone' => '18073186136',
+  'phone_code' => '6666',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.031702s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.013491s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.010908s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:09:27+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0&phone=18073186136&phone_code=9999
+[运行时间：0.112707s] [吞吐率：8.87req/s] [内存消耗：3,807.52kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '102497de-14b9-4b58-8641-e0d49863aaed',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+  'phone' => '18073186136',
+  'phone_code' => '9999',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019197s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.010239s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.029177s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:09:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0&phone=18073186136&phone_code=9999
+[运行时间：0.104817s] [吞吐率：9.54req/s] [内存消耗：3,810.13kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4e9f12ae-83cc-4919-9f93-2f9ddc0a7af4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+  'phone' => '18073186136',
+  'phone_code' => '9999',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020756s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.012221s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.009716s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:11:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/phone?phone_key=180731861360E1nHPqu3v697J0&phone=18073186136&phone_code=9999
+[运行时间：0.299512s] [吞吐率：3.34req/s] [内存消耗：3,943.89kb] [文件加载：135]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7010ed85-0925-4027-8bf3-ffd4c583172b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'phone_key' => '180731861360E1nHPqu3v697J0',
+  'phone' => '18073186136',
+  'phone_code' => '9999',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.036686s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.028357s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `mobile` = '18073186136' LIMIT 1 [ RunTime:0.013170s ]
+---------------------------------------------------------------
+
+[2020-03-26T10:27:49+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/index
+[运行时间：0.077636s] [吞吐率：12.88req/s] [内存消耗：2,305.08kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e2cd0a78-f347-4049-9585-ec1838277e72',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:28:28+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.212970s] [吞吐率：4.70req/s] [内存消耗：2,308.13kb] [文件加载：102]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0ec819d9-a333-469f-8a99-76289d422cec',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\JWT.php:66]
+---------------------------------------------------------------
+
+[2020-03-26T10:28:44+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5NzI5LCJpYXQiOjE1ODUxODk2NjksImlzcyI6IiIsImp0aSI6ImM5YTVhMzIzMWExMGI2YzkxYTg2NDY4ODJmYTU4MWZkIiwibmJmIjoxNTg1MTg5NjY5LCJzdWIiOiIifQ.BuPc3ZA9CoeF1YY4vyslzx625vnh4A88CO7IZxmgm7t4gb7vS09D-fhBXpBp4OopuA7i11FM6Ujf4hw0VTR0uh-lfOEpop11mmOwqnmDG82E4esaNSt75xLBpHpetUqZxA7ym9WaeimJrzsi4cMwWj-PuM4mq28SI93_0h7k2kTJ1wNP87qo5XerAAwDulCnDIfl0egi5JldsKtVP3Ieu3jZMexuE2jw6SsRCfAfrKmJQP85wjGCKMBCxRKgNHlToEPbyql-7hsVgY-Wl-jBf9TGEqISgbX_vmnnksFQAMLuNmcoc-V20AkjHISL3CtRH2kOjIbZEhrKExwB50Hfpg
+[运行时间：0.057278s] [吞吐率：17.46req/s] [内存消耗：2,372.34kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9ef17427-ee1f-4860-bfbf-eee98146f179',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5NzI5LCJpYXQiOjE1ODUxODk2NjksImlzcyI6IiIsImp0aSI6ImM5YTVhMzIzMWExMGI2YzkxYTg2NDY4ODJmYTU4MWZkIiwibmJmIjoxNTg1MTg5NjY5LCJzdWIiOiIifQ.BuPc3ZA9CoeF1YY4vyslzx625vnh4A88CO7IZxmgm7t4gb7vS09D-fhBXpBp4OopuA7i11FM6Ujf4hw0VTR0uh-lfOEpop11mmOwqnmDG82E4esaNSt75xLBpHpetUqZxA7ym9WaeimJrzsi4cMwWj-PuM4mq28SI93_0h7k2kTJ1wNP87qo5XerAAwDulCnDIfl0egi5JldsKtVP3Ieu3jZMexuE2jw6SsRCfAfrKmJQP85wjGCKMBCxRKgNHlToEPbyql-7hsVgY-Wl-jBf9TGEqISgbX_vmnnksFQAMLuNmcoc-V20AkjHISL3CtRH2kOjIbZEhrKExwB50Hfpg',
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:29:27+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5NzI5LCJpYXQiOjE1ODUxODk2NjksImlzcyI6IiIsImp0aSI6ImM5YTVhMzIzMWExMGI2YzkxYTg2NDY4ODJmYTU4MWZkIiwibmJmIjoxNTg1MTg5NjY5LCJzdWIiOiIifQ.BuPc3ZA9CoeF1YY4vyslzx625vnh4A88CO7IZxmgm7t4gb7vS09D-fhBXpBp4OopuA7i11FM6Ujf4hw0VTR0uh-lfOEpop11mmOwqnmDG82E4esaNSt75xLBpHpetUqZxA7ym9WaeimJrzsi4cMwWj-PuM4mq28SI93_0h7k2kTJ1wNP87qo5XerAAwDulCnDIfl0egi5JldsKtVP3Ieu3jZMexuE2jw6SsRCfAfrKmJQP85wjGCKMBCxRKgNHlToEPbyql-7hsVgY-Wl-jBf9TGEqISgbX_vmnnksFQAMLuNmcoc-V20AkjHISL3CtRH2kOjIbZEhrKExwB50Hfpg
+[运行时间：0.047026s] [吞吐率：21.26req/s] [内存消耗：2,434.16kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f3857ffb-cac8-44de-90a3-02424291bc92',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5NzI5LCJpYXQiOjE1ODUxODk2NjksImlzcyI6IiIsImp0aSI6ImM5YTVhMzIzMWExMGI2YzkxYTg2NDY4ODJmYTU4MWZkIiwibmJmIjoxNTg1MTg5NjY5LCJzdWIiOiIifQ.BuPc3ZA9CoeF1YY4vyslzx625vnh4A88CO7IZxmgm7t4gb7vS09D-fhBXpBp4OopuA7i11FM6Ujf4hw0VTR0uh-lfOEpop11mmOwqnmDG82E4esaNSt75xLBpHpetUqZxA7ym9WaeimJrzsi4cMwWj-PuM4mq28SI93_0h7k2kTJ1wNP87qo5XerAAwDulCnDIfl0egi5JldsKtVP3Ieu3jZMexuE2jw6SsRCfAfrKmJQP85wjGCKMBCxRKgNHlToEPbyql-7hsVgY-Wl-jBf9TGEqISgbX_vmnnksFQAMLuNmcoc-V20AkjHISL3CtRH2kOjIbZEhrKExwB50Hfpg',
+)
+[ error ] [0]The token is expired.[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\claim\Expiration.php:15]
+---------------------------------------------------------------
+
+[2020-03-26T10:29:51+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/index
+[运行时间：0.083369s] [吞吐率：11.99req/s] [内存消耗：2,305.14kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dd9868af-6dac-44e7-89fe-dccb4917b9de',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:30:03+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5ODUxLCJpYXQiOjE1ODUxODk3OTEsImlzcyI6IiIsImp0aSI6IjU0MzdlZGZjOWVlMjI1NjZjZTUxZmU5ZjcxYWNjMDBhIiwibmJmIjoxNTg1MTg5NzkxLCJzdWIiOiIifQ.h2m9HOwv869rK32tu398acZVIRn8r1yP2KV0OJ-h0ZiulkAZkr_qPTrTq0TmqjL1hJjLQplTUD-0b7obauIC57D74Ca-gpSlDmksCmN1Cd22BUckY1NiEh7sA0MysZ96zvF-EebmyHVfixVohKhO3UMp8G3iDDOq5sse_A0K4OZ9cIqjP3FV-ewAgohIfch6qcPthGArZ9sInxT64C3_NqYKfv-O8jQExlwy497sZuKPmiWoLCmyKbP9PFu50X7AmqtMKaTfTP4FKflby3NvmbPVKI82oP4QFdFImBso0bJQWdq5rZ-QXXh1XFQClOqbE--2_DA747xlgbRzmmTeww
+[运行时间：0.047761s] [吞吐率：20.94req/s] [内存消耗：2,372.40kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0e57814e-09ad-4299-b3fb-b85534bfd840',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5ODUxLCJpYXQiOjE1ODUxODk3OTEsImlzcyI6IiIsImp0aSI6IjU0MzdlZGZjOWVlMjI1NjZjZTUxZmU5ZjcxYWNjMDBhIiwibmJmIjoxNTg1MTg5NzkxLCJzdWIiOiIifQ.h2m9HOwv869rK32tu398acZVIRn8r1yP2KV0OJ-h0ZiulkAZkr_qPTrTq0TmqjL1hJjLQplTUD-0b7obauIC57D74Ca-gpSlDmksCmN1Cd22BUckY1NiEh7sA0MysZ96zvF-EebmyHVfixVohKhO3UMp8G3iDDOq5sse_A0K4OZ9cIqjP3FV-ewAgohIfch6qcPthGArZ9sInxT64C3_NqYKfv-O8jQExlwy497sZuKPmiWoLCmyKbP9PFu50X7AmqtMKaTfTP4FKflby3NvmbPVKI82oP4QFdFImBso0bJQWdq5rZ-QXXh1XFQClOqbE--2_DA747xlgbRzmmTeww',
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:30:57+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5ODUxLCJpYXQiOjE1ODUxODk3OTEsImlzcyI6IiIsImp0aSI6IjU0MzdlZGZjOWVlMjI1NjZjZTUxZmU5ZjcxYWNjMDBhIiwibmJmIjoxNTg1MTg5NzkxLCJzdWIiOiIifQ.h2m9HOwv869rK32tu398acZVIRn8r1yP2KV0OJ-h0ZiulkAZkr_qPTrTq0TmqjL1hJjLQplTUD-0b7obauIC57D74Ca-gpSlDmksCmN1Cd22BUckY1NiEh7sA0MysZ96zvF-EebmyHVfixVohKhO3UMp8G3iDDOq5sse_A0K4OZ9cIqjP3FV-ewAgohIfch6qcPthGArZ9sInxT64C3_NqYKfv-O8jQExlwy497sZuKPmiWoLCmyKbP9PFu50X7AmqtMKaTfTP4FKflby3NvmbPVKI82oP4QFdFImBso0bJQWdq5rZ-QXXh1XFQClOqbE--2_DA747xlgbRzmmTeww
+[运行时间：0.050455s] [吞吐率：19.82req/s] [内存消耗：2,434.20kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0be7e0b6-4931-427c-b134-bb6bc918ffbd',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5ODUxLCJpYXQiOjE1ODUxODk3OTEsImlzcyI6IiIsImp0aSI6IjU0MzdlZGZjOWVlMjI1NjZjZTUxZmU5ZjcxYWNjMDBhIiwibmJmIjoxNTg1MTg5NzkxLCJzdWIiOiIifQ.h2m9HOwv869rK32tu398acZVIRn8r1yP2KV0OJ-h0ZiulkAZkr_qPTrTq0TmqjL1hJjLQplTUD-0b7obauIC57D74Ca-gpSlDmksCmN1Cd22BUckY1NiEh7sA0MysZ96zvF-EebmyHVfixVohKhO3UMp8G3iDDOq5sse_A0K4OZ9cIqjP3FV-ewAgohIfch6qcPthGArZ9sInxT64C3_NqYKfv-O8jQExlwy497sZuKPmiWoLCmyKbP9PFu50X7AmqtMKaTfTP4FKflby3NvmbPVKI82oP4QFdFImBso0bJQWdq5rZ-QXXh1XFQClOqbE--2_DA747xlgbRzmmTeww',
+)
+[ error ] [0]The token is expired.[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\claim\Expiration.php:15]
+---------------------------------------------------------------
+
+[2020-03-26T10:31:01+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/index
+[运行时间：0.049736s] [吞吐率：20.11req/s] [内存消耗：2,305.17kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '97e4e8eb-bde2-44b2-9a7b-5be7c2bacb15',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:31:09+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5OTIxLCJpYXQiOjE1ODUxODk4NjEsImlzcyI6IiIsImp0aSI6Ijc1NWQwNGY1OWY4YjQ0ZjZlNTBlMjdkNzI5ZTIyYmJkIiwibmJmIjoxNTg1MTg5ODYxLCJzdWIiOiIifQ.nKI44cGw67LVxYMZNfvxqOFkaCG_V06Mw7iLfG0sfpi9rtm1tENbD6T-d5rSgtSEE30kbdwaIOl-e5V8EYNbsb3TfYtl2j9nn3Kqeg-dVroW4khpH4OlkVgSVmGV4Hx_5OeH9gagQF8wsAqoFVvbDkio1ivsmWMcr2sy3GaROHhXSb3zXmduk3EJyLhxYJdIwZHz5SgOzi3X2wHiHAqy5gC1OKkwNbKMqqx5Wzf_np8q14J4SJM-rytPOR8P4N9EzmXWPo13rPhfoIVXIPr8BaVfCL2htNSkTgpU06r0jFqO59jTLeayutQser-i4FGGyFhpGVC_urZaRLKRYUwMjw
+[运行时间：0.169348s] [吞吐率：5.91req/s] [内存消耗：2,437.66kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e55e99fe-fa09-4929-ba6e-6304c56e62ee',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5OTIxLCJpYXQiOjE1ODUxODk4NjEsImlzcyI6IiIsImp0aSI6Ijc1NWQwNGY1OWY4YjQ0ZjZlNTBlMjdkNzI5ZTIyYmJkIiwibmJmIjoxNTg1MTg5ODYxLCJzdWIiOiIifQ.nKI44cGw67LVxYMZNfvxqOFkaCG_V06Mw7iLfG0sfpi9rtm1tENbD6T-d5rSgtSEE30kbdwaIOl-e5V8EYNbsb3TfYtl2j9nn3Kqeg-dVroW4khpH4OlkVgSVmGV4Hx_5OeH9gagQF8wsAqoFVvbDkio1ivsmWMcr2sy3GaROHhXSb3zXmduk3EJyLhxYJdIwZHz5SgOzi3X2wHiHAqy5gC1OKkwNbKMqqx5Wzf_np8q14J4SJM-rytPOR8P4N9EzmXWPo13rPhfoIVXIPr8BaVfCL2htNSkTgpU06r0jFqO59jTLeayutQser-i4FGGyFhpGVC_urZaRLKRYUwMjw',
+)
+[ error ] [8]Trying to get property 'uid' of non-object[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Index.php:20]
+---------------------------------------------------------------
+
+[2020-03-26T10:31:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5OTIxLCJpYXQiOjE1ODUxODk4NjEsImlzcyI6IiIsImp0aSI6Ijc1NWQwNGY1OWY4YjQ0ZjZlNTBlMjdkNzI5ZTIyYmJkIiwibmJmIjoxNTg1MTg5ODYxLCJzdWIiOiIifQ.nKI44cGw67LVxYMZNfvxqOFkaCG_V06Mw7iLfG0sfpi9rtm1tENbD6T-d5rSgtSEE30kbdwaIOl-e5V8EYNbsb3TfYtl2j9nn3Kqeg-dVroW4khpH4OlkVgSVmGV4Hx_5OeH9gagQF8wsAqoFVvbDkio1ivsmWMcr2sy3GaROHhXSb3zXmduk3EJyLhxYJdIwZHz5SgOzi3X2wHiHAqy5gC1OKkwNbKMqqx5Wzf_np8q14J4SJM-rytPOR8P4N9EzmXWPo13rPhfoIVXIPr8BaVfCL2htNSkTgpU06r0jFqO59jTLeayutQser-i4FGGyFhpGVC_urZaRLKRYUwMjw
+[运行时间：0.065815s] [吞吐率：15.19req/s] [内存消耗：2,437.70kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0e5300dd-d4c7-4a12-a1e8-5cc9f4c57f02',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5OTIxLCJpYXQiOjE1ODUxODk4NjEsImlzcyI6IiIsImp0aSI6Ijc1NWQwNGY1OWY4YjQ0ZjZlNTBlMjdkNzI5ZTIyYmJkIiwibmJmIjoxNTg1MTg5ODYxLCJzdWIiOiIifQ.nKI44cGw67LVxYMZNfvxqOFkaCG_V06Mw7iLfG0sfpi9rtm1tENbD6T-d5rSgtSEE30kbdwaIOl-e5V8EYNbsb3TfYtl2j9nn3Kqeg-dVroW4khpH4OlkVgSVmGV4Hx_5OeH9gagQF8wsAqoFVvbDkio1ivsmWMcr2sy3GaROHhXSb3zXmduk3EJyLhxYJdIwZHz5SgOzi3X2wHiHAqy5gC1OKkwNbKMqqx5Wzf_np8q14J4SJM-rytPOR8P4N9EzmXWPo13rPhfoIVXIPr8BaVfCL2htNSkTgpU06r0jFqO59jTLeayutQser-i4FGGyFhpGVC_urZaRLKRYUwMjw',
+)
+[ error ] [8]Undefined property: Lcobucci\JWT\Claim\Basic::$vaule[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Index.php:20]
+---------------------------------------------------------------
+
+[2020-03-26T10:31:41+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5OTIxLCJpYXQiOjE1ODUxODk4NjEsImlzcyI6IiIsImp0aSI6Ijc1NWQwNGY1OWY4YjQ0ZjZlNTBlMjdkNzI5ZTIyYmJkIiwibmJmIjoxNTg1MTg5ODYxLCJzdWIiOiIifQ.nKI44cGw67LVxYMZNfvxqOFkaCG_V06Mw7iLfG0sfpi9rtm1tENbD6T-d5rSgtSEE30kbdwaIOl-e5V8EYNbsb3TfYtl2j9nn3Kqeg-dVroW4khpH4OlkVgSVmGV4Hx_5OeH9gagQF8wsAqoFVvbDkio1ivsmWMcr2sy3GaROHhXSb3zXmduk3EJyLhxYJdIwZHz5SgOzi3X2wHiHAqy5gC1OKkwNbKMqqx5Wzf_np8q14J4SJM-rytPOR8P4N9EzmXWPo13rPhfoIVXIPr8BaVfCL2htNSkTgpU06r0jFqO59jTLeayutQser-i4FGGyFhpGVC_urZaRLKRYUwMjw
+[运行时间：0.170179s] [吞吐率：5.88req/s] [内存消耗：2,436.19kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8a0e2356-4074-4759-82bf-39b20613bdf2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTg5OTIxLCJpYXQiOjE1ODUxODk4NjEsImlzcyI6IiIsImp0aSI6Ijc1NWQwNGY1OWY4YjQ0ZjZlNTBlMjdkNzI5ZTIyYmJkIiwibmJmIjoxNTg1MTg5ODYxLCJzdWIiOiIifQ.nKI44cGw67LVxYMZNfvxqOFkaCG_V06Mw7iLfG0sfpi9rtm1tENbD6T-d5rSgtSEE30kbdwaIOl-e5V8EYNbsb3TfYtl2j9nn3Kqeg-dVroW4khpH4OlkVgSVmGV4Hx_5OeH9gagQF8wsAqoFVvbDkio1ivsmWMcr2sy3GaROHhXSb3zXmduk3EJyLhxYJdIwZHz5SgOzi3X2wHiHAqy5gC1OKkwNbKMqqx5Wzf_np8q14J4SJM-rytPOR8P4N9EzmXWPo13rPhfoIVXIPr8BaVfCL2htNSkTgpU06r0jFqO59jTLeayutQser-i4FGGyFhpGVC_urZaRLKRYUwMjw',
+)
+[ error ] [0]致命错误: Cannot use object of type Lcobucci\JWT\Claim\Basic as array[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Index.php:20]
+---------------------------------------------------------------
+
+[2020-03-26T10:33:20+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/index
+[运行时间：0.071966s] [吞吐率：13.90req/s] [内存消耗：2,305.08kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f86ef937-de60-4b99-8470-b2803304f43e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T10:33:26+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTkwMDYwLCJpYXQiOjE1ODUxOTAwMDAsImlzcyI6IiIsImp0aSI6ImI5YzEzNmRhZGFlZjBmOTRlYjMyNTVjMWNjN2I3NjY3IiwibmJmIjoxNTg1MTkwMDAwLCJzdWIiOiIifQ.ut9CyplMCiIXU-HrGBbIAwIwU5EADMCH9a1u8VVGZTwuJk9gFpCPblCowbWGf4Zf5RaBPf-m9T2I4EZNhF9EF6XrVAQCZ70QoM6vCKsl-yPuj_RBgW-TqNDFSF3gUDK8_9y68qM4_ye5_0OpMJKEv1TiMgX6bR2gskOf4Jfzi-CyCKuPkhy-y_OjgRMVft9OyZ1WTmHNcY1_T4QwtJIcngeYjQGyubfjEMgr4pr8YNhfQ43z4vqrT4XLURsRvw_1o6FP8p8Hs_U0DAJrZMH5-oAjiMkgihaKkwcRH-DpnvexKx4vNVoqLDnxYU56bSAq6hq3_IXoIeKev7skHs90YA
+[运行时间：0.049157s] [吞吐率：20.34req/s] [内存消耗：2,372.34kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '37d35a00-3ac5-4390-8679-d27abca83aa9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg1MTkwMDYwLCJpYXQiOjE1ODUxOTAwMDAsImlzcyI6IiIsImp0aSI6ImI5YzEzNmRhZGFlZjBmOTRlYjMyNTVjMWNjN2I3NjY3IiwibmJmIjoxNTg1MTkwMDAwLCJzdWIiOiIifQ.ut9CyplMCiIXU-HrGBbIAwIwU5EADMCH9a1u8VVGZTwuJk9gFpCPblCowbWGf4Zf5RaBPf-m9T2I4EZNhF9EF6XrVAQCZ70QoM6vCKsl-yPuj_RBgW-TqNDFSF3gUDK8_9y68qM4_ye5_0OpMJKEv1TiMgX6bR2gskOf4Jfzi-CyCKuPkhy-y_OjgRMVft9OyZ1WTmHNcY1_T4QwtJIcngeYjQGyubfjEMgr4pr8YNhfQ43z4vqrT4XLURsRvw_1o6FP8p8Hs_U0DAJrZMH5-oAjiMkgihaKkwcRH-DpnvexKx4vNVoqLDnxYU56bSAq6hq3_IXoIeKev7skHs90YA',
+)
+---------------------------------------------------------------
+
+[2020-03-26T14:22:05+08:00] 192.168.0.60 GET 192.168.0.60/lhsoft_back/public/index/index/index
+[运行时间：0.071212s] [吞吐率：14.04req/s] [内存消耗：2,303.32kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T14:22:21+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/index/index
+[运行时间：0.039602s] [吞吐率：25.25req/s] [内存消耗：2,303.57kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T14:22:52+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/getCaptcha
+[运行时间：0.379631s] [吞吐率：2.63req/s] [内存消耗：2,304.94kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T14:23:05+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/index/index
+[运行时间：0.057544s] [吞吐率：17.38req/s] [内存消耗：2,303.57kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T14:24:34+08:00] 192.168.0.4 GET 192.168.0.60/lhsoft_back/public//index/login/getCaptcha
+[运行时间：1.979409s] [吞吐率：0.51req/s] [内存消耗：2,384.13kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T14:24:34+08:00] 192.168.0.4 GET 192.168.0.60/lhsoft_back/public//index/login/getCaptcha
+[运行时间：0.113996s] [吞吐率：8.77req/s] [内存消耗：2,384.33kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T15:36:20+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.061760s] [吞吐率：16.19req/s] [内存消耗：2,285.17kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected 'case' (T_CASE)[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:141]
+---------------------------------------------------------------
+
+[2020-03-26T15:37:49+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.040411s] [吞吐率：24.75req/s] [内存消耗：2,285.17kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected 'case' (T_CASE)[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:141]
+---------------------------------------------------------------
+
+[2020-03-26T15:56:02+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051254s] [吞吐率：19.51req/s] [内存消耗：2,285.17kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected 'case' (T_CASE)[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:141]
+---------------------------------------------------------------
+
+[2020-03-26T15:59:51+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.057000s] [吞吐率：17.54req/s] [内存消耗：2,285.17kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected 'case' (T_CASE)[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Login.php:141]
+---------------------------------------------------------------
+
+[2020-03-26T16:11:16+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.370816s] [吞吐率：2.70req/s] [内存消耗：2,393.91kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:35:53+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：1.730911s] [吞吐率：0.58req/s] [内存消耗：2,393.91kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:42:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.076799s] [吞吐率：13.02req/s] [内存消耗：2,281.73kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8e00b6db-9458-4824-b3aa-aeb2fb523f2d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]语法解析错误: syntax error, unexpected '}', expecting ';'[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Configuration.php:28]
+---------------------------------------------------------------
+
+[2020-03-26T16:42:29+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.072850s] [吞吐率：13.73req/s] [内存消耗：3,693.20kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9072d5b1-72af-4538-abe8-7a22d06e0d8f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [8]未定义数组索引: LOGIN_TYPE[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\db\Connection.php:465]
+---------------------------------------------------------------
+
+[2020-03-26T16:43:28+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.062092s] [吞吐率：16.11req/s] [内存消耗：3,745.48kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '88ad4ae6-8dd6-48de-a501-84503a90a3f0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002615s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001602s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001237s ]
+---------------------------------------------------------------
+
+[2020-03-26T16:44:03+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.078497s] [吞吐率：12.74req/s] [内存消耗：3,752.12kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a9c94c58-51e5-43d9-a559-ae8ef1546b2a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011884s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002234s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001632s ]
+---------------------------------------------------------------
+
+[2020-03-26T16:45:03+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.101474s] [吞吐率：9.85req/s] [内存消耗：3,752.12kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '613dbe65-e19e-4e1e-9b2b-696ebbff4a5a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011964s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001578s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001283s ]
+---------------------------------------------------------------
+
+[2020-03-26T16:45:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.069471s] [吞吐率：14.39req/s] [内存消耗：3,745.52kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '166014a6-de84-4522-ab06-92b817ef9c6d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011706s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002135s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001478s ]
+---------------------------------------------------------------
+
+[2020-03-26T16:45:24+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.163754s] [吞吐率：6.11req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:45:42+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.154789s] [吞吐率：6.46req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:47:12+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.079903s] [吞吐率：12.52req/s] [内存消耗：3,746.05kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011782s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002483s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001392s ]
+---------------------------------------------------------------
+
+[2020-03-26T16:48:19+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051945s] [吞吐率：19.25req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:49:29+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：1.674145s] [吞吐率：0.60req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:49:37+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051042s] [吞吐率：19.59req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:50:02+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.047232s] [吞吐率：21.17req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:50:13+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051215s] [吞吐率：19.53req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:50:45+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051985s] [吞吐率：19.24req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:51:42+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.357554s] [吞吐率：2.80req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:52:20+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.049713s] [吞吐率：20.12req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:54:41+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.069161s] [吞吐率：14.46req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T16:55:16+08:00] 127.0.0.1 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.068638s] [吞吐率：14.57req/s] [内存消耗：2,395.78kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'sec-fetch-dest' => 'image',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'no-cors',
+  'referer' => 'http://localhost:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => '_ga=GA1.1.1109778544.1567133370; LiveWSPBT14859486=7a2edc514a22433388db37bf35b9f1f1; NPBT14859486UA=Mozilla/5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2011_0%20like%20Mac%20OS%20X%29%20AppleWebKit/604.1.38%20%28KHTML%2C%20like%20Gecko%29%20Version/11.0%20Mobile/15A372%20Safari/604.1; NPBT14859486fistvisitetime=1567827145978; NPBT14859486visitepages=NaN; NPBT14859486visitecounts=NaN; Hm_lvt_55dfce44fff8633b4acd273ad330bd40=1573467315,1573542818,1573708906,1573802032; Hm_lvt_17002be6e644afa7ab394158873798fe=1573469253,1573620806,1573713211,1573802049; NPBT14859486lastvisitetime=1573802070622; UM_distinctid=16e826e344de4f-005e42823d1598-1c3f6a5a-1fa400-16e826e344e3b9; CNZZDATA1263804910=1265692540-1574144156-null%7C1574144156; CNZZDATA1255882846=1537803141-1494922785-null%7C1494922785; Hm_lvt_4b53049028918cae5da1dbefaeeb49b2=1574146467; PHPSESSID=gtc0tu658obdji4u1rkjqk2fv6',
+  'x-forwarded-for' => '127.0.0.1',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => 'localhost:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:39:50+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.098945s] [吞吐率：10.11req/s] [内存消耗：3,746.56kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020963s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003115s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001873s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:39:50+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.049778s] [吞吐率：20.09req/s] [内存消耗：2,391.80kb] [文件加载：106]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:40:02+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.070501s] [吞吐率：14.18req/s] [内存消耗：2,390.69kb] [文件加载：106]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '70e29896-5bb4-46ee-b7cb-0bcc81908a6f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:40:26+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.034170s] [吞吐率：29.27req/s] [内存消耗：1,702.73kb] [文件加载：85]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-26T17:40:30+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.026619s] [吞吐率：37.57req/s] [内存消耗：1,702.64kb] [文件加载：85]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-26T17:40:30+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.028557s] [吞吐率：35.02req/s] [内存消耗：1,702.59kb] [文件加载：85]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-26T17:40:36+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.044554s] [吞吐率：22.44req/s] [内存消耗：1,702.73kb] [文件加载：85]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-26T17:41:09+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.061935s] [吞吐率：16.15req/s] [内存消耗：3,750.30kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011865s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002215s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001847s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:41:09+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.050229s] [吞吐率：19.91req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:43:19+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.081958s] [吞吐率：12.20req/s] [内存消耗：3,750.33kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012435s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002232s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001590s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:43:20+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.048775s] [吞吐率：20.50req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:43:26+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.071392s] [吞吐率：14.01req/s] [内存消耗：3,750.33kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012372s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003136s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.002080s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:43:26+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.047302s] [吞吐率：21.14req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:44:09+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.050303s] [吞吐率：19.88req/s] [内存消耗：3,750.33kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002143s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001351s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001373s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:44:10+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.046967s] [吞吐率：21.29req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:44:49+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.059188s] [吞吐率：16.90req/s] [内存消耗：3,750.33kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012308s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001955s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001819s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:44:49+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051126s] [吞吐率：19.56req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:45:18+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.058700s] [吞吐率：17.04req/s] [内存消耗：3,750.30kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011722s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002057s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001729s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:45:19+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.060397s] [吞吐率：16.56req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:45:25+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.077622s] [吞吐率：12.88req/s] [内存消耗：3,750.30kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012211s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002199s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001665s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:45:26+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.052065s] [吞吐率：19.21req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:46:07+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.063776s] [吞吐率：15.68req/s] [内存消耗：3,750.33kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011969s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001688s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001320s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:46:08+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.052262s] [吞吐率：19.13req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:46:16+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.063570s] [吞吐率：15.73req/s] [内存消耗：3,750.33kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011202s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002899s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.002307s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:46:20+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.178797s] [吞吐率：5.59req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:46:21+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.061021s] [吞吐率：16.39req/s] [内存消耗：3,750.30kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013056s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003073s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.002092s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:46:25+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.059235s] [吞吐率：16.88req/s] [内存消耗：3,750.33kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012140s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001819s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001884s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:46:25+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.047275s] [吞吐率：21.15req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:47:04+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.059922s] [吞吐率：16.69req/s] [内存消耗：3,750.30kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012006s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002481s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001813s ]
+---------------------------------------------------------------
+
+[2020-03-26T17:47:05+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.046775s] [吞吐率：21.38req/s] [内存消耗：2,395.19kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:54:39+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getAccountCaptchaConfig
+[运行时间：0.084809s] [吞吐率：11.79req/s] [内存消耗：2,310.55kb] [文件加载：103]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5b157639-6580-45fe-83f2-63b4f6a828ab',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T17:55:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getAccountCaptchaConfig
+[运行时间：0.064613s] [吞吐率：15.48req/s] [内存消耗：3,757.65kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getAccountCaptchaConfig',
+  'route' => 'index/Configuration/getAccountCaptchaConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '62796416-973d-4097-ac82-54e7fa69c651',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002462s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003901s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA' LIMIT 1 [ RunTime:0.001826s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:03:09+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.392545s] [吞吐率：2.55req/s] [内存消耗：2,695.27kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [64]Cannot make static method think\Model::update() non static in class app\index\model\Configuration[E:\phpStudy\WWW\lhsoft_back\application\index\model\Configuration.php:5]
+---------------------------------------------------------------
+
+[2020-03-26T18:03:10+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.049142s] [吞吐率：20.35req/s] [内存消耗：2,398.39kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:03:47+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/editConfig?id=1
+[运行时间：0.053227s] [吞吐率：18.79req/s] [内存消耗：2,314.83kb] [文件加载：103]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f0c64895-5023-45ef-a15e-4ff3e6e8c951',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:04:24+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.046485s] [吞吐率：21.51req/s] [内存消耗：2,698.00kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [64]Cannot make static method think\Model::update() non static in class app\index\model\Configuration[E:\phpStudy\WWW\lhsoft_back\application\index\model\Configuration.php:5]
+---------------------------------------------------------------
+
+[2020-03-26T18:04:24+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.048928s] [吞吐率：20.44req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:04:35+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/editConfig?id=1
+[运行时间：0.142323s] [吞吐率：7.03req/s] [内存消耗：2,344.16kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/editConfig',
+  'route' => 'index/Configuration/editConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ef359459-50ef-4c01-96e8-f168ca6fbb23',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]Class app\index\controller\Request does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-03-26T18:05:16+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/editConfig?id=1
+[运行时间：0.071250s] [吞吐率：14.04req/s] [内存消耗：2,701.97kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/editConfig',
+  'route' => 'index/Configuration/editConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3c0ffc68-7a21-4ef8-966d-946f6a5d523e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [64]Cannot make static method think\Model::update() non static in class app\index\model\Configuration[E:\phpStudy\WWW\lhsoft_back\application\index\model\Configuration.php:5]
+---------------------------------------------------------------
+
+[2020-03-26T18:06:09+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.043750s] [吞吐率：22.86req/s] [内存消耗：2,697.80kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [64]Cannot make static method think\Model::update() non static in class app\index\model\Configuration[E:\phpStudy\WWW\lhsoft_back\application\index\model\Configuration.php:5]
+---------------------------------------------------------------
+
+[2020-03-26T18:06:09+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.054180s] [吞吐率：18.46req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:07:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/editConfig?id=1
+[运行时间：0.180186s] [吞吐率：5.55req/s] [内存消耗：3,762.07kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/editConfig',
+  'route' => 'index/Configuration/editConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3045b486-1879-4464-8b34-59bb912b742b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012280s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002498s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:08:00+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.063486s] [吞吐率：15.75req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011554s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002506s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001631s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:08:01+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.062149s] [吞吐率：16.09req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:09:21+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.061054s] [吞吐率：16.38req/s] [内存消耗：3,762.41kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginWeChat',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011485s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003039s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001938s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:09:26+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.073637s] [吞吐率：13.58req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:09:28+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.067299s] [吞吐率：14.86req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011970s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002169s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001536s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:09:29+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.047572s] [吞吐率：21.02req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:12:50+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.099604s] [吞吐率：10.04req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011205s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001617s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001310s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:12:51+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.054318s] [吞吐率：18.41req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:18:43+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.073432s] [吞吐率：13.62req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:18:44+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.065650s] [吞吐率：15.23req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012268s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002015s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001675s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:19:14+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.061160s] [吞吐率：16.35req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011841s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002416s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001577s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:19:18+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.048294s] [吞吐率：20.71req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:19:19+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.071392s] [吞吐率：14.01req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012155s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003008s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.002050s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:20:28+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.063538s] [吞吐率：15.74req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012110s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002682s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.002522s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:20:32+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051711s] [吞吐率：19.34req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:20:34+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.063171s] [吞吐率：15.83req/s] [内存消耗：3,762.41kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012969s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002073s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001447s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:20:34+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.048502s] [吞吐率：20.62req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:20:58+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.428450s] [吞吐率：2.33req/s] [内存消耗：3,762.41kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003838s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002516s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001704s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:20:59+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.051417s] [吞吐率：19.45req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:20:59+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.061568s] [吞吐率：16.24req/s] [内存消耗：3,762.41kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012676s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002512s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.001724s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:20:59+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.048496s] [吞吐率：20.62req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:21:53+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.065294s] [吞吐率：15.32req/s] [内存消耗：3,762.44kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011966s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003313s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.003059s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:21:53+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.050380s] [吞吐率：19.85req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-26T18:24:08+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/config/getLoginType
+[运行时间：0.918107s] [吞吐率：1.09req/s] [内存消耗：3,762.41kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getLoginType',
+  'route' => 'index/Configuration/getLoginType',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'origin' => 'http://192.168.0.8:8083',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => '192.168.0.60',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009610s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003297s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE' LIMIT 1 [ RunTime:0.002579s ]
+---------------------------------------------------------------
+
+[2020-03-26T18:24:09+08:00] 192.168.0.8 GET 192.168.0.60/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.439493s] [吞吐率：2.28req/s] [内存消耗：2,399.93kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.60',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://192.168.0.8:8083/loginAccount',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'x-forwarded-for' => '192.168.0.8',
+  'x-forwarded-port' => '8083',
+  'x-forwarded-proto' => 'http',
+  'x-forwarded-host' => '192.168.0.8:8083',
+)
+[ info ] [ PARAM ] array (
+)

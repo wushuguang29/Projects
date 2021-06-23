@@ -1,0 +1,132 @@
+<template>
+	<view>
+		<view class="update-message">
+			<view class="update-text">用户名:</view>
+			<view class="u-input" style="width: 74%;">
+				<input class="uni-input" v-model="form.name" name="number" />
+				
+				</view>
+		
+		</view>
+		<view style="margin-bottom: 1em;">
+			<button class="uni-btn" @click="submit">提交</button>
+		</view>
+		
+	</view>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			form: {
+				
+			},
+			myData:{},
+			rules: {
+				name: [
+					{
+						required: true,
+						message: '请输入姓名',
+						trigger: ['blur', 'change']
+					}
+				]
+			}
+		};
+	},
+	onShow:function(option){
+		
+		this.$ajax.get({
+			url: '/api/AppUsers/getUserInfo',
+			param: {},
+			header: {
+				'Content-Type':'application/json;charset=UTF-8',
+							'x-requested-with':"XMLHttpRequest"
+			},
+		}).then((res) => {
+			console.log("res",res)
+			this.form=res.data.data;
+		}) 
+	},
+	methods: {
+		// onShow:function(option){
+		// 	this.$ajax.get({
+		// 		url: '/api/AppUsers/getUserInfo',
+		// 		param: {},
+		// 		header: {
+		// 			'Content-Type':'application/json;charset=UTF-8',
+		// 						'x-requested-with':"XMLHttpRequest"
+		// 		},
+		// 	}).then((res) => {
+		// 		this.form.name=res.data.data.name;
+		// 		console.log("111",this.form,res.data.data.name)
+		// 	}) 
+		// },
+		submit() {
+			let that=this;
+			console.log("that",that.form)
+			
+				if(that.form.name){
+					that.$ajax.post({
+						url: '/api/AppUsers/changeName',
+						data: that.form,
+						header: {
+							'Content-Type':'application/json;charset=UTF-8',
+										'x-requested-with':"XMLHttpRequest",
+												
+						},
+					}).then((res) => {
+						console.log("res",res)
+					    this.myData=uni.getStorageSync('rowData');
+					    console.log("get",this.myData)
+					    this.myData.name=this.form.name;
+					    uni.setStorageSync('rowData', this.myData);
+					    console.log("rowData",uni.getStorageSync('rowData'))
+					    uni.redirectTo({
+							url:'/pages/views/PersonalCenter/PersonalInformation'
+						})
+						var jian=setInterval(()=>{
+							
+							uni.showToast({
+							title: '操作成功',
+							icon: 'none'
+							});
+							clearInterval(jian)
+						},1000) 
+					})
+				}else{
+					uni.showToast({
+						title:'用户名不能为空',
+						icon:"none"
+					})
+					
+				}
+		},
+		
+	},
+	// 必须要在onReady生命周期，因为onLoad生命周期组件可能尚未创建完毕
+	onReady() {
+		
+	}
+};
+</script>
+<style>
+	.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+	}
+	
+	page{background-color: #f1f1f1;}
+	/* 更改手机号 */
+	.update-message{background-color: #fff;height:95upx;line-height: 95upx;font-size: 32upx;display: flex;border-bottom:2upx solid #e4e4e4;}
+	/* 文字 */
+	.update-text{flex: 3;text-align: right;font-size: 43rpx; font-weight: 500;}
+	/* 右侧input框 */
+	.update-input{flex: 7;display: flex;}
+	/* 获取验证码 */
+	.code{flex: 3;font-size: 25upx;text-align: center;background:#47C3A8;height:95upx;line-height:95upx;color: #fff;float: right;}
+	/* 验证码 */
+	.uni-input{flex: 7;padding: 4%;font-size: 43rpx; font-weight: 500;}
+	
+</style>

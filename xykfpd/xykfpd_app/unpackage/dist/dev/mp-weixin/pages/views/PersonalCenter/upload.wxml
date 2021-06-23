@@ -1,0 +1,1 @@
+<view><view style="margin:0 auto;text-align:center;"><u-avatar vue-id="620dd075-1" src="{{src}}" size="large" mode="square" sex-icon="close" bind:__l="__l"></u-avatar></view><u-button bind:click="__e" vue-id="620dd075-2" data-event-opts="{{[['^click',[['upload']]]]}}" bind:__l="__l" vue-slots="{{['default']}}">上传头像</u-button></view>

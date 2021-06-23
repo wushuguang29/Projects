@@ -1,0 +1,264 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uview-ui
+			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+			// @dcloudio
+			"^uni-(.*)": "@dcloudio/uniui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationBarTextStyle": "#47C3A8"
+			}
+		},
+		{
+			"path": "pages/views/EvaluationCenter/CenterIndex",
+			"style": {
+				"navigationBarTitleText": "评测中心",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/views/EvaluationCenter/questionBank",
+			"style": {
+				"navigationBarTitleText": "题库",
+				"navigationBarTextStyle": "#fff",
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/views/physiological/subscription",
+			"style": {
+				"navigationBarTitleText": "订阅中心",
+				"navigationBarTextStyle": "#fff",
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": true,
+						"homeButton": false
+					}
+				},
+				"mp-weixin": {
+					"titleNView": {
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/index/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationBarTextStyle": "#fff",
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": true,
+						"homeButton": false
+					}
+				},
+				"mp-weixin": {
+					"titleNView": {
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/views/PersonalCenter/PersonalCenter",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/views/PersonalCenter/PersonalInformation",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"navigationBarTextStyle": "#fff",
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": true,
+						"homeButton": false
+					}
+				},
+				"mp-weixin": {
+					"titleNView": {
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/views/PersonalCenter/name",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/index/updatePhone",
+			"style": {
+				"navigationBarTitleText": "绑定手机号",
+				"navigationBarTextStyle": "#fff",
+				"app-plus": {
+					"titleNView": {
+
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				},
+				"mp-weixin": {
+					"titleNView": {
+
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/views/PersonalCenter/phone",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/views/PersonalCenter/upload",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/views/member/memberTable",
+			"style": {
+				"navigationBarTitleText": "成员列表",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/views/member/member",
+			"style": {
+				"navigationBarTitleText": "成员信息",
+				"navigationBarTextStyle": "#fff"
+			}
+		}, {
+			"path": "pages/views/member/file",
+			"style": {
+				"navigationBarTitleText": "在线资源",
+				"navigationBarTextStyle": "#fff",
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": true,
+						"homeButton": false
+					}
+				},
+				"mp-weixin": {
+					"titleNView": {
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				}
+			}
+		}, {
+			"path": "pages/views/member/resourcesTable",
+			"style": {
+				"navigationBarTitleText": "在线资源",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/views/member/Video",
+			"style": {
+				"navigationBarTitleText": "视频",
+				"navigationBarTextStyle": "#fff"
+			}
+		},
+		{
+			"path": "pages/views/EvaluationCenter/evaluationRecord",
+			"style": {
+				"navigationBarTitleText": "评测记录",
+				"navigationBarTextStyle": "#fff",
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": true,
+						"homeButton": false
+					}
+				},
+				"mp-weixin": {
+					"titleNView": {
+						"autoBackButton": false,
+						"homeButton": false
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/views/EvaluationCenter/Evaluation",
+			"style": {
+				"navigationBarTitleText": "评测记录",
+				"navigationBarTextStyle": "#fff"
+				
+			}
+		},
+		{
+			"path": "pages/views/advisory/index",
+			"style": {
+				"navigationBarTitleText": "咨询",
+				"navigationBarTextStyle": "#fff"
+			}
+		}
+
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#47C3A8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"list": [{
+			"text": "订阅中心",
+			"pagePath": "pages/index/index", //路径
+			"iconPath": "static/bottom_dy1.png", //图标
+			"selectedIconPath": "static/bottom_dy2.png"
+		}, {
+			"text": "评测中心",
+			"pagePath": "pages/views/EvaluationCenter/CenterIndex", //路径
+			"iconPath": "static/bottom_cs1.png", //图标
+			"selectedIconPath": "static/bottom_cs2.png"
+		}, {
+			"text": "在线资源",
+			"pagePath": "pages/views/member/file", //路径
+			"iconPath": "static/bottom_zl1.png", //图标
+			"selectedIconPath": "static/bottom_zl2.png"
+		}, {
+			"text": "个人中心",
+			"pagePath": "pages/views/PersonalCenter/PersonalCenter", //路径
+			"iconPath": "static/bottom_us1.png", //图标
+			"selectedIconPath": "static/bottom_us2.png"
+		}]
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}

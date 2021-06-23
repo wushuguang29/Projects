@@ -1,0 +1,28 @@
+
+.uni_font{
+	font-size: 37rpx;
+	 width: 65%;
+	text-align: justify;
+	font-family: SourceHanSansCN-Normal;
+	font-weight:550;
+	word-wrap:break-word;
+	word-break:break-all; 
+	overflow: hidden;
+	padding: 0% 0 0 3%;
+}
+.uni_flex{
+	    width: 100%;
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: flex;
+	    border-bottom: 5rpx solid #c0c0c0;
+	    height: 5rem;
+	    padding: 6% 0 0 0;
+}
+.pic-style{
+	width:14%;
+	height:80rpx;
+	margin:0% 0 0 9px;
+	wxcs_style_margin:0% 0 0 20rpx;
+}
+

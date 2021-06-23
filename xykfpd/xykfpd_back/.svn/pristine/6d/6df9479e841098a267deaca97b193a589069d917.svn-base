@@ -1,0 +1,94 @@
+<?php
+namespace app\common\service;
+
+use app\common\model\ConfigurationModel;
+use app\common\validate\SmsValidate;
+use Overtrue\EasySms\EasySms;
+use think\Request;
+
+/**
+ * 短信类
+ * @package app\common\service
+ */
+class Sms
+{
+    private $is_captcha = false;
+
+    private $config;
+
+    /**
+     * 获取短信配置
+     */
+    public function __construct()
+    {
+
+    }
+
+    /**
+     * [sendMessages 发送验证码]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-03-25T17:07:11+0800
+     * @param Request $request
+     * @param SmsValidate $smsValidate
+     * @return array [type]                         [description]
+     * @throws \Exception
+     */
+    public function sendMessages(Request $request, SmsValidate $smsValidate)
+    {
+        //模拟是否需要验证码
+        $is_captcha    = false;
+        $phone_captcha = ConfigurationModel::getConfigInfo('PHONE_CAPTCHA');
+        if (!empty($phone_captcha)) {
+            $is_captcha = $phone_captcha['value'] == 1 ? false : true;
+        }
+        //需要验证码
+        if ($is_captcha) {
+            $smsValidate->goCheck($request->param());
+        }
+
+        //判断手机号是否有效
+        $user = $this->where('mobile', $request->phone)->find();
+        if (!empty($user)) {
+            $result = $this->send($request->phone);
+            return $result;
+        }
+
+        return msgReturn(43018);
+    }
+
+    /**
+     * [send 发送]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-03-25T17:08:12+0800
+     * @param    [type]                   $phone [description]
+     * @return   [type]                          [description]
+     */
+    public function send($phone)
+    {
+        // 生成4位随机数，左侧补0
+        $code    = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
+        $easySms = new EasySms(config('easysms.'));
+        try {
+            $result = $easySms->send($phone, [
+                'content'  =>  "您的验证码是{$code}。如非本人操作，请忽略本短信",
+            ]);
+        } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
+            $message = $exception->getException('yunpian')->getMessage();
+            return msgReturn(43028);
+        }
+
+        $key       = $phone . str_random(15);
+        $expiredAt = 600;
+        // 缓存验证码 10分钟过期。
+        cache($key, ['phone' => $phone, 'code' => $code], $expiredAt);
+        $data = [
+            'phone_key'  => $key,
+            'expired_at' => $expiredAt,
+            'phone_code' => $code,
+        ];
+
+        return msgReturn(45003, $data);
+    }
+}

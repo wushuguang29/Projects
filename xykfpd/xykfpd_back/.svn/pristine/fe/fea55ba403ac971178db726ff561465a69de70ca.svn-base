@@ -1,0 +1,16 @@
+<?php
+/**
+ * @notes
+ * @author Zhang zw
+ * @date 2020/9/22 18:42
+ */
+
+namespace service\jwt\exception;
+
+
+use think\Exception;
+
+class JwtException extends Exception
+{
+
+}

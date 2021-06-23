@@ -1,0 +1,54 @@
+
+.uni-icon{
+	  color: #47C3A8;
+	      display: -webkit-box;
+	     /* display: -webkit-flex;
+	      display: flex; */
+	      font-size: 28rpx;
+	      -webkit-box-pack: justify;
+	      -webkit-justify-content: space-between;
+	      justify-content: space-between;
+	      padding: 20rpx 0;
+	      margin: 0 40rpx;
+	      -webkit-box-align: center;
+	      -webkit-align-items: center;
+	      align-items: center;
+}
+.wrap {
+		padding: 24rpx;
+}
+.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+}
+.uni-name {
+		float: left
+}
+.uni-column {
+
+		border-bottom: 1px solid #333333;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		font-size: 28rpx;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		        justify-content: space-between;
+		padding: 20rpx 0;
+		margin: 0 40rpx;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+		border-bottom: 1rpx solid #e5e5e5;
+}
+.u-input {
+		width: 5%;
+}
+.title {
+		width: 35%
+}
+.uni-yzm {
+		width: 22%
+}
+

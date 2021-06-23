@@ -1,0 +1,11 @@
+<?php
+
+
+namespace service\exception;
+
+use Exception;
+
+class ConfigException extends Exception
+{
+
+}

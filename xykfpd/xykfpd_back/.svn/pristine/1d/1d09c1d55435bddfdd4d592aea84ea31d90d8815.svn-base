@@ -1,0 +1,31 @@
+#应用调试模式
+APP_DEBUG = true
+
+#云片
+YUNPIAN_API_KEY=7cf0d024ed29e77f97ebb678bfa67393
+
+[DATABASE]
+TYPE = mysql
+HOSTNAME = 192.168.0.210
+DATABASE_NAME = xyxm_kfpd
+USERNAME = root
+DATABASE_PASSWORD = lhsoft210
+HOSTPORT = 3306
+
+#HOSTNAME = 127.0.0.1
+#DATABASE_NAME = lhsoft_base
+#USERNAME = root
+#DATABASE_PASSWORD = root22
+#HOSTPORT = 3306
+
+[JWT]
+# 加密方式 hmac256 hmac384 hmac512 rsa256 rsa384 rsa512 ecdsa256 ecdsa348 ecdsa512
+ALGO = ecdsa512
+# 秘钥密码
+PASSWORD = www.lhsoft.net
+# 过期时间 秒  默认3小时
+TTL = 10800
+# 可刷新时间 分钟  默认14天
+REFRESH_TTL = 20160
+
+

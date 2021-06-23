@@ -1,0 +1,2186 @@
+---------------------------------------------------------------
+
+[2020-04-23T11:07:58+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getShareList?bound_folder_id
+[运行时间：1.061108s] [吞吐率：0.94req/s] [内存消耗：4,232.00kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getShareList',
+  'route' => 'index/ArchivesFolder/getShareList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '32c30fc0-0797-4222-8f2c-7b4fd5f9c191',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016952s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002749s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002527s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:08:48+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getShareList?bound_folder_id=9
+[运行时间：0.195752s] [吞吐率：5.11req/s] [内存消耗：4,262.90kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getShareList',
+  'route' => 'index/ArchivesFolder/getShareList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '265b0fc6-f3e5-4abd-8825-76ed6353c2fc',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003566s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002669s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002802s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002107s ]
+[ sql ] [ SQL ] SELECT `ai`.`id`,r.title AS resouce_name,`af`.`folder_name`,`ai`.`create_time` FROM `archives_inherit` `ai` INNER JOIN `archives_bound_folder` `abf` ON `abf`.`id`=ai.source_bound_folder_id AND abf.delete_time = 0 INNER JOIN `resources` `r` ON `r`.`id`=abf.resources_id AND r.delete_time = 0 INNER JOIN `archives_folder` `af` ON `af`.`id`=abf.folder_id AND af.delete_time = 0 WHERE  `ai`.`target_bound_folder_id` = '9'  AND `ai`.`delete_time` = 0 [ RunTime:0.001839s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:15:47+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：1.784950s] [吞吐率：0.56req/s] [内存消耗：4,004.53kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '240a53ea-c47c-48b1-be14-1d7a0ae54885',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012642s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003198s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002809s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001976s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.003217s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002158s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002692s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001223s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002251s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.002107s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:18:19+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.119654s] [吞吐率：8.36req/s] [内存消耗：4,004.80kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '2739ec6b-5764-4766-8dfb-4477424a8452',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003059s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002484s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003525s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002449s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001605s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001345s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001139s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002180s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001980s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:19:27+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.206254s] [吞吐率：4.85req/s] [内存消耗：3,943.61kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '1c553f2e-5989-49d7-9f73-e34032d97e51',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014116s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002481s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003343s ]
+[ error ] [0]语法解析错误: syntax error, unexpected '=', expecting ']'[E:\phpStudy\WWW\lhsoft_back\application\index\controller\ArchivesFolder.php:49]
+---------------------------------------------------------------
+
+[2020-04-23T11:19:40+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.115395s] [吞吐率：8.67req/s] [内存消耗：4,152.43kb] [文件加载：129]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '20035ce3-6d4b-41ab-a046-7942599c2239',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012769s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002129s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002420s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001792s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002193s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001335s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001376s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001232s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002905s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.002126s ]
+[ error ] [8]未定义数组索引: resource_id[E:\phpStudy\WWW\lhsoft_back\application\index\controller\ArchivesFolder.php:49]
+---------------------------------------------------------------
+
+[2020-04-23T11:19:51+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.101918s] [吞吐率：9.81req/s] [内存消耗：4,004.77kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'a7184d27-fd79-4132-a2da-b80edee30f59',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012488s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002027s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002336s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001425s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001251s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001224s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001046s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001567s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002786s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001686s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001307s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:21:04+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.115797s] [吞吐率：8.64req/s] [内存消耗：4,005.28kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '074e77fd-717c-4fab-8eee-c3bef2657e21',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013845s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002455s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003424s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.003419s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001342s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001555s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001671s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001364s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001817s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002311s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.003001s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:21:51+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.119166s] [吞吐率：8.39req/s] [内存消耗：4,005.27kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '37d18bbc-62a5-4cda-a1c2-f5cdc7aaa5a5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002864s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002243s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003258s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001637s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001320s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001264s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002866s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001949s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001561s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:22:22+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.116370s] [吞吐率：8.59req/s] [内存消耗：4,009.51kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'd6667155-7c8c-4664-8a08-5c6f4c1d3df6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013423s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002358s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002292s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002541s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002202s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001291s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001122s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001023s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001362s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001371s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:23:19+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.137483s] [吞吐率：7.27req/s] [内存消耗：4,005.92kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'dcee4087-2681-4aae-8c1c-82eabbcde800',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004078s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002645s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.005225s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.003033s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001469s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001440s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001385s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002791s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001770s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002285s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001973s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:24:29+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.134580s] [吞吐率：7.43req/s] [内存消耗：4,153.72kb] [文件加载：129]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'b12b5a54-9003-4c37-8e53-a8fcbddeba4d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013413s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002044s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002453s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001434s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001268s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001444s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001705s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001449s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001766s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001826s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001897s ]
+[ error ] [2]Use of undefined constant ture - assumed 'ture' (this will throw an Error in a future version of PHP)[E:\phpStudy\WWW\lhsoft_back\application\index\controller\ArchivesFolder.php:55]
+---------------------------------------------------------------
+
+[2020-04-23T11:24:39+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.100037s] [吞吐率：10.00req/s] [内存消耗：4,005.92kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '0f85e8e5-860e-459a-8c5c-e6f3fde3c242',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003614s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002254s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002481s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002257s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001368s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001257s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001196s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001106s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001521s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002375s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001504s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:24:52+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.098686s] [吞吐率：10.13req/s] [内存消耗：4,005.94kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'dd8054b7-a150-464d-9dc6-d2a289c50bb6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002727s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002486s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003093s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001583s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001285s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001170s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001128s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001038s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001631s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001824s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001381s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:24:54+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.110516s] [吞吐率：9.05req/s] [内存消耗：4,005.94kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '0ad2dfb3-eb81-4e57-a0a2-543e26ce1003',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003316s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002220s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003736s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001591s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001390s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001252s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001077s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002334s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001770s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:24:54+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.121893s] [吞吐率：8.20req/s] [内存消耗：4,005.92kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'a2fe8263-4121-4c2c-9842-125349e2b830',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012535s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002398s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002390s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002079s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002972s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002335s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002608s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.006465s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002782s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002086s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001912s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:25:49+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.151788s] [吞吐率：6.59req/s] [内存消耗：4,005.92kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '73a22030-aef5-4ad3-bfd1-ea452f903c28',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003611s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002694s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002805s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001752s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001564s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001716s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001968s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001676s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,38,2,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001561s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001948s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001636s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:26:52+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.094773s] [吞吐率：10.55req/s] [内存消耗：4,007.06kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'b6f6dac7-c833-433b-af33-5796ef5420e9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003564s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002553s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003233s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002199s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001800s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001730s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001317s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001280s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001675s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002175s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001770s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:33:43+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.130212s] [吞吐率：7.68req/s] [内存消耗：4,006.16kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '2215f759-b953-4c2e-bfd0-9a6d3cb28330',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002666s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003141s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002885s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `id` <> 3  AND `resources`.`delete_time` = 0 [ RunTime:0.001589s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001389s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001425s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001235s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (21,38,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001430s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002634s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001623s ]
+---------------------------------------------------------------
+
+[2020-04-23T11:36:38+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.127364s] [吞吐率：7.85req/s] [内存消耗：4,008.63kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'd5b1e96a-2443-4853-b1d8-a8353d1bdd02',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012133s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002335s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002378s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001923s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001481s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001276s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001195s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001303s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002057s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.002004s ]
+---------------------------------------------------------------
+
+[2020-04-23T13:20:15+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.173040s] [吞吐率：5.78req/s] [内存消耗：4,008.63kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'a5a20eb9-cc3f-4d89-b7f5-6ec1cc96d77c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004529s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002446s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002848s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002036s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001400s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001316s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001494s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001264s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001486s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.003167s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.003546s ]
+---------------------------------------------------------------
+
+[2020-04-23T13:35:40+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.131418s] [吞吐率：7.61req/s] [内存消耗：4,036.88kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'dea61a37-2d55-4b19-85fa-ae666953be9b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012765s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002097s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002583s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001962s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002308s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002349s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001781s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002058s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001938s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001520s ]
+---------------------------------------------------------------
+
+[2020-04-23T13:35:45+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree
+[运行时间：0.089747s] [吞吐率：11.14req/s] [内存消耗：4,036.88kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'f5d8d5e7-bfae-45db-baa8-b087cc48ecd5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002812s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002856s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003296s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002156s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001816s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001722s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002008s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001507s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002192s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002181s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001857s ]
+---------------------------------------------------------------
+
+[2020-04-23T13:37:10+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree?bound_folder_id=9
+[运行时间：0.125984s] [吞吐率：7.94req/s] [内存消耗：4,186.05kb] [文件加载：130]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'c21076e3-b4eb-439b-ae45-34e711a6abd2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011387s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002211s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001442s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001471s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001376s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001149s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001087s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001317s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001876s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002054s ]
+[ sql ] [ SQL ] SELECT `ai`.`id`,r.title AS resouce_name,`af`.`folder_name`,`ai`.`create_time`,`ai`.`source_bound_folder_id` FROM `archives_inherit` `ai` INNER JOIN `archives_bound_folder` `abf` ON `abf`.`id`=ai.source_bound_folder_id AND abf.delete_time = 0 INNER JOIN `resources` `r` ON `r`.`id`=abf.resources_id AND r.delete_time = 0 INNER JOIN `archives_folder` `af` ON `af`.`id`=abf.folder_id AND af.delete_time = 0 WHERE  `ai`.`target_bound_folder_id` = '9'  AND `ai`.`delete_time` = 0 [ RunTime:0.002575s ]
+[ error ] [8]未定义变量: variable[E:\phpStudy\WWW\lhsoft_back\application\index\controller\ArchivesFolder.php:68]
+---------------------------------------------------------------
+
+[2020-04-23T13:37:31+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree?bound_folder_id=9
+[运行时间：0.113054s] [吞吐率：8.85req/s] [内存消耗：4,044.39kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '529eb0f8-fab4-4ff6-b7a9-72c69d9bebbf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011850s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002097s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002326s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.002476s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001392s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001379s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001885s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001741s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002960s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002074s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001783s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001679s ]
+[ sql ] [ SQL ] SELECT `ai`.`id`,r.title AS resouce_name,`af`.`folder_name`,`ai`.`create_time`,`ai`.`source_bound_folder_id` FROM `archives_inherit` `ai` INNER JOIN `archives_bound_folder` `abf` ON `abf`.`id`=ai.source_bound_folder_id AND abf.delete_time = 0 INNER JOIN `resources` `r` ON `r`.`id`=abf.resources_id AND r.delete_time = 0 INNER JOIN `archives_folder` `af` ON `af`.`id`=abf.folder_id AND af.delete_time = 0 WHERE  `ai`.`target_bound_folder_id` = '9'  AND `ai`.`delete_time` = 0 [ RunTime:0.001510s ]
+---------------------------------------------------------------
+
+[2020-04-23T13:44:22+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree?bound_folder_id=9
+[运行时间：0.150148s] [吞吐率：6.66req/s] [内存消耗：4,185.92kb] [文件加载：130]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'aeb588a5-bd48-4c4a-a2f7-1038e9edfaf1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012679s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002208s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002635s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001887s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001682s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001866s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001920s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001842s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002548s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002268s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001835s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001817s ]
+[ sql ] [ SQL ] SELECT `ai`.`id`,r.title AS resouce_name,`af`.`folder_name`,`ai`.`create_time`,`ai`.`source_bound_folder_id` FROM `archives_inherit` `ai` INNER JOIN `archives_bound_folder` `abf` ON `abf`.`id`=ai.source_bound_folder_id AND abf.delete_time = 0 INNER JOIN `resources` `r` ON `r`.`id`=abf.resources_id AND r.delete_time = 0 INNER JOIN `archives_folder` `af` ON `af`.`id`=abf.folder_id AND af.delete_time = 0 WHERE  `ai`.`target_bound_folder_id` = '9'  AND `ai`.`delete_time` = 0 [ RunTime:0.001724s ]
+[ error ] [8]未定义变量: vu[E:\phpStudy\WWW\lhsoft_back\application\index\controller\ArchivesFolder.php:69]
+---------------------------------------------------------------
+
+[2020-04-23T13:44:42+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree?bound_folder_id=9
+[运行时间：0.102452s] [吞吐率：9.76req/s] [内存消耗：4,042.20kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '9d8f0bc5-adc5-455d-b03c-4babfc4b98e4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002905s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002403s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002520s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.004867s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.003549s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.002009s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001842s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001497s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.001680s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.001914s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.001598s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.004011s ]
+[ sql ] [ SQL ] SELECT `ai`.`id`,r.title AS resouce_name,`af`.`folder_name`,`ai`.`create_time`,`ai`.`source_bound_folder_id` FROM `archives_inherit` `ai` INNER JOIN `archives_bound_folder` `abf` ON `abf`.`id`=ai.source_bound_folder_id AND abf.delete_time = 0 INNER JOIN `resources` `r` ON `r`.`id`=abf.resources_id AND r.delete_time = 0 INNER JOIN `archives_folder` `af` ON `af`.`id`=abf.folder_id AND af.delete_time = 0 WHERE  `ai`.`target_bound_folder_id` = '9'  AND `ai`.`delete_time` = 0 [ RunTime:0.002348s ]
+---------------------------------------------------------------
+
+[2020-04-23T13:45:50+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getResourcesTree?bound_folder_id=9
+[运行时间：0.103661s] [吞吐率：9.65req/s] [内存消耗：4,122.90kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getResourcesTree',
+  'route' => 'index/ArchivesFolder/getResourcesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '41fcbefd-3aa8-4154-9213-71bee0ce3627',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012424s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002358s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002539s ]
+[ sql ] [ SQL ] SELECT `id` FROM `resources` WHERE  json_extract(`extra`, '$.annex') > 0  AND `status` = 1  AND `hidden` = 2  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001542s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,21,38)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001408s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,20,31)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001860s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 1  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001210s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.001258s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`pid` FROM `resources` WHERE  `id` IN (3,21,38,2,20,31,1,0)  AND `resources`.`delete_time` = 0 [ RunTime:0.002158s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002031s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.002526s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002073s ]
+[ sql ] [ SQL ] SELECT `ai`.`id`,r.title AS resouce_name,`af`.`folder_name`,`ai`.`create_time`,`ai`.`source_bound_folder_id` FROM `archives_inherit` `ai` INNER JOIN `archives_bound_folder` `abf` ON `abf`.`id`=ai.source_bound_folder_id AND abf.delete_time = 0 INNER JOIN `resources` `r` ON `r`.`id`=abf.resources_id AND r.delete_time = 0 INNER JOIN `archives_folder` `af` ON `af`.`id`=abf.folder_id AND af.delete_time = 0 WHERE  `ai`.`target_bound_folder_id` = '9'  AND `ai`.`delete_time` = 0 [ RunTime:0.001607s ]
+---------------------------------------------------------------
+
+[2020-04-23T15:27:22+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/folder/getBoundFolder?resources_id=3&project_id=1
+[运行时间：1.815848s] [吞吐率：0.55req/s] [内存消耗：4,271.74kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getBoundFolder',
+  'route' => 'index/ArchivesFolder/getBoundFolder',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '2d250525-b180-4be0-a0bd-0c888f35239d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '3',
+  'project_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012144s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002257s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_bound_folder` [ RunTime:0.002412s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,`af`.`project_id`,`abf`.`resources_id` FROM `archives_bound_folder` `abf` LEFT JOIN `archives_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = '1'  AND `abf`.`resources_id` = '3'  AND `abf`.`delete_time` = 0 [ RunTime:0.002107s ]
+---------------------------------------------------------------
+
+[2020-04-23T15:57:45+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList
+[运行时间：0.117009s] [吞吐率：8.55req/s] [内存消耗：4,022.01kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '0ba2ac6d-9236-40e4-8a7e-925841180906',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013697s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003277s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002397s ]
+[ error ] [0]方法参数错误:archives[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:480]
+---------------------------------------------------------------
+
+[2020-04-23T15:58:30+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList
+[运行时间：0.100549s] [吞吐率：9.95req/s] [内存消耗：4,021.02kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'e57be415-882d-4445-9d73-4bbb72b9a61e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005667s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002340s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002361s ]
+[ error ] [0]方法参数错误:archives[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:480]
+---------------------------------------------------------------
+
+[2020-04-23T15:59:17+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList
+[运行时间：0.085460s] [吞吐率：11.70req/s] [内存消耗：4,021.33kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'caef123d-5076-407c-9da5-e0db4cca0f3b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004270s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002369s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.004741s ]
+[ error ] [0]方法参数错误:archives[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:480]
+---------------------------------------------------------------
+
+[2020-04-23T15:59:18+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList
+[运行时间：0.084449s] [吞吐率：11.84req/s] [内存消耗：4,021.28kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '9950805c-06b4-433f-947a-cca9a4a01f1d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005171s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003069s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002684s ]
+[ error ] [0]方法参数错误:archives[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:480]
+---------------------------------------------------------------
+
+[2020-04-23T15:59:31+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList
+[运行时间：0.096090s] [吞吐率：10.41req/s] [内存消耗：3,931.19kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'd85bb49f-6469-4d26-875c-da59b33166f6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005082s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003123s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:00:21+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList
+[运行时间：0.220731s] [吞吐率：4.53req/s] [内存消耗：4,219.45kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '39076197-6aa0-462c-9bc6-8cccbf674041',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012669s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002473s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002981s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:00:40+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9
+[运行时间：0.091783s] [吞吐率：10.90req/s] [内存消耗：4,259.13kb] [文件加载：128]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '28ade287-f0cf-4388-89ad-91fd68a2483c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002798s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002624s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002895s ]
+[ error ] [0]致命错误: Call to undefined function app\index\controller\getFolderFileList()[E:\phpStudy\WWW\lhsoft_back\application\index\controller\ArchivesFile.php:164]
+---------------------------------------------------------------
+
+[2020-04-23T16:01:00+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9
+[运行时间：0.160650s] [吞吐率：6.22req/s] [内存消耗：4,254.64kb] [文件加载：130]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'f3961ce6-e027-43c3-9939-40dffc462166',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008342s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002343s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002459s ]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id ' at line 1[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\db\Connection.php:687]
+---------------------------------------------------------------
+
+[2020-04-23T16:13:56+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9
+[运行时间：0.127280s] [吞吐率：7.86req/s] [内存消耗：4,309.90kb] [文件加载：130]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '7a33435a-624f-4de7-bae0-63603d319afd',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002893s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003952s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002844s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`delete_time` = 0 [ RunTime:0.001470s ]
+[ error ] [0]致命错误: Class 'app\common\model\Db' not found[E:\phpStudy\WWW\lhsoft_back\application\common\model\ArchivesFileModel.php:32]
+---------------------------------------------------------------
+
+[2020-04-23T16:14:11+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9
+[运行时间：0.195025s] [吞吐率：5.13req/s] [内存消耗：4,315.47kb] [文件加载：131]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '41c0cb78-c8db-4d22-ae69-a514c12b0bed',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013031s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002377s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002661s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`delete_time` = 0 [ RunTime:0.001707s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002119s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001196s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,true AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = 10  AND `af`.`delete_time` = 0 [ RunTime:0.002863s ]
+[ error ] [2]array_merge(): Expected parameter 1 to be an array, object given[E:\phpStudy\WWW\lhsoft_back\application\common\model\ArchivesFileModel.php:54]
+---------------------------------------------------------------
+
+[2020-04-23T16:14:36+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9
+[运行时间：0.086265s] [吞吐率：11.59req/s] [内存消耗：4,255.03kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '1614eaa7-7df5-41c0-81b4-96be0e60ed61',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003147s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002319s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002710s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002447s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`delete_time` = 0 [ RunTime:0.002184s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001866s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001182s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,true AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = 10  AND `af`.`delete_time` = 0 [ RunTime:0.001375s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:18:30+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9
+[运行时间：0.146130s] [吞吐率：6.84req/s] [内存消耗：4,255.14kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '1200881b-ca90-4567-9a60-33497254aee9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011670s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001346s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.001898s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`delete_time` = 0 [ RunTime:0.001413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001482s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.000966s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,true AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = 10  AND `af`.`delete_time` = 0 [ RunTime:0.001018s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:40:59+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9
+[运行时间：0.224723s] [吞吐率：4.45req/s] [内存消耗：4,259.42kb] [文件加载：128]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'd5d74aa3-983b-4354-a0e4-0522e037d3c8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003257s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002402s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002836s ]
+[ error ] [0]类型错误: Too few arguments to function app\common\model\ArchivesFileModel::getFolderFileList(), 1 passed in E:\phpStudy\WWW\lhsoft_back\application\index\controller\ArchivesFile.php on line 164 and at least 2 expected[E:\phpStudy\WWW\lhsoft_back\application\common\model\ArchivesFileModel.php:22]
+---------------------------------------------------------------
+
+[2020-04-23T16:41:50+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9&target_id=1
+[运行时间：0.108878s] [吞吐率：9.18req/s] [内存消耗：4,255.96kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'eccd6932-4888-41a8-a113-96f26316d9df',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002356s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002191s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`target_id` = '1'  AND `af`.`delete_time` = 0 [ RunTime:0.001601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002230s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001187s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,true AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = 10  AND `af`.`target_id` = '1'  AND `af`.`delete_time` = 0 [ RunTime:0.001501s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:41:58+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=10&target_id=1
+[运行时间：0.105538s] [吞吐率：9.48req/s] [内存消耗：4,253.48kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'cf54c227-b567-4c96-9794-1e0ae7b14095',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '10',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012222s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002524s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003038s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.003003s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '10'  AND `af`.`target_id` = '1'  AND `af`.`delete_time` = 0 [ RunTime:0.001532s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001946s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 10  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001457s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:42:03+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=10&target_id=2
+[运行时间：0.102368s] [吞吐率：9.77req/s] [内存消耗：4,253.48kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '8549872b-51cf-49fc-8957-6fbfff5950ef',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '10',
+  'target_id' => '2',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004988s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002206s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002836s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002145s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '10'  AND `af`.`target_id` = '2'  AND `af`.`delete_time` = 0 [ RunTime:0.001986s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002134s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 10  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001502s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:42:54+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=10&target_id=2
+[运行时间：0.114517s] [吞吐率：8.73req/s] [内存消耗：4,253.52kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '6885e516-ee76-4c45-a22d-31f5da1f9b99',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '10',
+  'target_id' => '2',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013107s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001866s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002158s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '10'  AND `af`.`target_id` = '2'  AND `af`.`delete_time` = 0 [ RunTime:0.001472s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001133s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 10  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.000891s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:42:59+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9&target_id=2
+[运行时间：0.095167s] [吞吐率：10.51req/s] [内存消耗：4,256.09kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'ace49c94-7606-490e-af72-0cd93d4e9bf3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+  'target_id' => '2',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012201s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001891s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003103s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002615s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`target_id` = '2'  AND `af`.`delete_time` = 0 [ RunTime:0.002218s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002394s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.002801s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,true AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = 10  AND `af`.`target_id` = '2'  AND `af`.`delete_time` = 0 [ RunTime:0.002471s ]
+---------------------------------------------------------------
+
+[2020-04-23T16:43:05+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9&target_id=2
+[运行时间：0.114444s] [吞吐率：8.74req/s] [内存消耗：4,256.09kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'cf221c15-52c2-4393-8241-c14178ec41fa',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+  'target_id' => '2',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003551s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002285s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002844s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002702s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`target_id` = '2'  AND `af`.`delete_time` = 0 [ RunTime:0.001674s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002056s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001274s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,true AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = 10  AND `af`.`target_id` = '2'  AND `af`.`delete_time` = 0 [ RunTime:0.001603s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:10:32+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/rename
+[运行时间：0.131173s] [吞吐率：7.62req/s] [内存消耗：4,226.55kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/rename',
+  'route' => 'index/ArchivesFile/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '8e9a509c-01fd-42c0-8ea1-ceddc0ecb719',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012827s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003366s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003374s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:10:37+08:00] 127.0.0.1 POST www.lhbackadmin.com/index/archivesFile/rename
+[运行时间：0.116443s] [吞吐率：8.59req/s] [内存消耗：3,555.79kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004314s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002876s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003971s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:12:07+08:00] 127.0.0.1 POST www.lhbackadmin.com/index/archivesFile/rename
+[运行时间：0.087066s] [吞吐率：11.49req/s] [内存消耗：4,222.57kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/rename',
+  'route' => 'index/ArchivesFile/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '0fd2b545-c428-4237-a3be-b8ec05ac51ef',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011660s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003954s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002349s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:13:41+08:00] 127.0.0.1 POST www.lhbackadmin.com/index/archivesFile/rename?archives_file_id=1&
+[运行时间：0.159300s] [吞吐率：6.28req/s] [内存消耗：4,223.33kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/rename',
+  'route' => 'index/ArchivesFile/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'b0ea4628-9356-4af8-9235-06c0bca49267',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'archives_file_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012573s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002443s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003679s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:14:03+08:00] 127.0.0.1 POST www.lhbackadmin.com/index/archivesFile/rename?archives_file_id=1&file_name=%E6%96%87%E4%BB%B6%E5%90%8D%E4%BF%AE%E6%94%B9
+[运行时间：0.088902s] [吞吐率：11.25req/s] [内存消耗：4,271.67kb] [文件加载：129]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/rename',
+  'route' => 'index/ArchivesFile/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'e3a0ba02-52af-480e-8e86-f7fa5c1d8069',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'archives_file_id' => '1',
+  'file_name' => '文件名修改',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003355s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002329s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002312s ]
+[ error ] [8]未定义变量: params[E:\phpStudy\WWW\lhsoft_back\application\common\model\ArchivesFileModel.php:73]
+---------------------------------------------------------------
+
+[2020-04-23T17:14:51+08:00] 127.0.0.1 POST www.lhbackadmin.com/index/archivesFile/rename?archives_file_id=1&file_name=%E6%96%87%E4%BB%B6%E5%90%8D%E4%BF%AE%E6%94%B9
+[运行时间：0.195916s] [吞吐率：5.10req/s] [内存消耗：4,164.82kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/rename',
+  'route' => 'index/ArchivesFile/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '74a44b3d-fb6b-4058-bfde-2dd9c6c68011',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'archives_file_id' => '1',
+  'file_name' => '文件名修改',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003667s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002425s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002667s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002629s ]
+[ sql ] [ SQL ] SELECT `file_id` FROM `archives_file` WHERE  `id` = 1  AND `archives_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001154s ]
+[ sql ] [ SQL ] UPDATE `archives_file`  SET `file_name` = '文件名修改'  WHERE  `id` = 1  AND `archives_file`.`delete_time` = 0 [ RunTime:0.002455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.002452s ]
+[ sql ] [ SQL ] UPDATE `file`  SET `name` = '文件名修改'  WHERE  `id` IS NULL  AND `file`.`delete_time` = 0 [ RunTime:0.001218s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:15:33+08:00] 127.0.0.1 POST www.lhbackadmin.com/index/archivesFile/rename?archives_file_id=5&file_name=%E6%96%87%E4%BB%B6%E5%90%8D%E4%BF%AE%E6%94%B9
+[运行时间：0.121472s] [吞吐率：8.23req/s] [内存消耗：4,165.51kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/rename',
+  'route' => 'index/ArchivesFile/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'de24b6b0-4414-49ef-8b97-700c20001259',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'archives_file_id' => '5',
+  'file_name' => '文件名修改',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013964s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002020s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002189s ]
+[ sql ] [ SQL ] SELECT `file_id` FROM `archives_file` WHERE  `id` = 5  AND `archives_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001048s ]
+[ sql ] [ SQL ] UPDATE `archives_file`  SET `file_name` = '文件名修改'  WHERE  `id` = 5  AND `archives_file`.`delete_time` = 0 [ RunTime:0.010467s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.001665s ]
+[ sql ] [ SQL ] UPDATE `file`  SET `name` = '文件名修改'  WHERE  `id` = 1  AND `file`.`delete_time` = 0 [ RunTime:0.003881s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:48:57+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/delete
+[运行时间：0.124216s] [吞吐率：8.05req/s] [内存消耗：4,232.18kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/delete',
+  'route' => 'index/ArchivesFile/delete',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '136180b0-48b9-4407-b751-c418ef9c140f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012985s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002369s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002334s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:49:53+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9&target_id=1
+[运行时间：0.100135s] [吞吐率：9.99req/s] [内存消耗：4,268.32kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '685152e8-b3e1-4d19-952e-1abce75acadf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012156s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002419s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003273s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002381s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`target_id` = '1'  AND `af`.`delete_time` = 0 [ RunTime:0.001577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001966s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001415s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,true AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = 10  AND `af`.`target_id` = '1'  AND `af`.`delete_time` = 0 [ RunTime:0.001460s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:50:24+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/delete?archives_file_id=5,6
+[运行时间：0.097021s] [吞吐率：10.31req/s] [内存消耗：4,205.69kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/delete',
+  'route' => 'index/ArchivesFile/delete',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '899b9f09-91ff-4e69-8eec-9c9c7c92ecd4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'archives_file_id' => '5,6',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013269s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002399s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002779s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.003330s ]
+[ sql ] [ SQL ] SELECT `bound_folder_id` FROM `archives_file` WHERE  `id` IN (5,6)  AND `archives_file`.`delete_time` = 0 [ RunTime:0.001440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002125s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `archives_inherit` WHERE  `source_bound_folder_id` IN (9,10)  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001236s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:54:38+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/getList?bound_folder_id=9&target_id=1
+[运行时间：0.139030s] [吞吐率：7.19req/s] [内存消耗：4,265.73kb] [文件加载：126]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/getList',
+  'route' => 'index/ArchivesFile/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'c1da0ebe-f39c-4b1f-8e13-b08e0741e406',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '9',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012928s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003720s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003339s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002851s ]
+[ sql ] [ SQL ] SELECT af.id AS archives_file_id,CASE WHEN af.file_name = "" THEN f.name ELSE af.file_name END AS file_name,false AS share FROM `archives_file` `af` INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`bound_folder_id` = '9'  AND `af`.`target_id` = '1'  AND `af`.`delete_time` = 0 [ RunTime:0.001964s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.002155s ]
+[ sql ] [ SQL ] SELECT `source_bound_folder_id` FROM `archives_inherit` WHERE  `target_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001225s ]
+---------------------------------------------------------------
+
+[2020-04-23T17:55:05+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archivesFile/delete?archives_file_id=5
+[运行时间：0.113019s] [吞吐率：8.85req/s] [内存消耗：4,174.34kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesFile/delete',
+  'route' => 'index/ArchivesFile/delete',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '8ebd2efe-8dc5-4756-9932-8df30e82ac1b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'archives_file_id' => '5',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011794s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002526s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_file` [ RunTime:0.002028s ]
+[ sql ] [ SQL ] SELECT `bound_folder_id` FROM `archives_file` WHERE  `id` = 5  AND `archives_file`.`delete_time` = 0 [ RunTime:0.001112s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives_inherit` [ RunTime:0.001810s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `archives_inherit` WHERE  `source_bound_folder_id` = 9  AND `archives_inherit`.`delete_time` = 0 [ RunTime:0.001513s ]
+[ sql ] [ SQL ] UPDATE `archives_file`  SET `delete_time` = '2020-04-23 17:55:05'  WHERE  `id` = 5  AND `archives_file`.`delete_time` = 0 [ RunTime:0.011224s ]

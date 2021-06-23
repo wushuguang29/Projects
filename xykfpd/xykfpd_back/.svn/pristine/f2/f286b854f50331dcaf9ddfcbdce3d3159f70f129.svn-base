@@ -1,0 +1,132 @@
+<?php
+/**
+ * Created by 麓谷企业广场
+ * User：LaFee
+ * Date：2020/04/23
+ * Time: 10:00
+ *上传入口
+ */
+namespace upload;
+class uploadApi
+{
+    protected $config;
+    public function __construct($config=[])
+    {
+        if(isset($config)){
+            $this->config=$config;
+        }else{
+            require_once './config/config.php';
+            $this->config=$config;
+        }
+        #验证内容
+    }
+
+    #高拍仪、base64图片上传
+    public function base64Upload($user_id,$param=[]){
+        #处理base64得到文件对象
+        #上传到服务器
+        #调用buildFileData创建file数据
+        #业务中处理与file表的关联数据
+    }
+    #编辑器上传
+    public function ueditorUpload($user_id=0,$action="config",$param=[]){
+        $ueditor=new ueditor();
+        switch ($action) {
+            /*获取配置*/
+            case 'config':
+                $result =  json_encode( $this->config['ueditor']);
+                break;
+            /* 上传图片 */
+            case 'uploadimage':
+                break;
+            /* 上传涂鸦 */
+            case 'uploadscrawl':
+                break;
+            /* 上传视频 */
+            case 'uploadvideo':
+                break;
+            /* 上传文件 */
+            case 'uploadfile':
+                break;
+            /* 列出图片 */
+            case 'listimage':
+                break;
+            /* 列出文件 */
+            case 'listfile':
+                break;
+            /* 抓取远程文件 */
+            case 'catchimage':
+                break;
+            default:
+                $result = json_encode(array(
+                    'state' => '请求地址出错'
+                ));
+                break;
+        }
+        /* 输出结果 */
+        if(isset($param["callback"])){
+            if(preg_match("/^[\w_]+$/", $param["callback"])){
+                return  htmlspecialchars($param["callback"]).'('.$result.')';
+            }else{
+                return  json_encode(array(
+                    'state' => 'callback参数不合法'
+                ));
+            }
+        }else{
+            return  $result;
+        }
+    }
+    #云上传
+    public function cloudUpload($user_id=0,$param=[]){
+        /**
+         * 0.验证上传的附件类型，根据不同类型验证其大小及类型是否符合配置
+         * 1.引用七牛的类
+         * 2.获取七牛配置
+         * 3.生成七牛上传的token
+         * 4.把文件加到七牛空间
+         * 5.成功后获取七牛返回的每个资源对应的key，再拼接七牛的DOMAIN，构建出访问链接
+         */
+    }
+
+    #附件上传
+    public function attachmentUpload(){
+        #验证上传的附件类型，根据不同类型验证其大小及类型是否符合配置
+        #上传到服务器
+        #调用buildFileData创建file数据
+        #业务中处理与file表的关联数据
+    }
+
+    #真实磁盘路径上传
+    public function diskUpload(){
+        #验证上传的附件类型，根据不同类型验证其大小及类型是否符合配置
+        #上传到服务器
+        #调用buildFileData创建file数据
+        #业务中处理与file表的关联数据
+    }
+    #验证类型
+    private function checkExt($type="image",$ext){
+        switch ($type){
+            case "image"://图片
+                break;
+            case "video"://视频/音频
+                break;
+            case "document"://文档
+                break;
+        }
+        return true;
+    }
+    #验证大小
+    private function checkSize($type="image",$size){
+
+    }
+    #验证是否存在
+    #$unique_identifier 唯一标识，能去验证这个文件存在的，可以是现有file表中的file_id、MD5等
+    #$need_return 是否需要返回路径和file_id,否只要验证存不存在返回true和false
+    private function checkExist($unique_identifier="",$user_id=0,$need_return=false){
+
+    }
+    #构建file表数据
+    private function buildFileData(){
+
+    }
+}

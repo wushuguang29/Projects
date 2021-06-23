@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "评测记录",
+  "navigationBarTextStyle": "white",
+  "titleNView": {
+    "autoBackButton": false,
+    "homeButton": false
+  },
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon"
+  }
+}

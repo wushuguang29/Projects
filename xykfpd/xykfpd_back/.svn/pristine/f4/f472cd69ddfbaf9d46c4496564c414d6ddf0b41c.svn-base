@@ -1,0 +1,710 @@
+---------------------------------------------------------------
+
+[2020-12-03T09:52:16+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/config/getConfig
+[运行时间：1.842796s] [吞吐率：0.54req/s] [内存消耗：4,625.92kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077448s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.132572s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.029992s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.077587s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` = 0 [ RunTime:0.000540s ]
+---------------------------------------------------------------
+
+[2020-12-03T09:52:16+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/login/getCaptcha
+[运行时间：1.866253s] [吞吐率：0.54req/s] [内存消耗：4,177.95kb] [文件加载：90]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'app\\common\\service\\Captcha@getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077426s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.132716s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.029989s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:30+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/config/getConfig
+[运行时间：0.499840s] [吞吐率：2.00req/s] [内存消耗：4,632.86kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004527s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007141s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000975s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.013848s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` = 0 [ RunTime:0.000578s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:30+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/login/getCaptcha
+[运行时间：0.751569s] [吞吐率：1.33req/s] [内存消耗：4,184.88kb] [文件加载：90]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'app\\common\\service\\Captcha@getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001363s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002797s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000682s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:37+08:00] 127.0.0.1 OPTIONS www.lhsoftadmin.com/index/login/login
+[运行时间：0.152747s] [吞吐率：6.55req/s] [内存消耗：3,549.41kb] [文件加载：75]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001203s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003481s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000660s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:39+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/login/login
+[运行时间：1.245082s] [吞吐率：0.80req/s] [内存消耗：5,352.23kb] [文件加载：130]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/login',
+  'route' => 'index/Login/login',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '120',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'lhsoft',
+  'login_type' => 1,
+  'password' => 'lh123456',
+  'captcha_code' => 'grxu',
+  'captcha_key' => 'captcha_fLD0PJWv7REA5yq',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010350s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002739s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002645s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.118856s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'lhsoft'  AND `users`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `projects` [ RunTime:0.045759s ]
+[ sql ] [ SQL ] SELECT * FROM `projects` WHERE  `id` = 1  AND `projects`.`delete_time` = 0 LIMIT 1 [ RunTime:0.013717s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'MULTI_USER'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_token` [ RunTime:0.021618s ]
+[ sql ] [ SQL ] SELECT * FROM `users_token` WHERE  `users_id` = 1  AND `users_token`.`delete_time` = 0 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] UPDATE `users_token`  SET `delete_time` = '2020-12-03 15:39:38' , `update_time` = '2020-12-03 15:39:38'  WHERE  `id` = 1  AND `users_token`.`delete_time` = 0 [ RunTime:0.040486s ]
+[ sql ] [ SQL ] UPDATE `users_token`  SET `delete_time` = '2020-12-03 15:39:38' , `update_time` = '2020-12-03 15:39:38'  WHERE  `id` = 3  AND `users_token`.`delete_time` = 0 [ RunTime:0.000580s ]
+[ sql ] [ SQL ] UPDATE `users_token`  SET `delete_time` = '2020-12-03 15:39:38' , `update_time` = '2020-12-03 15:39:38'  WHERE  `id` = 5  AND `users_token`.`delete_time` = 0 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] UPDATE `users_token`  SET `delete_time` = '2020-12-03 15:39:38' , `update_time` = '2020-12-03 15:39:38'  WHERE  `id` = 6  AND `users_token`.`delete_time` = 0 [ RunTime:0.000816s ]
+[ sql ] [ SQL ] INSERT INTO `users_token` (`users_id` , `token` , `create_time` , `update_time`) VALUES (1 , 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL' , '2020-12-03 15:39:38' , '2020-12-03 15:39:38') [ RunTime:0.000668s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = 5  WHERE  `id` = 1  AND `users`.`delete_time` = 0 [ RunTime:0.024023s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:39+08:00] 127.0.0.1 OPTIONS www.lhsoftadmin.com/index/resource/getTree
+[运行时间：0.061015s] [吞吐率：16.39req/s] [内存消耗：3,549.42kb] [文件加载：75]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011140s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003426s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000840s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:41+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/resource/getTree
+[运行时间：0.661503s] [吞吐率：1.51req/s] [内存消耗：5,323.46kb] [文件加载：129]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/resource/getTree',
+  'route' => 'index/Resource/getTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 
+      array (
+        0 => 'JWTAuthAndRefresh',
+        1 => NULL,
+      ),
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010657s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002556s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003314s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `users`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `projects` [ RunTime:0.002479s ]
+[ sql ] [ SQL ] SELECT * FROM `projects` WHERE  `id` = 1  AND `projects`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `id` FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.109017s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (1,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26,27,28,29,30,32,35,37,38,39,40,41,43,44,46,47,48,49,50,53,54,55,56,57,58,66,67,68,72,73,74,75,76,77,90,92,93,94,95,96,97,98,99,100,101,102,103)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.031623s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (2,96,3,10,21,38,53,43,46,55,66,54,74,90,94,1,76,0)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (3,53,1,0,76)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (1,0)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT `id`,`attachment_folder_type`,`pid`,`method`,`title`,`url`,`router`,`open_mode`,`front_router_name`,`identifier`,`middleware`,`status`,`hidden`,`type`,`icon`,`sort`,`extra` FROM `resources` WHERE  `hidden` = 2  AND `status` = 1  AND `id` IN (1,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26,27,28,29,30,32,35,37,38,39,40,41,43,44,46,47,48,49,50,53,54,55,56,57,58,66,67,68,72,73,74,75,76,77,90,92,93,94,95,96,97,98,99,100,101,102,103,2,0)  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT `id`,`attachment_folder_type`,`pid`,`method`,`title`,`url`,`router`,`open_mode`,`front_router_name`,`identifier`,`middleware`,`status`,`hidden`,`type`,`icon`,`sort`,`extra` FROM `resources` WHERE  `hidden` = 2  AND `status` = 1  AND `id` IN (1,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,26,27,28,29,30,32,35,37,38,39,40,41,43,44,46,47,48,49,50,53,54,55,56,57,58,66,67,68,72,73,74,75,76,77,90,92,93,94,95,96,97,98,99,100,101,102,103,2,0)  AND `type` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.001118s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:41+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/login/login
+[运行时间：0.121434s] [吞吐率：8.23req/s] [内存消耗：4,804.76kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/login',
+  'route' => 'index/Login/login',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '120',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'lhsoft',
+  'login_type' => 1,
+  'password' => 'lh123456',
+  'captcha_code' => 'grxu',
+  'captcha_key' => 'captcha_fLD0PJWv7REA5yq',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010470s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003308s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002648s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000481s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:42+08:00] 127.0.0.1 OPTIONS www.lhsoftadmin.com/index/login/getCaptcha
+[运行时间：0.041756s] [吞吐率：23.95req/s] [内存消耗：3,549.42kb] [文件加载：75]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001345s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002836s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000611s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:43+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/login/getCaptcha
+[运行时间：0.588042s] [吞吐率：1.70req/s] [内存消耗：4,186.71kb] [文件加载：90]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'app\\common\\service\\Captcha@getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001182s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002459s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000652s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:47+08:00] 127.0.0.1 OPTIONS www.lhsoftadmin.com/research/getReviewList?page=1&limit=25&start=0
+[运行时间：0.049074s] [吞吐率：20.38req/s] [内存消耗：3,551.64kb] [文件加载：75]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010386s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002898s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000698s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:49+08:00] 127.0.0.1 GET www.lhsoftadmin.com/research/getReviewList?page=1&limit=25&start=0
+[运行时间：1.087428s] [吞吐率：0.92req/s] [内存消耗：5,108.81kb] [文件加载：134]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'research/getReviewList',
+  'route' => 'index/Research/getReviewList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'JWTAuthAndRefresh',
+      1 => 'Competence',
+      2 => 'Config',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '25',
+  'start' => '0',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010253s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002709s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003107s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `users`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `projects` [ RunTime:0.002503s ]
+[ sql ] [ SQL ] SELECT * FROM `projects` WHERE  `id` = 1  AND `projects`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `research` [ RunTime:0.005907s ]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #7 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'lhsoft_base.fep.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\db\Connection.php:687]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:49+08:00] 127.0.0.1 OPTIONS www.lhsoftadmin.com/index/archives/getBusinessArchivesList?page=1&limit=25&start=0
+[运行时间：0.038406s] [吞吐率：26.04req/s] [内存消耗：3,549.34kb] [文件加载：75]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001297s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002756s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000631s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:50+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/archives/getBusinessArchivesList?page=1&limit=25&start=0
+[运行时间：0.603386s] [吞吐率：1.66req/s] [内存消耗：4,850.95kb] [文件加载：97]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/getBusinessArchivesList',
+  'route' => 'index/Archives/getBusinessArchivesList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '25',
+  'start' => '0',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001273s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002702s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives` [ RunTime:0.114869s ]
+[ sql ] [ SQL ] SELECT id AS archives_id,`id`,`project_name`,`archives_name`,`archives_number`,`is_manually_create`,`create_time`,`affiliation_type`,`pigeonhole_status`,`archives_type`,`target_id` FROM `archives` WHERE  `archives_type` = 1  AND `pigeonhole_status` = 1  AND `project_id` = 0  AND `archives`.`delete_time` = 0 LIMIT 0,25 [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002817s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000453s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:51+08:00] 127.0.0.1 OPTIONS www.lhsoftadmin.com/research/getList?page=1&limit=25&start=0
+[运行时间：0.040233s] [吞吐率：24.86req/s] [内存消耗：3,550.80kb] [文件加载：75]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001045s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002570s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000651s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:51+08:00] 127.0.0.1 OPTIONS www.lhsoftadmin.com/flow/getConfig
+[运行时间：0.038328s] [吞吐率：26.09req/s] [内存消耗：3,550.83kb] [文件加载：75]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000967s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000663s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/flow/getConfig
+[运行时间：0.455720s] [吞吐率：2.19req/s] [内存消耗：4,542.98kb] [文件加载：92]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'flow/getConfig',
+  'route' => 'index/Flow/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001253s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000968s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000610s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:39:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/research/getList?page=1&limit=25&start=0
+[运行时间：0.589253s] [吞吐率：1.70req/s] [内存消耗：4,449.25kb] [文件加载：92]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'research/getList',
+  'route' => 'index/Research/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.lhsoft.com/',
+  'origin' => 'http://www.lhsoft.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.lhsoftadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDY5ODExNzgsIm5iZiI6MTYwNjk4MTE3OCwiZXhwIjoxNjA2OTkxOTc4LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH88R8kMFwh6F9BK0WJd-wIdeVIOWD4AX2JhW2S0G7LRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEe_G_GoHlG-5WW5tgzWEctbFd5-oh4CjVUOnYTXGvNL',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '25',
+  'start' => '0',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000924s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `research` [ RunTime:0.002582s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `research` WHERE  `research`.`delete_time` = 0 [ RunTime:0.130265s ]
+[ sql ] [ SQL ] SELECT `id`,id as target_id,`project_id`,`research_name`,`review_status`,`handle_id`,`create_time`,54 as resource_id FROM `research` WHERE  `research`.`delete_time` = 0  AND `research`.`delete_time` = 0 [ RunTime:0.000543s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:47+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/5f0f7622b58f637360b4b3fd4add9456.jpg
+[运行时间：0.861938s] [吞吐率：1.16req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001478s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001079s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000626s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:47+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/5abc5bfb2fe935d5b8b8515b646a4067.jpg
+[运行时间：0.861680s] [吞吐率：1.16req/s] [内存消耗：3,794.75kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001060s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000986s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000774s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:48+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/3e6c8445d6d54d0a22c02769bd019fbe.jpg
+[运行时间：0.933757s] [吞吐率：1.07req/s] [内存消耗：3,794.73kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013339s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003392s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.001462s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:48+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/6c1dfb748a374bd381c1c9090deddb0b.jpg
+[运行时间：0.928895s] [吞吐率：1.08req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004718s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.003671s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000979s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:48+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/e97e37266f70c0917235737109b0fc8f.jpg
+[运行时间：0.922258s] [吞吐率：1.08req/s] [内存消耗：3,794.73kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008994s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001417s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000734s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:48+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/43b78aab3f5db5650b3582abd92f597b.jpg
+[运行时间：0.949001s] [吞吐率：1.05req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001162s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000975s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000518s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:49+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/867fb66567bb5684f5500860f752f605.jpg
+[运行时间：0.852273s] [吞吐率：1.17req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001114s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001168s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000753s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:49+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/d477edcd07217dfd7c92ba138cf76a19.jpg
+[运行时间：0.850970s] [吞吐率：1.18req/s] [内存消耗：3,794.73kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001181s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000764s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:50+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/f44fc3c05b622ace1adbc4b0f0491e58.jpg
+[运行时间：0.868366s] [吞吐率：1.15req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001549s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001508s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.001040s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:50+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/cf014953389314e04388e59da9449454.jpg
+[运行时间：0.864695s] [吞吐率：1.16req/s] [内存消耗：3,794.73kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001343s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002787s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.001077s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:50+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/062b0c34ed371998f45d9663f1808da9.jpg
+[运行时间：0.881024s] [吞吐率：1.14req/s] [内存消耗：3,794.75kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009935s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000708s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:50+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/4fb36e25ea931454f5d47a53235e1377.jpg
+[运行时间：0.862193s] [吞吐率：1.16req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001096s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000694s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:51+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/700394f28c6a259cff85bb4d83c6bc0c.jpg
+[运行时间：0.858062s] [吞吐率：1.17req/s] [内存消耗：3,794.73kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010193s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000957s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000608s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:51+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/1592657a75b1c2a1821d6d640a20ccf5.jpg
+[运行时间：0.858553s] [吞吐率：1.16req/s] [内存消耗：3,794.70kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011533s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001216s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000677s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/2872f08d05ecb369fead4f6e975afe24.jpg
+[运行时间：0.862997s] [吞吐率：1.16req/s] [内存消耗：3,794.73kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001161s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001433s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000844s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/08f67b19f5473f2b6a685a5225bbbaf6.jpg
+[运行时间：0.866677s] [吞吐率：1.15req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010601s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001209s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000763s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/e393b0b3547207c0ef784bdd5a157462.jpg
+[运行时间：0.855035s] [吞吐率：1.17req/s] [内存消耗：3,794.72kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001328s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001172s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000927s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/f6250fb2314eb1aa637f9a9b5445c40a.jpg
+[运行时间：0.866521s] [吞吐率：1.15req/s] [内存消耗：3,794.75kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011050s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000594s ]
+---------------------------------------------------------------
+
+[2020-12-03T15:41:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/uploads/20201203/85de2523685e412b0edee12cc11b5550.jpg
+[运行时间：0.860676s] [吞吐率：1.16req/s] [内存消耗：3,794.77kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001052s ] mysql:host=127.0.0.1;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.000992s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.000690s ]

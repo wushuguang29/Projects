@@ -1,0 +1,28 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-23 09:57:47
+ * @LastEditTime: 2021-01-04 17:21:29
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\config\middleware.php
+ */
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
+
+// +----------------------------------------------------------------------
+// | 中间件配置
+// +----------------------------------------------------------------------
+return [
+    'JWTAuthAndRefresh' => app\http\middleware\JWTAuthAndRefresh::class,
+    'Config' => app\http\middleware\Config::class,
+    'Competence' => app\http\middleware\Competence::class,
+    'PhoneAuthVerify' => app\http\middleware\PhoneAuthVerify::class,
+];

@@ -1,0 +1,32 @@
+import Vue from 'vue'
+import App from './App'
+
+Vue.config.productionTip = false
+// Vue.prototype.uniUrl ='http://www.xyback.com';
+//跳转
+import * as navTo from '@/utils/navTo'
+Vue.prototype.$navTo = navTo
+//拦截器
+import ajax from './utils/request.js'
+// 引入uview库
+import uView from "uview-ui";
+//引入vuex
+import store from './src/store/index.js'
+//把vuex定义成全局组件
+Vue.prototype.$ajax = ajax
+Vue.prototype.$store = store
+Vue.use(uView);
+App.mpType = 'app'
+// #ifdef APP-PLUS
+plus.nativeUI.toast= (function(str,value){
+	if(str == '再按一次退出应用'){
+		return false
+	}
+})
+//#endif
+const app = new Vue({
+    ...App,
+	store,
+	ajax
+})
+app.$mount()

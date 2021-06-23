@@ -1,0 +1,165 @@
+<?php
+
+namespace app\index\controller;
+
+use app\common\model\QuestionsModel;
+use think\Controller;
+use think\Db;
+use think\Request;
+use app\common\model\FileModel;
+use app\common\model\ConfigurationModel;
+
+/**
+ * 康复题库管理
+ * @package app\index\controller
+ */
+class Questions extends Controller
+{
+    protected $fileId      = [];//文件id
+    protected $visit_path = [];//访问路径
+    protected $errorMsg    = [];//错误信息
+    public static $view_file_path;//预览文件路径
+    public function initialize(){
+        parent::initialize();
+        $VIEW_FILE_PATH = ConfigurationModel::where("name","eq","VIEW_FILE_PATH")->value("value");
+        $VIEW_FILE_PATH = trim($VIEW_FILE_PATH,"/");
+        self::$view_file_path = $VIEW_FILE_PATH."/". config("service.file.upload_file_path") ."/";
+    }
+    /**
+     * 康复题库管理列表
+     */
+    public function getList()
+    {
+        $domain     = input('domain');
+        $search     = input('search');
+        $start      = input('start') ? input('start') : 0;
+        $limit      = input('limit') ? input('limit') : 25;
+        $where      = [];
+        if (!empty($domain)) {
+            $where[] = array('domain', 'eq', $domain);
+        }
+        if (!empty($search)) {
+            $where[] = array('side', 'like', '%'.$search.'%');
+        }
+        $db = Db::table('questions')->alias('q')
+            ->join('file f', 'f.id = q.file_id', 'left')
+            ->field([
+                'q.id',
+                'q.domain',
+                'q.side',
+                'q.identification_code',
+                'q.question_type',
+                'q.instruction',
+                "CONCAT(q.serial_number,'、',q.question_title) AS question_title",
+                "CONCAT('".self::$view_file_path."',f.savepath,'/',f.savename) as voice",
+            ])
+            ->where($where)
+            ->group('q.id');
+        $data  = $db->order('q.domain,q.side,q.serial_number ASC')->limit($start, $limit)->select();
+        $total = $db->count();
+        foreach ($data as $ko => $vo) {
+            $data[$ko]['option_title'] = QuestionsModel::dealOption($vo['id']);
+        }
+        return msgReturn(0, [
+            'total' => $total,
+            'data' => $data
+        ]);
+    }
+
+
+    /**
+     * 康复题库添加
+     */
+    public function add()
+    {
+        $param = input();
+        return QuestionsModel::add($param);
+    }
+
+    /**
+     * 康复题库编辑
+     */
+    public function edit()
+    {
+        $param = input();
+        return QuestionsModel::edit($param);
+    }
+
+    /**
+     * 康复题库删除
+     */
+    public function delete()
+    {
+        $id = input('id');
+        if (empty($id)) {
+            return msgReturn(42011);
+        }
+        Db::startTrans();
+        try {
+            $info = Db::table('questions')->field('domain,side')->where('id', $id)->find();//获取题库领域方面
+            Db::table('questions')->where('id', $id)->delete();
+            Db::table('questions_option')->where('questions_id', $id)->delete();
+            //判断题库中是否存在该领域方面
+            $exis = Db::table('questions')->where(array('domain'=> $info['domain'], 'side'=> $info['side']))->find();
+            if (empty($exis)) { //没有则删除得分信息
+                Db::table('evaluating_score_ranges')->where(array('domain'=> $info['domain'], 'side'=> $info['side']))->delete();
+            }
+            Db::commit();
+            return msgReturn(45001);
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46001);
+        }
+    }
+
+    /**
+     * 康复题库查看/编辑回显
+     */
+    public function browse()
+    {
+        $param['id'] = input('id');
+        return QuestionsModel::browse($param);
+    }
+
+    /**
+     * 获取语音
+     */
+    public function getVoice()
+    {
+        $param['id'] = input('id');
+        return (new QuestionsModel())->getVoice($param);
+    }
+
+    /*
+     * 语音上传
+     */
+    public function upload(Request $request,FileModel $fileModel,QuestionsModel $model)
+    {
+        $file       = $request->file('file');
+        $target_id  = $request->id;
+        $validate = $fileModel->validate($file);
+        $info = $file->getInfo();
+        if ($validate["status"] == false) {
+            array_push($this->errorMsg,$info["name"].$validate["msg"]);
+        }else {
+            $result = $model->upload($file, $info, USER_ID, $target_id);
+            if($result["status"] == false){
+                array_push($this->errorMsg,$result["data"]["error_msg"]);
+            }else{
+                if(!empty($result["data"]["error_msg"])){
+                    array_push($this->errorMsg,$result["data"]["error_msg"]);
+                }
+                array_push($this->fileId,(int)$result["data"]["file_id"]);
+                array_push($this->visit_path,$result["data"]["visit_path"]);
+            }
+        }
+        #上传成功
+        if(empty($this->errorMsg)){
+            return msgReturn(0,array( "file_id"=>array_unique($this->fileId), 'path'=>array_unique($this->visit_path)));
+        }else{
+            return msgReturn(0,array(
+                "file_id"=>array_unique($this->fileId), 'path'=>array_unique($this->visit_path)
+            ),$this->errorMsg);
+        }
+    }
+}

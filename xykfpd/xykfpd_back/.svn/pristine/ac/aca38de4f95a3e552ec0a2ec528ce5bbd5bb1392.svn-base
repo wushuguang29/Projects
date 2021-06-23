@@ -1,0 +1,10 @@
+<?php
+
+namespace {%namespace%};
+
+use service\rewrite\RewriteModel;
+
+class {%className%} extends RewriteModel
+{
+    //
+}

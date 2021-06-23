@@ -1,0 +1,32 @@
+<?php
+/**
+ *
+ * @author Zhang zw
+ * @date 2020/9/24 12:02
+ */
+
+namespace service\jwt\facade;
+
+use Lcobucci\JWT\Token;
+use think\Facade;
+
+/**
+ * Class Jwt
+ * @see \service\jwt\Jwt
+ * @mixin \service\jwt\Jwt
+ * @method Token createToken(array $claim = []) static 生成Token
+ * @method Token builderCSRFToken($jtiClaim = null) static 生成一次性Token
+ * @method bool destroy($token = null, $force = 0) static 销毁Token
+ * @method mixed getToken() static 获取Token
+ * @method mixed getClaims() static 获取所有的载荷
+ * @method mixed getClaim($name) static 根据名称获取单个载荷
+ * @method false ifBlackList($token = null) static 是否加入黑名单
+ * @method object setClaims($user) static 设置载荷
+ */
+class Jwt extends Facade
+{
+    protected static function getFacadeClass()
+    {
+        return 'service\jwt\Jwt';
+    }
+}

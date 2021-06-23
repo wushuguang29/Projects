@@ -1,0 +1,142 @@
+<?php
+
+namespace service\jwt;
+
+use Exception;
+use Lcobucci\JWT\Token;
+use service\jwt\exception\TokenBlacklistException;
+
+/**
+ * jwt
+ * @author Zhang zw
+ * @date 2020/9/22 18:30
+ */
+class Jwt
+{
+
+    protected $manager;
+
+    protected $parser;
+
+    protected $token;
+
+    /**
+     * Jwt constructor.
+     * @param JwtAuth $jwtAuth
+     * @param ParserToken $parserToken
+     */
+    public function __construct(JwtAuth $jwtAuth, ParserToken $parserToken)
+    {
+        $this->manager = $jwtAuth;
+
+        $this->parser = $parserToken;
+    }
+
+    /**
+     * 生成 Token
+     * @param array $claim
+     * @return Token
+     * @author Zhang zw
+     * @date 2020/9/22 18:41
+     */
+    public function createToken(array $claim = [])
+    {
+        return $this->manager->builder($claim);
+    }
+
+    /**
+     * 生成一次性 Token
+     * @param null $jtiClaim
+     * @return Token
+     * @throws Exception
+     * @author Zhang zw
+     * @date 2020/9/24 15:23
+     */
+    public function builderCSRFToken($jtiClaim = null)
+    {
+        return $this->manager->builderCSRFToken($jtiClaim);
+    }
+
+    /**
+     * 销毁token
+     * @param null $token
+     * @param false $force
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/25 10:01
+     */
+    public function destroy($token = null, $force = 0)
+    {
+        return $this->manager->destroy($token, $force);
+    }
+
+    /**
+     * 获取 Token
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/23 16:33
+     */
+    public function getToken()
+    {
+        return $this->manager->getToken();
+    }
+
+    /**
+     * 获取所有的载荷
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/23 20:54
+     */
+    public function getClaims()
+    {
+        return $this->manager->getClaims();
+    }
+
+    /**
+     * 设置全部载荷
+     * @param $user
+     * @return bool|JwtAuth
+     * @throws \think\Exception\DbException
+     * @author Zhang zw
+     * @date 2020/11/11 15:10
+     */
+    public function setClaims($user)
+    {
+        return $this->manager->setClaims($user);
+    }
+
+    public function setAppClaims($user)
+    {
+        return $this->manager->setAppClaims($user);
+    }
+
+    /**
+     * 获取单个载荷
+     * @param $name
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/10/13 11:19
+     */
+    public function getClaim($name)
+    {
+        return $this->manager->getClaim($name);
+    }
+
+    public function getAppClaim($name)
+    {
+        return $this->manager->getAppClaims($name);
+    }
+
+    /**
+     * token 是否被加入黑名单
+     * @param null $token
+     * @return false
+     * @throws TokenBlacklistException
+     * @author Zhang zw
+     * @date 2020/9/24 16:57
+     */
+    public function ifBlackList($token = null)
+    {
+        return $this->manager->ifBlackList($token);
+    }
+}

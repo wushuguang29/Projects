@@ -1,0 +1,610 @@
+<template>
+  <el-container class="attachment-content">
+    <el-footer v-show="!attachmentIsFolderView">
+      <el-button
+        type="primary"
+        icon="iconfont el-icon-s-order"
+        @click="checkedAll"
+        >{{ checkedAllStatus ? "全选" : "取消全选" }}</el-button
+      >
+
+      <el-button
+        class="show-upload"
+        type="primary"
+        icon="iconfont el-icon-s-order"
+        >选取文件上传</el-button
+      >
+      <input
+        type="file"
+        multiple
+        :accept="accept"
+        class="hide-upload"
+        ref="fileUpload"
+        @change="uploadFiles"
+      />
+      <!-- <file-upload></file-upload> -->
+      <el-button
+        type="primary"
+        icon="iconfont el-icon-download"
+        @click="downloadAttachment"
+        >下载</el-button
+      >
+      <!-- <el-button
+        type="primary"
+        icon="iconfont el-icon-camera"
+        v-if="camera"
+        @click="cameraAttachment"
+        >拍照</el-button
+      > -->
+      <el-button
+        type="danger"
+        icon="iconfont el-icon-delete"
+        @click="deleteAttachment"
+        >删除</el-button
+      >
+      <!-- <el-popconfirm
+        confirm-button-text="好的"
+        cancel-button-text="不用了"
+        icon="el-icon-info"
+        icon-color="red"
+        title="这是一段内容确定删除吗？"
+      >
+        <el-button
+          slot="reference"
+          type="danger"
+          icon="iconfont el-icon-delete"
+          @click="deleteAttachment"
+          >删除</el-button
+        >
+      </el-popconfirm> -->
+      <el-button
+        type="primary"
+        icon="iconfont el-icon-arrow-left"
+        @click="goBack"
+        >返回</el-button
+      >
+    </el-footer>
+    <el-footer v-show="attachmentIsFolderView">
+      <el-button
+        type="primary"
+        icon="iconfont el-icon-s-order"
+        @click="checkedFileAll"
+        >{{ checkedAllStatusfile ? "全选" : "取消全选" }}</el-button
+      >
+
+      <!-- <el-button
+         
+          class="show-upload"
+          type="primary"
+          icon="iconfont el-icon-s-order"
+        >选取文件上传</el-button>
+        <input
+          type="file"
+          multiple
+          :accept="accept"
+          class="hide-upload"
+          ref="fileUpload"
+          @change="uploadFiles"
+        /> -->
+      <!-- <file-upload></file-upload> -->
+      <el-button type="primary" @click="Newfile">新建文件夹</el-button>
+      <!-- <el-button
+        type="primary"
+        icon="iconfont el-icon-camera"
+        v-if="camera"
+        @click="cameraAttachment"
+        >拍照</el-button
+      > -->
+      <el-button
+        type="danger"
+        icon="iconfont el-icon-delete"
+        @click="deleteFilex"
+        >删除</el-button
+      >
+      <!-- <el-popconfirm
+        confirm-button-text="好的"
+        cancel-button-text="不用了"
+        icon="el-icon-info"
+        icon-color="red"
+        title="这是一段内容确定删除吗？"
+      >
+        <el-button
+          slot="reference"
+          type="danger"
+          icon="iconfont el-icon-delete"
+          @click="deleteAttachment"
+          >删除</el-button
+        >
+      </el-popconfirm> -->
+      <!-- <el-button
+          type="primary"
+          icon="iconfont el-icon-arrow-left"
+          @click="goBack"
+          >返回</el-button
+        > -->
+    </el-footer>
+    <el-main class="list-container">
+      <template v-if="attachmentIsFolderView">
+        <el-checkbox-group v-model="checkboxGroups">
+          <div class="attachment-box">
+            <el-checkbox-button
+              v-for="item in formData"
+              :label="item.id"
+              :key="item.id"
+              :data-id="item.id"
+              @change="changeChecked"
+            >
+              <div @dblclick="folderClick(item)" class="folder-box">
+                <img
+                  :src="require('@/assets/img/files.png')"
+                  alt
+                  data-ptip="双击查看文件列表"
+                />
+                <h3 :title="item.folder_name">
+                  <input
+                    type="text"
+                    :value="item.folder_name"
+                    @change="FileName(item.id, $event)"
+                  />
+                </h3>
+              </div>
+            </el-checkbox-button>
+          </div>
+        </el-checkbox-group>
+      </template>
+      <template v-else>
+        <el-checkbox-group v-model="checkboxGroup">
+          <div class="checkbox-group-div">
+            <el-checkbox-button
+              v-for="item in resourceData"
+              :label="item.id"
+              :key="item.id"
+              :data-id="item.id"
+              :data-type="item.type"
+              @change="changeChecked"
+            >
+              <img
+                v-if="item.type == 1"
+                :src="item.path"
+                alt
+                data-ptip="双击预览图片"
+              />
+              <!-- @dblclick.capture="
+                    imageClick(item.bound_folder_id, item.attachment_file_id)
+                  " -->
+              <img
+                v-else-if="item.type == 2"
+                :src="require('@/assets/img/word.png')"
+              />
+              <img
+                v-else-if="item.type == 3"
+                :src="require('@/assets/img/excel.png')"
+              />
+              <img
+                v-else-if="item.type == 4"
+                :src="require('@/assets/img/ppt.png')"
+              />
+              <img
+                v-else-if="item.type == 5"
+                :src="require('@/assets/img/cad.png')"
+              />
+              <img
+                v-else-if="item.type == 6"
+                :src="require('@/assets/img/pdf.png')"
+              />
+              <img
+                v-else="item.type == 7"
+                :src="require('@/assets/img/unknow.png')"
+              />
+              <h3 :title="item.file_name">
+                <input
+                  type="text"
+                  :value="item.name"
+                  @change="renameFile(item, $event)"
+                />
+              </h3>
+            </el-checkbox-button>
+          </div>
+        </el-checkbox-group>
+      </template>
+    </el-main>
+  </el-container>
+</template>
+<script>
+import {
+  getFileList,
+  deleteFile,
+  download,
+  upload,
+  renameFile,
+  FolderGetList,
+  FolderDelete,
+  FolderBrowse,
+  FolderAdd,
+  FolderRename,
+} from "@/api/flex";
+import { MessageBox, Message } from "element-ui";
+export default {
+  data() {
+    return {
+      checkedAllStatusfile: true,
+      attachmentIsFolderView: true,
+      checkboxGroup: [],
+      checkboxGroups: [],
+      formData: {},
+      accept:
+        "image/*,.txt,.zip,.rar,.tar,.gz,.doc,.docx,.txt,.xml,.excel,.csv,xls,.xlsx,.ppt,.pdf,.apk,.bmp,.avi,.asf,.wmv,avs,.mov",
+      checkedAllStatus: true,
+      resourceData: {},
+    };
+  },
+  methods: {
+    beforeUpload(file) {
+      const isLt500M = file.size / 1024 / 1024 < 10;
+      if (!isLt500M) {
+        this.$message({
+          message: "上传文件大小不能超过 10MB!",
+          type: "warning",
+        });
+        return false;
+      }
+      this.fileList = this.fileList.concat(file);
+
+      return false;
+    },
+    onUpload() {
+      console.log(this.fileList);
+    },
+    //删除文件夹
+    deleteFilex() {
+      MessageBox.confirm("此操作将永久删除该数据, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
+      })
+        .then(() => {
+          const idsArr = [...this.checkboxGroups];
+
+          console.log("idsArrs", idsArr.toString());
+          let params = {
+            ids: idsArr.toString(),
+          };
+          FolderDelete(params).then((res) => {
+            if (res.code == 0) {
+              // this.$message(res.msg[0]);
+              this.Refresh();
+
+              this.$message(res.msg);
+            } else {
+              this.$message(res.msg);
+            }
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消删除",
+          });
+        });
+    },
+    //新建文件夹
+    Newfile() {
+      FolderAdd({ folder_name: "新建文件夹" }).then((res) => {
+        if (res.code == 0) {
+          this.$message(res.msg);
+          this.RefreshFile();
+        } else {
+          this.$message(res.msg);
+        }
+      });
+    },
+    uploadFiles() {
+      console.log("111", this.$refs);
+      let html = this.$refs.fileUpload;
+      console.log(html.files, 333);
+      const formData = new FormData();
+
+      let flag = false;
+      html.files.forEach((item, i) => {
+        var isLt500M = item.size / 1024 / 1024 < 500;
+        if (!isLt500M) {
+          this.$message({
+            message: "上传文件大小不能超过 500MB!",
+            type: "warning",
+          });
+          flag = true;
+          return false;
+        } else {
+          formData.append("file[]", item);
+        }
+      });
+      if (flag) {
+        return;
+      }
+
+      // return
+      // formData.append("files[]", this.fileList);
+      // formData.append("files[]", arr);
+      console.log("resourceData", this.resourceData);
+      formData.append("id", this.resourceData.id);
+      upload(formData)
+        .then((res) => {
+          console.log(res);
+          if (res.code == 0) {
+            if (Array.isArray(res.msg)) {
+              this.$message(res.msg[0]);
+            } else {
+              this.$message(res.msg);
+            }
+            this.fileList = [];
+            this.shuaxinwenjian(this.resourceData.id);
+          }
+        })
+        .catch((res) => {});
+    },
+    renameFile(item, e) {
+      const val = e.target.value;
+      // const originalVal = e.target._value;
+      // const params = this.getAttachmentFolderListParams();
+
+      const values = {
+        name: val,
+
+        id: item.id,
+      };
+      // console.log("env",process.env.VUE_APP_BASE_API)
+      renameFile(values).then(() => {
+        getFileList({ id: item.folder_id }).then((res) => {
+          console.log("res", res);
+          this.resourceData = res.data.data;
+          this.attachmentIsFolderView = false;
+          this.resourceData.id = item.folder_id;
+        });
+        this.checkboxGroup = [];
+      });
+    },
+
+    //刷新文件
+    shuaxinwenjian(id) {
+      getFileList({ id: id }).then((res) => {
+        console.log("res", res);
+        this.resourceData = res.data.data;
+        this.attachmentIsFolderView = false;
+        this.resourceData.id = id;
+      });
+    },
+    //文件夹改名
+    FileName(id, e) {
+      const val = e.target.value;
+      console.log("id", val);
+      let parms = {
+        folder_name: val,
+        id: id,
+      };
+      FolderRename(parms).then((res) => {
+        if (res.code == 0) {
+          this.$message(res.msg);
+          this.Refresh();
+        } else {
+          this.$message(res.msg);
+        }
+      });
+
+      //   const originalVal = e.target._value;
+    },
+    folderClick(row) {
+      console.log("row", row);
+      getFileList({ id: row.id }).then((res) => {
+        console.log("res", res);
+        this.resourceData = res.data.data;
+        this.attachmentIsFolderView = false;
+        this.resourceData.id = row.id;
+      });
+      // this.setAttachmentIsFolderView(false);
+      // this.setAttachmentFolderListParams(row);
+      // let params = this.getAttachmentFolderListParams();
+      // params.needPush = false;
+      // params.start = 0;
+      // this.getAttachmentFileListData(params);
+    },
+    checkedAll() {
+      const arr = [...this.resourceData];
+
+      arr.forEach((item) => {
+        if (this.checkedAllStatus) {
+          this.checkboxGroup.push(item.id);
+        } else {
+          this.checkboxGroup = [];
+        }
+      });
+      this.checkedAllStatus = !this.checkedAllStatus;
+    },
+    checkedFileAll() {
+      const arr = [...this.formData];
+
+      arr.forEach((item) => {
+        if (this.checkedAllStatusfile) {
+          this.checkboxGroups.push(item.id);
+        } else {
+          this.checkboxGroups = [];
+        }
+      });
+      this.checkedAllStatusfile = !this.checkedAllStatusfile;
+    },
+    downClick() {},
+    goBack() {
+      this.attachmentIsFolderView = true;
+      this.checkedAllStatus = true;
+    },
+    downloadAttachment() {
+      const idsArr = [...this.checkboxGroup];
+      console.log("idsArr", idsArr.toString());
+      download({ file_ids: idsArr.toString() }).then((res) => {
+        window.location.href = res.data;
+      });
+    },
+    deleteAttachment() {
+      MessageBox.confirm("此操作将永久删除该数据, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
+      })
+        .then(() => {
+          const idsArr = [...this.checkboxGroup];
+
+          console.log("idsArr", idsArr.toString());
+          let params = {
+            ids: idsArr.toString(),
+            id: this.resourceData.id,
+          };
+          deleteFile(params).then((res) => {
+            if (res.code == 0) {
+              if (Array.isArray(res.msg)) {
+                this.$message(res.msg[0]);
+              } else {
+                this.$message(res.msg);
+              }
+              this.fileList = [];
+              this.shuaxinwenjian(this.resourceData.id);
+            }
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消删除",
+          });
+        });
+      
+    },
+
+    imageClick(e) {
+      console.log(e);
+    },
+    changeChecked(e, row) {
+      console.log("checkboxGroup", this.checkboxGroup, this.checkboxGroups);
+      // let date = new Date();
+      // let timestamp = date.getTime();
+      // console.log("单击图片选中");
+      // console.log(timestamp);
+      // this.checkboxGroup.push(timestamp);
+    },
+
+    //刷新文件夹
+    RefreshFile() {
+      FolderGetList().then((res) => {
+        console.log("res", res);
+        this.formData = res.data.data;
+      });
+    },
+    //刷新文件
+    Refresh() {
+      FolderGetList().then((res) => {
+        console.log("res", res);
+        this.formData = res.data.data;
+      });
+    },
+  },
+  created() {
+    FolderGetList().then((res) => {
+      console.log("res", res);
+      this.formData = res.data.data;
+    });
+  },
+};
+</script>
+<style lang="less" scoped>
+.hide-upload {
+  margin-left: -110px;
+  opacity: 0;
+  width: 121px;
+}
+.attachment-content {
+  /deep/ .el-main {
+    height: 400px;
+    background-color: #fff;
+    border: 10px solid #5441;
+  }
+  /deep/ .el-dialog__body {
+    padding: 0px;
+  }
+  /deep/ .el-footer {
+    display: flex;
+    justify-content: flex-start;
+    button {
+      height: 30px;
+      margin: 20px 5px;
+    }
+  }
+
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    /deep/ .el-checkbox-button {
+      border-radius: 5px;
+      margin-right: 5px;
+      border: 1px solid #eee;
+      margin-top: 2px;
+    }
+    /deep/ .el-checkbox-button.is-checked {
+      border: 1px solid #4277fc;
+    }
+    /deep/ .el-checkbox-button__inner {
+      color: #000;
+      background: transparent;
+      border: none;
+      width: 120px;
+      box-shadow: none;
+      padding: 7px;
+    }
+    .attachment-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      div {
+        width: 100px;
+        border-radius: 5px;
+        // border: 1px solid #eee;
+        margin: 2px 5px 10px 0;
+        padding: 5px;
+        position: relative;
+        span {
+          width: 25px;
+          line-height: 25px;
+          height: 25px;
+          background: #3cc;
+          color: #fff;
+          position: absolute;
+          top: -5px;
+          right: 12px;
+          border-radius: 50%;
+          text-align: center;
+        }
+      }
+    }
+    .checkbox-group-div {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      img {
+        width: 80px;
+        height: 86px;
+      }
+    }
+    h3 {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin: 0;
+      input {
+        width: 90%;
+        font-size: 14px;
+        font-weight: normal;
+        text-align: center;
+        border: none;
+      }
+    }
+  }
+}
+</style>

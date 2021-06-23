@@ -1,0 +1,438 @@
+---------------------------------------------------------------
+
+[2020-05-07T09:49:12+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/mkDir?path=nihao/&name=dc
+[运行时间：1.567870s] [吞吐率：0.64req/s] [内存消耗：4,515.86kb] [文件加载：127]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/mkDir',
+  'route' => 'index/Archives/mkDir',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '7b635274-d0db-4b48-b209-e6e727c4c040',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'name' => 'dc',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.041481s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.009430s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010748s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011772s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ DB ] CONNECT:[ UseTime:0.030594s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives` [ RunTime:0.016924s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `archives` WHERE  `path` = 'nihao//'  AND `archives`.`delete_time` = 0 [ RunTime:0.006987s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049476s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] INSERT INTO `archives` (`path`) VALUES ('nihao//') [ RunTime:0.028104s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020206s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ error ] [2]mkdir(): File exists[E:\phpStudy\WWW\lhsoft_back\application\common\service\ArchivesService.php:215]
+---------------------------------------------------------------
+
+[2020-05-07T09:50:10+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/mkDir?path=nihao/&name=dc
+[运行时间：0.345653s] [吞吐率：2.89req/s] [内存消耗：4,293.55kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/mkDir',
+  'route' => 'index/Archives/mkDir',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '83fdd0a1-b46c-49fb-af07-68c7b1e5ef18',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'name' => 'dc',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073859s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010093s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.030291s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020026s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056174s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives` [ RunTime:0.050980s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `archives` WHERE  `path` = 'nihao//'  AND `archives`.`delete_time` = 0 [ RunTime:0.026154s ]
+---------------------------------------------------------------
+
+[2020-05-07T09:51:21+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/mkDir?path=nihao/&folder_name=xxx
+[运行时间：0.622001s] [吞吐率：1.61req/s] [内存消耗：4,332.70kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/mkDir',
+  'route' => 'index/Archives/mkDir',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '4c0923d2-7d98-41d3-be50-dc36385125ca',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'folder_name' => 'xxx',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.027143s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008002s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.011859s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.030573s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021589s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives` [ RunTime:0.011728s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `archives` WHERE  `path` = 'nihao//xxx'  AND `archives`.`delete_time` = 0 [ RunTime:0.006210s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010965s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] INSERT INTO `archives` (`path`) VALUES ('nihao//xxx') [ RunTime:0.031416s ]
+---------------------------------------------------------------
+
+[2020-05-07T09:51:29+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/mkDir?path=nihao/&folder_name=xxx
+[运行时间：0.199945s] [吞吐率：5.00req/s] [内存消耗：4,293.57kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/mkDir',
+  'route' => 'index/Archives/mkDir',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'e6b7c7eb-6714-44b0-8f76-2c56b192a41a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'folder_name' => 'xxx',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024993s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007566s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.015537s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017768s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013036s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives` [ RunTime:0.018810s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `archives` WHERE  `path` = 'nihao//xxx'  AND `archives`.`delete_time` = 0 [ RunTime:0.006143s ]
+---------------------------------------------------------------
+
+[2020-05-07T09:51:39+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/mkDir?path=nihao/&folder_name=xxxxd
+[运行时间：0.248508s] [吞吐率：4.02req/s] [内存消耗：4,408.62kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/mkDir',
+  'route' => 'index/Archives/mkDir',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'bb73e432-f46e-4f5c-808b-0038658b1fcf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'folder_name' => 'xxxxd',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015411s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010798s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.009326s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011598s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014010s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `archives` [ RunTime:0.006433s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `archives` WHERE  `path` = 'nihao//xxxxd'  AND `archives`.`delete_time` = 0 [ RunTime:0.011092s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.036457s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] INSERT INTO `archives` (`path`) VALUES ('nihao//xxxxd') [ RunTime:0.018276s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015770s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+---------------------------------------------------------------
+
+[2020-05-07T10:09:39+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/search?path=nihao/&search=xxxxd
+[运行时间：1.034666s] [吞吐率：0.97req/s] [内存消耗：4,143.18kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/search',
+  'route' => 'index/Archives/search',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '04b6697b-b22f-4798-a29f-525832fa41c9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'search' => 'xxxxd',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.246294s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.168429s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.307698s ]
+---------------------------------------------------------------
+
+[2020-05-07T10:10:16+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/search?path=nihao/&search=7
+[运行时间：0.151337s] [吞吐率：6.61req/s] [内存消耗：4,143.13kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/search',
+  'route' => 'index/Archives/search',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '8f332d82-27be-4064-9fd3-59dc458afc23',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'search' => '7',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.052466s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.015273s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.008280s ]
+---------------------------------------------------------------
+
+[2020-05-07T10:26:55+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/getData?path=%E9%A1%B9%E7%9B%AE%E4%B8%80/
+[运行时间：0.150181s] [吞吐率：6.66req/s] [内存消耗：4,142.38kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/getData',
+  'route' => 'index/Archives/getData',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '8aeff524-7b2e-4ba1-a367-404d0ff90eb5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => '项目一/',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021421s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.022072s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.008129s ]
+---------------------------------------------------------------
+
+[2020-05-07T10:27:03+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/getData?path=nihao/
+[运行时间：0.240680s] [吞吐率：4.15req/s] [内存消耗：4,142.38kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/getData',
+  'route' => 'index/Archives/getData',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'e84860c9-3fe3-4765-b2f6-108b285c3cb4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013948s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008785s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.026063s ]
+---------------------------------------------------------------
+
+[2020-05-07T10:29:34+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/search?path=nihao/&search=7
+[运行时间：0.174707s] [吞吐率：5.72req/s] [内存消耗：4,143.12kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/search',
+  'route' => 'index/Archives/search',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '3aa9a381-8310-43a7-b05c-d708200c82df',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'search' => '7',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048244s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.009936s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.024049s ]
+---------------------------------------------------------------
+
+[2020-05-07T11:47:04+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/search?path=nihao/&search=7
+[运行时间：0.144491s] [吞吐率：6.92req/s] [内存消耗：4,143.13kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/search',
+  'route' => 'index/Archives/search',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => 'e2c81c35-aa0f-4c6d-9b6c-f957e549eb2b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'search' => '7',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017566s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.005396s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003489s ]
+---------------------------------------------------------------
+
+[2020-05-07T14:01:49+08:00] 127.0.0.1 GET www.lhbackadmin.com/index/archives/search?path=nihao/&search=7
+[运行时间：0.166697s] [吞吐率：6.00req/s] [内存消耗：4,143.12kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archives/search',
+  'route' => 'index/Archives/search',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhbackadmin.com',
+  'postman-token' => '8053e13a-b7d4-4330-b66c-e71047f8095c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'path' => 'nihao/',
+  'search' => '7',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004090s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002772s ]
+[ sql ] [ SQL ] SELECT UPPER(router),`id`,`method`,`url`,`router`,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002595s ]

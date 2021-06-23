@@ -1,0 +1,319 @@
+<!--信息推送--推送-->
+<template>
+  <el-container class="main-container">
+    <el-header class="search-container" height="auto">
+      <lh-search-bar
+        :formItemData="formItemData"
+        @searchChange="getGridData"
+        @BulkPush="BulkPush"
+        :operationData="addOper"
+        
+      />
+    </el-header>
+    <lh-table
+      :table="table"
+      :gridData="gridData"
+      @pageChange="getGridData"
+      :needPaging="true"
+      :loading="loading"
+       @onSelect="onSelect"
+      @handlePush="handlePush"
+      @handleLook="handleLook"
+      :total='total'
+    ></lh-table>
+
+    <lh-dialog
+      :dialogVisible.sync="dialogVisible"
+      v-if="createDialog"
+      :windowTitle="windowTitle"
+      :hasButton="false"
+      @updateList="updateList"
+    >
+      <!-- <edit v-if="loShow" :editStatus="editStatus" :rowData="rowData" @handleClose="cancel" @updateList="updateList"></edit> -->
+      <push
+        v-if="!loShow"
+        :editStatus="editStatus"
+        :isLook="isLook"
+        :rowData="rowData"
+        @handleClose="cancel"
+        @updateList="updateList"
+      ></push>
+      <bulk
+        v-if="loShow"
+        :editStatus="editStatus"
+        :isLook="isLook"
+        :rowData="rowData"
+        @handleClose="cancel"
+        @updateList="updateList"
+      ></bulk>
+    </lh-dialog>
+  </el-container>
+</template>
+<script>
+// import {
+//  getFinanceList
+// } from "@/api/finance.js";
+import { getList } from "@/api/information";
+// import { getProjectAll } from "@/api/public.js";
+import { mapActions, mapGetters } from "vuex";
+
+import push from "./push";
+import { getBaseConfig } from "@/utils/common";
+import bulk from "./Bulk";
+
+export default {
+  name: "informationPush",
+  components: {
+    push,bulk
+  },
+  data() {
+    return {
+      editStatus: false,
+      loShow: false,
+      windowTitle: "",
+       Selected:'',//选中
+      areaList: [],
+
+      formItemData: [
+        {
+          element: "select",
+          defaultValue: "",
+          name: "domain",
+          label: "领域",
+          placeholder: "请选择领域",
+          clearable: true,
+        },
+        {
+          element: "input",
+          defaultValue: "",
+          name: "side",
+          disabled: false,
+          label: "方面",
+          placeholder: "请输入方面关键字",
+        },
+        {
+          element: "select",
+          defaultValue: "",
+          name: "push_status",
+          label: "推送状态",
+          placeholder: "请选择领域",
+          clearable: true,
+          options: [],
+        },
+      ],
+      table: {
+        // hasSelect: false,
+        hasRowsNumber: true,
+        hasSelect:true,
+        hasOperation: true,
+        hasExpend: true,
+        columns: [
+          {
+            text: "姓名",
+            dataIndex: "user_name",
+            showToolTip: true,
+          },
+          {
+            text: "电话号码",
+            dataIndex: "phone",
+            showToolTip: true,
+          },
+          {
+            text: "评测人",
+            dataIndex: "member_name",
+            showToolTip: true,
+          },
+          {
+            text: "领域",
+            dataIndex: "domain",
+            showToolTip: true,
+            render: (h, params) => {
+              let value = params.row["domain"],
+                config = getBaseConfig("DOMAIN");
+
+              return h("span", config[value]);
+            },
+          },
+          {
+            text: "方面",
+            dataIndex: "side",
+            showToolTip: true,
+          },
+          {
+            text: "评测结果",
+            dataIndex: "evaluating_result",
+            showToolTip: true,
+          },
+          {
+            text: "推送状态",
+            dataIndex: "push_status",
+            showToolTip: true,
+            render: (h, params) => {
+              let value = params.row["push_status"],
+                config = getBaseConfig("PUSH_STATUS");
+
+              return h("span", config[value]);
+            },
+          },
+          {
+            text: "推送内容",
+            dataIndex: "push_message",
+            showToolTip: true,
+          },
+          
+        ],
+        operation: {
+          width: 340,
+          data: [
+            {
+              text: "查看",
+              Fun: "handleLook",
+              permission: "look",
+              type: "primary",
+            },
+            {
+              text: "推送",
+              Fun: "handlePush",
+              permission: "push",
+              type: "primary",
+               controlBtnFun(e) {
+                    if(e.push_status=="1") {
+                      return true
+                    }else {
+                      return false
+                    }
+                  },
+            },
+          ],
+        },
+      },
+       addOper: [
+            {
+              text: "批量推送",
+              type: "success",
+              Fun: "BulkPush",
+              permission: "add",
+              icon: "iconfont el-icon-plus"
+            }
+          ],
+      //element-ui的dialog控制显示隐藏属性
+      dialogVisible: false,
+      //标记编辑或者新增状态
+      editStatus: false,
+      //窗口带入回写的数据
+      rowData: { house_district: {} },
+      roleList: [],
+    };
+  },
+  computed: {
+    ...mapGetters({
+      gridData: "evaluation/list/gridData",
+      total:'evaluation/list/total',
+      loading: "evaluation/list/loading",
+    }),
+
+    createDialog: function () {
+      return this.dialogVisible;
+    },
+  },
+  methods: {
+    ...mapActions({
+      getGridData: "evaluation/list/getGridData",
+      deleteGrid: "evaluation/list/deleteGrid",
+      createTagPanel: "createTagPanel",
+    }),
+    onSelect(e){
+      let a=[];
+        e.forEach(element => {
+         a.push(element.id)
+        });
+         
+         
+         this.Selected=a+'';
+
+    },
+    //批量推送
+    BulkPush(){
+      if(this.Selected!==""){
+           console.log(this.Selected);
+        this.loShow=true;
+         this.isLook = false;
+    
+      this.editStatus = true;
+      this.windowTitle = "查看";
+      this.dialogVisible = true;
+
+      this.rowData = {
+        data:this.Selected
+      };
+      }else{
+        this.$message({
+              message: "请选择数据",
+              type: "error",
+              duration: 3 * 1000,
+            });
+      }
+     
+      // Object.assign(this.rowData, this.Selected);
+    },
+    addHandler: function () {
+      this.dialogVisible = true;
+      this.editStatus = false;
+      this.loShow = false;
+      this.isLook = false;
+      //   this.rowAdd = false;
+      this.windowTitle = "新增";
+      this.rowData = {};
+    },
+    handleLook(options) {
+      //   console.log(3333);
+      this.isLook = true;
+      const { row, index } = options;
+      this.editStatus = true;
+      this.windowTitle = "查看";
+      this.dialogVisible = true;
+
+      this.rowData = {};
+      Object.assign(this.rowData, row);
+    },
+    //推送
+    handlePush(option) {
+          //   console.log(3333);
+      this.isLook = false;
+       this.loShow = false;
+      const { row, index } = option;
+      this.editStatus = true;
+      this.windowTitle = "查看";
+      this.dialogVisible = true;
+
+      this.rowData = {};
+      Object.assign(this.rowData, row);
+    },
+
+    
+    //编辑或新增成功后刷新列表
+    updateList() {
+      this.getGridData({ list: getList }); //接口
+    },
+    cancel() {
+      this.dialogVisible = false;
+      // this.updateList()
+    },
+  },
+  //表格数据
+  created() {
+    //列表
+    this.getGridData({
+      list: getList,
+    });
+    this.formItemData[0].options = getBaseConfig("DOMAIN", true);
+    this.formItemData[2].options = getBaseConfig("PUSH_STATUS", true);
+  },
+  
+};
+</script>
+<style lang="less" scoped>
+.el-dialog {
+  width: 30% !important;
+}
+</style>

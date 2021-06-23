@@ -1,0 +1,316 @@
+---------------------------------------------------------------
+
+[2020-04-09T14:29:28+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/data/setShareData
+[运行时间：0.316756s] [吞吐率：3.16req/s] [内存消耗：2,649.95kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/data/setShareData',
+  'route' => 'index/DataPemission/setShareData',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '380',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------660300484863084441551629',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '712e8e79-34a1-4eb0-83ac-9075c02ef647',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'name' => '财务部',
+  'pid' => '3',
+  'node_type' => '4',
+)
+[ error ] [0]Class app\index\controller\DataPemissionShareModel does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-09T14:31:28+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/data/setShareData
+[运行时间：0.306601s] [吞吐率：3.26req/s] [内存消耗：3,066.17kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/data/setShareData',
+  'route' => 'index/DataPemission/setShareData',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '380',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------974839654623805556952751',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '73765b9a-1904-4265-b1d2-7068591fa408',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'name' => '财务部',
+  'pid' => '3',
+  'node_type' => '4',
+)
+---------------------------------------------------------------
+
+[2020-04-09T14:32:27+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/data/setShareData
+[运行时间：1.725609s] [吞吐率：0.58req/s] [内存消耗：2,886.63kb] [文件加载：113]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/data/setShareData',
+  'route' => 'index/DataPemission/setShareData',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '620',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------637152797936852289373339',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '16d65248-777c-4e25-93ab-b8193f3f4c62',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'resource_id' => '1,2',
+  'from_type' => '1',
+  'target_id' => '4,5,6',
+  'share_type' => '1',
+  'share_target_id' => '7,8,9',
+)
+---------------------------------------------------------------
+
+[2020-04-09T15:11:55+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList?page=1&limit=25&start=0
+[运行时间：0.300562s] [吞吐率：3.33req/s] [内存消耗：3,972.23kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/role/getList',
+  'route' => 'index/Role/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------589941043521755551624311',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9abb13fa-4215-4443-9bad-dd2509895bee',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '25',
+  'start' => '0',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.038352s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.003701s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002359s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.users_id AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 WHERE  `r`.`delete_time` = 0 [ RunTime:0.002291s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames`,u.username AS handler_name FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.users_id AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 WHERE  `r`.`delete_time` = 0  AND `r`.`delete_time` = 0 LIMIT 0,25 [ RunTime:0.003079s ]
+---------------------------------------------------------------
+
+[2020-04-09T15:12:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.103381s] [吞吐率：9.67req/s] [内存消耗：3,969.62kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/role/getList',
+  'route' => 'index/Role/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------513572728684454425667260',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dfc8322b-000b-41c2-90a7-4c29eedecd00',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004378s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.005760s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002354s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames`,u.username AS handler_name FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.users_id AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 WHERE  `r`.`delete_time` = 0 [ RunTime:0.002088s ]
+---------------------------------------------------------------
+
+[2020-04-09T15:12:09+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.080323s] [吞吐率：12.45req/s] [内存消耗：3,969.60kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/role/getList',
+  'route' => 'index/Role/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------815744716961711670960362',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a8105057-be45-4d0c-903b-290a07a4380b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012865s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.002488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002367s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames`,u.username AS handler_name FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.users_id AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 WHERE  `r`.`delete_time` = 0 [ RunTime:0.002065s ]
+---------------------------------------------------------------
+
+[2020-04-09T15:12:10+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.077531s] [吞吐率：12.90req/s] [内存消耗：3,969.60kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/role/getList',
+  'route' => 'index/Role/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------766603358411144697455190',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5f6b99bb-c5e6-4ab0-ab5b-7e506c8fa5b9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012458s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.002144s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002425s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames`,u.username AS handler_name FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.users_id AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 WHERE  `r`.`delete_time` = 0 [ RunTime:0.002616s ]
+---------------------------------------------------------------
+
+[2020-04-09T15:12:10+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.079822s] [吞吐率：12.53req/s] [内存消耗：3,969.62kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/role/getList',
+  'route' => 'index/Role/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------639498000408681551527157',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b956734a-457c-45d7-b9fe-e050a739b3bf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001957s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002324s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames`,u.username AS handler_name FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.users_id AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 WHERE  `r`.`delete_time` = 0 [ RunTime:0.002232s ]
+---------------------------------------------------------------
+
+[2020-04-09T15:15:02+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.120155s] [吞吐率：8.32req/s] [内存消耗：3,970.74kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/role/getList',
+  'route' => 'index/Role/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------084913754527114251032643',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e0f23ecd-ebd4-4fed-848e-a911168ddcb1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012885s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.002588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.003836s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames`,u.username AS handler_name FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.users_id AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 WHERE  `r`.`delete_time` = 0 [ RunTime:0.005221s ]

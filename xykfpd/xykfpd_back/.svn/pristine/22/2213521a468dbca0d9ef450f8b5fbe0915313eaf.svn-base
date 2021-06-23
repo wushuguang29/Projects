@@ -1,0 +1,4 @@
+<?php
+//000000000000
+ exit();?>
+think_serialize:a:6:{s:3:"SEX";a:2:{i:1;s:3:"男";i:2;s:3:"女";}s:14:"ACCOUNT_STATUS";a:2:{i:1;s:6:"启用";i:2;s:6:"禁用";}s:14:"WORKING_STATUS";a:2:{i:1;s:6:"在职";i:2;s:6:"离职";}s:10:"LOGIN_TYPE";a:4:{i:0;a:2:{s:5:"title";s:12:"账号登录";s:4:"name";s:12:"loginAccount";}i:1;a:2:{s:5:"title";s:12:"手机登录";s:4:"name";s:11:"loginMobile";}i:2;a:2:{s:5:"title";s:12:"微信登录";s:4:"name";s:11:"loginWeChat";}i:3;a:2:{s:5:"title";s:12:"指纹登录";s:4:"name";s:16:"loginFingerprint";}}s:15:"ACCOUNT_CAPTCHA";s:1:"0";s:13:"PHONE_CAPTCHA";s:1:"0";}

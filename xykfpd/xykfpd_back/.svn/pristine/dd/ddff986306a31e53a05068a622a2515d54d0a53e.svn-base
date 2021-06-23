@@ -1,0 +1,564 @@
+---------------------------------------------------------------
+
+[2020-04-15T14:02:31+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getRoleDataByUser?users_id=1
+[运行时间：0.964744s] [吞吐率：1.04req/s] [内存消耗：3,828.79kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getRoleDataByUser',
+  'route' => 'index/User/getRoleDataByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------422273273077012784003462',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '326dfc26-d977-45a1-b308-1efd7ef6163b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023551s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.004051s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `role` WHERE  `role`.`delete_time` = 0 [ RunTime:0.001313s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001900s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 1  AND `users_role`.`delete_time` = 0 [ RunTime:0.001719s ]
+---------------------------------------------------------------
+
+[2020-04-15T14:05:20+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/bindRole?id=1&users_id=1
+[运行时间：0.235350s] [吞吐率：4.25req/s] [内存消耗：2,471.94kb] [文件加载：106]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/bindRole',
+  'route' => 'index/User/bindRole',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------509379718716178259142213',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '24a06952-ca22-41dd-b53e-5da7c35a5069',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  'users_id' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+  'login_type' => '1',
+)
+[ error ] [0]Class app\index\controller\UsersRoleModel does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-15T14:06:21+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/bindRole?id=1&users_id=1
+[运行时间：0.264808s] [吞吐率：3.78req/s] [内存消耗：4,207.26kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/bindRole',
+  'route' => 'index/User/bindRole',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------194662408707532694098632',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2c040015-4c9b-4f89-a068-9fb14fa182d0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  'users_id' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+  'login_type' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012117s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.002457s ]
+[ sql ] [ SQL ] INSERT INTO `users_role` (`role_id` , `users_id` , `create_time` , `update_time`) VALUES (1 , 1 , '2020-04-15 14:06:20' , '2020-04-15 14:06:20') [ RunTime:0.001562s ]
+---------------------------------------------------------------
+
+[2020-04-15T14:23:01+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getRoleDataByUser?users_id=1
+[运行时间：0.106023s] [吞吐率：9.43req/s] [内存消耗：3,828.84kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getRoleDataByUser',
+  'route' => 'index/User/getRoleDataByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------586660967524435016477318',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3afec727-f54e-4cdc-9271-65b73c687928',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012502s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.002486s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `role` WHERE  `role`.`delete_time` = 0 [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001926s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 1  AND `users_role`.`delete_time` = 0 [ RunTime:0.001348s ]
+---------------------------------------------------------------
+
+[2020-04-15T14:40:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.284887s] [吞吐率：3.51req/s] [内存消耗：4,306.52kb] [文件加载：127]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------034319094873712792958675',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a51a1daa-f6ee-4d00-b5b5-d2d10de9d463',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014723s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.002500s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001883s ]
+[ error ] [8]未定义变量: user_id[E:\phpStudy\WWW\lhsoft_back\application\index\controller\User.php:309]
+---------------------------------------------------------------
+
+[2020-04-15T14:41:05+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.087981s] [吞吐率：11.37req/s] [内存消耗：4,307.59kb] [文件加载：127]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------066677560879627748976759',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3194897a-37ac-4f35-b07a-465c6e7af21d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012698s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.001861s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001890s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` IS NULL  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001463s ]
+[ error ] [2]Use of undefined constant fase - assumed 'fase' (this will throw an Error in a future version of PHP)[E:\phpStudy\WWW\lhsoft_back\application\index\controller\User.php:314]
+---------------------------------------------------------------
+
+[2020-04-15T14:41:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.086625s] [吞吐率：11.54req/s] [内存消耗：4,255.37kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------730475987957462865046967',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f57b58fb-e813-4d3e-8d35-471cb9ce1cca',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012420s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.002907s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001826s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` IS NULL  AND `users_organization`.`delete_time` = 0 [ RunTime:0.002411s ]
+---------------------------------------------------------------
+
+[2020-04-15T15:15:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.196237s] [吞吐率：5.10req/s] [内存消耗：2,453.26kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'Check',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------617850960937078371820953',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c0757809-b318-42ed-a209-7ed02ae8bf28',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ error ] [40003]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\zhangzhuow\json-web-token\src\JWT.php:66]
+[ error ] [1]Uncaught Error: Call to a member function send() on null in E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Error.php:56
+Stack trace:
+#0 [internal function]: think\Error::appException(Object(tp51\jwt\exception\JWTException))
+#1 {main}
+  thrown[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Error.php:56]
+---------------------------------------------------------------
+
+[2020-04-15T15:15:58+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.109286s] [吞吐率：9.15req/s] [内存消耗：4,264.34kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------131386199233748730173080',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '89821274-48c6-4ab8-8223-4f1111d2ebd6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004692s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.002666s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.002457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002423s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` IS NULL  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001198s ]
+---------------------------------------------------------------
+
+[2020-04-15T15:17:20+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.122898s] [吞吐率：8.14req/s] [内存消耗：4,266.94kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------198393823177880873952624',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '192211dc-157a-48a0-93fc-90219400cb3f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013817s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.001991s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002036s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` IS NULL  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001110s ]
+---------------------------------------------------------------
+
+[2020-04-15T15:20:35+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.117702s] [吞吐率：8.50req/s] [内存消耗：4,266.92kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------663943071758387945841314',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0f6dc596-3cd2-46d4-a73c-8cc6daec5897',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011939s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.002179s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001758s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002148s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` IS NULL  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001713s ]
+---------------------------------------------------------------
+
+[2020-04-15T15:21:37+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.083045s] [吞吐率：12.04req/s] [内存消耗：4,267.94kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------135408000190919679503318',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'fb339de9-9288-45b1-9f9e-21827027150c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013248s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.002423s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001870s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002144s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` IS NULL  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001319s ]
+---------------------------------------------------------------
+
+[2020-04-15T15:21:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.145610s] [吞吐率：6.87req/s] [内存消耗：4,267.92kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------364851873030370274301198',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '92e3dfe3-ad43-43c6-8ec8-c5e4d5e687b2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012552s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.004936s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001754s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.003051s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` IS NULL  AND `users_organization`.`delete_time` = 0 [ RunTime:0.002191s ]
+---------------------------------------------------------------
+
+[2020-04-15T15:22:35+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getOrganizationByUser?users_id=1
+[运行时间：0.104039s] [吞吐率：9.61req/s] [内存消耗：4,265.16kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getOrganizationByUser',
+  'route' => 'index/User/getOrganizationByUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------054953250643423876647864',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'bc009a29-e7f7-46ca-986e-87ca9665ab3f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012488s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.001976s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.001561s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002066s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 1  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001565s ]
+---------------------------------------------------------------
+
+[2020-04-15T15:26:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=1
+[运行时间：0.074988s] [吞吐率：13.34req/s] [内存消耗：2,452.89kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'Check',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------928493134088449685780591',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f2964abe-6abd-4735-87ec-e12d336acd01',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '1',
+)
+[ error ] [40003]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\zhangzhuow\json-web-token\src\JWT.php:66]
+[ error ] [1]Uncaught Error: Call to a member function send() on null in E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Error.php:56
+Stack trace:
+#0 [internal function]: think\Error::appException(Object(tp51\jwt\exception\JWTException))
+#1 {main}
+  thrown[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Error.php:56]

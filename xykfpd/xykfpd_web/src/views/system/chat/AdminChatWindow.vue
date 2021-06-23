@@ -1,0 +1,121 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-12-23 16:34:50
+ * @LastEditTime: 2021-01-27 16:02:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_web\src\views\system\chat\ChatWindow.vue
+-->
+<template>
+  <el-button type="primary" @click="send">确 定</el-button>
+</template>
+<script>
+import { boundClient,getUserList,getUserMessage,sendMessage,setMessage } from "@/api/chat.js";
+let ws,user_id=2,user_name='弑魂';//模拟选中了2的用户
+export default {
+  name: "adminChat",
+  created() {
+    try {
+      ws = new WebSocket("ws://127.0.0.1:8282");
+      //接收消息时
+      ws.onmessage = this.handleMessage;
+
+      console.log(ws);
+    } catch (error) {
+      console.log("异常");
+      console.log(error);
+    }
+  },
+  methods: {
+    send: function () {
+      this.handleSend();
+    },
+    handleMessage: function (msg) {
+        console.log(msg);
+        let data, type, client_id, params, uid;
+        data = eval("(" + msg.data + ")");
+        type = data.type || "";
+        client_id = data.client_id;
+        //管理员默认id9999
+        uid = 999999;
+        params = {
+          unique_uid: uid,
+          client_id: client_id,
+        };
+        switch (type) {
+          case "init":
+            boundClient(params).then((res) => {
+                console.log('管理员客户端启动成功');
+            });
+            break;
+          case "message":
+            //判断当前打开的用户窗口是不是发送消息的用户
+            var sender = data.sender;
+            console.log('发送消息的人是：'+sender);
+            if(user_id == sender){
+              console.log('发送消息的人就是当前选中的人');
+              //发送消息的人就是当前选中的人则将跟新消息 跟新消息放入显示栏
+              this.setMessage(user_id);
+            }
+          default:
+            //只要收到消息就跟新用户列表
+            //is_onLine = 2 不在线 ， =1 在线
+            this.setUserList();
+            break;
+        }
+    },
+    //设置用户列表
+    setUserList:function(){
+      getUserList().then((res) => {
+        console.log('跟新用户列表');
+        console.log(res);
+      });
+    },
+    //设置消息框
+    setMessage: function(app_user_id) {
+      let setMessageParams = {
+        'app_user_id': app_user_id
+      };
+      getUserMessage(setMessageParams).then((res) => {
+        //将消息放入上面区域展示
+        console.log('接收消息时打印');
+        console.log(res);
+      });
+    },
+    //模拟切换用户
+    cutUser: function (app_user_id) {
+      //将用户的聊天信息放入聊天窗口
+      this.setMessage(app_user_id);
+      //将用户消息标记为已读
+      var readParam = {
+        'app_user_id':app_user_id,
+        'type':2
+      };
+      markRead(readParam).then((res)=>{
+
+      });
+      //修改用户列表
+      $this.setUserList();
+    },
+    //发送消息
+    handleSend: function (res) {
+        let params = {
+            'sender':999999,
+            'sender_name':'湘雅医院',
+            'receiver':user_id,
+            'receiver_name':user_name
+        }
+
+        sendMessage(params).then((res)=>{
+          //发送消息时 ， 从后台把数据拿出来放入上面展示
+          console.log('管理员'+params.sender_name+'给'+user_name+'发送消息');
+          this.setMessage(user_id);
+            
+        })
+    },
+    
+  },
+
+  
+};
+</script>

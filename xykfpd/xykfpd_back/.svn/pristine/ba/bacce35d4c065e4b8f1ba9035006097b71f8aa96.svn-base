@@ -1,0 +1,213 @@
+<?php
+
+namespace app\common\model;
+
+use service\rewrite\RewriteModel;
+use think\Db;
+use app\common\model\QuestionsModel;
+
+/**
+ * 评测管理
+ * @package app\common\model
+ */
+class EvaluatingModel extends RewriteModel
+{
+    public static $view_file_path;//预览文件路径
+    public function initialize(){
+        parent::initialize();
+        $VIEW_FILE_PATH = ConfigurationModel::where("name","eq","VIEW_FILE_PATH")->value("value");
+        $VIEW_FILE_PATH = trim($VIEW_FILE_PATH,"/");
+        self::$view_file_path = $VIEW_FILE_PATH."/". config("service.file.upload_file_path") ."/";
+    }
+    /**
+     * 获取订阅人订阅的领域方面
+     */
+    public function getMemberSideList($param)
+    {
+        $data = Db::table('app_user_member_subscription')->field('domain')->where('app_user_member_id', $param['app_user_member_id'])->group('domain')->select();
+        foreach ($data as $ko => $vo) {
+            $data[$ko]['index']  = $vo['domain'];
+            $data[$ko]['domain'] = config('config.DOMAIN')[$vo['domain']];
+            $data[$ko]['side'] = Db::table('app_user_member_subscription')->field('side')->where(array('domain'=> $vo['domain'],'app_user_member_id'=> $param['app_user_member_id']))->select();
+        }
+        return $data;
+    }
+
+    /**
+     * 获取题库
+     */
+    public function getQuestionsList($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            if (empty($param['app_user_member_id']) || !is_numeric($param['app_user_member_id'])) {
+                return msgReturn(50001, [], '订阅人不能为空');
+            }
+            $data = QuestionsModel::delRedundantFields('evaluating', $param);//除去多余字段
+            $data['create_time'] = $date;
+            $eval_id = Db::table('evaluating')->insertGetId($data);//添加到评测表
+            $detail_data = [];
+            $question = Db::table('questions')->field('id,question_title')->where(array('domain'=> $param['domain'],'side'=> $param['side']))->select();
+            foreach ($question as $ko => $vo) {
+                $option = Db::table('questions_option')->field('index,score')->where('questions_id', $vo['id'])->select();
+                $detail['evaluating_id']    = $eval_id;
+                $detail['questions_id']     = $vo['id'];
+                $detail['domain']            = $param['domain'];
+                $detail['side']              = $param['side'];
+                $detail['question_title']   = $vo['question_title'];
+                $detail['option_detail']    = json_encode($option);
+                $detail['create_time']      = $date;
+                array_push($detail_data, $detail);
+            }
+            Db::table('evaluating_question_detail')->insertAll($detail_data);;//添加到评测详情表
+            if ($eval_id) {
+                $result = Db::table('evaluating')->alias('e')
+                    ->join('evaluating_question_detail eqd', 'e.id = eqd.evaluating_id', 'left')
+                    ->join('questions q', 'q.id = eqd.questions_id', 'left')
+                    ->join('app_user_member aum', 'aum.id = e.app_user_member_id', 'left')
+                    ->join('file f', 'f.id = q.file_id', 'left')
+                    ->field("eqd.id,aum.name,q.id AS questions_id,q.instruction,q.question_type,q.question_title,concat('".self::$view_file_path."',f.savepath,'/',f.savename) as voice")
+                    ->where(array('e.id'=> $eval_id, 'aum.id'=> $param['app_user_member_id']))
+                    ->select();
+                foreach ($result as $k => $v) {
+                    $result[$k]['question_type'] = config('config.QUESTION_TYPE')[$v['question_type']];
+                    $result[$k]['children'] = Db::table('questions_option')->field('index,option_title')->where('questions_id', $v['questions_id'])->select();
+                    foreach ($result[$k]['children'] as $kk => $vv) {
+                        $result[$k]['children'][$kk]['checked']  = false;
+                        $result[$k]['children'][$kk]['disabled'] = false;
+                    }
+                    unset($result[$k]['questions_id']);
+                }
+                Db::commit();
+                return msgReturn(45003, ['result'=> $result]);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 评测
+     */
+    public function evaluate($param)
+    {
+        Db::startTrans();
+        try {
+            $evalArr = []; //评测信息
+            $evaluating_score  = 0; //评测得分
+            $evaluating_result = ''; //评测结果
+            $data = json_decode($param['answer'], true);
+            foreach ($data as $ko => $vo) {
+                $score = 0;
+                $option_json = Db::table('evaluating_question_detail')->where('id', $vo['id'])->value('option_detail');
+                $option = json_decode($option_json, true);
+                if (is_array($option)) { //避免非数组报错
+                    foreach ($option as $k => $v) {
+                        if ($v['index'] == $vo['answer']) { //单选
+                            Db::table('evaluating_question_detail')->where('id', $vo['id'])->update(['answer'=> $vo['answer'],'score'=> $v['score']]);
+                        } elseif (strpos($vo['answer'],',')) { //多选
+                            $answer = explode(',',$vo['answer']);
+                            foreach ($answer as $kk => $vv) {
+                                if ($vv == $v['index']) {
+                                    $score += $v['score'];
+                                }
+                            }
+                            Db::table('evaluating_question_detail')->where('id', $vo['id'])->update(['answer'=> $vo['answer'],'score'=> $score]);
+                        }
+                    }
+                }
+                $evalArr = Db::table('evaluating_question_detail')->field('evaluating_id,domain,side')->where('id', $vo['id'])->find();
+            }
+            //获取评测分数
+            $evaluating_score = Db::table('evaluating_question_detail')->where('evaluating_id', $evalArr['evaluating_id'])->sum('score');
+            //获取评测结果
+            $range = Db::table('evaluating_score_ranges')->where(array('domain'=> $evalArr['domain'],'side'=> $evalArr['side']))->value('score_range');
+            if (!empty($range)) { //通过判断范围得到结果
+                $range = json_decode($range, true);
+                foreach ($range as $k => $v) {
+                    //如果是区间内，取区间的结果；如果大于最大区间，取最大区间的结果
+                    if ($v['begin'] < $evaluating_score && $v['end'] >= $evaluating_score || $v['begin'] < $evaluating_score && !is_numeric($v['end'])) {
+                        $evaluating_result = $v['result'];
+                    }
+                }
+            }
+            //保存结果和总分
+            $evalData = [
+                'evaluating_score'    => $evaluating_score,
+                'evaluating_result'   => $evaluating_result,
+                'evaluating_how_long' => $param['evaluating_how_long'],
+                'evaluating_date'     => date('Y-m-d'),
+                'evaluating_finish_time'=> date('Y-m-d H:i:s'),
+            ];
+            Db::table('evaluating')->where('id', $evalArr['evaluating_id'])->update($evalData);
+            Db::commit();
+            return msgReturn(45003,['evaluating_score'=> $evaluating_score,'evaluating_result'=> $evaluating_result]);
+        }catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 评测人员
+     */
+    public function getAssessorList()
+    {
+        $data = Db::table('evaluating')->alias('e')
+            ->join('app_user_member aum', 'aum.id = e.app_user_member_id', 'left')
+            ->field([
+                'aum.id AS app_user_member_id',
+                'aum.name',
+                'aum.phone',
+            ])
+            ->where('aum.app_user_id', APP_USER_ID)
+            ->group('aum.id')
+            ->select();
+        return $data;
+    }
+
+    /**
+     * 评测记录
+     */
+    public function getEvaluateRecord($param)
+    {
+        $data = Db::table('evaluating')
+            ->field([
+                'side',
+                'evaluating_score',
+                'evaluating_result',
+            ])
+            ->where('app_user_member_id', $param['app_user_member_id'])
+            ->select();
+        return $data;
+    }
+
+    /**
+     * 查看
+     */
+    public function browse($param)
+    {
+        $data = Db::table('evaluating')->alias('e')
+            ->join('app_user_member aum', 'aum.id = e.app_user_member_id', 'left')
+            ->join('app_users au', 'au.id = aum.app_user_id', 'left')
+            ->field([
+                'e.id',
+                'au.name AS user_name',
+                'au.phone',
+                'aum.name AS member_name',
+                'e.domain',
+                'e.side',
+                'e.evaluating_result',
+                'e.push_status',
+                'e.push_message',
+            ])
+            ->where('e.id', $param['id'])
+            ->find();
+        return $data;
+    }
+}

@@ -1,0 +1,95 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-23 09:57:47
+ * @LastEditTime: 2021-02-07 11:14:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\application\common\service\Sms.php
+ */
+namespace app\common\service;
+
+use app\common\model\ConfigurationModel;
+use app\common\validate\SmsValidate;
+use Overtrue\EasySms\EasySms;
+use think\Db;
+use think\Request;
+
+/**
+ * 短信类
+ * @package app\common\service
+ */
+class Sms
+{
+
+    private $config;
+
+    /**
+     * 获取短信配置
+     */
+    public function __construct()
+    {
+        $this->config = config('easysms.');
+    }
+
+    /**
+     * 消息推送
+     *
+     * @param $type
+     * @param $phone
+     * @param $data
+     * @return array
+     */
+    public function send($phone,$template,$data)
+    {
+        $easySms = new EasySms($this->config);
+        try {
+            $result = $easySms->send($phone, [
+                'template' => $template,
+                'data' => $data
+            ]);
+        } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
+            $message = $exception->getException('aliyun')->getMessage();
+            return ['status'=>false,'msg'=>$message];
+        }
+
+        return ['status'=> true,'msg'=>'发送成功'];
+    }
+
+    /**
+     * 验证码
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2020-12-28 16:44:12
+     * @param [type] $phone
+     * @return void
+     */
+    public function sendVerificationCode($phone){
+        // 生成4位随机数，左侧补0
+        $code     = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
+        $code = '1234';
+//        $template = 'SMS_169870420';
+//        $data = [
+//            'name' => '【短信验证码测试】',
+//            'project' => $code
+//        ];
+//        $result = $this->send($phone,$template,$data);
+//        if(!$result['status']){
+//            return $result;
+//        }
+
+        $key       = $phone . str_random(15);
+        $expiredAt = 600;
+        // 缓存验证码 10分钟过期。
+        cache($key, ['phone' => $phone, 'code' => $code], $expiredAt);
+        cache($phone,['phone' => $phone, 'code' => $code],$expiredAt);
+        $data = [
+            'phone_key'  => $key,
+            'expired_at' => $expiredAt,
+            'phone_code' => $code,
+        ];
+
+        return ['status'=>true,'msg'=>'发送成功','data'=>$data];
+    }
+}
+

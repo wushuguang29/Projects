@@ -1,0 +1,1465 @@
+---------------------------------------------------------------
+
+[2020-04-14T10:39:14+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/organization/getList
+[运行时间：0.935199s] [吞吐率：1.07req/s] [内存消耗：3,976.58kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/organization/getList',
+  'route' => 'index/Organization/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '158',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------780233754591698962271532',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '38ed6616-0bc2-4732-a9bb-e7967c212760',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053232s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.018349s ]
+[ sql ] [ SQL ] SELECT `name`,`code`,`node_type`,`create_time`,`id`,`pid` FROM `organization` WHERE  `organization`.`delete_time` = 0 [ RunTime:0.015407s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:03:48+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.315907s] [吞吐率：3.17req/s] [内存消耗：1,970.41kb] [文件加载：93]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-04-14T14:04:03+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.247121s] [吞吐率：4.05req/s] [内存消耗：2,424.14kb] [文件加载：112]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'Check',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------876081890568198871453615',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '17681c2f-dd24-4ad7-aa4b-7b5ceffa4564',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ error ] [40003]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\zhangzhuow\json-web-token\src\JWT.php:66]
+[ error ] [1]Uncaught Error: Call to a member function send() on null in E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Error.php:56
+Stack trace:
+#0 [internal function]: think\Error::appException(Object(tp51\jwt\exception\JWTException))
+#1 {main}
+  thrown[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Error.php:56]
+---------------------------------------------------------------
+
+[2020-04-14T14:04:15+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.052309s] [吞吐率：19.12req/s] [内存消耗：2,444.15kb] [文件加载：106]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------333275268935114635595824',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e758e7d1-20ed-4795-818f-e5a8eb1e67f0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ error ] [0]Class app\index\controller\UsersOrganizationModel does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-14T14:05:49+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.172664s] [吞吐率：5.79req/s] [内存消耗：2,975.48kb] [文件加载：114]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------788371104551092563238650',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f7c629b9-73c3-46f3-b557-ac8d5e923b21',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ error ] [0]Class app\index\validate\UserValidate does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-14T14:06:40+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.220062s] [吞吐率：4.54req/s] [内存消耗：4,212.59kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------487311522156400845840841',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4cb10355-8d1b-42be-a83a-9c2919044e68',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012725s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002561s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001357s ]
+[ error ] [2]array_diff(): Expected parameter 1 to be an array, string given[E:\phpStudy\WWW\lhsoft_back\application\common\model\UsersOrganizationModel.php:111]
+---------------------------------------------------------------
+
+[2020-04-14T14:07:19+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.075889s] [吞吐率：13.18req/s] [内存消耗：4,160.79kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------554839189803628959313027',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a5e060ab-2e76-4976-9c5b-4358d9a491a6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003508s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002230s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001758s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:08:02+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.202744s] [吞吐率：4.93req/s] [内存消耗：4,073.53kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------758154618448836594163452',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f97ba896-0b09-4580-a083-9317388f2b9e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012157s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002128s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001409s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:08:29+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.072561s] [吞吐率：13.78req/s] [内存消耗：4,160.79kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------666913178969262517487164',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'daddb53b-945f-461d-878e-936ef9596838',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005552s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002073s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001604s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:17:05+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.104876s] [吞吐率：9.54req/s] [内存消耗：4,164.15kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------427694642212332521209851',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5eab0997-affa-442a-b105-bc7e69e27132',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011852s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002337s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001697s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:18:34+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.094149s] [吞吐率：10.62req/s] [内存消耗：4,163.40kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------093353595397848316153740',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f12b25a4-e13c-43b0-be0a-060ee7211ad4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012213s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001871s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001218s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:18:36+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.080583s] [吞吐率：12.41req/s] [内存消耗：4,163.40kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------427578161183340380423398',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '71d7d0f4-fbae-42c7-888c-a26d6ad19dac',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012925s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002193s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001373s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:18:37+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.100918s] [吞吐率：9.91req/s] [内存消耗：4,163.40kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------005069601742740597916266',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '79fac14b-adae-44d3-9e73-40e281aca375',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004147s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002461s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.002360s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:18:46+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.084080s] [吞吐率：11.89req/s] [内存消耗：4,163.38kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------184571526141308008804529',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a2d77761-3f07-4d1d-b124-44e6a2ff3c64',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014039s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002064s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001284s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:18:48+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.073471s] [吞吐率：13.61req/s] [内存消耗：4,163.40kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------511820294634846504071978',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '1e59c0c5-8502-41b1-9b81-00b6079576d1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004047s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001912s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001374s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:18:49+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.083033s] [吞吐率：12.04req/s] [内存消耗：4,163.41kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------631530739067704056996948',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9769f254-104d-4046-88a6-679ae8d4c20b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002852s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002056s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001453s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:19:02+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.086208s] [吞吐率：11.60req/s] [内存消耗：4,163.43kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------011426642542155366023165',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b9d52eff-2b62-4334-b4b7-3fa6a80c872d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012192s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002541s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001322s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:23:40+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.109079s] [吞吐率：9.17req/s] [内存消耗：4,076.09kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------120030659205631781010786',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b7b3ec81-ae6f-4d71-b94c-ef2b498598d5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014884s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002075s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001757s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:24:08+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.184133s] [吞吐率：5.43req/s] [内存消耗：4,192.05kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------532316153152847808448632',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b9ed0f56-bd03-4a06-bb84-9b7db8f79a0f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003072s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001919s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001495s ]
+[ sql ] [ SQL ] INSERT INTO `users_organization` (`users_id` , `organization_id` , `create_time` , `update_time`) VALUES (29 , 5 , '2020-04-14 14:24:08' , '2020-04-14 14:24:08') [ RunTime:0.001286s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:24:27+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.137782s] [吞吐率：7.26req/s] [内存消耗：4,192.70kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------153953915250041947278732',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '088b8b00-d91d-4b40-b9a6-e2a5f5105fe8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011870s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001819s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001690s ]
+[ sql ] [ SQL ] INSERT INTO `users_organization` (`users_id` , `organization_id` , `create_time` , `update_time`) VALUES (29 , 2 , '2020-04-14 14:24:27' , '2020-04-14 14:24:27') [ RunTime:0.001354s ]
+[ sql ] [ SQL ] UPDATE `users_organization`  SET `delete_time` = '2020-04-14 14:24:27'  WHERE  `users_id` = 29  AND `organization_id` = 5  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001281s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:24:38+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.090080s] [吞吐率：11.10req/s] [内存消耗：4,192.12kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '282',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------245552556900221772959333',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e23b8387-6d85-453e-9ca4-596c641ccaaa',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '2,5',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011649s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001738s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001667s ]
+[ sql ] [ SQL ] INSERT INTO `users_organization` (`users_id` , `organization_id` , `create_time` , `update_time`) VALUES (29 , 5 , '2020-04-14 14:24:38' , '2020-04-14 14:24:38') [ RunTime:0.001375s ]
+---------------------------------------------------------------
+
+[2020-04-14T14:25:51+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/userBindOrganization
+[运行时间：0.102453s] [吞吐率：9.76req/s] [内存消耗：4,131.39kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/userBindOrganization',
+  'route' => 'index/User/userBindOrganization',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '280',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------658875263728763595626590',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ec7078c7-c671-490f-80d1-95f799c75e3e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+  'organization_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013456s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002042s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001462s ]
+[ sql ] [ SQL ] UPDATE `users_organization`  SET `delete_time` = '2020-04-14 14:25:51'  WHERE  `users_id` = 29  AND `organization_id` = 5  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001843s ]
+---------------------------------------------------------------
+
+[2020-04-14T15:16:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.392641s] [吞吐率：2.55req/s] [内存消耗：2,385.06kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '84f99197-b774-4792-b4e4-ae8a464e850b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Class 'app\facade\DataPemissionService' not found[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Index.php:21]
+---------------------------------------------------------------
+
+[2020-04-14T15:27:09+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.069151s] [吞吐率：14.46req/s] [内存消耗：2,385.03kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '64be2873-0af6-4483-87f8-3994eb593718',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Class 'facade\DataPemissionService' not found[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Index.php:21]
+---------------------------------------------------------------
+
+[2020-04-14T15:27:43+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.049238s] [吞吐率：20.31req/s] [内存消耗：2,385.06kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'af06e1fb-4daf-44d1-8fa6-8e6eeb4b096c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Class 'app\facade\DataPemissionService' not found[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Index.php:21]
+---------------------------------------------------------------
+
+[2020-04-14T15:27:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.050260s] [吞吐率：19.90req/s] [内存消耗：2,385.03kb] [文件加载：105]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4335fb7f-a944-4697-9c7d-fae167cbd113',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Class 'facade\DataPemissionService' not found[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Index.php:21]
+---------------------------------------------------------------
+
+[2020-04-14T15:29:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.050731s] [吞吐率：19.71req/s] [内存消耗：2,344.95kb] [文件加载：103]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ab665c45-2a2c-40ae-a428-e3b2fa3736ef',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-14T17:19:56+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree
+[运行时间：0.133800s] [吞吐率：7.47req/s] [内存消耗：4,144.02kb] [文件加载：127]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------960911057743076902908863',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c5726643-370a-4e76-b5d0-4671a167bd55',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011833s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002240s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002660s ]
+[ error ] [0]致命错误: Class 'app\index\service\Config' not found[E:\phpStudy\WWW\lhsoft_back\application\index\service\PrivilegesService.php:17]
+---------------------------------------------------------------
+
+[2020-04-14T17:21:40+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree
+[运行时间：0.085475s] [吞吐率：11.70req/s] [内存消耗：4,143.88kb] [文件加载：127]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------217140767762365747449396',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8218fc58-49f2-4b05-b238-835b077b8509',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011424s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002397s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002976s ]
+[ error ] [0]致命错误: Class 'app\index\service\Db' not found[E:\phpStudy\WWW\lhsoft_back\application\index\service\PrivilegesService.php:76]
+---------------------------------------------------------------
+
+[2020-04-14T17:23:12+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree
+[运行时间：0.100010s] [吞吐率：10.00req/s] [内存消耗：4,068.89kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------010862741512349410299535',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'bf903127-11f1-4e21-8533-6980d582d6c7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011735s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002629s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002847s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `id` FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.001727s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:24:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.086554s] [吞吐率：11.55req/s] [内存消耗：4,120.59kb] [文件加载：127]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------156099529935667529626695',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5b104645-e49f-4a7d-ab38-e5a0619a4393',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011606s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002251s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001885s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001745s ]
+[ error ] [0]致命错误: Call to undefined method app\index\service\PrivilegesService::getRoleHaveResources()[E:\phpStudy\WWW\lhsoft_back\application\index\service\PrivilegesService.php:33]
+---------------------------------------------------------------
+
+[2020-04-14T17:27:10+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.103916s] [吞吐率：9.62req/s] [内存消耗：4,120.63kb] [文件加载：127]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------935885477217801618721572',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '539de5d5-b47f-4c77-9bb6-b9d99fed6fe8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012801s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.001908s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002450s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001558s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001286s ]
+[ error ] [0]致命错误: Call to undefined method app\index\service\PrivilegesService::getRoleHaveResources()[E:\phpStudy\WWW\lhsoft_back\application\index\service\PrivilegesService.php:33]
+---------------------------------------------------------------
+
+[2020-04-14T17:27:35+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.091211s] [吞吐率：10.96req/s] [内存消耗：4,076.38kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------348486956191615369833346',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6a63b5b6-ba35-4365-a8bc-6445f6de35ec',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002780s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002385s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002779s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.002065s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001310s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.002827s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002167s ]
+[ sql ] [ SQL ] SELECT `organization_id` FROM `users_organization` WHERE  `users_id` = 6  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001850s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:28:33+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.085732s] [吞吐率：11.66req/s] [内存消耗：4,043.57kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------401295699062816420694453',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2564515a-0410-437f-ba75-3a765ad0005b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012219s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002116s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002341s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:29:20+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.126343s] [吞吐率：7.91req/s] [内存消耗：4,076.41kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------538402813845633202158492',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '40cc5d24-9151-4b30-98d8-7dbcd0f57575',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003003s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002068s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.003119s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.001843s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001679s ]
+[ sql ] [ SQL ] SELECT `organization_id` FROM `users_organization` WHERE  `users_id` = 6  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001109s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:34:15+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.150439s] [吞吐率：6.65req/s] [内存消耗：4,038.30kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------875380434017833749280544',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '92ea7407-e078-4fdd-9846-2c824785ce9d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012093s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002232s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002358s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001952s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.001863s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001232s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002020s ]
+[ sql ] [ SQL ] SELECT `organization_id` FROM `users_organization` WHERE  `users_id` = 6  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001759s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:34:48+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.126833s] [吞吐率：7.88req/s] [内存消耗：4,035.95kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------493377179916558671962237',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9d4db5e9-b156-4eb9-8ec0-e1d8bc98b943',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012599s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002520s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002848s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001999s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001840s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.002564s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.002087s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:35:10+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.118345s] [吞吐率：8.45req/s] [内存消耗：4,035.95kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------753165297683442543199479',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'bd935ef2-b50f-42b5-96b7-0e93c365089b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013464s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002173s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001611s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001477s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.002683s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001178s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:35:32+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=6
+[运行时间：0.089945s] [吞吐率：11.12req/s] [内存消耗：4,038.84kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------126482278823593571354467',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3273a052-aef4-43cb-b607-0a9dbfc45486',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012135s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002152s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002541s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.001977s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 6  AND `users_role`.`delete_time` = 0 [ RunTime:0.001310s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.001781s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001822s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001929s ]
+[ sql ] [ SQL ] SELECT `organization_id` FROM `users_organization` WHERE  `users_id` = 6  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001195s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:36:14+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=29
+[运行时间：0.112809s] [吞吐率：8.86req/s] [内存消耗：4,141.55kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------414823309687327251634798',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e0b7dc1a-5054-4003-974d-5a0447658578',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011711s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002101s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.002606s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 29  AND `users_role`.`delete_time` = 0 [ RunTime:0.001259s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.001986s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 2  AND `target_id` = 1  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001370s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 29  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.001648s ]
+[ sql ] [ SQL ] SELECT `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001514s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 1  AND `target_id` = 2  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001974s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012739s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.001501s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `organization` WHERE  `id` = 2  AND `organization`.`delete_time` = 0 LIMIT 1 [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 1  AND `target_id` = 1  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001039s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 1  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001015s ]
+---------------------------------------------------------------
+
+[2020-04-14T17:36:41+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserPrivilegesTree?users_id=29
+[运行时间：0.153277s] [吞吐率：6.52req/s] [内存消耗：4,179.33kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUserPrivilegesTree',
+  'route' => 'index/User/getUserPrivilegesTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '392',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------302435066647925688034682',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '08c8eb50-e689-46f4-9d98-26c890dc92b1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.1',
+)
+[ info ] [ PARAM ] array (
+  'users_id' => '29',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012278s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002253s ]
+[ sql ] [ SQL ] SELECT * FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.002609s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.002185s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `users_role` WHERE  `users_id` = 29  AND `users_role`.`delete_time` = 0 [ RunTime:0.001142s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.002122s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 2  AND `target_id` = 1  AND `access_permission`.`delete_time` = 0 [ RunTime:0.002269s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 3  AND `target_id` = 29  AND `access_permission`.`delete_time` = 0 [ RunTime:0.002631s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_organization` [ RunTime:0.002781s ]
+[ sql ] [ SQL ] SELECT `organization_id` FROM `users_organization` WHERE  `users_id` = 29  AND `users_organization`.`delete_time` = 0 [ RunTime:0.001685s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 1  AND `target_id` = 2  AND `access_permission`.`delete_time` = 0 [ RunTime:0.002001s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012157s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `organization` [ RunTime:0.001614s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `organization` WHERE  `id` = 2  AND `organization`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 1  AND `target_id` = 1  AND `access_permission`.`delete_time` = 0 [ RunTime:0.001040s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `resources_id` FROM `access_permission` WHERE  `type` = 1  AND `target_id` = 6  AND `access_permission`.`delete_time` = 0 [ RunTime:0.000915s ]

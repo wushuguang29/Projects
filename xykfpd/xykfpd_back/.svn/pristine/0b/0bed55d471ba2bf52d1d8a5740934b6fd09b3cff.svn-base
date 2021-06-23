@@ -1,0 +1,319 @@
+<?php
+
+namespace app\common\model;
+
+use app\index\controller\Login;
+use http\Exception\RuntimeException;
+use service\rewrite\RewriteModel;
+use think\Db;
+use think\Exception;
+use think\exception\DbException;
+use think\facade\Config;
+use think\model\relation\BelongsToMany;
+use think\model\relation\HasMany;
+
+class UsersModel extends RewriteModel
+{
+    // use SoftDelete;
+    // protected $deleteTime = 'delete_time';
+    protected $table = 'users';
+
+    /**
+     * users_token表的一对多关联
+     * @return HasMany
+     */
+    public function usersToken()
+    {
+        return $this->hasMany('UsersTokenModel', 'users_id');
+    }
+
+    /**
+     * 通过project_id查询项目名称
+     * @author Zhang zw
+     * @date 2020/9/24 15:44
+     */
+    public function projects(): \think\model\relation\HasOne
+    {
+        return $this->hasOne('ProjectsModel','id','project_id');
+    }
+
+    /**
+     * 角色表的相对关联
+     * @return BelongsToMany
+     */
+    public function roles(): BelongsToMany
+    {
+        return $this->belongsToMany('RoleModel','users_role','users_id','users_id');
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2020-12-22 14:19:35
+     * @param [type] $request
+     * @param integer $page
+     * @param integer $limit
+     * @return array
+     */
+    public function getList($request, $page = 1, $limit = 25): array
+    {
+
+        $role = Db::table('users_role')->alias('ur')
+            ->join('role r','r.id = ur.role_id','LEFT')
+            ->field(['
+                GROUP_CONCAT(r.name) AS role_name,
+                0 AS delete_time,
+                ur.users_id
+                '])
+            ->fetchSql(true)
+            ->group('ur.users_id')
+            ->select();
+
+        $where = [['u.region_id', '=', USER_ARR['region_id']], ['u.region_id', '=', 0]];
+
+        if (USER_ARR['is_root'] === 1) {
+            $where = [];
+        }
+
+        $db    = $this->alias('u')
+            ->join(['('.$role.')' => 'r'],'r.users_id = u.id','LEFT')
+            ->whereOr($where)
+            ->withSearch(['username'], ['username' => $request['username']]);
+
+        $field = [
+            'u.id',
+            'u.username',
+            'u.account',
+            'u.gender',
+            'u.email',
+            'u.mobile',
+            'u.status',
+            'u.working_status',
+            'r.role_name',
+            'u.is_root',
+            'u.is_administrator',
+        ];
+        $total = $db->count('u.id');
+        $data  = $db->page($page, $limit)->field($field)->order('u.id', 'DESC')->select();
+        return ['total' => $total, 'data' => $data];
+    }
+
+    /**
+     * [addUser 添加用户]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-03-24T17:57:39+0800
+     * @param    [type]                   $data [description]
+     * @return array
+     * @throws \think\exception\PDOException
+     */
+    public function addUser($data): array
+    {
+
+        try {
+            $this->startTrans();
+
+            $exist_account = $this->where('account',$data['account'])->count();
+            $exist_phone = $this->where('mobile',$data['mobile'])->count();
+            if ($exist_account || $exist_phone) {
+                return msgReturn(43021);
+            }
+
+            $result = $this->allowField(true)->save($data);
+            if ($result) {
+
+                $this->commit();
+                return msgReturn(45003, ['id' => $this->id]);
+
+            }
+            throw new RuntimeException('');
+        } catch (Exception $exception) {
+            $this->rollback();
+            return msgReturn(46002);
+        }
+
+
+    }
+
+    /**
+     * [editUser 编辑用户]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-03-24T18:07:25+0800
+     * @param    [type]                   $data [description]
+     * @return array [type]                         [description]
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
+    public function editUser($data): array
+    {
+        //判断用户名或账号是否存在
+        $exist = $this
+            ->where(function ($query) use ($data) {
+                $query->whereor('mobile', $data['mobile']);
+                $query->whereor('account', $data['account']);
+            })
+            ->where('id', 'NEQ', $data['id'])
+            ->count();
+        if ($exist) {
+            return msgReturn(43021);
+
+        }
+
+        $result = $this->isUpdate(true)->update($data);
+
+        if ($result !== false) {
+            // 注销用户的token
+            $users = self::get($data['id']);
+
+            $login = new Login;
+
+            foreach ($users->usersToken AS $key => $value) {
+                $login->logout($value->token);
+            }
+
+            $users->save();
+
+            return msgReturn(45003);
+        }
+        return msgReturn(46002);
+    }
+
+    /**
+     * [unlock 用户解锁]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-03-25T13:52:38+0800
+     * @param    [type]                   $id [description]
+     * @return array [type]                       [description]
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
+    public static function unlock($id): array
+    {
+        $result = self::where('id', $id)
+            ->update([
+                'remain' => '5', //错误次数
+                'status' => '1', //状态
+            ]);
+        if ($result !== false) {
+            return msgReturn(45003);
+        }
+        return msgReturn(46002);
+    }
+
+    /**
+     * [reset 重置密码]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-03-25T14:04:32+0800
+     * @param    [type]                   $id [description]
+     * @return array [type]                       [description]
+     * @throws \think\Exception
+     * @throws \think\exception\PDOException
+     */
+    public static function reset($id): array
+    {
+        $users = self::get($id);
+
+        $login = new Login;
+
+        // 注销用户的token
+        foreach ($users->usersToken AS $key => $value) {
+            $login->logout($value->token, $value->users_id);
+        }
+
+        $users->password = password_hash(Config::get('service.DEFAULT_PASSWORD'), PASSWORD_BCRYPT);
+
+        $result = $users->save();
+
+        if ($result !== false) {
+            return msgReturn(0, [], '重置成功，新密码：' . Config::get('service.DEFAULT_PASSWORD'));
+        }
+        return msgReturn(46004);
+    }
+
+    /**
+     * [delete 删除用户]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-03-25T14:04:21+0800
+     * @param    [type]                   $id [description]
+     * @return array [type]                       [description]
+     */
+    public static function deleteUser($id): array
+    {
+        $userCollection = self::get($id);
+
+        if($userCollection['is_root'] === 1){
+            return msgReturn(43029);
+        }
+
+        $is_bound_role = Db('users_role')->where('users_id',$id)->count();
+        $is_bound_organization = Db('users_organization')->where('users_id',$id)->count();
+        if($is_bound_organization || $is_bound_role){
+            return msgReturn(46001,'删除失败，用户已绑定角色或机构');
+        }
+        $result = $userCollection->delete();
+        if ($result) {
+            return msgReturn(45001);
+        }
+        return msgReturn(46001);
+    }
+
+    public static function getUserInfo($id)
+    {
+        $data = self::get($id);
+        return msgReturn(45003, $data);
+    }
+
+    /**
+     * [change 修改密码]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-04-02T09:42:22+0800
+     * @param $params
+     * @return array [type]                   [description]
+     */
+    public function change($params): array
+    {   
+        $user = $this->get($params['id']);
+        if(!password_verify($params['old_password'],$user['password'])){
+            return msgReturn(43022);
+        }
+        $result = $this->isUpdate(true)->save($params);
+        if($result !== false){
+            return msgReturn(45003);
+        }
+        return msgReturn(46002);
+    }
+
+    /**
+     * [searchUsernameAttr 用户名模糊搜索]
+     * @Author   ShiHUN
+     * @Email    461770336@qq.com
+     * @DateTime 2020-04-01T13:27:34+0800
+     * @param $query
+     * @param $value
+     * @param $data
+     * @return void [type]                          [description]
+     */
+    public function searchUsernameAttr($query, $value, $data): void
+    {
+        $query->where('username', 'LIKE', '%' . $value . '%');
+    }
+
+    /**
+     * 根据用户 ID 返回用户
+     * @param $users
+     * @throws DbException
+     * @return array
+     * @author Zhang zw
+     * @date 2020/10/22 17:09
+     */
+    public static function getReceiver($users): array
+    {
+        return self::where('id', 'IN', $users)->field('id AS receiver_id,username AS receiver')->select()->toArray();
+    }
+}

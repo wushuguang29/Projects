@@ -1,0 +1,333 @@
+<?php
+
+namespace app\common\model;
+
+use service\rewrite\RewriteModel;
+use think\Db;
+use app\common\model\QuestionsModel;
+use zip\pclzip;
+
+/**
+ * 在线资源管理
+ * @package app\common\model
+ */
+class FolderModel extends RewriteModel
+{
+    public static $upload_path;//下载文件路径
+    public static $view_file_path;//预览文件路径
+    public static $view_zip_path;//压缩包访问路径
+    public static $zip_path;//压缩包存放路径
+    public function initialize(){
+        parent::initialize();
+        $VIEW_FILE_PATH = ConfigurationModel::where("name","eq","VIEW_FILE_PATH")->value("value");
+        $VIEW_FILE_PATH = trim($VIEW_FILE_PATH,"/");
+        self::$upload_path = env("root_path")."/".config("service.file.upload_file_path")."/";
+        self::$view_file_path = $VIEW_FILE_PATH."/". config("service.file.upload_file_path") ."/";
+        self::$zip_path = env("root_path")."public/".config("service.file.upload_file_path"). "/Zip/";
+        self::$view_zip_path = $VIEW_FILE_PATH."/". config("service.file.upload_file_path") . "/Zip/";
+    }
+    /**
+     * 文件夹添加
+     */
+    static function add($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = QuestionsModel::delRedundantFields('folder', $param);//除去多余字段
+            $data['create_time']    = $date;
+            $folder_id = Db::table('folder')->insertGetId($data);//添加到资源文件夹表
+            if ($folder_id) {
+                Db::commit();
+                return msgReturn(45003, ['id'=> $folder_id]);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 文件夹重命名
+     */
+    static function rename($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = QuestionsModel::delRedundantFields('folder', $param);//除去多余字段
+            $data['update_time']    = $date;
+            unset($data['id']);
+            $res = Db::table('folder')->where('id', $param['id'])->update($data);//更新到资源文件夹表
+            if ($res) {
+                Db::commit();
+                return msgReturn(45003);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 文件夹查看
+     */
+    static function browse($param)
+    {
+        $res = Db::table('folder')->field([
+            'id',
+            'pid',
+            'folder_name',
+        ])
+            ->where('id', $param['id'])
+            ->find();
+        return msgReturn(0, $res);
+    }
+
+    /**
+     * 文件列表
+     */
+    public function getFileList($param)
+    {
+        $start = input('start') ? input('start') : 0;
+        $limit = input('limit') ? input('limit') : 25;
+        $db = Db::table('file')->alias('f')
+            ->join('folder fr', 'fr.id = f.folder_id', 'left')
+            ->field([
+                'f.id',
+                'f.name',
+                'f.height',
+                'f.width',
+                'f.ext',
+                'f.savepath',
+                'f.savename',
+                "concat('".self::$view_file_path."',f.savepath,'/',f.savename) as path",
+                'fr.id as folder_id',
+                'fr.folder_name',
+            ])
+            ->where('fr.id', $param['id']);
+        $data  = $db->order('f.id DESC')->limit($start, $limit)->select();
+        $total = $db->count();
+        $list  = $this->getImageType($data);
+        return msgReturn(0, [
+            'total' => $total,
+            'data' => $list
+        ]);
+    }
+
+    /**
+     * 文件预览
+     */
+    static function browseFile($param)
+    {
+        $res = Db::table('file')->alias('f')
+            ->join('folder fr', 'fr.id = f.folder_id', 'left')
+            ->field([
+                'f.id',
+                'f.name',
+                'f.height',
+                'f.width',
+                'f.ext',
+                'f.savepath',
+                'f.savename',
+                "concat('".self::$view_file_path."','',f.savepath,'/',f.savename) as path",
+                'fr.id as folder_id',
+                'fr.folder_name',
+            ])
+            ->where('f.id', $param['id'])
+            ->find();
+        $ext = strtolower(ltrim($res['ext'], '.'));
+        if (strpos(config('service.file.img_type'), $ext) !== false) {
+            $res['type'] = 1;
+        } else if (strpos(config('service.file.word_type'), $ext) !== false) {
+            $res['type'] = 2;
+        } else if (strpos(config('service.file.excel_type'), $ext) !== false) {
+            $res['type'] = 3;
+        } else if (strpos(config('service.file.ppt_type'), $ext) !== false) {
+            $res['type'] = 4;
+        } else if (strpos(config('service.file.cad_type'), $ext) !== false) {
+            $res['type'] = 5;
+        } else if (strpos(config('service.file.pdf_type'), $ext) !== false) {
+            $res['type'] = 6;
+        } else {
+            $res['type'] = 7;
+        }
+        return msgReturn(0, $res);
+    }
+
+    /**
+     * [getImageType 获取图片类型]
+     * @param  [type] $list [description]
+     * @return [type]       [description]
+     */
+    protected function getImageType($list)
+    {
+        foreach ($list as $key => $value) {
+            $ext = strtolower(ltrim($value['ext'], '.'));
+            if (strpos(config('service.file.img_type'), $ext) !== false) {
+                $list[$key]['type'] = 1;
+            } else if (strpos(config('service.file.word_type'), $ext) !== false) {
+                $list[$key]['type'] = 2;
+            } else if (strpos(config('service.file.excel_type'), $ext) !== false) {
+                $list[$key]['type'] = 3;
+            } else if (strpos(config('service.file.ppt_type'), $ext) !== false) {
+                $list[$key]['type'] = 4;
+            } else if (strpos(config('service.file.cad_type'), $ext) !== false) {
+                $list[$key]['type'] = 5;
+            } else if (strpos(config('service.file.pdf_type'), $ext) !== false) {
+                $list[$key]['type'] = 6;
+            } else {
+                $list[$key]['type'] = 7;
+            }
+        }
+        return $list;
+    }
+
+    /**
+     * 文件上传
+     */
+    public function upload($file,$info,$user_id,$target_id)
+    {
+        #给文件加密
+        $encryptFile = array(
+            "sha1" => sha1_file($info['tmp_name']),
+            "md5"  => md5_file($info['tmp_name'])
+        );
+        $date = date('Y-m-d H:i:s');
+//        #文件是否已存在
+//        $oldFileData = Db::table("file")->where( array("md5"=>$encryptFile["md5"],"data_from"=>2))->find();
+//        if (empty($oldFileData)) {
+        $moveResult = $file->move(self::$upload_path);
+        if($moveResult == false){
+            return array(
+                "status"=>false,
+                "data"=>array(
+                    "error_msg"=>$info["name"].$file->getError()
+                )
+            );
+        }
+        $imageInfo = @GetImageSize(self::$upload_path. "/".$moveResult->getSaveName());
+        #构造file表数据
+        $fileData = [
+            'name'          => $info["name"], //原始名称
+            'savename'      =>$moveResult->getFilename(),
+            'savepath'      => substr($moveResult->getSaveName(), 0, strpos($moveResult->getSaveName(), "\\")),
+            'ext'           => str_replace('.','',strrchr($info["name"],'.')), //后缀名
+            'mime'          => $moveResult->getMime(), //
+            'size'          => $moveResult->getSize(), //大小
+            'md5'           => $encryptFile["md5"], //对原始附件md5
+            'sha1'          => $encryptFile["sha1"],//对原始附件sha1
+            'data_from'    => 2,
+            'create_uid'   => $user_id,
+            'create_time'  => $date,
+            'folder_id'    => $target_id,
+        ];
+        #是否为图片
+        if(!(false === $imageInfo)){
+            $fileData["width"]  = $imageInfo[0];
+            $fileData["height"]  = $imageInfo[1];
+        }
+        try{
+            Db::startTrans();
+            $file_id = db("file")->insertGetId($fileData);
+            Db::commit();
+            return array(
+                "status"=>true,
+                "data"=>array(
+                    "error_msg" => "",
+                    "file_id"   => $file_id,
+                    "visit_path"=> self::$view_file_path. $fileData["savepath"] . "/" . $fileData["savename"]
+                )
+            );
+        }catch (\Exception $e){
+            Db::rollback();
+            return array(
+                "status"    => false,
+                "data"      => array(
+                    "error_msg" =>  $info["name"].($e->getMessage())
+                )
+            );
+        }
+//        } else{
+//            Db::table('file')->where('id', $oldFileData["id"])->update(['folder_id'=> $target_id, 'update_time'=> $date]);
+//            return array(
+//                "status"=>true,
+//                "data"=>array(
+//                    "error_msg" => "",
+//                    "file_id"   => $oldFileData["id"],
+//                    "visit_path"=>self::$view_file_path.$oldFileData["savepath"]."/".$oldFileData["savename"]
+//                )
+//            );
+//        }
+    }
+
+    /**
+     * 下载
+     */
+    public function download($file_ids)
+    {
+        if (is_numeric($file_ids)) {
+            $fileArr[] = $file_ids;
+        } else {
+            if (is_null(json_decode($file_ids))) {
+                $fileArr = explode(",", $file_ids);
+            } else {
+                $fileArr = json_decode($file_ids, true);
+            }
+        }
+        $result = Db::table('file')
+            ->field(array("concat('".self::$view_file_path."',savepath,'/',savename) as url", 'savepath', 'savename'))
+            ->where('id', 'in', $fileArr)
+            ->select();
+        if (!empty($result)) {
+            $zipName = date("Y-m-d") . ".zip";
+            $zipPath = self::$zip_path.$zipName; //压缩包存放路径
+            $zipViewPath = self::$view_zip_path.$zipName; //压缩包访问路径
+            $archive = new pclzip($zipPath);
+            foreach ($result as $file) {
+                $path = self::$upload_path. $file["savepath"] . "/" . $file["savename"];
+                $paths[] = str_replace('//', '/', $path);
+            }
+            $result = $archive->add(implode(",",$paths),PCLZIP_OPT_ADD_PATH, '',
+                PCLZIP_OPT_REMOVE_PATH,self::$upload_path);
+            if ($result == 0) {
+                return array("status" => false, "msg" => $archive->errorInfo(true));
+            } else {
+                return array("status" => true,"data"=>$zipViewPath);
+            }
+        }else {
+            return array("status" => false, "msg" => "未获取到相关数据！");
+        }
+    }
+
+    /**
+     * 文件重命名
+     */
+    static function renameFile($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = QuestionsModel::delRedundantFields('file', $param);//除去多余字段
+            $data['update_time']    = $date;
+            unset($data['id']);
+            $res = Db::table('file')->where('id', $param['id'])->update($data);//更新到文件表
+            if ($res) {
+                Db::commit();
+                return msgReturn(45003);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+}

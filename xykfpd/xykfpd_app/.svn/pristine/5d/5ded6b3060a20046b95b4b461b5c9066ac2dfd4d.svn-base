@@ -1,0 +1,455 @@
+<!--生理订阅-->
+<template>
+	<view class="body">
+		<view class="uni-div" v-if="!flag">
+			<view  class="uni-div2">
+				<p class="uni_p"><image src="../../../static/no_data.png" style="width: 100%;height: 100%;"></image></p>
+				<p>暂无数据</p>
+			</view>
+		</view>
+		
+		<view  class="uni-div" v-if="flag">
+			<view class="uni_img">
+			
+			</view>
+			<view class="tan-xf" >
+				<u-form-item label="订阅人" label-width="180">
+				<u-input v-model="form.app_user_member"  type="select" @click="change" placeholder="请选择订阅人"/>
+				<u-select v-model="show" mode="single-column" :list="list" @confirm="confirm"></u-select>
+				</u-form-item>
+			</view>
+			<view style="height: 37rem;" v-if="type">
+				<view class="uni_checkbox">
+				      <h3 style="text-align: center;">{{domain}}</h3>
+								<checkbox-group class="content-class" @change="chooseMaleLike">
+								        <label class="item" v-for="(item, index) in maleLike" :key="index" :class="{on: item.isChecked}">
+								          <checkbox :value="item.side"></checkbox>
+								          <text class="item-text">{{item.side}}</text>
+								        </label>
+								      </checkbox-group>
+						
+				</view>
+			</view>
+			<view style="min-height: 37rem;" v-if="!type">
+				<view style="width:100%;visibility:inherit;padding-top: 32%;">
+				<view style="width: 45%;height: 10rem;margin: 0 auto;text-align: center;">
+					<image src="../../../static/no_data.png"  style="width: 100%;height: 100%;"></image>
+					<view>暂无数据</view>
+				</view>
+				</view>
+			</view>
+		</view>
+		<view class="footer">
+				<button class="uni-btn" @click="submit">提交</button>
+			 </view>
+	</view>
+	
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				type:false,
+			option:{},
+			show: false,
+			form:{},
+			domain:"",
+			maleLike: [	],
+			currentArr: [], // 当前用户想要的选项，最大为5
+			oldArr: [], // 上一次的返回值
+			hasPass: false, // 用户之前是否选择过，是为true
+			checkboxList: [],
+			list: [],
+			flag:true
+			}
+			},
+			onLoad:function(option){
+				console.log("option",option)
+				this.option=option;
+				// this.$ajax.get({
+				// 	url: '/api/AppUserMember/getMemberInfo',
+				// 	param: {},
+				// 	header: {
+				// 		'Content-Type':'application/json;charset=UTF-8',
+				// 		'x-requested-with':"XMLHttpRequest"
+				// 	},
+				// }).then((res) => {
+				// 	let arry={};
+					
+					
+				//     res.data.data.forEach((Element)=>{
+				// 		arry.label=Element.name;
+				// 		arry.value=Element.id.toString();
+				// 		console.log("arrrr",this.list)
+				// 	    this.list.push(arry);
+				// 	})
+				// 	// this.list=res.data.data;
+				// 	console.log("list",this.list)
+				// }) 
+				
+			},
+			onShow:function(option){
+				//       console.log("option",option);
+				// let list = []
+				// 		this.$ajax.get({
+				// 			url: '/api/AppUserMember/getMemberInfo',
+				// 			param: {},
+				// 			header: {
+				// 				'Content-Type':'application/json;charset=UTF-8',
+				// 				'x-requested-with':"XMLHttpRequest"
+				// 			},
+				// 		}).then((res) => {
+							
+							 
+							
+				// 		    res.data.data.forEach((Element)=>{
+				// 				let arry={};
+				// 				arry.label=Element.name;
+				// 				arry.value=Math.random() + ""
+				// 				console.log("arrrr",arry)
+				// 			    list.push(arry);
+								
+				// 			})
+				// 			// this.list=res.data.data;
+				// 			// console.log("list",this.list)
+				// 		}) 
+						
+				// 			this.list = list
+			},
+			async created(){
+				// this.list = [
+				// 	{
+				// 		label: "123123",
+				// 		value: "5"
+				// 	}
+				// ]
+				
+				const {data: {data,code}} = await this.$ajax.get({
+							url: '/api/AppUserMember/getMemberInfo',
+							param: {},
+							header: {
+								'Content-Type':'application/json;charset=UTF-8',
+								'x-requested-with':"XMLHttpRequest"
+							},
+						})
+						console.log("看",data)
+						data.forEach(item => {
+							let obj = {}
+							obj.label = item.name
+							obj.value = item.id + ""
+							this.list.push(obj)
+						})
+						console.log("this",this.list,code)
+						if(code!==0){
+							
+						}else{
+							this.$ajax.get({
+															url: '/api/AppUserMember/getSideList',
+															param: {
+																domain:this.option.type
+															},
+															header: {
+																'Content-Type':'application/json;charset=UTF-8',
+																'x-requested-with':"XMLHttpRequest"
+															},
+														}).then(res=>{
+															console.log("ceke",res.data.data)
+															if(res.data.data.length==0){
+																this.type=false;
+															}else{
+																this.type=true
+																res.data.data[0].side.forEach(item => {
+																	console.log("item",item)
+																	item.isChecked=false
+																})
+																this.domain=res.data.data[0].domain;
+																this.maleLike=res.data.data[0].side;
+																console.log("me",this.maleLike)
+															}
+															
+														})
+						}
+					this.form.app_user_member_id=uni.getStorageSync('memberType');
+					console.log("id",this.form.app_user_member_id,this.list)
+					 this.list.forEach((item,index)=>{
+						if(item.value==this.form.app_user_member_id){
+							this.form.app_user_member=item.label
+						} 
+					 })
+							
+							
+				
+			},
+			
+			methods:{
+				submit(){
+					console.log("currentArr",this.currentArr)
+					 let B=[];
+					 this.currentArr.forEach(res=>{
+						let a={
+						 						
+						 }
+						 console.log(res);
+						 a.side=res;
+						 
+						 B.push(a);//选中按钮数组
+						
+					 })
+					
+					// api/AppUserMember/subscribe
+					this.$ajax.post({
+													url: '/api/AppUserMember/subscribe',
+													data: {
+														app_user_member_id:this.form.app_user_member_id,
+														domain:this.option.type,
+														side: JSON.stringify(B)
+													},
+													header: {
+														'Content-Type':'application/json;charset=UTF-8',
+														'x-requested-with':"XMLHttpRequest"
+													},
+												}).then(res=>{
+													uni.setStorageSync('memberType', this.form.app_user_member_id);
+													if(res.data.code==0){
+														uni.showToast({
+															title:res.data.msg,
+															icon:"none"
+														})
+														uni.switchTab({
+														             url: '/pages/views/EvaluationCenter/CenterIndex',
+														         });
+													}else{
+														uni.showToast({
+															title:res.data.msg,
+															icon:"none"
+														})
+													}
+														
+													
+														
+													
+													
+												})
+				},
+				 chooseMaleLike: function (e) {
+					 let a={};
+					 console.log("e",e.detail.value);
+				        if (e.detail.value.length > 5) { // 如果选择的个数超过5个
+				          if (!this.hasPass) { // 当用户选择数量是第一次超过5
+				            this.hasPass = true
+				            if (e.detail.value.length > this.oldArr.length) { // 如果当前选择总数大于上一次选择总数（用户没有取消过选择）
+				              this.currentArr = e.detail.value.slice(0, 5)
+				              uni.showToast({
+				                title: '最多5个',
+				                icon: 'none'
+				              })
+				            } else { // 如果当前选择总数小于上一次选择总数（用户取消部分选择）
+				              let arr = []
+				              for (var i = 0; i < this.currentArr.length; i++) {
+				                for (var j = 0; j < 5; j++) {
+				                  if (this.currentArr[i] === e.detail.value[j]) {
+									  
+				                    arr.push(this.currentArr[i])
+				                  } else {
+				                    continue
+				                  }
+				                }
+				              }
+				              this.currentArr = arr
+				            }
+				          } else { // 当用户选择数量不是第一次超过5（这时候change事件的返回值里有不一定是用户想要的值，所以需要做判断）
+				            if (e.detail.value.length > this.oldArr.length) { // 用户又增加了选项
+				              let n = e.detail.value.length
+				              if (this.currentArr.length < 5) {
+				                this.currentArr.push(e.detail.value[n - 1])
+				              } else {
+				                uni.showToast({
+				                  title: '最多5个',
+				                  icon: 'none'
+				                })
+				              }
+				            } else { // 用户取消了部分选项
+				              let arr = []
+				              for (var i = 0; i < this.currentArr.length; i++) {
+				                let n = e.detail.value.indexOf(this.currentArr[i])
+				                if (n !== -1) {
+				                  arr.push(this.currentArr[i])
+				                } else {
+				                  continue
+				                }
+				              }
+				              this.currentArr = arr
+				            }
+				          }
+				        } else { // 如果选择的个数小于等于5
+				          if (this.hasPass) { // 不是第一次小于5，即之前多选过，后来又取消选择
+				            if (e.detail.value.length < this.oldArr.length) { // 用户取消了部分选择
+				              let arr = []
+				              for (var i = 0; i < this.currentArr.length; i++) {
+				                let n = e.detail.value.indexOf(this.currentArr[i])
+				                if (n !== -1) {
+				                  arr.push(this.currentArr[i])
+				                } else {
+				                  continue
+				                }
+				              }
+				              this.currentArr = arr
+				            } else { // 用户增加选择，增加的新选项在数组最后
+				              let n = e.detail.value.length
+				              this.currentArr.push(e.detail.value[n - 1])
+				            }
+				          } else { // 是第一次小于5，这个最简单了，直接选了什么就给什么
+				            this.currentArr = e.detail.value
+				          }
+				          
+				          if (e.detail.value.length === 0) { // 如果用户取消了全部选择，让hasPass为false，即下一次再选时就会判断为第一次选择
+				            this.hasPass = false
+				          }
+				        }
+				        for (var i = 0, lenI = this.maleLike.length; i < lenI; ++i) { // 给用户的选项添加样式
+				          this.maleLike[i].isChecked = false;
+				          for (var j = 0, lenJ = this.currentArr.length; j < lenJ; ++j) {
+				            if (String(this.maleLike[i].side) === String(this.currentArr[j])) {
+				              this.maleLike[i].isChecked = true
+				              break
+				            } 
+				          }
+				        }
+				        this.oldArr = e.detail.value // 把当前返回值赋值给上一次的返回值
+				      },
+				    
+				change(){
+					
+					if(this.list.length==0){
+						uni.showToast({
+						title: '用户没有成员,请先添加成员',
+						icon: 'none'
+						});
+						 uni.reLaunch({ url:'/pages/views/member/memberTable'})
+					}
+						this.$nextTick(() => (this.show = true))
+				},
+			async	confirm(e) {
+								console.log(e);
+								this.form.app_user_member=e[0].label;
+								this.form.app_user_member_id=e[0].value;
+								// console.log("app_user_member",this.form.app_user_member_id);
+								// const {data: {data}} = await this.$ajax.get({
+								// 			url: '/api/Evaluating/getMemberSideList',
+								// 			param: {
+								// 				app_user_member_id:this.form.app_user_member_id,
+								// 			},
+								// 			header: {
+								// 				'Content-Type':'application/json;charset=UTF-8',
+								// 				'x-requested-with':"XMLHttpRequest"
+								// 			},
+								// 		})
+								// 	console.log("看",data)
+							},
+							
+							
+			}
+			
+			}
+</script>
+
+<style>
+	
+	.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+	}
+	.footer {
+		color: #fff;
+		line-height: 100rpx;
+		flex: 0 0 100rpx;
+		    width: 100%;
+		/* 不放大不缩小固定100rpx */
+	}
+	.uni_checkbox{
+		    margin: 15% 0 0 6%;
+		    border: solid 10rpx #f8f8f8;
+		    border-radius: 25rpx;
+		    width: 90%;
+	}
+	.item {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	  width: 30%;
+	  height: 60upx;
+	  font-size: 28upx;
+	  line-height: 60upx;
+	  border-radius: 30upx;
+	  margin-bottom: 20upx;
+	  text-align: center;
+	  box-sizing: border-box;
+	  border: 1upx solid #47C3A8;
+	  
+	}
+	.item checkbox {
+	  display: none;
+	}
+	.on {
+	  border: none;
+	  background-color: #47C3A8;
+	  color: #fff;
+	}
+	.content-class {
+	        width: 90%;
+	        margin: 20upx auto;
+	        display: flex;
+	        flex-flow: row wrap;
+	        justify-content: space-between;
+	        
+	      
+	      }
+	.uni-form-item, .uni-column{
+		    margin: 4% 0% 0% 26%;
+	}
+	.tan-xf{
+			display: flex;
+			border: 0.1rem solid #f5f5f5;
+			    position: absolute;
+			    padding: 0rem;
+			    margin: -4% 0 0 5%;
+			    width: 90%;
+			    height: 4rem;
+			    background-color: #fff;
+				    border-radius: 6px;
+	-moz-border-radius:25px;
+	padding: 0 0 0 10%;
+		}
+	.uni_img{
+		background-image: url(../../../static/bg.png);
+		background-size: 100% 100%;
+		  
+		    background-repeat: no-repeat;
+		    height: 6rem;
+	}
+	.uni_p{
+		    width: 35%;
+		    height: 14rem;
+		    margin: 50% 0 0 32%;
+		    position: 1;
+	}
+	.uni-div{
+		width: 100%;
+		    min-height: 36rem;
+			height: 100%;
+	}
+	.uni-div2{
+		height: 100%;
+		    width: 100%;
+	}
+	.body{
+		    width: 100vw;
+		    height: 100vh;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
+	}
+</style>

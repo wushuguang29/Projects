@@ -1,0 +1,392 @@
+<!--康复测评管理--康复题库管理-->
+<template>
+  <el-container class="main-container">
+    <el-header class="search-container" height="auto">
+      <lh-search-bar :formItemData="formItemData" @searchChange="getGridData" @addHandler="addHandler" :operationData="addOper" @getForm="getForm" />
+    </el-header>
+    <lh-table
+      :table="table"
+      :gridData="gridData"
+      @pageChange="getGridData"
+      @handleVoice='handleVoice'
+      :loading="loading"
+      @handleEdit='handleEdit'
+      @handleDelete='handleDelete'
+      @handleUpload='handleUpload'
+      @handleLook='handleLook'
+      @handleAudio='handleAudio'
+      :total="total"
+    ></lh-table>
+
+    <lh-dialog
+      :dialogVisible.sync="dialogVisible"
+      v-if="createDialog"
+      :windowTitle="windowTitle"
+      :hasButton="false"
+      @updateList="updateList"
+    >
+      <!-- <edit v-if="loShow" :editStatus="editStatus" :rowData="rowData" @handleClose="cancel" @updateList="updateList"></edit> -->
+        <add v-if="!loshow"  :hidden="hidden" :editStatus="editStatus" :isLook="isLook" :rowData="rowData" @handleClose="cancel" @updateList="updateList"></add>
+        <voice v-if="loshow" :hidden="hidden" :editStatus="editStatus" :isLook="isLook" :rowData="rowData" @handleClose="cancel" @updateList="updateList"></voice>
+    </lh-dialog>
+     <lh-dialog
+      :dialogVisible.sync="Visible"
+      v-if="Dialog"
+      windowTitle="录音"
+      :hasButton="false"
+      windowWidth="60%"
+      @updateList="updateList"
+    >
+    <!-- 1112222 -->
+      <audioaa :editStatus="editStatus"  :rowData="rowData" @handleClose="audiocancel" @updateList="updateList"></audioaa>
+    </lh-dialog>
+  </el-container>
+
+
+</template>
+<script>
+// import {
+//  getFinanceList
+// } from "@/api/finance.js";
+import { QuestionsEdit,QuestionsAdd,QuestionsBrowse,Questionsdelete,QuestionsGetList } from "@/api/evaluation";
+// import { getProjectAll } from "@/api/public.js";
+import { mapActions, mapGetters } from "vuex";
+ import audioaa from "./detail/audio";
+ import edit from "./detail/edit";
+  import add from "./detail/add";
+  import voice from "./detail/voice";
+import { getBaseConfig } from "@/utils/common";
+// import Audit from "./module/Audit";
+
+export default {
+  name: "index",
+  components: {
+    edit,add,voice,audioaa
+  },
+  data() {
+    return {
+      hidden:false,
+      editStatus:false,
+     loShow:false,
+      windowTitle:"",
+    voiceShow:false,
+      areaList: [],
+      
+      formItemData: [
+        {
+          element: "input",
+              defaultValue: "",
+              name: "search",
+              disabled: false,
+              label: "关键字",
+              placeholder: "请输入方面关键字"
+        },{
+              element: "select",
+                defaultValue: "",
+                name: "domain",
+                label: "领域",
+                placeholder: "请选择领域",
+                clearable: true,
+                options: [
+                   
+                ]
+        }
+      ],
+      table: {
+        // hasSelect: false,
+        hasRowsNumber: true,
+         
+        hasOperation: true,
+        hasExpend: true,
+        columns: [
+          {
+            text: "领域",
+            dataIndex: "domain",
+            showToolTip: true,
+            render: (h, params) => {
+                            
+                            let value = params.row["domain"],
+                           
+                              config = getBaseConfig("DOMAIN");
+                              
+                              return h("span", config[value]);
+                        }
+          },
+          {
+            text: "方面",
+            dataIndex: "side",
+            showToolTip: true,
+          },
+          {
+            text: "标识码",
+            dataIndex: "identification_code",
+            showToolTip: true,
+          },
+        //  {
+        //     text: "指导语",
+        //     dataIndex: "instruction",
+        //     showToolTip: true,
+        //   },
+          {
+            text: "题目类型",
+            dataIndex: "question_type",
+            showToolTip: true,
+            render: (h, params) => {
+                            
+                            let value = params.row["question_type"],
+                           
+                              config = getBaseConfig("QUESTION_TYPE");
+                              
+                              return h("span", config[value]);
+                        }
+          },
+          {
+            text: "题目",
+            dataIndex: "question_title",
+            showToolTip: true,
+          },
+          {
+            text: "选项/分数",
+            dataIndex: "option_title",
+            showToolTip: true,
+          },
+          {
+            text: "语音上传情况",
+            dataIndex: "is_voice",
+            showToolTip: true,
+            render: (h, params) => {
+                            
+                let is_voice = params.row["is_voice"];
+                let value = "未上传";
+                if(is_voice == 1){
+                  value = '已上传';
+                }
+                  
+                  return h("span", value);
+            }
+          },
+           
+        ],
+         operation: {
+              width: 340,
+              data: [
+                {
+                  text: "查看",
+                  Fun: "handleLook",
+                  permission: "look",
+                  type: "primary"
+                },
+                {
+                  text: "编辑",
+                  Fun: "handleEdit",
+                  permission: "edit",
+                  type: "primary"
+                },
+                {
+                  text: "删除",
+                  Fun: "handleDelete",
+                  permission: "delete",
+                  type: "danger",
+                  // controlBtnFun(e) {
+                  //   if(e.isdel) {
+                  //     return true
+                  //   }else {
+                  //     return false
+                  //   }
+                  // },
+                },
+               
+                {
+                  text: "语音",
+                  Fun: "handleVoice",
+                  permission: "voice",
+                  type: "primary"
+                },
+                 {
+                  text: "录音",
+                  Fun: "handleAudio",
+                  permission: "recording",
+                  type: "primary"
+                },
+              ]
+            },
+      },
+     addOper: [
+            {
+              text: "新建",
+              type: "success",
+              Fun: "addHandler",
+              permission: "add",
+              icon: "iconfont el-icon-plus"
+            }
+          ],
+      //element-ui的dialog控制显示隐藏属性
+      dialogVisible: false,
+      Visible:false,
+      //标记编辑或者新增状态
+      editStatus: false,
+      //窗口带入回写的数据
+      rowData: { house_district: {} },
+      roleList: [],
+    };
+  },
+  computed: {
+    ...mapGetters({
+      gridData: "evaluation/list/gridData",
+      total:"evaluation/list/total",
+      loading: "evaluation/list/loading",
+    }),
+    Dialog:function () {
+      console.log(this.Visible);
+      return this.Visible;
+    },
+    createDialog: function () {
+      return this.dialogVisible;
+    },
+  },
+  methods: {
+    ...mapActions({
+      getGridData: "evaluation/list/getGridData",
+      deleteGrid: "evaluation/list/deleteGrid",
+      createTagPanel: "createTagPanel",
+    }),
+    async project() {
+    //   const { data } = await getProjectAll();
+    //   const newData = this.dataArrSelect(data);
+    //   this.formItemData[0].options = newData;
+    //   let policyConfig = getBaseConfig("APPLY_STATUS", true);
+    },
+    getForm(e) {
+      this.searchForm = e
+    },
+    handleAudio(options){
+     this.Visible = true;
+          // this.isLook = false
+          // this.loshow = true
+
+     const { row, index } = options;
+          this.editStatus = true;
+        
+          this.Visible = true;
+          this.rowData = {};
+          Object.assign(this.rowData, row);
+      
+    },
+    handleVoice(options){
+      console.log("1");
+        this.loshow=true;
+         this.hidden=false;
+          console.log(3333);
+          this.isLook = false;
+          const { row, index } = options;
+          this.editStatus = true;
+          this.windowTitle = "";
+          this.dialogVisible = true;
+         
+          this.rowData = {};
+          Object.assign(this.rowData, row);
+          console.log("this.loshow=true;",this.loshow);
+    },
+    addHandler: function() {
+      this.loshow=false;
+      this.hidden=true;
+          this.dialogVisible = true;
+          this.editStatus = false;
+          this.loShow=false;
+          this.isLook = false;
+        //   this.rowAdd = false;             
+          this.windowTitle = "新增";
+          this.rowData = {};
+           console.log("this.loshow=false;",this.loshow);
+        },
+     handleUpload(options) {
+     
+            // this.isUpload = true;
+            // this.target_id = options.row.id;
+            // this.project_id = options.project_id ? options.project_id : 0;
+        },
+        handleLook(options) {
+        //   console.log(3333);
+          this.loshow=false;
+          this.isLook = true
+          const { row, index } = options;
+          this.editStatus = true;
+          this.windowTitle = "查看";
+          this.dialogVisible = true;
+         this.hidden=true;
+          this.rowData = {};
+          Object.assign(this.rowData, row);
+        },
+         handleDelete: function(options) {
+           
+          const { row, index } = options;
+          this.deleteGrid({
+            deleteFun: Questionsdelete,
+            params: {
+              id: row.id
+            }
+          }).then(res => {
+            this.$message(res.msg);
+            this.getGridData({
+              list: QuestionsGetList
+            });
+          });
+        },
+       
+        handleEdit: function (options) {
+          
+          this.hidden=true;
+            this.loshow=false;
+          console.log(3333);
+          this.isLook = false
+          const { row, index } = options;
+          this.editStatus = true;
+          this.windowTitle = "编辑";
+          this.dialogVisible = true;
+          
+          this.rowData = {};
+          Object.assign(this.rowData, row);
+          console.log("this.loshow=false;",this.loshow);
+        },
+         //编辑或新增成功后刷新列表
+         updateList() {
+          this.getGridData({list:QuestionsGetList,params: {...this.searchForm} });//接口
+        },
+        audiocancel(){
+          Visible = false
+        },
+           cancel() {
+          this.dialogVisible = false
+          // this.updateList()
+        },
+    //下拉转换
+    dataArrSelect(arr) {
+    //   arr.forEach((item) => {
+    //     item.name = item.project_name;
+    //   });
+    //   return arr;
+    },
+    policyGet() {
+    //   let policyConfig = getBaseConfig("APPLY_STATUS", true);
+    //   this.formItemData[0].options = policyConfig;
+    },
+  },
+  //表格数据
+  created() {
+    //列表
+    this.getGridData({
+      list: QuestionsGetList,
+    });
+   this.formItemData[1].options =getBaseConfig("DOMAIN",true)
+  },
+  mounted() {
+    this.project();
+  },
+};
+</script>
+<style lang="less" scoped>
+.el-dialog {
+  width: 30% !important;
+}
+.el-tooltip__popper{font-size: 14px; max-width:50% } 
+</style>

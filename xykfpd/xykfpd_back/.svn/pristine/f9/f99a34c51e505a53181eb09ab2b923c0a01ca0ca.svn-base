@@ -1,0 +1,2088 @@
+---------------------------------------------------------------
+
+[2020-11-05T10:06:33+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：2.130666s] [吞吐率：0.47req/s] [内存消耗：5,051.96kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------060828754526448706614459',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'c12a05d4-2e3c-4fed-8734-fa7de4a19205',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029499s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.011891s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.024142s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.007054s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.006133s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.007456s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.016050s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019264s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.009678s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.007024s ]
+[ error ] [2]mkdir(): No such file or directory[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\File.php:160]
+---------------------------------------------------------------
+
+[2020-11-05T10:26:43+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.440818s] [吞吐率：2.27req/s] [内存消耗：4,952.68kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------380702508435282589638083',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'd503f10d-689b-45f3-aedf-eb260fded0a0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.042693s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.020532s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.015014s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.031572s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.035928s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.009280s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.020596s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010301s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.021318s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.029752s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:27:24+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.972888s] [吞吐率：1.03req/s] [内存消耗：5,051.97kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------417011573283909735869411',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '78db78cb-1687-4977-be1c-954726fb5963',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016723s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008092s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.008678s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.008581s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005900s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.007881s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005739s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021083s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.008024s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.018727s ]
+[ error ] [2]mkdir(): No such file or directory[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\File.php:160]
+---------------------------------------------------------------
+
+[2020-11-05T10:27:56+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.197846s] [吞吐率：5.05req/s] [内存消耗：4,952.71kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------776233769937636362745627',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'd8490d8d-412d-430f-b21f-b353f4bc2f3a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022815s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010566s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.016410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.009106s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.019698s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.011493s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.015438s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018242s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.012519s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.010522s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:30:15+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：3.319826s] [吞吐率：0.30req/s] [内存消耗：4,952.68kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------670974756380952523749101',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '86224bc0-f7bf-4b8b-9ffc-7cc921f83d08',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:2.966313s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.071263s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.051782s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.047836s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.045027s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.007437s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.029730s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018729s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.007921s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.010130s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:34:24+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.198902s] [吞吐率：5.03req/s] [内存消耗：4,952.68kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------411703800743006678939132',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'd33b6053-6ae4-4576-b05d-3d0c09c96abb',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018054s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.011413s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.012649s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.007039s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.011414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.008513s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.029738s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023649s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.007394s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005748s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:35:39+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.159291s] [吞吐率：6.28req/s] [内存消耗：4,952.48kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------246380761387525180010011',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'b8b5b338-c4a9-4e1d-b6dc-9ada1c1210b4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013914s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008623s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.016910s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.008618s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.008940s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.008438s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.008881s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016579s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.008782s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.006766s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:36:59+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：1.505595s] [吞吐率：0.66req/s] [内存消耗：5,232.45kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------075365699423807917848660',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '7be1818d-25af-4508-9306-58ea73e70f7c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015612s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007541s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.012604s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.009834s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005625s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.039021s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.066165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.034259s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.033835s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.059639s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060961s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018821s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] INSERT INTO `file` (`name` , `savename` , `savepath` , `ext` , `mime` , `size` , `md5` , `sha1` , `data_from` , `width` , `height`) VALUES ('22222.png' , '83f6dfdafa0bd653bd43258c5fc931cd.png' , '' , 'png' , 'image/png' , 111451 , 'f8b3c1f6a0556a1b309aa1a76cba2029' , '1849d849947c1c7c770284c326485592c84bb38c' , 1 , 650 , 650) [ RunTime:0.025383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.034309s ]
+[ sql ] [ SQL ] INSERT INTO `attachment_file` (`bound_folder_id` , `target_id` , `project_id` , `size` , `create_time` , `update_time` , `create_uid` , `data_from` , `is_manually_create_archives` , `file_name` , `ext` , `file_id`) VALUES (4 , 1 , 0 , 111451 , '2020-11-05 10:36:57' , '2020-11-05 10:36:57' , 1 , 1 , 2 , '22222.png' , 'png' , 1) [ RunTime:0.041226s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.042602s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ error ] [2]array_push() expects parameter 1 to be array, null given[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Attachment.php:106]
+---------------------------------------------------------------
+
+[2020-11-05T10:38:54+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.177435s] [吞吐率：5.64req/s] [内存消耗：4,957.30kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '111882',
+  'content-type' => 'multipart/form-data; boundary=--------------------------979666194444949865178824',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'd74b01a6-1435-48d5-b12c-57caf07e9ca3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016697s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.015430s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.009883s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.007029s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005316s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.005359s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005998s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011635s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.008781s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'f8b3c1f6a0556a1b309aa1a76cba2029'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005794s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.006687s ]
+[ sql ] [ SQL ] SELECT `id` FROM `attachment_file` WHERE  `file_id` = 1  AND `bound_folder_id` = 4  AND `target_id` = 1  AND `project_id` = 0  AND `attachment_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.027149s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:39:41+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.484390s] [吞吐率：2.06req/s] [内存消耗：5,131.82kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468388',
+  'content-type' => 'multipart/form-data; boundary=--------------------------079696975099920461807270',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'ab30775d-dbab-48d5-bac3-5a631dec458f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016185s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.015042s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.014654s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.031362s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.011934s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006723s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005705s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022037s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.014018s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'ec4ddb45c44b017d7503767fecaadbc0'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.007182s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021665s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021841s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] INSERT INTO `file` (`name` , `savename` , `savepath` , `ext` , `mime` , `size` , `md5` , `sha1` , `data_from` , `width` , `height`) VALUES ('1.jpg' , '7e9e44ed7708d7c1dd13669a06fa94e1.jpg' , '' , 'jpg' , 'image/jpeg' , 467960 , 'ec4ddb45c44b017d7503767fecaadbc0' , '877a3cad76d401de570886082d83423c30147e95' , 1 , 1920 , 1080) [ RunTime:0.018725s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.022494s ]
+[ sql ] [ SQL ] INSERT INTO `attachment_file` (`bound_folder_id` , `target_id` , `project_id` , `size` , `create_time` , `update_time` , `create_uid` , `data_from` , `is_manually_create_archives` , `file_name` , `ext` , `file_id`) VALUES (4 , 1 , 0 , 467960 , '2020-11-05 10:39:40' , '2020-11-05 10:39:40' , 1 , 1 , 2 , '1.jpg' , 'jpg' , 2) [ RunTime:0.028643s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020355s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+---------------------------------------------------------------
+
+[2020-11-05T10:41:48+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.999932s] [吞吐率：1.00req/s] [内存消耗：5,057.89kb] [文件加载：104]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468388',
+  'content-type' => 'multipart/form-data; boundary=--------------------------076288498820661663253547',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'f4afd1c3-9243-4f8b-89dc-ee43b94434e7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016620s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.019479s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010921s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.006047s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.010303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.008326s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005869s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018144s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.007169s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'ec4ddb45c44b017d7503767fecaadbc0'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.007411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.006054s ]
+[ sql ] [ SQL ] SELECT `id` FROM `attachment_file` WHERE  `file_id` = 2  AND `bound_folder_id` = 4  AND `target_id` = 1  AND `project_id` = 0  AND `attachment_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.008662s ]
+[ error ] [2]array_push() expects parameter 1 to be array, null given[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Attachment.php:106]
+---------------------------------------------------------------
+
+[2020-11-05T10:44:30+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.650825s] [吞吐率：1.54req/s] [内存消耗：4,988.17kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468388',
+  'content-type' => 'multipart/form-data; boundary=--------------------------635386345946620831540146',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'c47b43c6-9dab-4f14-9bb5-6865ac3bd97a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021269s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008156s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.019251s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.016278s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.026831s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.007230s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005571s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016890s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.008913s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'ec4ddb45c44b017d7503767fecaadbc0'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.038815s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.008573s ]
+[ sql ] [ SQL ] SELECT `id` FROM `attachment_file` WHERE  `file_id` = 2  AND `bound_folder_id` = 4  AND `target_id` = 1  AND `project_id` = 0  AND `attachment_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005937s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:46:14+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFolders?resources_id=54
+[运行时间：0.551781s] [吞吐率：1.81req/s] [内存消耗：4,821.88kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFolders',
+  'route' => 'index/Attachment/getFolders',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '600a68bc-b460-43d5-a71e-0a61a94cef53',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023504s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010270s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.037216s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.007182s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.012285s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,abf.target_id AS resources_id,af.id AS folder_id FROM `attachment_resources_bound_folder` `abf` LEFT JOIN `attachment_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 0  AND `abf`.`target_id` = '54'  AND `abf`.`archives_type` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.008662s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:46:23+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4
+[运行时间：0.579612s] [吞吐率：1.73req/s] [内存消耗：4,891.96kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'bbe309e1-c830-4372-aad0-8a331928c179',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020767s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010201s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.017679s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.006543s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.018857s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.012078s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.011492s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.014682s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.007923s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = 0  AND `af`.`bound_folder_id` = '54'  AND `af`.`is_manually_create_archives` = '4'  AND `af`.`delete_time` = 0 [ RunTime:0.007927s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:46:52+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?bound_folder_id=4
+[运行时间：0.412101s] [吞吐率：2.43req/s] [内存消耗：4,810.48kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'd36153b2-c308-429c-a476-7062f7a40377',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '4',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021484s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008380s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.009647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.008431s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.006623s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:46:56+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4
+[运行时间：0.583722s] [吞吐率：1.71req/s] [内存消耗：4,891.96kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '69cbe07d-c0ee-4074-b46a-7572a3ede713',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018557s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.009198s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.008595s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.005865s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.022109s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.011830s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.008865s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.015075s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.021259s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = 0  AND `af`.`bound_folder_id` = '54'  AND `af`.`is_manually_create_archives` = '4'  AND `af`.`delete_time` = 0 [ RunTime:0.007632s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:47:34+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4
+[运行时间：0.154692s] [吞吐率：6.46req/s] [内存消耗：4,770.21kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'cc2a685c-a2a6-44f8-9fa9-96ea2e620ca3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.046713s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.009623s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.014275s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.006420s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005751s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.006300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.005759s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.008541s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:48:26+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.892158s] [吞吐率：1.12req/s] [内存消耗：4,892.61kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '3c09f2ef-cb4a-4383-8816-6577cf6047ec',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.248579s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010653s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.027443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.015681s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.014008s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.032672s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.068573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.006987s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.007841s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = 0  AND `af`.`bound_folder_id` = '54'  AND `af`.`data_from` = '1'  AND `af`.`is_manually_create_archives` = '4'  AND `af`.`delete_time` = 0 [ RunTime:0.005483s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:48:33+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.569175s] [吞吐率：1.76req/s] [内存消耗：4,892.61kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '5e15c189-6f76-4e7f-af75-8c7c5a159f56',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018932s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008077s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.009487s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.011367s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.008210s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.007898s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005661s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.026147s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = 0  AND `af`.`bound_folder_id` = '54'  AND `af`.`data_from` = '1'  AND `af`.`is_manually_create_archives` = '4'  AND `af`.`delete_time` = 0 [ RunTime:0.009635s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:55:35+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.152669s] [吞吐率：6.55req/s] [内存消耗：4,770.59kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '8382d357-73b8-4ced-9dca-e847520d25ec',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016666s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.011691s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.028501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.009443s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.006040s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.008089s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006701s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005229s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:57:44+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.487760s] [吞吐率：2.05req/s] [内存消耗：4,770.45kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '00efd297-4590-4cc8-9045-c0c1cc3d2167',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098521s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.104310s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.057051s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.097598s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.038089s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.019919s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006995s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005375s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:57:55+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.572321s] [吞吐率：1.75req/s] [内存消耗：4,893.17kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '113a9a01-dfaf-405d-a383-262dfe516b58',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021377s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.015850s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.012008s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.015785s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.007302s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.007760s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.007820s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.006454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.009104s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = 0  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '4'  AND `af`.`data_from` = '54'  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.017263s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:58:02+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.129658s] [吞吐率：7.71req/s] [内存消耗：4,770.44kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'f60b7f21-17d6-401a-9f6d-d905b5282da3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017578s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008495s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.021523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.007386s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005955s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.007179s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.005680s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005874s ]
+---------------------------------------------------------------
+
+[2020-11-05T10:58:44+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.265846s] [吞吐率：3.76req/s] [内存消耗：4,770.45kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '9b6d437b-83a8-4fe4-be4d-4e8d2724e476',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010295s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.032675s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.078808s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.052387s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005262s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.012522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.019455s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.007608s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:00:51+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.584283s] [吞吐率：1.71req/s] [内存消耗：4,892.14kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '80ad8415-293f-4f93-a23d-41b29004f17c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020041s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007787s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.012006s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.009671s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.021859s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.005584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.005792s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.007149s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.008863s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '4'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.009402s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.006493s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005352s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:01:16+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：1.011011s] [吞吐率：0.99req/s] [内存消耗：4,888.92kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'dbc115cd-32a6-418e-8fde-9a29151d5ec6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063104s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.072472s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.353977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.008837s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.008071s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.008225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.007208s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005620s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.006253s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '4'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.007124s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.008994s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005820s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:02:00+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/ArchivesConfig/getResourceList
+[运行时间：0.504679s] [吞吐率：1.98req/s] [内存消耗：4,568.83kb] [文件加载：94]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/archivesConfig/getResourceList',
+  'route' => 'index/ArchivesConfiguration/getResourceArchivesConfigurationList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'ebeaf5ce-6c32-4f1c-8af8-4f10457b3a2b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022287s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.011384s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.009600s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,attachment_folder_type AS affiliation_type FROM `resources` WHERE  json_extract(`extra`, '$.annex') = 1  AND `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.008662s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:02:11+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/folder/getUnboundFolderList?resources_id=54
+[运行时间：0.576913s] [吞吐率：1.73req/s] [内存消耗：4,877.25kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getUnboundFolderList',
+  'route' => 'index/ArchivesConfiguration/getUnboundFolderList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '16e1dd72-c7f1-4df9-b814-eeaa5bee2970',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022636s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.009185s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.034946s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.007269s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006320s ]
+[ sql ] [ SQL ] SELECT `folder`.`id` FROM `attachment_resources_bound_folder` `bound` INNER JOIN `attachment_folder` `folder` ON `folder`.`id`=bound.folder_id AND folder.delete_time = 0 WHERE  `bound`.`project_id` = 0  AND `bound`.`target_id` = '54'  AND `bound`.`archives_type` = 1  AND `bound`.`delete_time` = 0 [ RunTime:0.029743s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_folder` [ RunTime:0.007745s ]
+[ sql ] [ SQL ] SELECT `id`,`folder_name` FROM `attachment_folder` WHERE  `id` <> 2  AND `attachment_folder`.`delete_time` = 0 [ RunTime:0.006140s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:02:26+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/folder/getBoundFolderList?resources_id=54
+[运行时间：0.509305s] [吞吐率：1.96req/s] [内存消耗：4,855.25kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getBoundFolderList',
+  'route' => 'index/ArchivesConfiguration/getBoundFolderList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '333b6936-9297-4edc-88a2-3c8946afbe80',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018684s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008885s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010409s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.005576s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006740s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,abf.target_id AS resources_id,af.id AS folder_id FROM `attachment_resources_bound_folder` `abf` LEFT JOIN `attachment_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 0  AND `abf`.`target_id` = '54'  AND `abf`.`archives_type` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.008085s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:02:49+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/folder/boundFolder?resources_id=54&folder_id=1,2&affiliation_type=1
+[运行时间：0.664499s] [吞吐率：1.50req/s] [内存消耗：4,848.92kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/boundFolder',
+  'route' => 'index/ArchivesConfiguration/boundFolder',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '427498e7-7964-4a82-996e-0cd489fabf2a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'folder_id' => '1,2',
+  'affiliation_type' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020065s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.008027s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.024359s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.006835s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_folder` [ RunTime:0.005820s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_folder` WHERE  `id` = 1,2  AND `attachment_folder`.`delete_time` = 0 [ RunTime:0.006197s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006571s ]
+[ sql ] [ SQL ] SELECT `folder`.`id` FROM `attachment_resources_bound_folder` `bound` INNER JOIN `attachment_folder` `folder` ON `folder`.`id`=bound.folder_id AND folder.delete_time = 0 WHERE  `bound`.`project_id` = 0  AND `bound`.`target_id` = '54'  AND `bound`.`archives_type` = 1  AND `bound`.`delete_time` = 0 [ RunTime:0.006153s ]
+[ sql ] [ SQL ] INSERT INTO `attachment_resources_bound_folder` (`project_id` , `target_id` , `folder_id` , `archives_type` , `affiliation_type` , `pid` , `create_time` , `update_time`) VALUES (0 , 54 , 1 , 1 , 1 , 0 , '2020-11-05 11:02:48' , '2020-11-05 11:02:48') [ RunTime:0.005803s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:02:56+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/folder/getBoundFolderList?resources_id=54
+[运行时间：0.539758s] [吞吐率：1.85req/s] [内存消耗：4,855.38kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/folder/getBoundFolderList',
+  'route' => 'index/ArchivesConfiguration/getBoundFolderList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '458c4911-7e4c-45e9-9d6b-e319ae8fbd7d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018897s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007876s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.011838s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.010505s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.008484s ]
+[ sql ] [ SQL ] SELECT `af`.`id`,abf.id AS bound_folder_id,`af`.`folder_name`,abf.target_id AS resources_id,af.id AS folder_id FROM `attachment_resources_bound_folder` `abf` LEFT JOIN `attachment_folder` `af` ON `abf`.`folder_id`=af.id AND af.delete_time = 0 WHERE  `abf`.`project_id` = 0  AND `abf`.`target_id` = '54'  AND `abf`.`archives_type` = 1  AND `abf`.`delete_time` = 0 [ RunTime:0.020205s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:19:57+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.584127s] [吞吐率：1.71req/s] [内存消耗：4,963.15kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------859224951162191652398470',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '8ba4452c-70cb-4607-a13e-06418f19327c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009177s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007860s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.008650s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.005860s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005921s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.011931s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.006469s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016896s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.006782s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'ec4ddb45c44b017d7503767fecaadbc0'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.006573s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.008334s ]
+[ sql ] [ SQL ] SELECT `id` FROM `attachment_file` WHERE  `file_id` = 2  AND `bound_folder_id` = 17  AND `target_id` = 1  AND `project_id` = 0  AND `attachment_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005918s ]
+[ sql ] [ SQL ] INSERT INTO `attachment_file` (`bound_folder_id` , `target_id` , `project_id` , `size` , `create_time` , `update_time` , `create_uid` , `data_from` , `is_manually_create_archives` , `file_id` , `ext` , `file_name`) VALUES (17 , 1 , 0 , 467960 , '2020-11-05 11:19:56' , '2020-11-05 11:19:56' , 1 , 1 , 2 , 2 , 'jpg' , '1.jpg') [ RunTime:0.013691s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:22:12+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=17&target_id=1
+[运行时间：0.574158s] [吞吐率：1.74req/s] [内存消耗：4,888.03kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'c61ffce8-78a7-4a93-b40f-a061c68ad123',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016524s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007870s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.014583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.015833s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005767s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.010869s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006196s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005338s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.009810s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '17'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.006357s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.009394s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:26:02+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/delete?attachment_file_ids=2,3
+[运行时间：0.635121s] [吞吐率：1.57req/s] [内存消耗：4,777.12kb] [文件加载：97]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/delete',
+  'route' => 'index/Attachment/delete',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'c5709394-bc5c-4987-8fca-fe9df230f4b3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'attachment_file_ids' => '2,3',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020511s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.013773s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010100s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.006904s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.009120s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.007339s ]
+[ sql ] [ SQL ] DELETE FROM `attachment_file` WHERE  `id` IN (2,3)  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.013450s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:26:08+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=17&target_id=1
+[运行时间：0.620692s] [吞吐率：1.61req/s] [内存消耗：4,899.50kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '2aec0dcd-0e8b-43c4-b04f-fae1b2851c5f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054915s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.015343s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.019031s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.025750s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.009872s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.008609s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.015553s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.005898s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.007146s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '17'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.007637s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:26:14+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=4&target_id=1
+[运行时间：0.571348s] [吞吐率：1.75req/s] [内存消耗：4,894.31kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'a35bc585-f525-41fd-940e-3376da665f83',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029865s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.013112s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010612s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.011520s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.007411s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.008253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.005875s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 4  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.008189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.006382s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '4'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.008594s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.007629s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:26:20+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/upload?=4&=1&
+[运行时间：0.600460s] [吞吐率：1.67req/s] [内存消耗：4,969.48kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/upload',
+  'route' => 'index/Attachment/upload',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------149507760270023829973594',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '69501193-08fb-4437-957b-d2e17e7922f1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023803s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010774s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.009255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.005586s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.010585s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006608s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.006028s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008780s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `file` [ RunTime:0.009580s ]
+[ sql ] [ SQL ] SELECT `savepath`,`savename`,`id`,`name`,`ext`,`width`,`height` FROM `file` WHERE  `md5` = 'ec4ddb45c44b017d7503767fecaadbc0'  AND `data_from` = 1  AND `file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.008104s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.013653s ]
+[ sql ] [ SQL ] SELECT `id` FROM `attachment_file` WHERE  `file_id` = 2  AND `bound_folder_id` = 17  AND `target_id` = 1  AND `project_id` = 0  AND `attachment_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.015042s ]
+[ sql ] [ SQL ] INSERT INTO `attachment_file` (`bound_folder_id` , `target_id` , `project_id` , `size` , `create_time` , `update_time` , `create_uid` , `data_from` , `is_manually_create_archives` , `file_id` , `ext` , `file_name`) VALUES (17 , 1 , 0 , 467960 , '2020-11-05 11:26:19' , '2020-11-05 11:26:19' , 1 , 1 , 2 , 2 , 'jpg' , '1.jpg') [ RunTime:0.012935s ]
+---------------------------------------------------------------
+
+[2020-11-05T11:26:29+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=17&target_id=1
+[运行时间：0.567193s] [吞吐率：1.76req/s] [内存消耗：4,894.31kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '9fb9bfdd-8701-4b80-ad8d-d4c92d463ea4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020348s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.009428s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010247s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.011208s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.005458s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.008195s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.006865s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.007130s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.006734s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '17'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.009756s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.013746s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:14:28+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename
+[运行时间：0.863387s] [吞吐率：1.16req/s] [内存消耗：3,740.84kb] [文件加载：83]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003147s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002657s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003123s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:14:42+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename
+[运行时间：0.074694s] [吞吐率：13.39req/s] [内存消耗：4,824.26kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------299586323291875456527651',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '68b5bdbf-e2cf-4af7-ad87-d7df8eb815df',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010815s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002790s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002849s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002184s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.002482s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001568s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:15:14+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?folder_name=ABCD
+[运行时间：0.070961s] [吞吐率：14.09req/s] [内存消耗：4,824.41kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------108226525222453481965488',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'a9109544-9383-4564-a15c-9c2aed3f7742',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'folder_name' => 'ABCD',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010870s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002609s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002805s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002600s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001620s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.002263s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001539s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:15:44+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?folder_name=ABCD&bound_folder_id=4
+[运行时间：0.072401s] [吞吐率：13.81req/s] [内存消耗：4,824.40kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------809365646967060243934594',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '87514d39-427d-4122-a97b-2a10dd7065a5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'folder_name' => 'ABCD',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010863s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002053s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002927s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002185s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001221s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.001958s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001239s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:16:10+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?file_name=ABCD&bound_folder_id=4
+[运行时间：0.082663s] [吞吐率：12.10req/s] [内存消耗：4,824.38kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------571048262160705579355536',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'e9a94b2d-f3f8-4991-84e3-2fbebf85af0f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'file_name' => 'ABCD',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011700s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002403s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.004355s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.003512s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.004666s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.004019s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:16:15+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?file_name=ABCD
+[运行时间：0.072280s] [吞吐率：13.84req/s] [内存消耗：4,824.36kb] [文件加载：98]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------986222405302078223722454',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'a9dd22c4-d3d0-4dc8-9e0d-72af7af9f5a4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'file_name' => 'ABCD',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011514s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002558s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002788s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001896s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001249s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.001885s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001248s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:16:31+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=17&target_id=1
+[运行时间：0.496334s] [吞吐率：2.01req/s] [内存消耗：4,899.70kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '5c658ae1-d513-465e-9edd-ca1afa6c2b2c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011758s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002671s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002886s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002103s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001240s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.001388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.002219s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001318s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.002065s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '17'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.002042s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001118s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:16:41+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?file_name=ABCD&attachment_file_id=4
+[运行时间：0.495236s] [吞吐率：2.02req/s] [内存消耗：4,789.09kb] [文件加载：97]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------641911986224422146601798',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'a0faacde-ea37-4601-bcb3-ebb58369bc75',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'file_name' => 'ABCD',
+  'attachment_file_id' => '4',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011583s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002399s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002907s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002179s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.001980s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001231s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.002122s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001220s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `bound_folder_id` = 17  AND `file_name` = 'ABCD'  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001296s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001404s ]
+[ sql ] [ SQL ] SELECT `ext` FROM `attachment_file` WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001271s ]
+[ sql ] [ SQL ] UPDATE `attachment_file`  SET `file_name` = 'ABCD.jpg' , `update_time` = '2020-11-05 13:16:41'  WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001101s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:16:54+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=17&target_id=1
+[运行时间：0.488723s] [吞吐率：2.05req/s] [内存消耗：4,899.70kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '1ac1ff80-c3fc-4914-b8a8-85d93e387cf2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011810s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002460s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002974s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002242s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001725s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.002110s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.002037s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '17'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.001978s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001233s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:17:41+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?file_name=ABCD&bound_folder_id=17&attachment_file_id=4
+[运行时间：0.496896s] [吞吐率：2.01req/s] [内存消耗：4,789.16kb] [文件加载：97]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------072422060527673571861765',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '06425339-b99f-4591-8a01-e089201c886e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'file_name' => 'ABCD',
+  'bound_folder_id' => '17',
+  'attachment_file_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010956s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002260s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003144s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002221s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.002516s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.002462s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001456s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `bound_folder_id` = 17  AND `file_name` = 'ABCD'  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001325s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001222s ]
+[ sql ] [ SQL ] SELECT `ext` FROM `attachment_file` WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001212s ]
+[ sql ] [ SQL ] UPDATE `attachment_file`  SET `file_name` = 'ABCD.jpg' , `update_time` = '2020-11-05 13:17:41'  WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001329s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:17:46+08:00] 127.0.0.1 GET www.lhsoftadmin.com/index/attachment/getFiles?resources_id=54&bound_folder_id=17&target_id=1
+[运行时间：0.489820s] [吞吐率：2.04req/s] [内存消耗：4,899.73kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/getFiles',
+  'route' => 'index/Attachment/getFiles',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '2ac9d539-4ef3-471d-805f-2818567e5f80',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'resources_id' => '54',
+  'bound_folder_id' => '17',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012491s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002512s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.003761s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.003805s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.003238s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `resources` WHERE  `id` = 54  AND `resources`.`delete_time` = 0 [ RunTime:0.001149s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.001902s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001396s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.002336s ]
+[ sql ] [ SQL ] SELECT af.id AS attachment_file_id,arbf.id AS bound_folder_id,`f`.`height`,`f`.`width`,`f`.`ext`,`af`.`file_name`,concat("/uploads/","",f.savepath,"/",f.savename)  as path FROM `attachment_file` `af` INNER JOIN `attachment_resources_bound_folder` `arbf` ON `arbf`.`id`=af.bound_folder_id AND arbf.delete_time = 0 INNER JOIN `file` `f` ON `f`.`id`=af.file_id AND f.delete_time = 0 WHERE  `af`.`project_id` = 0  AND `arbf`.`target_id` = '54'  AND `af`.`target_id` = '1'  AND `af`.`bound_folder_id` = '17'  AND `af`.`data_from` = 1  AND `af`.`is_manually_create_archives` = 2  AND `af`.`delete_time` = 0 [ RunTime:0.002641s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.002194s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:22:20+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?file_name=ABCD&bound_folder_id=17&attachment_file_id=4
+[运行时间：0.089095s] [吞吐率：11.22req/s] [内存消耗：4,783.92kb] [文件加载：96]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------213654466455976644302371',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => 'bbebebd1-837e-4a45-a5e6-6a5ab8809ef5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'file_name' => 'ABCD',
+  'bound_folder_id' => '17',
+  'attachment_file_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011362s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002454s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002860s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002555s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001620s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.002251s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001212s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.002087s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001133s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `bound_folder_id` = 17  AND `file_name` = 'ABCD'  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001346s ]
+---------------------------------------------------------------
+
+[2020-11-05T13:23:22+08:00] 127.0.0.1 POST www.lhsoftadmin.com/index/attachment/rename?file_name=ABCD&bound_folder_id=17&attachment_file_id=4
+[运行时间：0.075872s] [吞吐率：13.18req/s] [内存消耗：4,781.56kb] [文件加载：95]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/attachment/rename',
+  'route' => 'index/Attachment/rename',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '468389',
+  'content-type' => 'multipart/form-data; boundary=--------------------------711773902243150624518292',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => 'www.lhsoftadmin.com',
+  'postman-token' => '5b75ea2f-73e3-4be3-b185-444e6c4f0288',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.26.8',
+)
+[ info ] [ PARAM ] array (
+  'file_name' => 'ABCD',
+  'bound_folder_id' => '17',
+  'attachment_file_id' => '4',
+  'target_id' => '1',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011111s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.002240s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.002613s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002236s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'VIEW_FILE_PATH'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.001201s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_resources_bound_folder` [ RunTime:0.002161s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_resources_bound_folder` WHERE  `id` = 17  AND `attachment_resources_bound_folder`.`delete_time` = 0 [ RunTime:0.001281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `attachment_file` [ RunTime:0.002301s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `id` = 4  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001256s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `attachment_file` WHERE  `bound_folder_id` = 17  AND `file_name` = 'ABCD'  AND `attachment_file`.`delete_time` = 0 [ RunTime:0.001797s ]

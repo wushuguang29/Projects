@@ -1,0 +1,271 @@
+<?php
+
+namespace app\common\model;
+
+use service\rewrite\RewriteModel;
+use think\Db;
+
+/**
+ * 康复题库管理
+ * @package app\common\model
+ */
+class QuestionsModel extends RewriteModel
+{
+    public static $upload_path;//下载文件路径
+    public static $view_file_path;//预览文件路径
+    public function initialize(){
+        parent::initialize();
+        $VIEW_FILE_PATH = ConfigurationModel::where("name","eq","VIEW_FILE_PATH")->value("value");
+        $VIEW_FILE_PATH = trim($VIEW_FILE_PATH,"/");
+        self::$upload_path = env("root_path")."/".config("service.file.upload_file_path")."/";
+        self::$view_file_path = $VIEW_FILE_PATH."/". config("service.file.upload_file_path") ."/";
+    }
+    /**
+     * 康复题库添加
+     */
+    static function add($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = self::delRedundantFields('questions', $param);//除去多余字段
+            $question = json_decode($param['question'], true);
+            $option   = json_decode($param['option'], true);
+            $questions_id = 0;
+            $option_res   = 0;
+            foreach ($question as $ko => $vo) {
+                $data['serial_number']  = trim(explode('、',$vo['question'])[0]);
+                $data['question_title'] = trim(explode('、',$vo['question'])[1]);
+                $data['create_time']    = $date;
+                $data['create_uid']     = USER_ID;
+                $questions_id = Db::table('questions')->insertGetId($data);//添加到题目表
+                $option_data = [];
+                foreach ($option as $k => $v) {
+                    $options['questions_id']  = $questions_id;
+                    $options['index']          = trim(explode('、',$v['option'])[0]);
+                    $options['option_title']  = trim(explode('、',$v['option'])[1]);
+                    $options['score']          = $v['score'];
+                    array_push($option_data, $options);
+                }
+                $option_res = Db::table('questions_option')->insertAll($option_data);//添加到选项表
+            }
+            //检测得分范围表是否存在领域与方面
+            self::is_no($param);
+            if ($questions_id && $option_res) {
+                Db::commit();
+                return msgReturn(45003);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 康复题库编辑
+     */
+    static function edit($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = self::delRedundantFields('questions', $param);//除去多余字段
+            $option   = json_decode($param['option'], true);
+            $data['serial_number']  = trim(explode('、',$param['question_title'])[0]);
+            $data['question_title'] = trim(explode('、',$param['question_title'])[1]);
+            $data['update_time']    = $date;
+            unset($data['id']);
+            $questions_res = Db::table('questions')->where('id', $param['id'])->update($data);//更新到题目表
+            //删除选项重新插入
+            Db::table('questions_option')->where('questions_id', $param['id'])->delete();
+            $option_data = [];
+            foreach ($option as $k => $v) {
+                $options['questions_id']  = $param['id'];
+                $options['index']          = trim(explode('、',$v['option'])[0]);
+                $options['option_title']  = trim(explode('、',$v['option'])[1]);
+                $options['score']          = $v['score'];
+                array_push($option_data, $options);
+            }
+            $option_res = Db::table('questions_option')->insertAll($option_data);//添加到选项表
+            //检测得分范围表是否存在领域与方面
+            self::is_no($param);
+            if ($questions_res && $option_res) {
+                Db::commit();
+                return msgReturn(45003);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 康复题库查看/编辑回显
+     */
+    static function browse($param)
+    {
+        $res = Db::table('questions')->field([
+            'id',
+            'domain',
+            'side',
+            'identification_code',
+            'question_type',
+            'instruction',
+            "CONCAT(serial_number,'、',question_title) AS question_title",
+        ])
+            ->where('id', $param['id'])
+            ->find();
+        $res['option'] = Db::table('questions_option')->field('index,option_title,score')->where('questions_id', $res['id'])->select();
+        return msgReturn(0, $res);
+    }
+
+    /**
+     * 获取语音
+     */
+    public function getVoice($param)
+    {
+        $fileData = Db::table('file')->alias('f')
+            ->join('questions q', 'f.id = q.file_id', 'left')
+            ->field('savename,savepath')
+            ->where('q.id', $param['id'])
+            ->find();
+        $path = !empty($fileData) ? self::$view_file_path. $fileData["savepath"] . "/" . $fileData["savename"] : '';
+        return msgReturn(0, ['path'=> $path]);
+    }
+
+    /*
+     * 检测得分范围表是否存在领域与方面
+     */
+    static function is_no($param)
+    {
+        $is_no = Db::table('evaluating_score_ranges')->where(array('domain'=> $param['domain'], 'side'=> $param['side']))->find();
+        if (empty($is_no)) { //插入得分范围表
+            $rangs['domain']                = $param['domain'];
+            $rangs['side']                  = $param['side'];
+            $rangs['identification_code'] = $param['identification_code'];
+            $rangs['create_uid']           = USER_ID;
+            $rangs['create_time']          = date('Y-m-d H:i:s');
+            Db::table('evaluating_score_ranges')->insertGetId($rangs);//添加到得分范围表
+        }
+    }
+
+    /*
+     * 处理选项/分数
+     */
+    static function dealOption($questions_id)
+    {
+        $optionArr = Db::table('questions_option')->field('index,option_title,score')->where('questions_id', $questions_id)->select();
+        $option_title = '';
+        foreach ($optionArr as $k => $v) {
+            $option_title .= $v['index']. '、'. $v['option_title'] . '/' . $v['score'].' ';
+        }
+        return $option_title;
+    }
+
+    /**
+     * 语音上传【上传头像】
+     */
+    public function upload($file,$info,$user_id,$target_id)
+    {
+        #给文件加密
+        $encryptFile = array(
+            "sha1" => sha1_file($info['tmp_name']),
+            "md5"  => md5_file($info['tmp_name'])
+        );
+        $date = date('Y-m-d H:i:s');
+//        #文件是否已存在
+//        $oldFileData = Db::table("file")->where( array("md5"=>$encryptFile["md5"],"data_from"=>2))->field(array("savepath","savename","id","name","ext","width","height"))->find();
+//        if (empty($oldFileData)) {
+        $moveResult = $file->move(self::$upload_path);
+        if($moveResult == false){
+            return array(
+                "status"=>false,
+                "data"=>array(
+                    "error_msg"=>$info["name"].$file->getError()
+                )
+            );
+        }
+        $imageInfo = @GetImageSize(self::$upload_path. "/".$moveResult->getSaveName());
+        #构造file表数据
+        $fileData = [
+            'name'          => $info["name"], //原始名称
+            'savename'      =>$moveResult->getFilename(),
+            'savepath'      => substr($moveResult->getSaveName(), 0, strpos($moveResult->getSaveName(), "\\")),
+            'ext'           => str_replace('.','',strrchr($info["name"],'.')), //后缀名
+            'mime'          => $moveResult->getMime(), //
+            'size'          => $moveResult->getSize(), //大小
+            'md5'           => $encryptFile["md5"], //对原始附件md5
+            'sha1'          => $encryptFile["sha1"],//对原始附件sha1
+            'data_from'    => 2,
+            'create_uid'   => $user_id,
+            'create_time'  => $date,
+        ];
+        #是否为图片
+        if(!(false === $imageInfo)){
+            $fileData["width"]  = $imageInfo[0];
+            $fileData["height"]  = $imageInfo[1];
+        }
+        try{
+            Db::startTrans();
+            $file_id = db("file")->insertGetId($fileData);
+            if (!empty($target_id)) { //target为0，上传头像，否则上传语音
+                Db::table('questions')->where('id', $target_id)->update(['file_id'=> $file_id, 'update_time'=> $date]);
+            } else {
+                $avatar = self::$view_file_path. $fileData["savepath"] . "/" . $fileData["savename"];
+                Db::table('app_users')->where('id', $user_id)->update(['avatar'=> $avatar]);
+            }
+            Db::commit();
+            return array(
+                "status"=>true,
+                "data"=>array(
+                    "error_msg" => "",
+                    "file_id"   => $file_id,
+                    "visit_path"=> self::$view_file_path. $fileData["savepath"] . "/" . $fileData["savename"]
+                )
+            );
+        }catch (\Exception $e){
+            Db::rollback();
+            return array(
+                "status"    => false,
+                "data"      => array(
+                "error_msg" =>  $info["name"].($e->getMessage())
+                )
+            );
+        }
+//        } else {
+//            Db::table('questions')->where('id', $target_id)->update(['file_id'=> $oldFileData["id"], 'update_time'=> $date]);
+//            return array(
+//                "status"=>true,
+//                "data"=>array(
+//                    "error_msg" => "",
+//                    "file_id"   => $oldFileData["id"],
+//                    "visit_path"=>self::$view_file_path.$oldFileData["savepath"]."/".$oldFileData["savename"]
+//                )
+//            );
+//        }
+    }
+
+    /**
+     * Notes:去掉参数中多余的字段
+     * User: Yqx
+     * @param $table
+     * @param $data
+     * @return array
+     */
+    static function delRedundantFields($table, $data)
+    {
+        $allFields = Db::table($table)->getTableFields();
+        foreach ($data as $key => $value) {
+            if (!in_array($key, $allFields)) {
+                unset($data[ $key ]);
+            }
+        }
+        return $data;
+    }
+}

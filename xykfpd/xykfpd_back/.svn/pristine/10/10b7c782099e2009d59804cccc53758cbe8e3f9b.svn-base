@@ -1,0 +1,228 @@
+<?php
+/**
+ * 重写验证类,方便添加自定义验证规则
+ */
+namespace service\rewrite;
+
+use app\common\model\ConfigurationModel;
+use app\common\model\ConfigurationModel as ConfigModel;
+use think\Container;
+use think\Db;
+use think\exception\ClassNotFoundException;
+use think\facade\Cache;
+use think\facade\Response;
+use think\Validate;
+
+class RewriteValidate extends Validate
+{
+
+    /**
+     * 自动验证数据
+     * @param array $param 请求参数
+     * @param string $type 验证场景名称
+     * @param bool $errorType 是否验证器直接返回错误还是返回错误信息到控制器
+     * @return array
+     */
+    public function goCheck($param, $type = '', $errorType = false)
+    {
+
+        if (empty($type)) {
+            $result = $this->check($param);
+        } else {
+            $result = $this->scene($type)->check($param);
+        }
+
+        if (!$result) {
+
+            if ($errorType) {
+                return ['validate_check_status' => true, 'error_msg' => $this->getError()];
+            } else {
+                if (is_int($this->getError())) {
+                    // 使用response对象返回错误
+                    Response::create(msgReturn($this->getError()), 'json')->send();
+                } else {
+                    // 使用response对象返回错误
+                    Response::create(msgReturn(42002, [], $this->getError()), 'json')->send();
+                }
+                exit;
+            }
+
+        } else {
+
+            return $param;
+
+        }
+
+    }
+
+    /**
+     * 验证字段值是否存在指定的数据库表中
+     * 使用的父类的 unique()方法做的更改
+     * @access public
+     * @param mixed $value 字段值
+     * @param mixed $rule 验证规则 格式：数据表,字段名,排除ID,主键名
+     * @param array $data 数据
+     * @param string $field 验证字段名
+     * @return bool
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function isPresence($value, $rule, $data, $field)
+    {
+        if (is_string($rule)) {
+            $rule = explode(',', $rule);
+        }
+
+        if (false !== strpos($rule[0], '\\')) {
+            // 指定模型类
+            $db = new $rule[0];
+        } else {
+            try {
+                $db = Container::get('app')->model($rule[0]);
+            } catch (ClassNotFoundException $e) {
+                $db = Db::name($rule[0]);
+            }
+        }
+
+        $key = isset($rule[1]) ? $rule[1] : $field;
+
+        if (strpos($key, '^')) {
+            // 支持多个字段验证
+            $fields = explode('^', $key);
+            foreach ($fields as $key) {
+                if (isset($data[$key])) {
+                    $map[] = [$key, '=', $data[$key]];
+                }
+            }
+        } elseif (strpos($key, '=')) {
+            parse_str($key, $map);
+        } elseif (isset($data[$field])) {
+            $map[] = [$key, '=', $data[$field]];
+        } else {
+            $map = [];
+        }
+
+        $pk = !empty($rule[3]) ? $rule[3] : $db->getPk();
+
+//        if (is_string($pk)) {
+//            if (isset($rule[2])) {
+//                $map[] = [$pk, '<>', $rule[2]];
+//            } elseif (isset($data[$pk])) {
+//                $map[] = [$pk, '<>', $data[$pk]];
+//            }
+//        }
+
+        if ($db->where($map)->field($pk)->find()) {
+            return true;
+        }
+
+        return false;
+    }
+
+//    此类可以添加自定义验证方法
+
+    /**
+     * 验证登陆类型
+     * @access public
+     * @param mixed $value 字段值
+     * @param mixed $rule 验证规则
+     * @param array $data 数据
+     * @return bool
+     * @throws \Exception
+     */
+    public function loginTypeCheck($value, $rule, $data = [])
+    {
+        // 获取到配置
+        $loginConfig = ConfigModel::getConfigInfo('LOGIN_TYPE');
+
+        // 判断登陆类型是否存在配置
+        if (mb_strpos($loginConfig['value'], $value) === false) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     * 验证码是否正确
+     * @access public
+     * @param mixed $value 字段值
+     * @param mixed $rule 验证规则
+     * @param array $data 数据
+     * @return bool
+     * @throws \Exception
+     */
+    public function captchaCheck($value, $rule, $data = [])
+    {
+        // 获取验证码缓存
+        $cacheCode = Cache::get($data['captcha_key']);
+
+        $config = ConfigurationModel::getConfigInfo('ACCOUNT_CAPTCHA');
+
+        if ($config['value'] == 0) {
+            // 判断验证码是否正确
+            if (strtolower($cacheCode) == strtolower($value)) {
+                Cache::rm($data['captcha_key']);
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * 根据 ID 和 字段名称 批量验证数据是否存在
+     * 使用字符串拼接或数组传递ID时使用
+     * 使用方法 'userIdSplice:{table_name or model_name},{field_name}'
+     * @param $value
+     * @param $rule
+     * @param array $data
+     * @return bool
+     */
+    public function userIdSplice($value, $rule, $data = [])
+    {
+        if (is_string(trim(',', $value))) {
+            $value = explode(',', $value);
+        }
+
+        if (is_string(trim(',', $rule))) {
+            $rule = explode(',', $rule);
+        }
+
+        // 判断是否使用命名空间指定模型类
+        if (false !== strpos($rule[0], '\\')) {
+            // 指定模型类
+            $db = new $rule[0];
+        } else {
+            try { // 否则使用app获取模型对象
+                $db = Container::get('app')->model($rule[0]);
+            } catch (ClassNotFoundException $e) { // 模型不存在则使用db类生成查询构造器对象
+                $db = Db::name($rule[0]);
+            }
+        }
+
+        if ($db->where('id', 'IN', $value)->count('id') != count($value)) {
+            return false;
+        }
+
+        return true;
+
+    }
+
+    /**
+     * 验证身份证格式
+     * @param $value
+     * @param $rule
+     * @param array $data
+     * @return bool
+     * @author Zhang zw
+     * @date 2020/11/16 18:15.
+     */
+    public function isIdCard($value, $rule, $data = [])
+    {
+        return isIdCard($value);
+    }
+}

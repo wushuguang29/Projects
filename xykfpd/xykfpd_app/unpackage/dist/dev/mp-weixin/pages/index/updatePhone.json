@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "绑定手机号",
+  "navigationBarTextStyle": "white",
+  "titleNView": {
+    "autoBackButton": false,
+    "homeButton": false
+  },
+  "usingComponents": {}
+}

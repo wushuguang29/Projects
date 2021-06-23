@@ -1,0 +1,618 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* input {
+width: 100%;
+
+border: 2rpx solid red;
+} */
+.uni-btn-vx {
+	margin: 59rpx 40rpx 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+
+	font-family: -webkit-body;
+	font-family: -webkit-body;
+	font-family: -webkit-body;
+	font-family: -webkit-body;
+	font-family: -webkit-body;
+	background: #47C3A8;
+	color: #fff;
+
+	font: status-bar;
+	outline: none;
+	background-size: 100%;
+}
+.qitalogin {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	padding: 0 0 0 26%;
+}
+.wrap {
+	padding: 24rpx;
+}
+.uni-btn {
+	margin: 59rpx 40rpx 0;
+	background: #47C3A8;
+	color: #fff;
+}
+.uni-btns {
+	margin: 59rpx 40rpx 0;
+
+	color: #fff;
+}
+.uni-name {
+	float: left
+}
+.uni-column {
+
+	border-bottom: 1px solid #333333;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	font-size: 28rpx;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	padding: 20rpx 0;
+	margin: 0 40rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.u-input {
+	width: 58%;
+}
+.title {
+	width: 20%
+}
+.uni-yzm {
+	width: 22%
+}
+/* 更改手机号 */
+.update-message {
+	background-color: #fff;
+	height: 95rpx;
+	line-height: 95rpx;
+	font-size: 32rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	border-bottom: 2rpx solid #e4e4e4;
+}
+/* 文字 */
+.update-text {
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	        flex: 3;
+	text-align: right;
+	font-size: 43rpx;
+	font-weight: 500;
+}
+/* 右侧input框 */
+.update-input {
+	-webkit-box-flex: 7;
+	-webkit-flex: 7;
+	        flex: 7;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+/* .codefalse:{flex: 3;font-size: 25upx;text-align: center;background:#ADADAD;height:95upx;line-height:95upx;color: #fff;float: right;} */
+/* 获取验证码 */
+.code {
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	        flex: 3;
+	font-size: 25rpx;
+	text-align: center;
+	background: #47C3A8;
+	height: 95rpx;
+	line-height: 95rpx;
+	color: #fff;
+	float: right;
+}
+/* 验证码 */
+.uni-input {
+	-webkit-box-flex: 7;
+	-webkit-flex: 7;
+	        flex: 7;
+	padding: 4%;
+	font-size: 43rpx;
+	font-weight: 500;
+}
+

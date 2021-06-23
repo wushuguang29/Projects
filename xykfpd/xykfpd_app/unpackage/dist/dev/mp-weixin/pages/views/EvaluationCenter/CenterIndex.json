@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "评测中心",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "u-form-item": "/node-modules/uview-ui/components/u-form-item/u-form-item",
+    "u-input": "/node-modules/uview-ui/components/u-input/u-input",
+    "u-select": "/node-modules/uview-ui/components/u-select/u-select"
+  }
+}

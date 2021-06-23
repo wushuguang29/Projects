@@ -1,0 +1,23 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 17:16:15
+ * @LastEditTime: 2021-01-04 17:29:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\route\api.php
+ */
+
+
+//登录
+Route::get('api/Login/login','api/Login/login');
+// 发送手机验证码
+Route::get('index/login/sendCode', 'app\common\service\Sms@sendVerificationCode');
+// 消息推送
+Route::get('index/Evaluating/send', 'app\common\service\Sms@send');
+//手机号绑定
+Route::post('api/Login/phoneBind','api/Login/phoneBind');
+
+Route::group('index', function(){
+	Route::rule('api/Login/phoneBind','api/Login/phoneBind');//手机号绑定
+})->middleware(['PhoneAuthVerify']);

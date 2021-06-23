@@ -1,0 +1,15 @@
+<?php
+/**
+ *
+ * @author Zhang zw
+ * @date 2020/9/24 11:14
+ */
+
+namespace service\jwt\exception;
+
+use think\Exception;
+
+class TokenBlacklistException extends Exception
+{
+
+}

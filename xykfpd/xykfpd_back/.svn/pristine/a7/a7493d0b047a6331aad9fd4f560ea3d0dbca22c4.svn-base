@@ -1,0 +1,337 @@
+<?php
+
+
+namespace service\rewrite;
+
+use app\common\model\DataPemissionShareModel;
+use think\db\Expression;
+use think\db\Query;
+use think\db\Where;
+use think\Exception;
+use think\exception\PDOException;
+use think\Loader;
+
+class RewriteQuery extends Query
+{
+    /**
+     * 重写join添加软删除条件
+     * 查询SQL组装 join
+     * @access public
+     * @param  mixed  $join      关联的表名
+     * @param  mixed  $condition 条件
+     * @param  string $type      JOIN类型
+     * @param  array  $bind      参数绑定
+     * @return $this
+     */
+    public function join($join, $condition = null, $type = 'INNER', $bind = [])
+    {
+
+        if (empty($condition)) {
+            // 如果为组数，则循环调用join
+            foreach ($join as $key => $value) {
+                if (is_array($value) && 2 <= count($value)) {
+                    $this->join($value[0], $value[1], isset($value[2]) ? $value[2] : $type);
+                }
+            }
+        } else {
+
+            $table = $this->getJoinTable($join);
+
+            if ($bind) {
+                $this->bindParams($condition, $bind);
+            }
+            $currentTableName=is_array($table)?current($table):$table;
+            $this->options['join'][] = [$table, strtoupper($type), $condition . ' AND ' . $currentTableName . '.delete_time = 0'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * 重写方法，强制添加软删除条件
+     * 分析表达式（可用于查询或者写入操作）
+     * @access protected
+     * @return array
+     */
+    protected function parseOptions()
+    {
+        $options = $this->getOptions();
+
+        $table = '';
+
+        // 获取数据表
+        if (empty($options['table'])) {
+            $options['table'] = $this->getTable();
+        }
+
+        if (is_array($options['table'])) {
+            $tem = array_values($options['table']);
+            $table = $tem[0];
+        } else {
+            $table = trim($options['table']);
+        }
+        if (!isset($options['where'])) {
+            $options['where'] = ['AND' => [[$table . '.delete_time', '=', 0]]];
+        } elseif (isset($options['view'])) {
+            // 视图查询条件处理
+            $this->parseView($options);
+        } elseif (!empty($options['where']['AND'])) {
+            $options['where']['AND'] = array_merge($options['where']['AND'], [[$table . '.delete_time', '=', 0]]);
+        }
+
+        if (!isset($options['field'])) {
+            $options['field'] = '*';
+        }
+
+        foreach (['data', 'order', 'join', 'union'] as $name) {
+            if (!isset($options[$name])) {
+                $options[$name] = [];
+            }
+        }
+
+        if (!isset($options['strict'])) {
+            $options['strict'] = $this->getConfig('fields_strict');
+        }
+
+        foreach (['master', 'lock', 'fetch_pdo', 'fetch_sql', 'distinct'] as $name) {
+            if (!isset($options[$name])) {
+                $options[$name] = false;
+            }
+        }
+
+        if (isset(static::$readMaster['*']) || (is_string($options['table']) && isset(static::$readMaster[$options['table']]))) {
+            $options['master'] = true;
+        }
+
+        foreach (['group', 'having', 'limit', 'force', 'comment'] as $name) {
+            if (!isset($options[$name])) {
+                $options[$name] = '';
+            }
+        }
+
+        if (isset($options['page'])) {
+            // 根据页数计算limit
+            list($page, $listRows) = $options['page'];
+            $page                  = $page > 0 ? $page : 1;
+            $listRows              = $listRows > 0 ? $listRows : (is_numeric($options['limit']) ? $options['limit'] : 20);
+            $offset                = $listRows * ($page - 1);
+            $options['limit']      = $offset . ',' . $listRows;
+        }
+
+        $this->options = $options;
+
+        return $options;
+    }
+
+    /**
+     * 重写分析查询表达式
+     * 在闭包内添加软删除条件
+     * @access protected
+     * @param  string   $logic     查询逻辑 and or xor
+     * @param  mixed    $field     查询字段
+     * @param  mixed    $op        查询表达式
+     * @param  mixed    $condition 查询条件
+     * @param  array    $param     查询参数
+     * @param  bool     $strict    严格模式
+     * @return $this
+     */
+    protected function parseWhereExp($logic, $field, $op, $condition, array $param = [], $strict = false)
+    {
+        if ($field instanceof $this) {
+            $this->options['where'] = $field->getOptions('where');
+            $this->bind($field->getBind(false));
+            return $this;
+        }
+
+        $logic = strtoupper($logic);
+
+        if ($field instanceof Where) {
+            $this->options['where'][$logic] = $field->parse();
+            return $this;
+        }
+
+        if (is_string($field) && !empty($this->options['via']) && false === strpos($field, '.')) {
+            $field = $this->options['via'] . '.' . $field;
+        }
+
+        if ($field instanceof Expression) {
+            return $this->whereRaw($field, is_array($op) ? $op : [], $logic);
+        } elseif ($strict) {
+            // 使用严格模式查询
+            $where = [$field, $op, $condition, $logic];
+        } elseif (is_array($field)) {
+            // 解析数组批量查询
+            return $this->parseArrayWhereItems($field, $logic);
+        } elseif ($field instanceof \Closure) {
+
+            // 闭包内添加软删除
+            $query = $this->newQuery()->setConnection($this->connection);
+
+            $table = $this->getOptions('table');
+
+            if (is_array($table)) {
+                $tem = array_values($table);
+                $table = $tem[0];
+            } else {
+                $table = trim($table);
+            }
+
+            $field($query);
+
+            $options = $query->getOptions('where');
+            if (isset($options['AND'])) {
+                $where = array_merge($options['AND'], [[$table . '.delete_time', '=', 0]]);
+            } elseif (isset($options['OR'])) {
+                $where = $field;
+            }
+
+        } elseif (is_string($field)) {
+            if (preg_match('/[,=\<\'\"\(\s]/', $field)) {
+                return $this->whereRaw($field, $op, $logic);
+            } elseif (is_string($op) && strtolower($op) == 'exp') {
+                $bind = isset($param[2]) && is_array($param[2]) ? $param[2] : null;
+                return $this->whereExp($field, $condition, $bind, $logic);
+            }
+
+            $where = $this->parseWhereItem($logic, $field, $op, $condition, $param);
+        }
+
+        if (!empty($where)) {
+            $this->options['where'][$logic][] = $where;
+        }
+
+        return $this;
+    }
+
+    /**
+     * 重写删除方法 默认数据软删除
+     * @access public
+     * @param  mixed $data 表达式 true 表示强制删除
+     * @return int
+     * @throws Exception
+     * @throws PDOException
+     */
+    public function delete($data = null)
+    {
+        $this->parseOptions();
+
+        if (!is_null($data) && true !== $data) {
+            // AR模式分析主键条件
+            $this->parsePkWhere($data);
+        }
+
+        // 判断是否强制删除数据
+        if ($data === true) {
+            return $this->connection->delete($this);
+        } else { // 软删除数据
+            $this->options['data'] = ['delete_time' => date('Y-m-d H:i:s', time())];
+            return $this->connection->update($this);
+        }
+
+
+    }
+
+    /**
+     * 重写搜索器条件搜索字段
+     * @access public
+     * @param  array    $fields     搜索字段
+     * @param  array    $data       搜索数据
+     * @param  string   $prefix     字段前缀标识
+     * @return $this
+     */
+    public function withSearch(array $fields, array $data = [], $prefix = '')
+    {
+
+        foreach ($fields as $key => $field) {
+            if ($field instanceof \Closure) {
+                if (!empty($data[$key])) {
+                    $field($this, isset($data[$key]) ? $data[$key] : null, $data, $prefix);
+                }
+            } elseif ($this->model) {
+                // 检测搜索器
+                $fieldName = is_numeric($key) ? $field : $key;
+                $method    = 'search' . Loader::parseName($fieldName, 1) . 'Attr';
+            }
+
+            if (method_exists($this->model, $method)) {
+                if (!empty($data[$field])) {
+                    $this->model->$method($this, isset($data[$field]) ? $data[$field] : null, $data, $prefix);
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * 重写COUNT查询 添加delete_time字段
+     * @access public
+     * @param string|Expression $field 字段名
+     * @return float|string
+     * @throws \think\exception\DbException
+     */
+    public function count($field = '*')
+    {
+        if (!empty($this->options['group'])) {
+            // 支持GROUP
+            $options = $this->getOptions();
+            $subSql  = $this->options($options)
+                ->field('count(' . $field . ') AS think_count, 0 AS delete_time')
+                ->bind($this->bind)
+                ->buildSql();
+
+            $query = $this->newQuery()->table([$subSql => '_group_count_']);
+
+            if (!empty($options['fetch_sql'])) {
+                $query->fetchSql(true);
+            }
+
+            $count = $query->aggregate('COUNT', '*', true);
+        } else {
+            $count = $this->aggregate('COUNT', $field, true);
+        }
+
+        return is_string($count) ? $count : (int) $count;
+    }
+
+    /**
+     * 权限查询方法
+     * 可以使用查询构造器链式语法调用
+     * @param string $handleId 关联用户 ID 字段名
+     * @param int $resourcesId 资源 ID
+     * @param string $regionId 区域 ID
+     * @return $this
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function resourcePermission(string $handleId, int $resourcesId, string $regionId) :object
+    {
+        // 根据区域查询
+
+        // 拥有root权限的管理员能查看所有区域的数据
+        if (USER_ARR['is_administrator'] === 1 && USER_ARR['is_root'] === 1) {
+            return $this;
+        }
+
+        // 普通管理员只能查看当前区域内所有的数据
+        if (USER_ARR['is_administrator'] === 1 && USER_ARR['is_root'] === 2) {
+            return $this->parseWhereExp('AND', $regionId, '=', REGION_ID);
+        }
+
+        // 普通用户根据分配的权限查询数据
+        // 获取用户的权限
+        $dataPermissionShareModel = new DataPemissionShareModel();
+
+        $usersId = $dataPermissionShareModel->getFinalData($resourcesId, true, USER_ID);
+
+        // 判断是否拥有权限 是否是管理员
+        if ($usersId !== true && !empty($usersId)) {
+
+            return $this->parseWhereExp('AND', $handleId, 'IN', $usersId);
+
+        }
+
+        return $this;
+    }
+}

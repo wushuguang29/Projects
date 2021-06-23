@@ -1,0 +1,156 @@
+<template>
+    <view>
+        <view class="update-message">
+        	<view class="update-text">手机号:</view>
+        	<view class="u-input" style="width: 74%;">
+				<input class="uni-input" v-model="form.phone" name="number"  maxlength="11"/>
+				
+				</view>
+        
+        </view>
+		<view class="update-message">
+			
+			<view class="update-text">验证码：</view>
+			<view class="update-input">
+				<input class="uni-input" maxlength="6" v-model="form.phone_code" type="number"  />
+				<input class="code" @click="getVerification" v-model="code" disabled>
+			</view>
+			
+		</view>
+		<view style="margin-bottom: 1em;">
+			<button class="uni-btn" @click="login">登录</button>
+		</view>
+    </view>
+</template>
+
+<script>
+	export default {
+	    data() {
+			return {
+				code:"获取验证码",
+				form:{},
+				myData:{},
+				storeUrl:null
+			}
+	    },
+		onLoad:function(option){
+			console.log(option)
+			if(option.storeUrl){
+				this.storeUrl=option.storeUrl
+				console.log("123213",this.storeUrl)
+			}
+		},
+	    methods: {
+			login(){
+				console.log("this.form",this.form);
+				this.$ajax.post({
+					url: '/api/login/phoneBind',
+					data: this.form,
+					header: {
+						'Content-Type':'application/json;charset=UTF-8',
+									'x-requested-with':"XMLHttpRequest"
+					},
+				}).then((res) => {
+					console.log("rescode",res);
+					if(res.data.code==0){
+						console.log("进来了");
+						this.myData=uni.getStorageSync('rowData');
+						console.log("get",this.myData)
+						this.mydata.phone=this.form.phone;
+						uni.setStorageSync('rowData', this.mydata);
+						console.log("rowData",uni.getStorageSync('rowData'))
+						
+						if(this.storeUrl!=null){
+													
+													  uni.switchTab({
+													   	url: this.storeUrl
+													   });
+						}else{
+													
+													  uni.switchTab({
+													   	url: '/pages/index/index'
+													   });
+						}
+						
+					var jian=setInterval(()=>{
+						
+						uni.showToast({
+						title: '绑定成功',
+						icon: 'none'
+						});
+						clearInterval(jian)
+					},1000) 
+					}else{
+						uni.showToast({
+							title:res.data.msg,
+							icon:"none"
+						})
+					}
+				}) 
+				
+			},
+			getVerification(){
+				console.log()
+			if(this.form.phone){
+				if(this.code!="获取验证码"){
+					uni.showToast({
+						title:'请稍后再试',
+						icon:"none"
+					})
+				}else{
+					this.code=60;
+					var jian=setInterval(()=>{
+						this.code--
+						if(this.code==0){
+							clearInterval(jian)
+							this.code="获取验证码"
+						}
+					},1000) 
+					this.$ajax.get({
+						url: '/index/login/sendCode',
+						param: {
+							phone: this.form.phone
+						},
+						header: {
+							'Content-Type':'application/json;charset=UTF-8',
+										'x-requested-with':"XMLHttpRequest"
+						},
+					}).then((res) => {
+						console.log(res)
+					    this.form.phone_key=res.data.data.phone_key;
+					   
+						console.log("this.form",this.form);
+					}) 
+				}
+			  }else{
+				  uni.showToast({
+				  	title:'手机号不能为空',
+				  	icon:"none"
+				  })
+			  }
+				   
+			}
+	    }
+	}
+</script>
+
+<style>
+	.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+	}
+	
+	page{background-color: #f1f1f1;}
+	/* 更改手机号 */
+	.update-message{background-color: #fff;height:95upx;line-height: 95upx;font-size: 32upx;display: flex;border-bottom:2upx solid #e4e4e4;}
+	/* 文字 */
+	.update-text{flex: 3;text-align: right;}
+	/* 右侧input框 */
+	.update-input{flex: 7;display: flex;font-size: 43rpx; font-weight: 500;}
+	/* 获取验证码 */
+	.code{flex: 3;font-size: 25upx;text-align: center;background:#47C3A8;height:95upx;line-height:95upx;color: #fff;float: right;}
+	/* 验证码 */
+	.uni-input{flex: 7;padding: 4%;font-size: 43rpx; font-weight: 500;}
+	
+</style>

@@ -1,0 +1,63 @@
+<?php
+
+namespace app\common\model;
+
+use service\rewrite\RewriteModel;
+use think\Db;
+use app\common\model\QuestionsModel;
+
+/**
+ * 题库结果管理
+ * @package app\common\model
+ */
+class EvaluatingScoreRangesModel extends RewriteModel
+{
+    /**
+     * 题库结果编辑
+     */
+    static function edit($param)
+    {
+        $date = date('Y-m-d H:i:s');
+        Db::startTrans();
+        try {
+            $data = QuestionsModel::delRedundantFields('evaluating_score_ranges',$param);
+            unset($data['id']);
+            //是否存在得分范围表
+            $is_no = Db::table('evaluating_score_ranges')->where(array('domain'=> $param['domain'], 'side'=> $param['side']))->find();
+            if (!empty($is_no)) {
+                $data['update_time']  = $date;
+                $res = Db::table('evaluating_score_ranges')->where('id', $param['id'])->update($data);//更新到得分范围表
+            } else {
+                $data['create_uid']   = USER_ID;
+                $data['create_time']  = $date;
+                $res = Db::table('evaluating_score_ranges')->insertGetId($data);//添加到得分范围表
+            }
+            if ($res) {
+                Db::commit();
+                return msgReturn(45003);
+            } else {
+                Db::rollback();
+                return msgReturn(46002);
+            }
+        } catch (\Exception $e) {
+            Db::rollback();
+            return msgReturn(46002, $e->getMessage());
+        }
+    }
+
+    /**
+     * 题库结果查看/编辑回显
+     */
+    static function browse($param)
+    {
+        $res = Db::table('evaluating_score_ranges')->field([
+            'id',
+            'domain',
+            'side',
+            'score_range',
+        ])
+        ->where('id', $param['id'])
+        ->find();
+        return msgReturn(0, $res);
+    }
+}

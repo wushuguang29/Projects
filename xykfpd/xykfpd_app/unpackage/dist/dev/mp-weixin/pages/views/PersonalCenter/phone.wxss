@@ -1,0 +1,24 @@
+
+.uni-btn {
+	margin: 59rpx 40rpx 0;
+	background: #47C3A8;
+	color: #fff;
+}
+page{background-color: #f1f1f1;}
+
+/* 更改手机号 */
+.update-message{background-color: #fff;height:95rpx;line-height: 95rpx;font-size: 32rpx;display: -webkit-box;display: -webkit-flex;display: flex;border-bottom:2rpx solid #e4e4e4;}
+
+/* 文字 */
+.update-text{-webkit-box-flex: 3;-webkit-flex: 3;flex: 3;text-align: right; font-size: 43rpx; font-weight: 500;}
+
+/* 右侧input框 */
+.update-input{-webkit-box-flex: 7;-webkit-flex: 7;flex: 7;display: -webkit-box;display: -webkit-flex;display: flex;}
+
+/* 获取验证码 */
+.code{-webkit-box-flex: 3;-webkit-flex: 3;flex: 3;font-size: 25rpx;text-align: center;background:#47C3A8;height:95rpx;line-height:95rpx;color: #fff;float: right;}
+
+/* 验证码 */
+.uni-input{-webkit-box-flex: 7;-webkit-flex: 7;flex: 7;padding: 4%; font-size: 43rpx; font-weight: 500;}
+
+

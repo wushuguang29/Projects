@@ -1,0 +1,40 @@
+<template>
+	<view>
+		<u-table>
+				<u-tr>
+					<u-th>学校</u-th>
+					<u-th>班级</u-th>
+					<u-th>年龄</u-th>
+				</u-tr>
+				<u-tr>
+					<u-td>浙江大学</u-td>
+					<u-td>二年级</u-td>
+					<u-td>22</u-td>
+				</u-tr>
+				
+			</u-table>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				fromData:{
+					
+				}
+				
+				
+			}
+		},
+		onShow:function(option){
+			
+		},
+		methods:{
+			
+		}
+	}
+</script>
+
+<style>
+</style>

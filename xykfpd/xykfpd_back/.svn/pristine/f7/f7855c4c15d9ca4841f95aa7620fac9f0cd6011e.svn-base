@@ -1,0 +1,9 @@
+<?php
+namespace upload\config;
+$config=[
+    "ueditor"=>[], //编辑器配置
+    "cloud"=>[], //云配置
+    "base"=>[], //基础配置
+    "gaopaiyi"=>[],//驱动路径、硬件版本型号、是否开启身份证识别
+    "disk"=>[],//在项目创建真实结构目录的配置，可配置存储目录，最终目录等于 base中的目录+disk的目录
+];

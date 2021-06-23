@@ -1,0 +1,84 @@
+<?php
+
+
+namespace service\rewrite;
+
+
+use service\rewrite\RewriteQuery;
+use think\Model;
+
+/**
+ * 自定义模型抽象类 方便统一配置模型参数和方法
+ * @package app\service
+ * @mixin RewriteQuery
+ * @method RewriteQuery resourcePermission(string $handleId, int $resourcesId) static 权限查询方法
+ */
+abstract class RewriteModel extends Model
+{
+    /**
+     * 主键字段
+     * @var string
+     */
+    protected $pk = 'id';
+
+    /**
+     * 自动时间戳字段类型
+     * @var string
+     */
+    protected $autoWriteTimestamp = 'varchar';
+
+    /**
+     * 定义创建时间戳字段名
+     * @var string
+     */
+    protected $createTime = 'create_time';
+
+    /**
+     * 定义更新时间戳字段名
+     * @var string
+     */
+    protected $updateTime = 'update_time';
+
+    /**
+     * 重写Attribute类里面的自动写入时间戳方法
+     * @access protected
+     * @param  string $name 时间戳字段
+     * @return mixed
+     */
+    protected function autoWriteTimestamp($name)
+    {
+        if (isset($this->type[$name])) {
+            $type = $this->type[$name];
+
+            if (strpos($type, ':')) {
+                list($type, $param) = explode(':', $type, 2);
+            }
+
+            switch ($type) {
+                case 'datetime':
+                case 'date':
+                    $value = $this->formatDateTime('Y-m-d H:i:s');
+                    break;
+                case 'timestamp':
+                case 'integer':
+                case 'varchar':
+                    $value = $this->formatDateTime('Y-m-d H:i:s');
+                    break;
+                default:
+                    $value = time();
+                    break;
+            }
+        } elseif (is_string($this->autoWriteTimestamp) && in_array(strtolower($this->autoWriteTimestamp), [
+                'datetime',
+                'date',
+                'timestamp',
+                'varchar',
+            ])) {
+            $value = $this->formatDateTime('Y-m-d H:i:s');
+        } else {
+            $value = time();
+        }
+
+        return $value;
+    }
+}

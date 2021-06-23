@@ -1,0 +1,302 @@
+---------------------------------------------------------------
+
+[2020-12-23T09:33:18+08:00] 127.0.0.1 GET www.xyadmin.com/index/config/getConfig
+[运行时间：1.038163s] [吞吐率：0.96req/s] [内存消耗：4,614.19kb] [文件加载：94]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.xy.com/',
+  'origin' => 'http://www.xy.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.xyadmin.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.035863s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.011900s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.022194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.007323s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` = 0 [ RunTime:0.007143s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:18+08:00] 127.0.0.1 GET www.xyadmin.com/index/login/getCaptcha
+[运行时间：1.144245s] [吞吐率：0.87req/s] [内存消耗：4,153.95kb] [文件加载：88]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'app\\common\\service\\Captcha@getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.xy.com/',
+  'origin' => 'http://www.xy.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.xyadmin.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.035857s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.012037s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.026284s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:24+08:00] 127.0.0.1 OPTIONS www.xyadmin.com/index/login/login
+[运行时间：0.090552s] [吞吐率：11.04req/s] [内存消耗：3,518.20kb] [文件加载：73]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.035628s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007611s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010758s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:25+08:00] 127.0.0.1 POST www.xyadmin.com/index/login/login
+[运行时间：0.860941s] [吞吐率：1.16req/s] [内存消耗：5,123.92kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/login',
+  'route' => 'index/Login/login',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.xy.com/',
+  'origin' => 'http://www.xy.com',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '120',
+  'connection' => 'close',
+  'host' => 'www.xyadmin.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'lhsoft',
+  'login_type' => 1,
+  'password' => 'lh123456',
+  'captcha_code' => 'qkom',
+  'captcha_key' => 'captcha_dzXyTCWSGEpcx1E',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.030451s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.011069s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.011351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.018740s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'LOGIN_TYPE'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.023223s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.007787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.010728s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'lhsoft'  AND `users`.`delete_time` = 0 LIMIT 1 [ RunTime:0.008341s ]
+[ sql ] [ SQL ] SELECT `value` FROM `configuration` WHERE  `name` = 'MULTI_USER'  AND `configuration`.`delete_time` = 0 LIMIT 1 [ RunTime:0.006560s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_token` [ RunTime:0.006735s ]
+[ sql ] [ SQL ] INSERT INTO `users_token` (`users_id` , `token` , `create_time` , `update_time`) VALUES (1 , 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDg2ODcyMDUsIm5iZiI6MTYwODY4NzIwNSwiZXhwIjoxNjA4Njk4MDA1LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKLwzGhiufkzo-4tmF8a8s3d_kLIN3Wz3V3CyF_TfUuWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeTck4V2e3v0thDMpg_aM1zrPqSqnBM6TPeiC1bjN89' , '2020-12-23 09:33:25' , '2020-12-23 09:33:25') [ RunTime:0.005596s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = 5  WHERE  `id` = 1  AND `users`.`delete_time` = 0 [ RunTime:0.009782s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:26+08:00] 127.0.0.1 OPTIONS www.xyadmin.com/index/resource/getTree
+[运行时间：0.084201s] [吞吐率：11.88req/s] [内存消耗：3,518.16kb] [文件加载：73]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016081s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.010149s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.016252s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:27+08:00] 127.0.0.1 GET www.xyadmin.com/index/resource/getTree
+[运行时间：0.791426s] [吞吐率：1.26req/s] [内存消耗：5,057.10kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/resource/getTree',
+  'route' => 'index/Resource/getTree',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 
+      array (
+        0 => 'JWTAuthAndRefresh',
+        1 => NULL,
+      ),
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.xy.com/',
+  'origin' => 'http://www.xy.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.xyadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDg2ODcyMDUsIm5iZiI6MTYwODY4NzIwNSwiZXhwIjoxNjA4Njk4MDA1LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKLwzGhiufkzo-4tmF8a8s3d_kLIN3Wz3V3CyF_TfUuWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeTck4V2e3v0thDMpg_aM1zrPqSqnBM6TPeiC1bjN89',
+)
+[ info ] [ PARAM ] array (
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016479s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.007283s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.010488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.010328s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `users`.`delete_time` = 0 LIMIT 1 [ RunTime:0.008578s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `id` FROM `resources` WHERE  `status` = 1  AND `hidden` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.013584s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (1,3,4,6,7,8,9,10,11,21,22,24,27,29,43,44,55,56,57,58)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.007423s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (21,55,43,2,3,1,0)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.063104s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` IN (1,0)  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.026253s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `resources` WHERE  `id` = 0  AND `hidden` = 2  AND `status` = 1  AND `resources`.`delete_time` = 0 ORDER BY `sort` [ RunTime:0.012666s ]
+[ sql ] [ SQL ] SELECT `id`,`attachment_folder_type`,`pid`,`method`,`title`,`url`,`router`,`open_mode`,`front_router_name`,`identifier`,`middleware`,`status`,`hidden`,`type`,`icon`,`sort`,`extra` FROM `resources` WHERE  `hidden` = 2  AND `status` = 1  AND `id` IN (1,3,4,6,7,8,9,10,11,21,22,24,27,29,43,44,55,56,57,58,2,0)  AND `type` = 1  AND `resources`.`delete_time` = 0 [ RunTime:0.009728s ]
+[ sql ] [ SQL ] SELECT `id`,`attachment_folder_type`,`pid`,`method`,`title`,`url`,`router`,`open_mode`,`front_router_name`,`identifier`,`middleware`,`status`,`hidden`,`type`,`icon`,`sort`,`extra` FROM `resources` WHERE  `hidden` = 2  AND `status` = 1  AND `id` IN (1,3,4,6,7,8,9,10,11,21,22,24,27,29,43,44,55,56,57,58,2,0)  AND `type` = 2  AND `resources`.`delete_time` = 0 [ RunTime:0.013763s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:30+08:00] 127.0.0.1 OPTIONS www.xyadmin.com/index/user/getList?page=1&limit=25&start=0
+[运行时间：0.101524s] [吞吐率：9.85req/s] [内存消耗：3,520.38kb] [文件加载：73]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018527s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.011249s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.039432s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:31+08:00] 127.0.0.1 GET www.xyadmin.com/index/user/getList?page=1&limit=25&start=0
+[运行时间：0.745489s] [吞吐率：1.34req/s] [内存消耗：5,017.08kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/Users/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'JWTAuthAndRefresh',
+      1 => 'Competence',
+      2 => 'Config',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.xy.com/',
+  'origin' => 'http://www.xy.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.xyadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDg2ODcyMDUsIm5iZiI6MTYwODY4NzIwNSwiZXhwIjoxNjA4Njk4MDA1LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKLwzGhiufkzo-4tmF8a8s3d_kLIN3Wz3V3CyF_TfUuWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeTck4V2e3v0thDMpg_aM1zrPqSqnBM6TPeiC1bjN89',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '25',
+  'start' => '0',
+)
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017935s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.020438s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.012783s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.049957s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `users`.`delete_time` = 0 LIMIT 1 [ RunTime:0.039409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.016602s ]
+[ sql ] [ SQL ] SELECT COUNT(`u`.`id`) AS tp_count FROM `users` `u` LEFT JOIN (SELECT GROUP_CONCAT(r.name) AS role_name,
+                0 AS delete_time,
+                ur.users_id FROM `users_role` `ur` LEFT JOIN `role` `r` ON `r`.`id`=ur.role_id AND r.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`users_id`) `r` ON `r`.`users_id`=u.id AND r.delete_time = 0 WHERE  `u`.`delete_time` = 0 [ RunTime:0.008847s ]
+[ sql ] [ SQL ] SELECT *,`u`.`id`,`u`.`username`,`u`.`account`,`u`.`gender`,`u`.`email`,`u`.`mobile`,`u`.`status`,`u`.`working_status`,`r`.`role_name`,`u`.`is_root`,`u`.`is_administrator` FROM `users` `u` LEFT JOIN (SELECT GROUP_CONCAT(r.name) AS role_name,
+                0 AS delete_time,
+                ur.users_id FROM `users_role` `ur` LEFT JOIN `role` `r` ON `r`.`id`=ur.role_id AND r.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`users_id`) `r` ON `r`.`users_id`=u.id AND r.delete_time = 0 WHERE  `u`.`delete_time` = 0  AND `u`.`delete_time` = 0 ORDER BY `u`.`id` DESC LIMIT 0,25 [ RunTime:0.009798s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:33+08:00] 127.0.0.1 OPTIONS www.xyadmin.com/index/role/getList?page=1&limit=25&start=0
+[运行时间：0.091370s] [吞吐率：10.94req/s] [内存消耗：3,520.38kb] [文件加载：73]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022473s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.016827s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.016848s ]
+---------------------------------------------------------------
+
+[2020-12-23T09:33:35+08:00] 127.0.0.1 GET www.xyadmin.com/index/role/getList?page=1&limit=25&start=0
+[运行时间：0.786959s] [吞吐率：1.27req/s] [内存消耗：5,127.63kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\xykfpd_back\thinkphp\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/role/getList',
+  'route' => 'index/Role/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'JWTAuthAndRefresh',
+      1 => 'Competence',
+      2 => 'Config',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.xy.com/',
+  'origin' => 'http://www.xy.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'close',
+  'host' => 'www.xyadmin.com',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzUxMiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDg2ODcyMDUsIm5iZiI6MTYwODY4NzIwNSwiZXhwIjoxNjA4Njk4MDA1LCJ1c2VyX2lkIjoxLCJjb25maWdfa2V5IjoiZmNhMDZjMTZmZTlmOTg5MDQwZTA0YzdmN2YwMzYzOTcifQ.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKLwzGhiufkzo-4tmF8a8s3d_kLIN3Wz3V3CyF_TfUuWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeTck4V2e3v0thDMpg_aM1zrPqSqnBM6TPeiC1bjN89',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '25',
+  'start' => '0',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023399s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `resources` [ RunTime:0.009866s ]
+[ sql ] [ SQL ] SELECT TRIM(BOTH '/' FROM UPPER(router)),`id`,`method`,TRIM(BOTH '/' FROM url) AS url,TRIM(BOTH '/' FROM router) AS router,`middleware` FROM `resources` WHERE  `status` = 1  AND `method` <> ''  AND `url` <> ''  AND `router` <> ''  AND `resources`.`delete_time` = 0 [ RunTime:0.011341s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.007807s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `users`.`delete_time` = 0 LIMIT 1 [ RunTime:0.023020s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071745s ] mysql:host=192.168.0.210;port=3306;dbname=xyxm_kfpd;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.011910s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `access_permission` [ RunTime:0.016600s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.007790s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.handler_uid AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,0 AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 LEFT JOIN (SELECT 0 AS delete_time,`target_id`,GROUP_CONCAT(resources_id)  AS access_permission FROM `access_permission` WHERE  `type` = 2  AND `access_permission`.`delete_time` = 0 GROUP BY `target_id`) `aps` ON `aps`.`target_id`=r.id AND aps.delete_time = 0 WHERE  `r`.`delete_time` = 0 [ RunTime:0.015938s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames`,u.username AS handler_name,`aps`.`access_permission` FROM `role` `r` LEFT JOIN `users` `u` ON `u`.`id`=r.handler_uid AND u.delete_time = 0 LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,0 AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND u.delete_time = 0 WHERE  `ur`.`delete_time` = 0 GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND us.delete_time = 0 LEFT JOIN (SELECT 0 AS delete_time,`target_id`,GROUP_CONCAT(resources_id)  AS access_permission FROM `access_permission` WHERE  `type` = 2  AND `access_permission`.`delete_time` = 0 GROUP BY `target_id`) `aps` ON `aps`.`target_id`=r.id AND aps.delete_time = 0 WHERE  `r`.`delete_time` = 0  AND `r`.`delete_time` = 0 LIMIT 0,25 [ RunTime:0.007922s ]

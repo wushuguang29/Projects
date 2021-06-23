@@ -1,0 +1,146 @@
+<?php
+/**
+ * 公共路由文件
+ */
+
+// 主页
+Route::get('/', 'index/Index/index');
+
+// 获取验证码
+Route::get('index/login/getCaptcha', 'app\common\service\Captcha@getCaptcha');
+
+// 登录
+Route::post('index/login/login', 'index/Login/login');
+
+// 发送手机验证码
+Route::get('index/login/sendMessages', 'app\common\service\Sms@sendMessages');
+
+// 获取所有数据库配置
+Route::get('index/config/getConfig', 'index/Configuration/getConfig');
+
+// 重新获取数据库配置
+Route::get('index/config/configRefresh', 'index/Configuration/configRefresh')->middleware('JWTAuthAndRefresh');
+
+// 退出登录
+Route::get('index/login/logout', 'index/Login/logout');
+
+// 获取资源树
+Route::get('index/resource/getTree', 'index/Resource/getTree')->middleware('JWTAuthAndRefresh');
+
+//资源排序
+Route::get('menuTree','index/Index/menuTree');
+
+Route::get('index/folder/getResourcesTree', 'index/ArchivesFolder/getResourcesTree');
+
+// 勾选了审核功能的路由
+Route::get('index/resource/getReviewList', 'index/Resource/getReviewList')->middleware('JWTAuthAndRefresh');
+
+// 发起审核
+Route::get('flow/start', 'index/Flow/start')->middleware('JWTAuthAndRefresh');
+
+// 审核操作
+Route::get('flow/audit', 'index/Flow/audit')->middleware('JWTAuthAndRefresh');
+
+// 用户关联的所有区域
+Route::get('get/regionList','index/Users/getRegionList')->middleware('JWTAuthAndRefresh');
+// 根据区域查询项目
+Route::get('get/projectList','index/Users/getRegionProject')->middleware('JWTAuthAndRefresh');
+// 用户设置区域和项目
+Route::get('setUserRegionProject', 'index/Users/setUserRegionProject')->middleware('JWTAuthAndRefresh');
+
+
+//档案管理配置
+//资源档案配置
+Route::get('index/archivesConfig/getResourceList' ,'index/ArchivesConfiguration/getResourceArchivesConfigurationList');//资源档案配置列表
+Route::post('index/folder/addFolder', 'index/ArchivesConfiguration/createFolder'); //添加文件夹
+Route::post('index/folder/updateFolder', 'index/ArchivesConfiguration/updateFolder'); //编辑文件夹
+Route::get('index/folder/delFolder', 'index/ArchivesConfiguration/delFolder'); //删除文件夹
+Route::get('index/folder/getUnboundFolderList','index/ArchivesConfiguration/getUnboundFolderList');//获取未绑定得文件夹
+Route::get('index/folder/getBoundFolderList','index/ArchivesConfiguration/getBoundFolderList');//获取绑定的文件夹
+Route::post('index/folder/boundFolder', 'index/ArchivesConfiguration/boundFolder'); //绑定文件夹
+Route::get('index/folder/removeBound', 'index/ArchivesConfiguration/removeBound'); //解除文件夹绑定关系
+
+//综合档案配置
+Route::get('index/archivesConfig/getSynthesisList' ,'index/ArchivesConfiguration/getSynthesisArchivesConfigurationList');//综合档案配置列表
+Route::post('index/folder/createSynthesisFolder','index/ArchivesConfiguration/createSynthesisFolder');//创建综合文件夹
+Route::post('index/folder/updateSynthesisFolder','index/ArchivesConfiguration/updateSynthesisFolder');//修改综合文件夹
+Route::get('index/folder/deleteSynthesisFolder','index/ArchivesConfiguration/deleteSynthesisFolder');//修改综合文件夹
+
+//附件模块
+Route::get('index/attachment/getFolders','index/Attachment/getFolders');//获取文件夹列表
+Route::get('index/attachment/getFiles','index/Attachment/getFiles');//获取文件夹中文件列表
+Route::post('index/attachment/upload','index/Attachment/upload');//上传附件
+Route::get('index/attachment/delete','index/Attachment/delete');//删除附件
+Route::post('index/attachment/rename','index/Attachment/rename');//重名明
+Route::get('index/attachment/download','index/Attachment/download');//下载
+
+//档案
+Route::get('index/archives/getBusinessArchivesList','index/Archives/getBusinessArchivesList');//获取业务档案列表
+Route::get('index/archives/getSynthesisArchivesList','index/Archives/getSynthesisArchivesList');//获取综合档案列表
+Route::get('index/archives/getArchivesList','index/Archives/getArchivesList');//获取档案列表
+Route::post('index/archives/manuallyCreateArchives','index/Archives/manuallyCreateArchives');//创建档案
+Route::post('index/archives/manuallyCreateSynthesisArchives','index/Archives/manuallyCreateSynthesisArchives');//创建综合档案
+Route::get('index/archives/getArchivesFolderList','index/Archives/getArchivesFolderList');//获取档案文件夹列表get
+Route::get('index/archives/getBusinessArchivesFileList','index/Archives/getBusinessArchivesFileList');//获取业务档案文件列表
+Route::get('index/archives/getSynthesisArchivesFileList','index/Archives/getSynthesisArchivesFileList');//获取综合档案文件列表
+Route::get('index/archives/getArchivesFileList','index/Archives/getArchivesFileList');//获取档案档案文件列表
+Route::post('index/archives/pigeonhole','index/Archives/pigeonhole');//归档/完结
+Route::post('index/archives/upload','index/Archives/upload');//档案上传
+Route::get('index/archives/download','index/Archives/download');//档案上传
+Route::get('index/archives/imagePreview','index/Archives/imagePreview');//图片预览
+Route::get('index/archives/folderPreview','index/Archives/folderPreview');//文件夹预览
+Route::get('index/archives/deleteArchivesFile','index/Archives/deleteArchivesFile');//删除文件
+
+//康复题库管理
+Route::get('index/Questions/getList','index/Questions/getList')->middleware('JWTAuthAndRefresh');//列表
+Route::post('index/Questions/add','index/Questions/add')->middleware('JWTAuthAndRefresh');//添加
+Route::post('index/Questions/edit','index/Questions/edit')->middleware('JWTAuthAndRefresh');//编辑
+Route::get('index/Questions/delete','index/Questions/delete')->middleware('JWTAuthAndRefresh');//删除
+Route::get('index/Questions/browse','index/Questions/browse')->middleware('JWTAuthAndRefresh');//查看/编辑回显
+Route::post('index/Questions/upload','index/Questions/upload')->middleware('JWTAuthAndRefresh');//语音上传
+Route::get('index/Questions/getVoice','index/Questions/getVoice')->middleware('JWTAuthAndRefresh');//获取语音
+//题库结果管理
+Route::get('index/EvaluatingScoreRanges/getList','index/EvaluatingScoreRanges/getList')->middleware('JWTAuthAndRefresh');//列表
+Route::post('index/EvaluatingScoreRanges/edit','index/EvaluatingScoreRanges/edit')->middleware('JWTAuthAndRefresh');//编辑
+Route::get('index/EvaluatingScoreRanges/browse','index/EvaluatingScoreRanges/browse')->middleware('JWTAuthAndRefresh');//查看/编辑回显
+
+//聊天
+Route::post('chat/boundClient','chat/ChatMessage/boundClient');
+Route::post('chat/sendMessage','chat/ChatMessage/sendMessage');
+Route::get('chat/getUserMessage','chat/ChatMessage/getUserMessage');
+Route::get('chat/getUserList','chat/ChatMessage/getUserList');
+Route::post('chat/markRead','chat/ChatMessage/markRead');
+Route::get('chat/getUserMemberList','chat/ChatMessage/getUserMemberList');
+
+Route::get('sms/test','index/Test/smsTest');
+
+//在线资源管理
+Route::get('index/Folder/getList','index/Folder/getList')->middleware('JWTAuthAndRefresh');//文件夹列表
+Route::post('index/Folder/add','index/Folder/add')->middleware('JWTAuthAndRefresh');//文件夹添加
+Route::post('index/Folder/rename','index/Folder/rename')->middleware('JWTAuthAndRefresh');//文件夹重命名
+Route::get('index/Folder/delete','index/Folder/delete')->middleware('JWTAuthAndRefresh');//文件夹删除
+Route::get('index/Folder/browse','index/Folder/browse')->middleware('JWTAuthAndRefresh');//文件夹查看
+Route::get('index/Folder/getFileList','index/Folder/getFileList')->middleware('JWTAuthAndRefresh');//文件列表
+Route::get('index/Folder/browseFile','index/Folder/browseFile')->middleware('JWTAuthAndRefresh');//文件预览
+Route::post('index/Folder/upload','index/Folder/upload')->middleware('JWTAuthAndRefresh');//文件上传
+Route::get('index/Folder/download','index/Folder/download')->middleware('JWTAuthAndRefresh');//下载
+Route::get('index/Folder/deleteFile','index/Folder/deleteFile')->middleware('JWTAuthAndRefresh');//文件删除
+Route::post('index/Folder/renameFile','index/Folder/renameFile')->middleware('JWTAuthAndRefresh');//文件重命名
+
+//信息推送管理
+Route::get('index/Evaluating/send', 'index/Evaluating/send')->middleware('JWTAuthAndRefresh');//信息推送
+Route::get('index/Evaluating/getList', 'index/Evaluating/getList')->middleware('JWTAuthAndRefresh');//信息推送列表
+Route::get('index/Evaluating/browse', 'index/Evaluating/browse')->middleware('JWTAuthAndRefresh');//查看
+
+//统计分析
+Route::get('index/StatisticalAnalysis/getList', 'index/StatisticalAnalysis/getList')->middleware('JWTAuthAndRefresh');//统计分析
+Route::get('head', 'index/StatisticalAnalysis/getHead');//统计分析
+
+Route::get('index/AutoResponse/getList', 'index/AutoResponse/getList')->middleware('JWTAuthAndRefresh');;//自动回复列表
+Route::post('index/AutoResponse/create', 'index/AutoResponse/create')->middleware('JWTAuthAndRefresh');;//自动回复添加
+Route::post('index/AutoResponse/update', 'index/AutoResponse/update')->middleware('JWTAuthAndRefresh');;//自动回复编辑
+Route::get('index/AutoResponse/delete', 'index/AutoResponse/delete')->middleware('JWTAuthAndRefresh');;//自动回复删除
+
+
+Route::get('index/user/change', 'index/Users/changePassowrd')->middleware('JWTAuthAndRefresh');//修改密码
+Route::get('index/desktop','index/Index/desktop')->middleware('JWTAuthAndRefresh');//桌面汇总数据

@@ -1,0 +1,113 @@
+<template>
+	<view>
+	
+	<view style="margin: 0 auto;text-align: center;"><u-avatar :src="src" size="large" mode="square" sex-icon="close"></u-avatar></view>
+			<u-button @click="upload">上传头像</u-button>
+	</view>
+</template>
+
+<script>
+	import config from '../../../api/config.js'
+
+	
+	//  公共的方法
+	 
+	export default {
+			data() {
+				return {
+					// action: config.host+'/index/Folder/upload',
+					src:"",
+					filesArr: [],
+					formData:{},
+					fileList:"",
+					myData:{}
+				}
+			},
+			created() {
+				
+			},
+			onShow:function(option){
+				
+				this.$ajax.get({
+					url: '/api/AppUsers/getUserInfo',
+					param: {},
+					header: {
+						'Content-Type':'application/json;charset=UTF-8',
+									'x-requested-with':"XMLHttpRequest"
+					},
+				}).then((res) => {
+					console.log("res",res)
+					this.myData=res.data.data;
+					this.src=this.myData.avatar
+				}) 
+			},
+			methods: {
+				upload(){
+				          uni.chooseImage({
+				              success: (chooseImageRes) => {
+				                  const tempFilePaths = chooseImageRes.tempFilePaths;
+				                  uni.uploadFile({
+				                      url: config.host+'/api/AppUsers/upload', //仅为示例，非真实的接口地址
+				                      filePath: tempFilePaths[0],
+				                      name: 'file',
+				                header: {
+				                  'Authorization':uni.getStorageSync('userToken')
+				                },
+				                      formData: {},
+				                      success: (uploadFileRes) => {
+										  
+				                    console.log(uploadFileRes.data);
+									let	data= JSON.parse(uploadFileRes.data) 
+									console.log("data",data)
+									// this.formData.src=data.data.path[0];
+									this.src=data.data.path[0];
+									
+									this.formData=uni.getStorageSync('rowData');
+								// uni.setStorageSync('rowData', res.data.data);
+								console.log("111",this.formData)
+								this.formData.avatar=this.src;
+								uni.setStorageSync('rowData', this.formData);
+								if(data.code==0){
+									
+									uni.redirectTo({
+										url:'/pages/views/PersonalCenter/PersonalInformation'
+									})
+									
+									var jian=setInterval(()=>{
+										
+										uni.showToast({
+										title: "操作成功",
+										icon: 'none'
+										});
+									clearInterval(jian)
+									},2000) 
+								}else{
+									uni.showToast({
+									title: "操作失败",
+									icon: 'none'
+									});
+								}
+								
+				                      }
+				                  });
+				              }
+				          });
+				        },
+				submit() {
+					let files = [];
+					// 通过filter，筛选出上传进度为100的文件(因为某些上传失败的文件，进度值不为100，这个是可选的操作)
+					// files = this.$refs.uUpload.lists.filter(val => {
+					// 	return val.progress == 100;
+					// })
+					
+					
+					// 如果您不需要进行太多的处理，直接如下即可
+					// files = this.$refs.uUpload.lists;
+					console.log(files,this.formData)
+				}
+			}
+		}
+</script>
+
+<style>
+</style>

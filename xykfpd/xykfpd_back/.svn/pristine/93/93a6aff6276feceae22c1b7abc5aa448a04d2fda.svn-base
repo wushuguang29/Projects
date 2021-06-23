@@ -1,0 +1,2315 @@
+---------------------------------------------------------------
+
+[2020-04-01T13:15:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.432983s] [吞吐率：2.31req/s] [内存消耗：3,895.48kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ddd9bf2a-d930-4f65-aaa1-65e4e5c11cc8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.051833s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.007651s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001326s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:37:09+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.094576s] [吞吐率：10.57req/s] [内存消耗：3,901.65kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'bc2d1f29-4c5f-4863-9a60-224941f883b4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002514s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005887s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001256s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:37:14+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.080429s] [吞吐率：12.43req/s] [内存消耗：3,901.66kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'cb4456fc-590d-4929-962a-e4f2d6d041e1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011792s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.007883s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001500s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:37:27+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.186034s] [吞吐率：5.38req/s] [内存消耗：2,899.23kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7ff20753-1572-43f6-9bc3-f293b7f05da2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ error ] [0]致命错误: Cannot use object of type think\Request as array[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:18]
+---------------------------------------------------------------
+
+[2020-04-01T13:40:03+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.202258s] [吞吐率：4.94req/s] [内存消耗：2,900.78kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '67238f3b-994d-4184-97d0-d19f2b6605aa',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ error ] [8]未定义变量: query[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:18]
+---------------------------------------------------------------
+
+[2020-04-01T13:40:29+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.068374s] [吞吐率：14.63req/s] [内存消耗：3,790.61kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '642e2861-90c4-435a-b142-793a44679830',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]类型错误: Argument 2 passed to think\db\Query::withSearch() must be of the type array, string given[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\db\Query.php:2342]
+---------------------------------------------------------------
+
+[2020-04-01T13:41:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.086810s] [吞吐率：11.52req/s] [内存消耗：3,902.13kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f0f63317-cbc1-4a56-a3fe-d22b131c7e42',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011957s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004475s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001326s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:41:28+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.206153s] [吞吐率：4.85req/s] [内存消耗：3,904.97kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'cdd84099-734c-4580-bd71-bb565b2ee13a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012661s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.007246s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001247s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:41:57+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.084968s] [吞吐率：11.77req/s] [内存消耗：3,904.97kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '946cc931-252e-4165-b75f-c81da19416a6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013043s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.009468s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001643s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:43:06+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.095336s] [吞吐率：10.49req/s] [内存消耗：3,904.97kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '360f176a-f793-4dab-a427-f498305d249d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011990s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.006500s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001779s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:43:08+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.079930s] [吞吐率：12.51req/s] [内存消耗：3,904.97kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6d13f7e3-5ca0-41f7-8689-7afd5625617f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012463s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.010156s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001914s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:43:09+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.070966s] [吞吐率：14.09req/s] [内存消耗：3,904.97kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '461a0211-f097-4439-8103-61e3f614066a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011754s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004926s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001663s ]
+---------------------------------------------------------------
+
+[2020-04-01T13:43:10+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.075784s] [吞吐率：13.20req/s] [内存消耗：3,904.97kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '466e14df-8c74-47fe-9063-660d701b654f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012068s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.006701s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001457s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:01:40+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.093940s] [吞吐率：10.65req/s] [内存消耗：3,904.97kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '385b432c-047f-42aa-9354-b886156a5d7e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012753s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004640s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001661s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:02:40+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.075809s] [吞吐率：13.19req/s] [内存消耗：3,905.25kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '173696e2-4274-4fad-b192-cbc28aaa448b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002365s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005374s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001467s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:07:55+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.114639s] [吞吐率：8.72req/s] [内存消耗：3,903.41kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a675320f-dc1f-4be1-8cab-2d4236548f45',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012463s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002853s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,1 [ RunTime:0.001125s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:08:47+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.070841s] [吞吐率：14.12req/s] [内存消耗：3,905.98kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dfa85f32-9030-42f2-815c-76ec338d28ce',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012087s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003025s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000941s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001552s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:09:01+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.100028s] [吞吐率：10.00req/s] [内存消耗：3,906.00kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2bc11783-2401-4935-bf33-ecb10f1ae3f1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014530s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005800s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001320s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:17:22+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.238621s] [吞吐率：4.19req/s] [内存消耗：3,903.73kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '07873e93-90cd-40d7-944a-91b036142477',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011326s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003968s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001319s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:21:40+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.101497s] [吞吐率：9.85req/s] [内存消耗：3,903.73kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '18d656d8-d3b7-4d6f-b209-a3ced2c787f7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013006s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003201s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000866s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001411s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:22:05+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.169006s] [吞吐率：5.92req/s] [内存消耗：3,719.10kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ac1876e1-940b-420f-bfaf-4eb8b33e90f4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2020-04-01T14:23:12+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.053945s] [吞吐率：18.54req/s] [内存消耗：3,719.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e9f51721-7484-4d73-b0c9-c453462347f4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2020-04-01T14:23:18+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.077119s] [吞吐率：12.97req/s] [内存消耗：3,903.77kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e4a5f029-2fbc-48da-9852-712846532989',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011790s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003299s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000758s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001696s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:23:48+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.100871s] [吞吐率：9.91req/s] [内存消耗：3,908.58kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6453b66f-2a1d-404d-8943-5b062ecc3b5c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012213s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003016s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001656s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:25:50+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.099564s] [吞吐率：10.04req/s] [内存消耗：3,903.67kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b475da9f-640d-468b-8e90-26c6cbc6a30a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012262s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004766s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001569s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:26:44+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.076621s] [吞吐率：13.05req/s] [内存消耗：3,903.66kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '77288c6a-a3ed-4750-830c-a3ae035b376a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012199s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003444s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001372s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:26:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.074383s] [吞吐率：13.44req/s] [内存消耗：3,903.66kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '347c674c-3329-465c-a5bf-f3873bd5f819',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012269s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002311s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001604s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:26:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.076872s] [吞吐率：13.01req/s] [内存消耗：3,903.66kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '73157866-c331-4405-9800-24a1674b03a4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012664s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003226s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001350s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:27:02+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.079955s] [吞吐率：12.51req/s] [内存消耗：3,906.41kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9946dce3-d0b5-4c13-becc-06ea2b05eef8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011250s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005601s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000993s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001451s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:31:22+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.084928s] [吞吐率：11.77req/s] [内存消耗：3,718.50kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c9bc823a-f2a6-4465-a702-4531c935f909',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2020-04-01T14:33:39+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.089624s] [吞吐率：11.16req/s] [内存消耗：3,903.67kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e989cf0f-df02-4f33-a315-43917733ad04',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002490s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005648s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001171s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.002375s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:34:17+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.081764s] [吞吐率：12.23req/s] [内存消耗：4,018.58kb] [文件加载：124]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c8e4235d-e67a-4905-a223-97c114cbfcd6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012002s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003479s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001471s ]
+[ error ] [8]未定义变量: total[E:\phpStudy\WWW\lhsoft_back\application\index\model\User.php:21]
+---------------------------------------------------------------
+
+[2020-04-01T14:34:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.068120s] [吞吐率：14.68req/s] [内存消耗：3,903.19kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '23a430dd-8265-4bc1-bf8b-79aef2726daa',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002347s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004521s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001533s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:36:00+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.101967s] [吞吐率：9.81req/s] [内存消耗：3,902.18kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '87a03527-7962-4fe9-a3c8-64630a765da6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010993s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004709s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001458s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:37:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.073875s] [吞吐率：13.54req/s] [内存消耗：3,903.71kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8e67ef6b-649c-4922-9aee-a4973e4dacc8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011328s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004216s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001373s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:37:27+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.068363s] [吞吐率：14.63req/s] [内存消耗：3,903.71kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '28ed8e41-98e7-4470-b341-7d914722a70f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002190s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005002s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001059s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001473s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:37:28+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.098624s] [吞吐率：10.14req/s] [内存消耗：3,903.70kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e5f777e4-6646-4a46-93d9-f16daabad15b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004035s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003199s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001073s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001268s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:37:41+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.081693s] [吞吐率：12.24req/s] [内存消耗：3,903.52kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ba06b915-3d64-440c-ac6e-c5289445f9da',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013328s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004848s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000950s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001361s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:37:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.091390s] [吞吐率：10.94req/s] [内存消耗：3,905.04kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '1a468be0-c902-42ac-9959-2c4b04ac6cba',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002439s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005354s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001616s ]
+---------------------------------------------------------------
+
+[2020-04-01T14:43:20+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.111299s] [吞吐率：8.98req/s] [内存消耗：3,904.77kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'cbbf13c1-d7a3-45ca-86b7-acb6573f47a3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012371s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005466s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001161s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001650s ]
+---------------------------------------------------------------
+
+[2020-04-01T15:11:59+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.068267s] [吞吐率：14.65req/s] [内存消耗：2,357.27kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '47125444-bfcc-4e7c-abe6-b063c079dd40',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]Class app\index\model\UserModel does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T15:13:34+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.050175s] [吞吐率：19.93req/s] [内存消耗：2,397.10kb] [文件加载：108]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '515a21a1-dff3-4d9b-ad52-074efac13feb',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]Class app\common\model\UserModel does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T15:14:20+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.063612s] [吞吐率：15.72req/s] [内存消耗：2,397.10kb] [文件加载：108]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '681c2c2a-b91c-4863-bae4-e70618c54f8c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]Class app\common\model\UserModel does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T15:15:49+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.075507s] [吞吐率：13.24req/s] [内存消耗：3,917.60kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e2288d81-4ec6-4ca8-b0f5-c20a9d682ac2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011254s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003005s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001422s ]
+---------------------------------------------------------------
+
+[2020-04-01T15:15:54+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.097923s] [吞吐率：10.21req/s] [内存消耗：3,916.15kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a86b0d8d-3237-43ce-88fb-6f5bbc88294d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012590s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002541s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001009s ]
+---------------------------------------------------------------
+
+[2020-04-01T15:16:28+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList?username=%E5%BE%90
+[运行时间：0.094777s] [吞吐率：10.55req/s] [内存消耗：3,916.51kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ca575487-f056-452a-9967-20b6804e4a9d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '徐',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011995s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003630s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.000880s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%徐%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001165s ]
+---------------------------------------------------------------
+
+[2020-04-01T15:48:13+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUserInfo?id=1
+[运行时间：0.073450s] [吞吐率：13.61req/s] [内存消耗：2,387.64kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c5b0c607-05f2-4d99-869d-dd60a5c82e80',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+---------------------------------------------------------------
+
+[2020-04-01T15:48:31+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.069953s] [吞吐率：14.30req/s] [内存消耗：2,359.06kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '10f6e2a7-3e41-41ff-9ea5-3ddfefe69dcd',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]Class app\index\validate\UserValidate does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T15:49:52+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.048844s] [吞吐率：20.47req/s] [内存消耗：2,359.06kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dc22f2a7-0283-41e8-943c-5efe3f5c445c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]Class app\index\validate\UserValidate does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T15:49:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.039660s] [吞吐率：25.21req/s] [内存消耗：2,359.06kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ceacbff1-80ab-41f4-a844-b2a43f2e8b1c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]Class app\index\validate\UserValidate does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T15:50:50+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.068755s] [吞吐率：14.54req/s] [内存消耗：2,358.88kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6d848e9f-55e1-48b4-a559-80ecef2008f9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]Class app\index\validate\UserValidate does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T15:51:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：12.840866s] [吞吐率：0.08req/s] [内存消耗：3,856.58kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3b8f03a2-26df-4733-bb7d-5f88f83ecb04',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012989s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:12.765860s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00'  AND `id` = 1 LIMIT 1 [ RunTime:0.001706s ]
+---------------------------------------------------------------
+
+[2020-04-01T15:51:33+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.084170s] [吞吐率：11.88req/s] [内存消耗：3,856.58kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0f18086c-c9f4-43c0-bb35-ea443a20abe0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012106s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004916s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00'  AND `id` = 1 LIMIT 1 [ RunTime:0.001341s ]
+---------------------------------------------------------------
+
+[2020-04-01T16:09:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.102179s] [吞吐率：9.79req/s] [内存消耗：3,856.55kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f386284d-2b3f-4cdf-8a38-c3d807efd023',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012672s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004503s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00'  AND `id` = 1 LIMIT 1 [ RunTime:0.001631s ]
+---------------------------------------------------------------
+
+[2020-04-01T16:11:16+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getList
+[运行时间：0.092699s] [吞吐率：10.79req/s] [内存消耗：3,919.64kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getList',
+  'route' => 'index/User/getList',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'sec-fetch-site' => 'none',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011973s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.005237s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00' [ RunTime:0.001174s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` LIKE '%%'  AND `users`.`delete_time` = '0000-00-00 00:00:00'  AND `users`.`delete_time` = '0000-00-00 00:00:00' LIMIT 0,25 [ RunTime:0.001744s ]
+---------------------------------------------------------------
+
+[2020-04-01T16:21:34+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/create
+[运行时间：0.073804s] [吞吐率：13.55req/s] [内存消耗：2,907.67kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/create',
+  'route' => 'index/User/create',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '850',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------804000072246382903055540',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '96ab3ca4-2055-4220-9499-0158401949f7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'lh110',
+  'account' => 'lh110',
+  'password' => '123456',
+  'password_confirm' => '123456',
+  'gender' => '1',
+  'phone' => '15255556669',
+  'email' => '12346@qq.com',
+)
+[ error ] [0]致命错误: Call to undefined function app\index\controller\encryptPwd()[E:\phpStudy\WWW\lhsoft_back\application\index\controller\User.php:56]
+---------------------------------------------------------------
+
+[2020-04-01T16:23:11+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/create
+[运行时间：0.264749s] [吞吐率：3.78req/s] [内存消耗：3,826.34kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/create',
+  'route' => 'index/User/create',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '850',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------545707408509250814625720',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '95984e3f-2532-4c2f-a430-1dd531e4c52b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'lh110',
+  'account' => 'lh110',
+  'password' => '123456',
+  'password_confirm' => '123456',
+  'gender' => '1',
+  'phone' => '15255556669',
+  'email' => '12346@qq.com',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011914s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004188s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `users` WHERE  `account` = 'lh110'  AND `users`.`delete_time` = '0000-00-00 00:00:00' OR `username` = 'lh110' [ RunTime:0.001040s ]
+[ sql ] [ SQL ] INSERT INTO `users` (`username` , `account` , `password` , `gender` , `mobile` , `email` , `create_time` , `update_time`) VALUES ('lh110' , 'lh110' , '$2y$10$GlKPOgbI8JTzDSg3b.PmuebyGeZR3n4xmgv1CTrLDLNzFJ7D6tMva' , 1 , '15255556669' , '12346@qq.com' , '2020-04-01 16:23:11' , '2020-04-01 16:23:11.532841') [ RunTime:0.001677s ]
+---------------------------------------------------------------
+
+[2020-04-01T16:24:05+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.066407s] [吞吐率：15.06req/s] [内存消耗：2,353.70kb] [文件加载：106]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4c4c9938-1e9e-4169-885a-75d496547d32',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]Class app\index\validate\UserValidate does not exist[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\Container.php:467]
+---------------------------------------------------------------
+
+[2020-04-01T16:37:48+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.075205s] [吞吐率：13.30req/s] [内存消耗：2,358.73kb] [文件加载：107]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '95731ae7-f7b0-42ea-abe0-e6fb52c6cfcf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]语法解析错误: syntax error, unexpected '=', expecting ']'[E:\phpStudy\WWW\lhsoft_back\application\index\validate\UserValidate.php:49]
+---------------------------------------------------------------
+
+[2020-04-01T16:38:04+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.059774s] [吞吐率：16.73req/s] [内存消耗：2,370.38kb] [文件加载：108]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c509c560-f3ea-4e9a-96db-640550cfbaa5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]致命错误: Class 'app\index\service\ReviewValidate' not found[E:\phpStudy\WWW\lhsoft_back\application\index\validate\UserValidate.php:6]
+---------------------------------------------------------------
+
+[2020-04-01T16:40:14+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.074090s] [吞吐率：13.50req/s] [内存消耗：2,588.35kb] [文件加载：110]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ef824047-d018-403b-ac23-156c1132aa5f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]致命错误: Class 'app\service\ReviewValidate' not found[E:\phpStudy\WWW\lhsoft_back\application\index\validate\UserValidate.php:6]
+---------------------------------------------------------------
+
+[2020-04-01T16:40:54+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.050370s] [吞吐率：19.85req/s] [内存消耗：2,588.35kb] [文件加载：110]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e03c2ed1-555c-436c-afe2-0c38b561134c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ error ] [0]致命错误: Class 'app\service\ReviewValidate' not found[E:\phpStudy\WWW\lhsoft_back\application\index\validate\UserValidate.php:6]
+---------------------------------------------------------------
+
+[2020-04-01T16:41:52+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.071058s] [吞吐率：14.07req/s] [内存消耗：4,024.13kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3830f25b-cb74-41d8-b162-4b08c811610a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002177s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.003017s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00'  AND `id` = 1 LIMIT 1 [ RunTime:0.001390s ]
+---------------------------------------------------------------
+
+[2020-04-01T16:42:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.099512s] [吞吐率：10.05req/s] [内存消耗：4,025.84kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2dfb035f-4674-44ae-a293-baa7184b4b38',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011240s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004384s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00'  AND `id` = 1 LIMIT 1 [ RunTime:0.001677s ]
+---------------------------------------------------------------
+
+[2020-04-01T16:42:45+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser?id=1
+[运行时间：0.076327s] [吞吐率：13.10req/s] [内存消耗：4,090.20kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0e57f59e-4f30-4474-af4f-1aea9cc7658d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012435s ] mysql:host=192.168.0.208;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.004213s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `users`.`delete_time` = '0000-00-00 00:00:00'  AND `id` = 1 LIMIT 1 [ RunTime:0.001611s ]
+---------------------------------------------------------------
+
+[2020-04-01T16:42:56+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser
+[运行时间：0.058346s] [吞吐率：17.14req/s] [内存消耗：3,929.43kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '3d894aae-f88e-4d31-98b3-87188e694303',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2020-04-01T16:45:13+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser
+[运行时间：0.067973s] [吞吐率：14.71req/s] [内存消耗：2,460.59kb] [文件加载：106]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '760da2ba-7246-4085-ba10-42ead699f1b0',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-01T16:46:45+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser
+[运行时间：0.057443s] [吞吐率：17.41req/s] [内存消耗：3,929.43kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ef96d02a-abca-4bae-8aa1-7263024eea74',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2020-04-01T16:49:04+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser
+[运行时间：0.089083s] [吞吐率：11.23req/s] [内存消耗：3,929.43kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8ae613bd-7079-4f1e-9d79-11cc3aef6315',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+---------------------------------------------------------------
+
+[2020-04-01T16:54:56+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/user/getUser
+[运行时间：0.065883s] [吞吐率：15.18req/s] [内存消耗：2,560.92kb] [文件加载：108]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/getUser',
+  'route' => 'index/User/getUser',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f6739ccf-a014-41cc-a019-baadff8d3424',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-01T16:56:12+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/user/create
+[运行时间：0.056411s] [吞吐率：17.73req/s] [内存消耗：3,047.10kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/user/create',
+  'route' => 'index/User/create',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '738',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------146244602907344130151626',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a182e43e-22c0-4ebd-9ee6-ced4409d7faf',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'account' => 'lh110',
+  'password' => '123456',
+  'password_confirm' => '123456',
+  'gender' => '1',
+  'phone' => '15255556669',
+  'email' => '12346@qq.com',
+)
+---------------------------------------------------------------
+
+[2020-04-01T17:37:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：1.750680s] [吞吐率：0.57req/s] [内存消耗：2,411.30kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '24c449b1-fd96-4ab3-a650-180cadd0d3d3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)

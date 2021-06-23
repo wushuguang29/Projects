@@ -1,0 +1,18 @@
+<?php
+namespace app\api\controller;
+
+use think\Controller;
+
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 17:24:16
+ * @LastEditTime: 2020-12-22 17:26:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\application\api\controller\Test.php
+ */
+class Test extends Controller{
+    public function aaa(){
+        echo 'bbbbb';
+    }
+}

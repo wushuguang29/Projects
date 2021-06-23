@@ -1,0 +1,1 @@
+<video style="{{'width:100%;'+('height:'+(windowHeight+'px')+';')}}" id="myVideo" src="{{videourl}}" data-event-opts="{{[['error',[['videoErrorCallback',['$event']]]]]}}" binderror="__e"></video>

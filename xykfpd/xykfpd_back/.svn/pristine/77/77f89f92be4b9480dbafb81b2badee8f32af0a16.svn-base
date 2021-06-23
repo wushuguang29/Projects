@@ -1,0 +1,46 @@
+<?php
+/**
+ * JWT中间件基类
+ * @author Zhang zw
+ * @date 2020/9/22 22:18
+ */
+
+namespace service\jwt\middleware;
+
+use app\common\model\UsersModel;
+use service\jwt\exception\TokenBlacklistException;
+use service\jwt\JwtAuth;
+
+class BaseMiddleware
+{
+    protected $jwtAuth;
+
+    /**
+     * BaseMiddleware constructor.
+     * @param JwtAuth $jwtAuth
+     */
+    public function __construct(JwtAuth $jwtAuth)
+    {
+        $this->jwtAuth = $jwtAuth;
+    }
+
+    /**
+     * 返回刷新的token
+     * @return mixed
+     * @throws TokenBlacklistException
+     * @author Zhang zw
+     * @date 2020/10/13 11:49
+     */
+    protected function setAuthentication()
+    {
+        if ($this->jwtAuth->ifRefresh()) {
+            throw new TokenBlacklistException('登录超时',40002);
+        }
+
+        $token = $this->jwtAuth->builder($this->jwtAuth->getClaims());
+
+        $this->jwtAuth->setDefine();
+
+        return $token;
+    }
+}

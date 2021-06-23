@@ -1,0 +1,492 @@
+<template>
+	<view>
+		<u-form :model="form" ref="uForm" label-align="left" label-width="200rpx" :error-type="errorType">
+			<u-form-item label="姓名" prop="name" :required="true">
+				<u-input v-model="form.name" placeholder="请输入姓名" />
+			</u-form-item>
+			<u-form-item label="年龄" prop="age" :required="true">
+				<u-input v-model="form.age" type="number" placeholder="请输入年龄" />
+			</u-form-item>
+			<u-form-item label="联系电话" prop="phone" :required="true">
+				<u-input v-model="form.phone" type="number" placeholder="请输入联系电话" />
+			</u-form-item>
+			<u-form-item label="联系邮箱" prop="email">
+				<u-input v-model="form.email" type="email" placeholder="请输入联系邮箱" />
+			</u-form-item>
+			<u-form-item label="性别" v-model="form.sex" prop="sex" :required="true">
+				<template v-for="item in sexList">
+					<text :key="item.value" :class="[form.sex == item.value?'sex-active':'','sex-box']" @tap="sexActive(item.value)">
+						{{item.label}}</text>
+				</template>
+			</u-form-item>
+			<u-form-item label="文化程度" prop="degree_education_name" :required="true">
+				<u-input v-model="form.degree_education_name" type="select" @click="degreeEducationShow = true" placeholder="请选择文化程度" />
+				<u-select :list="degreeEducationList" v-model="degreeEducationShow" @confirm="degreeEducationCallback" mode="single-column"></u-select>
+			</u-form-item>
+			<u-form-item label="婚姻状况" prop="marital_condition_name" :required="true">
+				<u-input v-model="form.marital_condition_name" type="select" @click="marriagetionShow = true" placeholder="请选择婚姻状况" />
+				<u-select :list="marriagetionList" v-model="marriagetionShow" @confirm="marriagetionCallback" mode="single-column"></u-select>
+			</u-form-item>
+			<u-form-item label="子女状况" prop="children_condition_name" :required="true">
+				<u-input v-model="form.children_condition_name" type="select" @click="childrenShow = true" placeholder="请选择子女状况" />
+				<u-select :list="childrenList" v-model="childrenShow" @confirm="childrenCallback" mode="single-column"></u-select>
+			</u-form-item>
+			<u-form-item label="所属疾病" prop="affiliated_disease_name" :required="true">
+				<u-input v-model="form.affiliated_disease_name" type="select" @click="diseasetionShow = true" placeholder="请选择所属疾病" />
+				<u-select :list="diseasetionList"  v-model="diseasetionShow" @confirm="diseasetionCallback"
+				 mode="single-column"></u-select>
+			</u-form-item>
+			<u-form-item label="所患疾病" prop="critical_disease">
+				<u-input v-model="form.critical_disease" placeholder="请输入所患疾病" />
+			</u-form-item>
+			<u-form-item label="身体状况" prop="physical_condition_name" :required="true">
+				<u-input v-model="form.physical_condition_name" type="select" @click="bodyShow = true" placeholder="请选择身体状况" />
+				<u-select :list="bodyList" v-model="bodyShow" @confirm="bodyCallback" mode="single-column"></u-select>
+			</u-form-item>
+			<u-form-item label="居住环境" prop="living_condition_name" :required="true">
+				<u-input v-model="form.living_condition_name" type="select" @click="liveShow = true" placeholder="请选择居住环境" />
+				<u-select :list="liveList" v-model="liveShow" @confirm="liveCallback" mode="single-column"></u-select>
+			</u-form-item>
+			<u-form-item label="医保类型" prop="health_insurance_type_name" :required="true">
+				<u-input v-model="form.health_insurance_type_name" type="select" @click="healthShow = true" placeholder="请选择医保类型" />
+				<u-select :list="healthList" v-model="healthShow" @confirm="healthCallback" mode="single-column"></u-select>
+			</u-form-item>
+			<u-form-item label="经济来源" prop="source_finance_name" :required="true">
+				<u-input v-model="form.source_finance_name" type="select"  @click="economicShow = true" placeholder="请选择经济来源"/>
+				<u-select :list="economicList" v-model="economicShow" @confirm="economicCallback" mode="single-column"></u-select>
+			</u-form-item>
+		</u-form>
+		<button class="uni-btn" @click="submit">保存</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		onReady() {
+			this.$refs.uForm.setRules(this.rules);
+		},
+		data() {
+			return {
+				editStatus:false,
+				errorType: ['message'],
+				form: {
+					name: '',
+					age: '',
+					phone: '',
+					email: '',
+					sex: '1',
+					degree_education: '',
+					marital_condition: '',
+					children_condition: '',
+					affiliated_disease: '',
+					physical_condition: '',
+					critical_disease: '',
+					living_condition: '',
+					health_insurance_type: '',
+					source_finance: '',
+				},
+				rules: {
+					name: [{
+						required: true,
+						message: '请输入姓名',
+						trigger: ['change','blur']
+					}],
+					age: [{
+						required: true,
+						message: '请输入年龄,年龄为正整数,区间值1-150',
+						trigger: ['change','blur'],
+						pattern: /^(?:[0-9][0-9]?|1[0-4][0-9]|150)$/,
+					}],
+					phone: [{
+						required: true,
+						message: '请输入联系电话',
+						trigger: ['change','blur'],
+						pattern: /^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/
+					}],
+					email: [{
+						message: '请输入邮箱',
+						trigger: ['change','blur'],
+						type: 'email'
+					}],
+					degree_education_name: [{
+						required: true,
+						message: '请选择文化程度',
+						trigger: ['change','blur'],
+					}],
+					marital_condition_name: [{
+						required: true,
+						message: '请选择婚姻状况',
+						trigger: ['change','blur'],
+					}],
+					children_condition_name: [{
+						required: true,
+						message: '请选择子女状况',
+						trigger: ['change','blur'],
+					}],
+					affiliated_disease_name: [{
+						required: true,
+						message: '请选择所属疾病',
+						trigger: ['change','blur'],
+					}],
+					critical_disease_name: [{
+						message: '请输入所患疾病',
+						trigger: ['change','blur'],
+						type: 'email'
+					}],
+					physical_condition_name: [{
+						required: true,
+						message: '请选择身体状况',
+						trigger: ['change','blur'],
+					}],
+					living_condition_name: [{
+						required: true,
+						message: '请选择居住环境',
+						trigger: ['change','blur'],
+					}],
+					health_insurance_type_name: [{
+						required: true,
+						message: '请选择医保类型',
+						trigger: ['change','blur'],
+					}],
+					source_finance_name: [{
+						required: true,
+						message: '请选择经济来源',
+						trigger: ['change','blur'],
+					}]
+				},
+				sexList: [{
+						value: '1',
+						label: '男'
+					},
+					{
+						value: '2',
+						label: '女'
+					}
+				],
+				degreeEducationShow: false,
+				degreeEducationList: [{
+					value: '1',
+					label: '未上学',
+				}, {
+					value: '2',
+					label: '小学'
+				}, {
+					value: '3',
+					label: '初中'
+				}, {
+					value: '4',
+					label: '中专'
+				}, {
+					value: '5',
+					label: '高中'
+				}, {
+					value: '6',
+					label: '大专'
+				}, {
+					value: '7',
+					label: '本科'
+				}, {
+					value: '8',
+					label: '硕士'
+				}, {
+					value: '9',
+					label: '博士'
+				}],
+				marriagetionShow: false,
+				marriagetionList: [{
+					value: '1',
+					label: '未婚'
+				}, {
+					value: '2',
+					label: '有配偶'
+				}, {
+					value: '3',
+					label: '离异'
+				}, {
+					value: '4',
+					label: '丧偶'
+				}],
+				childrenShow: false,
+				childrenList: [{
+					value: '1',
+					label: '无'
+				}, {
+					value: '2',
+					label: '1个'
+				}, {
+					value: '3',
+					label: '2个'
+				}, {
+					value: '4',
+					label: '3个'
+				}, {
+					value: '5',
+					label: '4个及以上'
+				}],
+				diseasetionShow: false,
+				diseasetionList: [{
+						value: '1',
+						label: '未患病',
+					},
+					{
+						value: '2',
+						label: '心血管疾病',
+					}, {
+						value: '3',
+						label: '呼吸系统疾病',
+					}, {
+						value: '4',
+						label: '泌尿系统疾病',
+					}, {
+						value: '5',
+						label: '内分泌系统疾病',
+					}, {
+						value: '6',
+						label: '消化道疾病',
+					}, {
+						value: '7',
+						label: '神经系统疾病',
+					}, {
+						value: '8',
+						label: '肿瘤',
+					}, {
+						value: '9',
+						label: '其他',
+					}
+				],
+				bodyShow: false,
+				bodyList: [{
+					value: '1',
+					label: '非常好'
+				}, {
+					value: '2',
+					label: '较好'
+				}, {
+					value: '3',
+					label: '一般'
+				}, {
+					value: '4',
+					label: '较差'
+				}, {
+					value: '5',
+					label: '非常差'
+				}],
+				liveShow: false,
+				liveList: [{
+					value: '1',
+					label: '独居'
+				}, {
+					value: '2',
+					label: '夫妻'
+				}, {
+					value: '3',
+					label: '子女或家人'
+				}, {
+					value: '4',
+					label: '保姆'
+				}, {
+					value: '5',
+					label: '其他'
+				}],
+				healthShow: false,
+				healthList: [{
+					value: '1',
+					label: '公费医疗'
+				}, {
+					value: '2',
+					label: '城镇居民医疗保险'
+				}, {
+					value: '3',
+					label: '农村合作医疗保险'
+				}, {
+					value: '4',
+					label: '商业医疗保险'
+				}, {
+					value: '5',
+					label: '自费'
+				}, {
+					value: '6',
+					label: '其他'
+				}],
+				economicShow: false,
+				economicList: [{
+					value: '1',
+					label: '储蓄'
+				}, {
+					value: '2',
+					label: '退休金'
+				}, {
+					value: '3',
+					label: '政府补助'
+				}, {
+					value: '4',
+					label: '子女亲戚提供'
+				}, {
+					value: '5',
+					label: '朋友提供'
+				}, {
+					value: '6',
+					label: '其他'
+				}],
+			}
+		},
+		onLoad: function(option) {
+			const arrMap = {
+				degree_education: 'degreeEducationList',
+				marital_condition: 'marriagetionList',
+				children_condition: 'childrenList',
+				affiliated_disease: 'diseasetionList',
+				physical_condition: 'bodyList',
+				living_condition: 'liveList',
+				health_insurance_type: 'healthList',
+				source_finance: 'economicList'
+			}
+			if (option.id) {
+				this.editStatus = true;
+				this.$ajax.get({
+					url: '/api/AppUserMember/browse',
+					param: {
+						id: option.id
+					},
+					header: {
+						'Content-Type': 'application/json;charset=UTF-8',
+						'x-requested-with': "XMLHttpRequest",
+
+					},
+				}).then((res) => {
+					const data = Object.assign({}, res.data.data);
+					const keys = Object.keys(arrMap);
+					let list,index;
+					keys.forEach(each=>{
+						list = this[arrMap[each]];
+						index = list.findIndex(rec=>rec.value == data[each]);
+						data[each+'_name'] = this[arrMap[each]][index]['label'];
+					})
+					data.age = data.age + '';
+					console.log('data:',data)
+					this.form = data;
+				})
+			}
+		},
+		methods: {
+			sexActive(index) {
+				this.form.sex = index
+			},
+			degreeEducationCallback(item) {
+				this.setSelectValue(item, 'degree_education');
+			},
+			marriagetionCallback(item) {
+				this.setSelectValue(item, 'marital_condition');
+			},
+			childrenCallback(item) {
+				this.setSelectValue(item, 'children_condition');
+			},
+			diseasetionCallback(item) {
+				this.setSelectValue(item, 'affiliated_disease');
+			},
+			bodyCallback(item) {
+				this.setSelectValue(item, 'physical_condition');
+			},
+			liveCallback(item) {
+				this.setSelectValue(item, 'living_condition');
+			},
+			healthCallback(item) {
+				this.setSelectValue(item, 'health_insurance_type');
+			},
+			economicCallback(item) {
+				this.setSelectValue(item, 'source_finance');
+			},
+			setSelectValue(item, field) {
+				this.form[field] = item[0].value;
+				this.form[field+'_name'] = item[0].label;
+			},
+			edit() {
+				console.log('edit',this.form)
+				this.$ajax.post({
+					url: '/api/AppUserMember/edit',
+					data: this.form,
+				}).then((res) => {
+					console.log("res", res)
+					uni.redirectTo({
+						url: '/pages/me/memberTable',
+					});
+					uni.showToast({
+						title: res.data.msg,
+						icon: "none"
+					})
+
+				})
+			},
+			add() {
+				console.log('add',this.form)
+				this.$ajax.post({
+					url: '/api/AppUserMember/add',
+					data: this.form,
+				}).then((res) => {
+					console.log("res", res)
+					uni.redirectTo({
+						url: '/pages/me/memberTable',
+					});
+					uni.showToast({
+						title: res.data.msg,
+						icon: "none"
+					})
+
+				})
+			},
+			submit() {
+				this.$refs.uForm.validate(valid => {
+					if (valid) {
+						console.log('验证通过');
+						if(this.editStatus){
+							this.edit();
+						}else{
+							this.add();
+						}
+					} else {
+						console.log('验证失败');
+					}
+				});
+			},
+			onBackPress(event) {
+				uni.switchTab({
+					url: '/pages/subscription/subscription'
+				});
+			},
+		},
+
+	}
+</script>
+
+<style lang="scss" scoped>
+	/deep/ .u-form-item {
+		.u-form-item--left__content--required {
+			left: 0rpx;
+		}
+		.u-form-item--left__content{
+			font-size:38rpx;
+		}
+		.u-form-item--left__content__label{
+			text-indent:28rpx;
+		}
+	}
+	/deep/ .u-form-item.u-border-bottom{
+		padding: 20rpx 15rpx;
+	}
+	.uni-btn {
+		margin: 59rpx 40rpx 0;
+		background: #47C3A8;
+		color: #fff;
+	}
+	.sex-box {
+		padding: 5px 20px;
+		border: 1px solid #eee;
+		margin-left: 10px;
+		border-radius: 3px;
+	}
+	.sex-active {
+		border-color: #46c4a7;
+		background-color: #46c4a7;
+		color: #fff;
+	}
+</style>

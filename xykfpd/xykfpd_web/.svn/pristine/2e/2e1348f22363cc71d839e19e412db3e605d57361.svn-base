@@ -1,0 +1,440 @@
+<template>
+  <div>
+    <audio
+      v-if="fileType === 'WAV' || fileType === 'MP3'"
+      :src="fileUrl"
+      controls="controls"
+    ></audio>
+
+    <div style="font-size: 14px">
+      <!-- <h3>录音时长：{{recorder&&recorder.duration.toFixed(4)}}</h3> -->
+      <br />
+      <el-button type="primary" @click="startRecorder">开始录音</el-button>
+      <el-button type="info" @click="pauseRecorder">暂停录音</el-button>
+      <el-button type="success" @click="resumeRecorder">继续录音</el-button>
+      <el-button type="warning" @click="stopRecorder">停止录音</el-button>
+      <br />
+      <br />
+      <!-- <h3>播放时长：{{recorder&&(playTime>recorder.duration?recorder.duration.toFixed(4):playTime.toFixed(4))}}</h3> -->
+      <br />
+      <div style="width: 80%; height: 200px; margin: 0 auto; display: flex">
+        <canvas id="canvas" style="width: 45%"></canvas>
+        <span style="padding: 0 5%"></span>
+        <canvas id="playChart" style="width: 45%"></canvas>
+      </div>
+      <br />
+      <el-button type="primary" @click="playRecorder" plain>播放录音</el-button>
+      <el-button type="info" @click="pausePlayRecorder" plain
+        >暂停播放</el-button
+      >
+      <el-button type="success" @click="resumePlayRecorder" plain
+        >继续播放</el-button
+      >
+      <el-button type="warning" @click="stopPlayRecorder" plain
+        >停止播放</el-button
+      >
+      <el-button type="danger" @click="destroyRecorder" plain
+        >销毁录音</el-button
+      >
+    </div>
+    <br />
+    <div>
+      <el-button style="margin-left: 5px" type="default" @click="aaa"
+        >取消</el-button
+      >
+      <el-button style="margin-left: 5px" type="primary" @click="uploadRecord"
+        >上传</el-button
+      >
+    </div>
+  </div>
+</template>
+ 
+<script>
+import Recorder from "js-audio-recorder";
+import { upload } from "@/api/evaluation.js";
+const lamejs = require("lamejs");
+let recorder = new Recorder({
+  sampleBits: 16, // 采样位数，支持 8 或 16，默认是16
+  sampleRate: 48000, // 采样率，支持 11025、16000、22050、24000、44100、48000，根据浏览器默认值，我的chrome是48000
+  numChannels: 1, // 声道，支持 1 或 2， 默认是1
+  // compiling: false,(0.x版本中生效,1.x增加中)  // 是否边录边转换，默认是false
+});
+
+// 绑定事件-打印的是当前录音数据
+recorder.onprogress = function (params) {
+  // console.log('--------------START---------------')
+  // console.log('录音时长(秒)', params.duration);
+  // console.log('录音大小(字节)', params.fileSize);
+  // console.log('录音音量百分比(%)', params.vol);
+  // console.log('当前录音的总数据([DataView, DataView...])', params.data);
+  // console.log('--------------END---------------')
+};
+export default {
+  name: "audioaa",
+  props: {
+    editStatus: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+
+    rowData: {
+      type: Object,
+    },
+  },
+  data() {
+    return {
+      //波浪图-录音
+      drawRecordId: null,
+      oCanvas: null,
+      ctx: null,
+      //波浪图-播放
+      drawPlayId: null,
+      pCanvas: null,
+      pCtx: null,
+      fileType: "",
+      fileUrl: "",
+    };
+  },
+  mounted() {
+    this.startCanvas();
+    this.recorder = new Recorder({
+      sampleBits: 16, // 采样位数，支持 8 或 16，默认是16
+      sampleRate: 48000, // 采样率，支持 11025、16000、22050、24000、44100、48000，根据浏览器默认值，我的chrome是48000
+      numChannels: 1, // 声道，支持 1 或 2， 默认是1
+      // compiling: false,(0.x版本中生效,1.x增加中)  // 是否边录边转换，默认是false
+    });
+  },
+  created() {
+    console.log("1", this.rowData);
+  },
+  methods: {
+    aaa() {
+      console.log("aaaa");
+    },
+    /**
+     * 波浪图配置
+     * */
+    startCanvas() {
+      //录音波浪
+      this.oCanvas = document.getElementById("canvas");
+      this.ctx = this.oCanvas.getContext("2d");
+      //播放波浪
+      this.pCanvas = document.getElementById("playChart");
+      this.pCtx = this.pCanvas.getContext("2d");
+    },
+
+    /**
+     *  录音的具体操作功能
+     * */
+    // 开始录音
+    startRecorder() {
+      // this.getPermission().then(() => {
+      //   console.log('开始录音')
+      //   recorder.start().then(
+      //     ()=>{
+      //       this.drawRecord();
+      //     },
+      //     (error)=>{
+      //       console.log(error);
+      //     }
+      //   ) // 开始录音
+      // }, (error) => {
+      //   console.log('请先允许该网页使用麦克风');
+      //   console.log(error);
+      // });
+
+      Recorder.getPermission().then(
+        () => {
+          recorder = new Recorder({
+            sampleBits: 16, // 采样位数，支持 8 或 16，默认是16
+            sampleRate: 48000, // 采样率，支持 11025、16000、22050、24000、44100、48000，根据浏览器默认值，我的chrome是48000
+            numChannels: 1, // 声道，支持 1 或 2， 默认是1
+            // compiling: false,(0.x版本中生效,1.x增加中)  // 是否边录边转换，默认是false
+          });
+          recorder.start().then(
+            () => {
+              this.drawRecord();
+            },
+            (error) => {
+              console.log(error);
+            }
+          ); // 开始录音
+        },
+        (error) => {
+          console.log(`${error.name} : ${error.message}`);
+          this.$message(`${error.name} : ${error.message}`);
+        }
+      );
+    },
+    // 继续录音
+    resumeRecorder() {
+      recorder.resume();
+      this.drawRecord();
+    },
+    // 暂停录音
+    pauseRecorder() {
+      recorder.pause();
+      this.drawRecordId && cancelAnimationFrame(this.drawRecordId);
+      this.drawRecordId = null;
+    },
+    // 结束录音
+    stopRecorder() {
+      recorder.stop();
+      this.drawRecordId && cancelAnimationFrame(this.drawRecordId);
+      this.drawRecordId = null;
+    },
+    // 录音播放
+    playRecorder() {
+      if (recorder != null && recorder.duration > 0) {
+        recorder.play();
+        this.drawPlay(); //绘制波浪图
+      } else {
+        console.log("没有录音文件");
+        this.$message("没有开始录音或录音被销毁");
+      }
+    },
+    // 暂停录音播放
+    pausePlayRecorder() {
+      recorder.pausePlay();
+    },
+    // 恢复录音播放
+    resumePlayRecorder() {
+      recorder.resumePlay();
+      this.drawPlay(); //绘制波浪图
+    },
+    // 停止录音播放
+    stopPlayRecorder() {
+      recorder.stopPlay();
+    },
+    // 销毁录音
+    destroyRecorder() {
+      recorder.stop();
+      this.drawRecordId && cancelAnimationFrame(this.drawRecordId);
+      this.drawRecordId = null;
+      recorder.destroy().then(function () {
+        recorder = new Recorder({
+          sampleBits: 16, // 采样位数，支持 8 或 16，默认是16
+          sampleRate: 48000, // 采样率，支持 11025、16000、22050、24000、44100、48000，根据浏览器默认值，我的chrome是48000
+          numChannels: 1, // 声道，支持 1 或 2， 默认是1
+          // compiling: false,(0.x版本中生效,1.x增加中)  // 是否边录边转换，默认是false
+        });
+        // this.drawRecordId && cancelAnimationFrame(this.drawRecordId);
+        // this.drawRecordId = null;
+      });
+    },
+    /**
+     *  获取录音文件
+     * */
+    getRecorder() {
+      let toltime = recorder.duration; //录音总时长
+      let fileSize = recorder.fileSize; //录音总大小
+
+      //录音结束，获取取录音数据
+      let PCMBlob = recorder.getPCMBlob(); //获取 PCM 数据
+      let wav = recorder.getWAVBlob(); //获取 WAV 数据
+
+      let channel = recorder.getChannelData(); //获取左声道和右声道音频数据
+    },
+    /**
+     *  下载录音文件
+     * */
+    //下载pcm
+    downPCM() {
+      //这里传参进去的时文件名
+      recorder.downloadPCM("新文件");
+    },
+    //下载wav
+    downWAV() {
+      //这里传参进去的时文件名
+      recorder.downloadWAV("新文件");
+    },
+    /**
+     *  获取麦克风权限
+     * */
+    getPermission() {
+      Recorder.getPermission().then(
+        () => {
+          this.$Message.success("获取权限成功");
+        },
+        (error) => {
+          console.log(`${error.name} : ${error.message}`);
+        }
+      );
+    },
+    /**
+     * 文件格式转换 wav-map3
+     * */
+    getMp3Data() {
+      const mp3Blob = this.convertToMp3(recorder.getWAV());
+      recorder.download(mp3Blob, "recorder", "mp3");
+    },
+    uploadRecord() {
+      if (recorder == null || recorder.duration === 0) {
+        // this.$Message.error('请先录音')
+        console.log("请先录音");
+        return false;
+      }
+      this.recorder.pause(); // 暂停录音
+      this.timer = null;
+      this.drawRecordId && cancelAnimationFrame(this.drawRecordId);
+      this.drawRecordId = null;
+      // return false;
+      console.log("上传录音"); // 上传录音
+      var formData = new FormData();
+      // var blob = this.recorder.getWAVBlob(); //获取wav格式音频数据
+      //此处获取到blob对象后需要设置fileName满足当前项目上传需求，其它项目可直接传把blob作为file塞入formData
+      // var newbolb = new Blob([blob], { type: "audio/wav" });
+      var newbolb = this.convertToMp3(recorder.getWAV());
+      // recorder.download(newbolb, "recorder", "mp3");
+      var fileOfBlob = new File([newbolb], new Date().getTime() + ".mp3");
+      formData.append("file", fileOfBlob);
+      formData.append("id", this.rowData.id); //要传得ID
+      upload(formData).then((res) => {
+        console.log(res);
+        if (res.code == 0) {
+          (this.fileType = "MP3"), (this.fileUrl = res.data.path[0]);
+          console.log(res.data.path[0]);
+          this.$parent.$emit("updateList");
+        }
+      });
+      //本地公共上传接口获取到服务器地址保存即可
+      // const axios = require("axios");
+      // axios.post(this.resource, formData).then((res) => {
+      //   console.log(res.data.data[0].url);
+      //   //开始调用保存的方法
+      //   this.uploadRecordModal = false;
+      // });
+    },
+    convertToMp3(wavDataView) {
+      // 获取wav头信息
+      const wav = lamejs.WavHeader.readHeader(wavDataView); // 此处其实可以不用去读wav头信息，毕竟有对应的config配置
+      const { channels, sampleRate } = wav;
+      const mp3enc = new lamejs.Mp3Encoder(channels, sampleRate, 128);
+      // 获取左右通道数据
+      const result = recorder.getChannelData();
+      const buffer = [];
+
+      const leftData =
+        result.left &&
+        new Int16Array(result.left.buffer, 0, result.left.byteLength / 2);
+      const rightData =
+        result.right &&
+        new Int16Array(result.right.buffer, 0, result.right.byteLength / 2);
+      const remaining = leftData.length + (rightData ? rightData.length : 0);
+
+      const maxSamples = 1152;
+      for (let i = 0; i < remaining; i += maxSamples) {
+        const left = leftData.subarray(i, i + maxSamples);
+        let right = null;
+        let mp3buf = null;
+
+        if (channels === 2) {
+          right = rightData.subarray(i, i + maxSamples);
+          mp3buf = mp3enc.encodeBuffer(left, right);
+        } else {
+          mp3buf = mp3enc.encodeBuffer(left);
+        }
+
+        if (mp3buf.length > 0) {
+          buffer.push(mp3buf);
+        }
+      }
+
+      const enc = mp3enc.flush();
+
+      if (enc.length > 0) {
+        buffer.push(enc);
+      }
+
+      return new Blob(buffer, { type: "audio/mp3" });
+    },
+
+    /**
+     * 绘制波浪图-录音
+     * */
+    drawRecord() {
+      // 用requestAnimationFrame稳定60fps绘制
+      this.drawRecordId = requestAnimationFrame(this.drawRecord);
+
+      // 实时获取音频大小数据
+      let dataArray = recorder.getRecordAnalyseData(),
+        bufferLength = dataArray.length;
+
+      // 填充背景色
+      this.ctx.fillStyle = "rgb(200, 200, 200)";
+      this.ctx.fillRect(0, 0, this.oCanvas.width, this.oCanvas.height);
+
+      // 设定波形绘制颜色
+      this.ctx.lineWidth = 2;
+      this.ctx.strokeStyle = "rgb(0, 0, 0)";
+
+      this.ctx.beginPath();
+
+      var sliceWidth = (this.oCanvas.width * 1.0) / bufferLength, // 一个点占多少位置，共有bufferLength个点要绘制
+        x = 0; // 绘制点的x轴位置
+
+      for (var i = 0; i < bufferLength; i++) {
+        var v = dataArray[i] / 128.0;
+        var y = (v * this.oCanvas.height) / 2;
+
+        if (i === 0) {
+          // 第一个点
+          this.ctx.moveTo(x, y);
+        } else {
+          // 剩余的点
+          this.ctx.lineTo(x, y);
+        }
+        // 依次平移，绘制所有点
+        x += sliceWidth;
+      }
+
+      this.ctx.lineTo(this.oCanvas.width, this.oCanvas.height / 2);
+      this.ctx.stroke();
+    },
+    /**
+     * 绘制波浪图-播放
+     * */
+    drawPlay() {
+      // 用requestAnimationFrame稳定60fps绘制
+      this.drawPlayId = requestAnimationFrame(this.drawPlay);
+
+      // 实时获取音频大小数据
+      let dataArray = recorder.getPlayAnalyseData(),
+        bufferLength = dataArray.length;
+
+      // 填充背景色
+      this.pCtx.fillStyle = "rgb(200, 200, 200)";
+      this.pCtx.fillRect(0, 0, this.pCanvas.width, this.pCanvas.height);
+
+      // 设定波形绘制颜色
+      this.pCtx.lineWidth = 2;
+      this.pCtx.strokeStyle = "rgb(0, 0, 0)";
+
+      this.pCtx.beginPath();
+
+      var sliceWidth = (this.pCanvas.width * 1.0) / bufferLength, // 一个点占多少位置，共有bufferLength个点要绘制
+        x = 0; // 绘制点的x轴位置
+
+      for (var i = 0; i < bufferLength; i++) {
+        var v = dataArray[i] / 128.0;
+        var y = (v * this.pCanvas.height) / 2;
+
+        if (i === 0) {
+          // 第一个点
+          this.pCtx.moveTo(x, y);
+        } else {
+          // 剩余的点
+          this.pCtx.lineTo(x, y);
+        }
+        // 依次平移，绘制所有点
+        x += sliceWidth;
+      }
+
+      this.pCtx.lineTo(this.pCanvas.width, this.pCanvas.height / 2);
+      this.pCtx.stroke();
+    },
+  },
+};
+</script>
+ 

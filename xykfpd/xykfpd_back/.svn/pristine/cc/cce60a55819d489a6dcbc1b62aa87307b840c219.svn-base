@@ -1,0 +1,347 @@
+<?php
+
+namespace app\api\controller;
+
+use think\Controller;
+use think\Db;
+use think\facade\Cache;
+use think\Request;
+use think\facade\Config;
+use app\api\validate\LoginValidate;
+use app\common\model\AppUsersAuthModel;
+use wxapp\WXBizDataCrypt;
+use alipay\aop\AopClient;
+use alipay\aop\request\AlipaySystemOauthTokenRequest;
+use alipay\aop\request\AlipayUserInfoShareRequest;
+use service\jwt\facade\Jwt;
+
+/**
+ * app登录管理
+ * @package app\api\controller
+ */
+class Login extends Controller
+{
+    protected $wechat_appid;//微信appid
+    protected $wechat_appsecret;//微信appsecret
+    protected $appid;//支付宝appid
+    protected $prikey; //应用私钥
+    protected $alipubkey;//支付宝公钥
+    public function initialize()
+    {
+        $this->wechat_appid = Config::get('alipay.WECHAR_APPID');
+        $this->wechat_appsecret = Config::get('alipay.WECHAR_APPSECRET');
+        $this->appid = Config::get('alipay.APPID');
+        $this->prikey = Config::get('alipay.PRIVATE_KEY');
+        $this->alipubkey = Config::get('alipay.ALI_PUBLIC_KEY');
+    }
+    /**
+     * 登录
+     */
+    public function login(Request $request, LoginValidate $loginValidate)
+    {
+        $param = $loginValidate->goCheck($request->param(), 'loginType');
+        switch (intval($param['login_type'])) {
+
+            case 1: //微信登录
+                $loginValidate->goCheck($param, 'wechat');
+
+                return $this->wechat($param);
+
+            case 2: //支付宝登录
+                if (!isset($param['auth_code'])) {
+                    $appid = $this->appid; //appid
+                    $redirect_uri = urlencode($request->url(true));
+                    $state = md5(uniqid(rand(), true));
+                    $url = 'https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id='.$appid.'&scope=auth_user&redirect_uri='.$redirect_uri.'&state='.$state;
+                    header('Location:' . $url);
+                    exit;
+                } else {
+                    return $this->alipay($param);
+                }
+
+            case 3: //手机短信登录
+                $loginValidate->goCheck($param, 'phone');
+
+                return $this->phoneLogin($param);
+            case 4://app微信授权登录
+                return $this->weChatApp($param);
+
+            default:
+                return msgReturn(43001);
+
+        }
+    }
+
+    //APP 微信授权登录
+    public function weChatApp($data){
+        $openId = $data['openId'];
+        $nickName = $data['nickName'];
+        $avatarUrl = $data['avatarUrl'];
+        $userInfo = [
+            'openId' => $openId,
+            'nickName' => $nickName,
+            'avatarUrl' => $avatarUrl,
+        ];
+        $userId   = (new AppUsersAuthModel())->saveOauth($userInfo, 1);
+        if (empty($userId)) {
+            return msgReturn(50001, [], '登录失败');
+        }
+        $user     = Db::name("app_users")->where('id', $userId)->find();
+        $appUser = [
+            'app_user_id' => $user['id']
+        ];
+        $token =  $this->createToken($appUser);
+        $user['token'] = $token;
+        return msgReturn(45010, $user);
+
+    }
+
+    /**
+     * 手机号绑定
+     */
+    public function phoneBind()
+    {
+        $data = input();
+        //判断手机验证码是否过期
+        $cache_phone = Cache::get($data['phone_key']);
+        if (!$cache_phone) {
+            return msgReturn(43006);
+        }
+        //判断登录手机号与接受短信手机号是否一致
+        if ($cache_phone['phone'] !== $data['phone']) {
+            return msgReturn(43017);
+        }
+
+        //判断验证码是否正确
+        if ($cache_phone['code'] !== $data['phone_code']) {
+            return msgReturn(43006);
+        }
+
+        //判断手机号是否已绑定
+        $isBind = Db::name("app_users")->where(array('phone'=> $data['phone']))->find();
+        if (!empty($isBind)) {
+            return msgReturn(50001, [], '该手机号码已被注册');
+        }
+        Db::table('app_users')->where('id', APP_USER_ID)->update(['is_phone_auth'=> 1, 'phone'=> $data['phone']]);
+        $user     = Db::name("app_users")->where('id', APP_USER_ID)->find();
+        //删除缓存
+        Cache::rm($data['phone_key']);
+        return msgReturn(45005, $user);
+    }
+
+    /**
+     * 手机短信登录
+     */
+    public function phoneLogin($data)
+    {
+        //判断手机验证码是否过期
+        $code = '';
+        $phone = '';
+        //判断用户是否存在缓存验证码 如果有直接拿缓存验证码比较  没有则从新发送验证码
+
+        $phone_cache = Cache::get($data['phone']);
+        if(!$phone_cache){
+            if(!isset($data['phone_key'])){
+                return msgReturn(43030,[],'验证码错误或验证码过去，请重新发送验证码');
+            }
+            $cache_phone = Cache::get($data['phone_key']);
+            if (!$cache_phone) {
+                return msgReturn(43006);
+            }else{
+                $code = $cache_phone['code'];
+                $phone = $cache_phone['phone'];
+            }
+        }else{
+            $code = $phone_cache['code'];
+            $phone = $phone_cache['phone'];
+        }
+        
+
+        //判断登录手机号与接受短信手机号是否一致
+        if ($phone !== $data['phone']) {
+            return msgReturn(43017);
+        }
+
+        //判断验证码是否正确
+        if ($code !== $data['phone_code']) {
+            return msgReturn(43006);
+        }
+
+        $userId   = (new AppUsersAuthModel())->saveOauth($data, 3);
+        if (empty($userId)) {
+            return msgReturn(50001, [], '登录失败');
+        }
+        $user     = Db::name("app_users")->where('id', $userId)->find();
+        $appUser = [
+            'app_user_id' => $user['id']
+        ];
+        $token =  $this->createToken($appUser);
+        $user['token'] = $token;
+        //删除缓存
+        // Cache::rm($data['phone_key']);
+        return msgReturn(45010, $user);
+    }
+
+    /**
+     * 微信授权登录
+     */
+    public function wechat($data)
+    {
+        $appid          = $this->wechat_appid; //appid
+        $appsecret      = $this->wechat_appsecret; //appsecret
+        $code           = $data['code']; //登录会话
+        $encryptedData  = $data['encryptedData']; //加密信息
+        $iv             = $data['iv'];
+        $signature      = $data['signature'];
+        $rawData        = $data['rawData'];
+
+        //通过 code 发送请求获取 session_key
+        $res = $this->sendCode($appid, $appsecret, $code);
+        $sessionKey = $res['session_key'];
+        //验证签名
+        $signature2 =  sha1(htmlspecialchars_decode($rawData).$sessionKey);
+        // 验证签名
+        if ($signature2 !== $signature){
+            return msgReturn(50001, [], '验签失败');
+        }
+        // 进行解密
+        $userInfo = $this->getUserInfo($appid, $sessionKey, $encryptedData, $iv);
+        $userId   = (new AppUsersAuthModel())->saveOauth($userInfo, 1);
+        if (empty($userId)) {
+            return msgReturn(50001, [], '登录失败');
+        }
+        $user     = Db::name("app_users")->where('id', $userId)->find();
+        $appUser = [
+            'app_user_id' => $user['id']
+        ];
+        $token =  $this->createToken($appUser);
+        $user['token'] = $token;
+        return msgReturn(45010, $user);
+    }
+
+    /**
+     * 微信用户信息解密
+     */
+    private function getUserInfo($appid, $session_key, $encryptedData, $iv)
+    {
+        //进行解密
+        $pc         = new WXBizDataCrypt($appid, $session_key);
+        $errCode    = $pc->decryptData($encryptedData, $iv, $data);
+        //判断解密是否成功
+        if ($errCode != 0) {
+            return msgReturn(50001, [], '解密失败');
+        }
+        //返回解密数据
+        return json_decode($data, true);
+    }
+
+    /**
+     * 获取微信openid、session_key等信息
+     */
+    private function sendCode($appid, $appsecret, $code)
+    {
+        // 拼接请求地址
+        $url = 'https://api.weixin.qq.com/sns/jscode2session?appid='
+            . $appid . '&secret=' . $appsecret . '&js_code='
+            . $code . '&grant_type=authorization_code';
+        return json_decode(curl_get($url), true);
+    }
+
+    public function alipayAuth(Request $request){
+        echo "<a href='hbuilder://".json_encode($request->param())."'> <h1>跳转</h1> </a>";
+        // return "success";
+        // return $request->param;
+    }
+
+    /**
+     * 支付宝登录
+     */
+    public function alipay($data)
+    {
+        //获取授权access_token
+        $auth_code = $data['auth_code'];
+        $aop = new AopClient ();
+        $aop->gatewayUrl = 'https://openapi.alipay.com/gateway.do';
+        $aop->appId = $this->appid;
+        $aop->rsaPrivateKey = $this->prikey;
+        $aop->alipayrsaPublicKey = $this->alipubkey;
+        $aop->apiVersion = '1.0';
+        $aop->signType = 'RSA2';
+        $aop->postCharset='utf-8';
+        $aop->format='json';
+        $aop->method='alipay.userinfo.share';
+        $request = new AlipaySystemOauthTokenRequest ();
+        $request->setGrantType("authorization_code");
+        $request->setCode($auth_code);
+        $result = $aop->execute ($request);
+        if(isset($result->alipay_system_oauth_token_response->access_token))
+        {
+            //用access_token获取用户信息
+            $requests = new AlipayUserInfoShareRequest ();
+            $results = $aop->execute ( $requests , $result->alipay_system_oauth_token_response->access_token );
+            if($results->alipay_user_info_share_response->code == 10000)
+            {
+                //保存数据
+                $userInfo['user_id'] = $result->alipay_system_oauth_token_response->user_id;
+                $userInfo['access_token'] = $result->alipay_system_oauth_token_response->access_token;
+                $userInfo['avatar'] = $results->alipay_user_info_share_response->avatar;
+                $userInfo['province'] = $results->alipay_user_info_share_response->province;
+                $userInfo['city'] = $results->alipay_user_info_share_response->city;
+                $userInfo['gender'] = $results->alipay_user_info_share_response->gender;
+                $userInfo['nick_name'] = isset($results->alipay_user_info_share_response->nick_name) ? isset($results->alipay_user_info_share_response->nick_name) : \app\common\service\GenearteName::generate_name()['xm'];
+                $userId   = (new AppUsersAuthModel())->saveOauth($userInfo, 2);
+                if (empty($userId)) {
+                    return msgReturn(50001, [], '登录失败');
+                }
+                $user     = Db::name("app_users")->where('id', $userId)->find();
+                $appUser = [
+                    'app_user_id' => $user['id']
+                ];
+                $token =  $this->createToken($appUser);
+                $user['token'] = $token;
+                return msgReturn(45010, $user);
+            }else{
+                return msgReturn(50001, [], '登录异常');
+            }
+        }else{
+            return msgReturn(50001, [], '登录异常');
+        }
+    }
+
+    /**
+     * 创建token
+     * @param array $user
+     * @return string
+     * @throws DbException
+     * @throws Exception
+     */
+    public function createToken(array $appUser): string
+    {
+
+        // 生成token
+        $token = Jwt::setAppClaims($appUser)->builder();
+
+        // 判断是否多重登录    1:允许2:不允许
+
+            // 不允许多重登录
+            // 清除中间表的数据 并把token加入黑名单
+        // $usersToken = db('app_user_token')->where('app_user_id',$appUser['app_user_id'])->select();
+        
+        // foreach ($usersToken AS $key => $value) {
+        //     //销毁token force参数为强制下线配置,默认为false
+        //     Jwt::destroy($value['token'], true);
+
+        //     db('app_user_token')->where('id',$value['app_user_id'])->delete();
+        // }
+
+
+        // 创建中间表数据
+        db('app_user_token')->insert([
+            'app_user_id' => $appUser['app_user_id'],
+            'token' => $token
+        ]);
+
+        return $token;
+
+    }
+}

@@ -1,0 +1,157 @@
+<template>
+	<view class="content" style="width: 100vw;height: 100vh;">
+		<view class="uni-bottom">
+	<view class="uni-avatar">
+			<u-avatar :src="fromData.avatar" size="160"></u-avatar>
+			<view >{{fromData.name}}</view>
+			<view @tap="grxx">{{fromData.phone==null?"无手机号":fromData.phone}}<u-icon name="edit-pen" color="#FFA800" size="45" ></u-icon></view>
+		</view>
+		</view>
+		<view class="tan-xf" >
+			<view class="uni-pc" @click="evaluation">
+			<view class="pc_left" >
+				
+				<u-icon name="list-dot" color="#FFA800" size="70"></u-icon>
+				
+			</view>
+			<view class="pc_center" >评测记录</view>
+			<view class="pc_right" >
+					<u-icon name="arrow-right" color="#C0C0C0" width="200" height="200"></u-icon>
+			</view>
+			</view>
+			<view  class="uni-pc" @click="cypath" >
+				<view class="pc_left" >
+					<u-icon name="account-fill" color="#47C3A8"size="70"></u-icon>
+				</view>
+				<view class="pc_center"  >成员管理</view>
+				<view class="pc_right" >
+					<u-icon name="arrow-right" color="#C0C0C0" width="200" height="200"></u-icon>
+				</view>
+				
+			</view>
+		</view>
+		<view   class="footer"><image style="width: 100%;height: 100%;" :src="aimg"></image></view>
+	</view>
+</template>
+
+<script>
+	import aimg from '../../../static/my_bg.png'
+	export default {
+			data() {
+				return {
+					
+					fromData:{
+						src: '',
+					},
+					aimg
+					
+					
+				}
+			},
+			onShow:function(option){
+				// this.fromData=uni.getStorageSync('rowData');
+				this.$ajax.get({
+					url: '/api/AppUsers/getUserInfo',
+					param: {
+						storeUrl:"/pages/views/PersonalCenter/PersonalCenter"
+					},
+					header: {
+						'Content-Type':'application/json;charset=UTF-8',
+									'x-requested-with':"XMLHttpRequest"
+					},
+				}).then((res) => {
+					if(res.data.code==0){
+						this.fromData=res.data.data;
+						this.flag=true
+					}
+					
+				}) 
+			},
+			methods:{
+				evaluation(){
+					uni.redirectTo({
+					             url: '/pages/views/EvaluationCenter/evaluationRecord',
+					         });
+				},
+				grxx(){
+					
+					if(this.fromData.phone!=null){
+						uni.redirectTo({
+						             url: '/pages/views/PersonalCenter/PersonalInformation',
+						         });
+						
+					}else{
+						uni.redirectTo({
+						             url: '/pages/index/updatePhone',
+						         });
+					}
+					
+				},
+				cypath(){
+					
+					   uni.redirectTo({
+					                url: '/pages/views/member/memberTable',
+					            });
+
+				},
+				
+			}
+			
+		}
+</script>
+
+<style>
+	.footer{
+	            height: 60%;
+	            background-repeat: round;
+	            background-size: contain;
+	            margin-top: 16%;
+	}
+	.pc_left{
+		width: 15%;
+		margin-right: 2rem;
+	}
+	.pc_center{
+		    width: 80%;
+		    font-size: 17px;
+		    padding-top: 0.4rem;
+	}
+	.pc_right{
+		width:7%;
+		padding-top: 0.4rem;
+	}
+	.uni-pc{
+		    display: flex;
+		    width: 100%;
+		    height: 50%;
+		    border-bottom: 1px solid #1212;
+		    margin: 0% auto;
+			padding-top: 3.5%;
+			/* padding: 10px auto; */
+		   
+	}
+	.tan-xf{
+			
+			border: 0.1rem solid #f5f5f5;
+			    position: absolute;
+			    padding: 0rem;
+			   margin: -9% 0 0 5%;
+			    width: 90%;
+			    height: 7rem;
+			    background-color: #fff;
+				    border-radius: 6px;
+	-moz-border-radius:25px;
+		}
+	.uni-bottom{
+		height: 30%;
+		  background: linear-gradient(to bottom ,#47C3A8,#0CBAB6);
+	}
+	.uni-avatar{
+		    color: #FFFFFF;
+		    width: 12rem;
+		    text-align: center;
+		    margin: 0% auto;
+		    padding-top: 3%;
+			font-size: 40rpx;
+	}
+</style>

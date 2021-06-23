@@ -1,0 +1,123 @@
+<template>
+  <div>
+    <el-upload
+      v-if="!hidden"
+      class="upload-demo"
+      :limit="1"
+      ref="upload"
+      :on-change="handleChange"
+      :http-request="handleHttpRequest"
+      :auto-upload="true"
+      action=""
+      :show-file-list="false"
+    >
+      <!-- :on-exceed="outTip" -->
+      <div slot="tip" class="re_show_file_list" v-if="name">
+        <span class="el-icon-document file_name fl">{{ name }}</span>
+      </div>
+      <el-button size="small" type="primary">{{
+        name ? "重新上传" : "点击上传"
+      }}</el-button>
+    </el-upload>
+    <div class="bottom-btn" style="margin: 6% 0 0 75%">
+      <el-button @click="handleConfirm" type="primary">确定</el-button>
+    </div>
+  </div>
+</template>
+<script>
+import {
+  QuestionsEdit,
+  QuestionsAdd,
+  QuestionsBrowse,
+  Questionsdelete,
+  QuestionsGetList,
+  upload,
+  getVoice,
+} from "@/api/evaluation";
+
+export default {
+  name: "voice",
+  props: {
+    hidden: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    editStatus: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    isLook: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    rowData: {
+      type: Object,
+    },
+  },
+  data() {
+    return {
+      nameShow: true,
+      name: "",
+      fileList: [],
+    };
+  },
+  methods: {
+    outTip() {
+      this.$message({
+        type: "warning",
+        message: "当前已有上传文件，请删除之后重新上传",
+      });
+    },
+    deleteFile() {
+      this.nameShow = false;
+    },
+    handleRemove(file, fileList) {
+      console.log("dsdasda", file, fileList);
+    },
+    handleHttpRequest() {
+      let formData = new FormData();
+      this.fileList.forEach((item) => {
+        formData.append("file", item.raw);
+      });
+      formData.append("id", this.rowData.id);
+      this.formData = formData;
+      upload(this.formData).then((res) => {
+        if (res.msg == "请求成功") {
+          this.$message({
+            message: res.msg,
+            type: "success",
+            duration: 3 * 1000,
+          });
+          this.nameShow = false;
+          this.$parent.$emit("updateList");
+        } else {
+          this.nameShow = false;
+          this.$message({
+            message: res.msg,
+            type: "error",
+            duration: 3 * 1000,
+          });
+          this.$refs["upload"].clearFiles();
+        }
+      });
+    },
+    handleConfirm() {
+      this.$emit("handleClose");
+    },
+    handleChange(file, fileList) {
+      this.fileList = fileList;
+      this.name = file.name;
+    },
+  },
+  created() {
+    getVoice({ id: this.rowData.id }).then((res) => {
+      this.name = res.data ? res.data.name : "";
+    });
+  },
+};
+</script>
+<style lang="less" scoped>
+</style>

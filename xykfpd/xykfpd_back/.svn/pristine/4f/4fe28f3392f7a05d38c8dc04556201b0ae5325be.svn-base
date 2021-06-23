@@ -1,0 +1,18 @@
+<?php
+namespace app\index\controller;
+
+use think\Controller;
+
+class Index extends Controller
+{
+    /**
+     * 重定向到公司官网
+     * @return \think\response\Redirect
+     * @author Zhang zw
+     * @date 2020/12/2 13:48
+     */
+    public function index(): \think\response\Redirect
+    {
+        return redirect('https://www.lhsoft.net/');
+    }
+}

@@ -1,0 +1,96 @@
+<template>
+  <div>
+    <el-form
+      :model="formData"
+      ref="ruleForm"
+      :rules="rules"
+      class="demo-form-inline"
+      label-width="110px"
+      :disabled="isLook"
+    >
+   
+      <el-row>
+        <el-col :span="24">
+          <el-form-item label="内容" prop="content">
+            <el-select
+              style="width: 100%"
+              v-model="formData.content"
+              @change="contentChange"
+              placeholder="请选择内容"
+            >
+              <el-option
+                v-for="item in content"
+                :key="item.id"
+                :label="item.content"
+                :value="item.id"
+              >
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+       
+      </el-row>
+    </el-form>
+
+   
+    <div class="bottom-btn">
+      <el-button @click="handleConfirm" type="primary" v-if="!isLook"
+        >保存</el-button
+      >
+      <el-button @click="cancel">取消</el-button>
+    </div>
+  </div>
+</template>
+<script>
+import { getList,send } from "@/api/information";
+import { mapActions } from "vuex";
+import { getBaseConfig } from "@/utils/common";
+export default {
+    name: "Bulk",
+  props: {
+    editStatus: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    isLook: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    rowData: {
+      type: Object,
+    },
+  },
+  
+    data(){
+        return{
+            formData: {},
+            content:[{id:"1",content:"晚上睡觉"},{id:"2",content:"晚上打牌"}],
+             rules: {
+        content: [{ required: true, message: "请选择领域", trigger: "blur" }],
+      },
+        }
+    },
+    methods:{
+          cancel() {
+      this.$emit("handleClose");
+    },
+        handleConfirm(){
+            this.formData.data=this.rowData.data
+             this.formData.type=2
+            console.log("data",this.rowData.data)
+           send(this.formData).then(res=>{
+               console.log("是否成功",res);
+
+           })
+        },
+        contentChange(e){
+           console.log("选中",e)
+        }
+    },
+     created() {
+
+     }
+}
+</script>

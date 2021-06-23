@@ -1,0 +1,399 @@
+<template>
+  <div>
+    <div style="padding-bottom: 20px;color: #DD524D;">提示：最后一个范围值填写 “0” 或 “以上” 则代表当前范围结果取值为无限值</div>
+    <el-form
+      :model="formData"
+      ref="ruleForm"
+      :rules="rules"
+      class="demo-form-inline"
+      label-width="110px"
+      :disabled="isLook"
+    >
+      
+      <el-row>
+        <el-col :span="12">
+          <el-form-item label="领域" prop="domain">
+            <el-select
+              style="width: 100%"
+              v-model="formData.domain"
+              @change="domainChange"
+              placeholder="请选择领域"
+            >
+              <el-option
+                v-for="item in domain"
+                :key="item.id"
+                :label="item.name"
+                :value="item.id"
+              >
+              </el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="方面" prop="side">
+            <el-input
+              v-model="formData.side"
+              placeholder="请输入方面"
+            ></el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="6">
+           <el-form-item label="范围值" prop="begin">
+        <el-input v-model="formData.begin"  palceholder="请输入">
+        </el-input>
+           </el-form-item>
+        </el-col>
+         <el-col :span="6">
+           <el-form-item  prop="end">
+        <el-input v-model="formData.end" palceholder="请输入">
+        </el-input>
+           </el-form-item>
+        </el-col>
+         <el-col :span="10">
+             <el-form-item label="提示" prop="result">
+            
+        <el-input v-model="formData.result"  palceholder="请输入提示">
+        </el-input>
+             </el-form-item>
+        </el-col>
+      </el-row>
+     
+           <div v-for="(item, index) in formData.score_range" style="display:flex" :key="index">
+    <el-form-item
+        label="范围值"
+        :prop="'score_range.' + index + '.begin'"
+       style="width: 76%;"
+        :rules="{
+            required: true, message: '请输入', trigger: 'blur'
+        }"
+    >
+        <el-input v-model="item.begin"  style="width:100%"></el-input>
+    </el-form-item>
+    <el-form-item
+       style="width: 78%;padding-left: 0em;"
+
+       
+        :prop="'score_range.' + index + '.end'"
+        :rules="[
+             {required: true, message: '请输入', trigger: 'blur'},
+           
+          ]"
+        >
+        <el-input v-model="item.end" style="width:100%"></el-input>
+    </el-form-item>
+      <el-form-item
+        label="提示"
+          style="width:100%;"
+        :prop="'score_range.' + index + '.result'"
+        :rules="[
+             {required: true, message: '请输入', trigger: 'blur'},
+           
+          ]"
+        >
+        <el-input v-model="item.result" ></el-input>
+    </el-form-item>
+    <el-form-item>
+        <i class="el-icon-close" @click="deleteItem(item, index)"></i>
+    </el-form-item>
+</div>
+       
+     
+    
+   
+    </el-form>
+   
+    <el-button type="text" @click="addOptions">
+              <i class="el-icon-plus"></i>
+              添加
+            </el-button>
+    <div class="bottom-btn">
+      <el-button @click="handleConfirm" type="primary" v-if="!isLook">保存</el-button>
+      <el-button @click="cancel">取消</el-button>
+    </div>
+  </div>
+</template>
+<script>
+import { getList,browse,edit } from "@/api/evaluation";
+import { mapActions } from "vuex";
+import { getBaseConfig } from "@/utils/common";
+// import { getProjectLandArea,updateProjectLandArea } from "@/api/projectLandArea.js";
+// import {
+//   getProjectApprovalList
+// } from "@/api/project.js";
+// import { addInfo,editInfo } from "@/api/fund.js";
+
+export default {
+  name: "projectWindow",
+  props: {
+    editStatus: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    isLook:{
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    rowData: {
+      type: Object,
+    },
+  },
+
+  data() {
+    return {
+      formData: {
+        type: 2,
+        score_range: [{}],
+       begin:'',
+       end:'',
+       result:''
+      },
+      width: {
+        width: "300px",
+      },
+      rules: {
+        domain: [{ required: true, message: "请选择领域", trigger: "blur" }],
+
+        side: [{ required: true, message: "请输入方面", trigger: "blur" }],
+
+        begin: [
+          { required: true, message: "请输入", trigger: "blur" },
+        ],
+        end: [
+          { required: true, message: "请输入", trigger: "blur" },
+        ],
+        result: [
+          { required: true, message: "请输入提示", trigger: "blur" },
+        ],
+
+      },
+
+      questionType: [], //题目
+      domain: [], //领域
+      options: [],
+      optionsData: [],
+      policy: [],
+      formInline: {
+        user: "",
+        region: "",
+      },
+      isSee: {
+        type: Boolean,
+        default: true,
+        required: true,
+      },
+    };
+  },
+  methods: {
+  deleteItem (item, index) {
+      this.formData.score_range.splice(index, 1)
+    },
+     end_change:function(event){
+      //  var value = event.target.value;
+      // if (!/^\+?[1-9][0-9]*$/.test(value)) {
+      //   alert('只能正整数');
+      //   event.target.value = '';
+      // }
+        console.log("进入",event)
+        if(!/^\+?[1-9][0-9]*$/.test(event)){
+       return event=""
+        }
+     },
+    // 添加题目
+    addQuestion(){
+      // 添加之前先判断前面的是否都已录入
+      this.$refs["ruleForm"].validateField(
+        `question.${this.formData.question.length - 1}.question`,
+        (errMsg) => {
+          if (errMsg != "") {
+            return false;
+          } else {
+            this.formData.question.push({
+              question: "",
+            });
+          }
+        }
+      );
+    },
+    addOptions() {
+      console.log("this.formData",this.formData);
+     // 添加之前先判断前面的是否都已录入
+    
+       
+            this.formData.score_range.push({
+              begin: "",
+              end:"",
+              result:""
+            })
+          
+    },
+    // 移除题目
+    removeQuestion(item) {
+      console.log("item",item)
+      let index = this.formData.question.indexOf(item);
+      if (index !== -1) {
+        this.formData.question.splice(index, 1);
+      }
+    },
+     // 移除选项
+    removeOptions(item){
+    
+      let index = this.formData.score_range.indexOf(item);
+      if (index !== -1) {
+        this.formData.score_range.splice(index, 1);
+      }
+    },
+    submit() {},
+    cancel() {
+      this.$emit("handleClose");
+    },
+    ...mapActions({
+      getGridData: "evaluation/list/getGridData",
+    }),
+    domainChange(val) {},
+    handleAddConfirm: function () {
+      console.log("打印值", this.formData);
+       this.$refs["ruleForm"].validate(async (valid) => {
+          if (valid) {
+            this.formData.option=JSON.stringify(this.formData.option);
+            this.formData.question=JSON.stringify(this.formData.question);
+             const { code, msg } = await QuestionsAdd(this.formData);
+             if (code == 0) {
+            this.$message({
+              message: msg,
+              type: "success",
+              duration: 3 * 1000,
+            });
+            this.loading = false;
+            this.$parent.$emit("updateList");
+            this.$parent.$emit("handleClose", false);
+          } else {
+            this.loading = false;
+            this.$message({
+              message: msg,
+              type: "error",
+              duration: 3 * 1000,
+            });
+          }
+          }else {
+
+          }
+       })
+       
+    },
+    handleEditConfirm: function () {
+      this.$refs["ruleForm"].validate(async (valid) => {
+        if (valid) {
+          // this.formData.question_title=this.formData.question[0].question;
+          // this.formData.option=JSON.stringify(this.formData.option);
+          //   this.formData.question=JSON.stringify(this.formData.question);
+          let dx={}
+         dx.begin= this.formData.begin;
+         dx.end= this.formData.end;
+         dx.result= this.formData.result;
+        //  this.formData.score_range.push(dx);
+        this.formData.score_range=[...[dx],...this.formData.score_range];
+      
+         this.formData.score_range=JSON.stringify(this.formData.score_range)
+          const { code, msg } = await edit(this.formData);
+          if (code == 0) {
+            this.$message({
+              message: msg,
+              type: "success",
+              duration: 3 * 1000,
+            });
+            this.loading = false;
+            this.$parent.$emit("updateList");
+            this.$parent.$emit("handleClose", false);
+          } else {
+            this.loading = false;
+            this.$message({
+              message: msg,
+              type: "error",
+              duration: 3 * 1000,
+            });
+          }
+        } else {
+          // this.$message({
+          //     message: "填写信息格式错误！",
+          //     type: "error",
+          //     duration: 3 * 1000
+          // })
+        }
+      });
+    },
+    async project_rangeChange(value) {
+      console.log("value", value);
+    },
+    handleConfirm: function () {
+      if (this.editStatus) {
+        console.log("进入");
+        this.handleEditConfirm();
+      } else {
+        console.log("进入2");
+        this.handleAddConfirm();
+      }
+    },
+  },
+
+  async created() {
+    console.log("进入", this.rowData);
+    this.loading = true;
+    //  const { data } = await getProjectApprovalList();
+    this.domain = getBaseConfig("DOMAIN", true);
+   
+    console.log("data", this.editStatus,this.isLook);
+    if (this.editStatus) {
+     
+    const {data} = await browse({id:this.rowData.id});
+    // data.question=[{question:""}]
+    // data.question[0].question=data.question_title;
+    // data.option.forEach(element => {
+    //   element.option=element.index+'、'+element.option_title;
+    // });
+  
+    if(data.score_range==null){
+  data.score_range=this.formData.score_range
+    }else{
+         data.score_range=JSON.parse(data.score_range)
+    }
+  
+    
+  
+    this.formData=data;
+     if( data.score_range.length>1){
+      this.formData.score_range=data.score_range
+         this.formData.begin=this.formData.score_range[0].begin;
+     this.formData.end=this.formData.score_range[0].end;
+      this.formData.result=this.formData.score_range[0].result;
+    }else{
+      data.score_range=this.formData.score_range;
+    }
+     this.formData.score_range.splice(0, 1);
+    this.formData.type=2;
+    console.log("formdata",this.formData)   
+    }
+    this.loading = false;
+  },
+};
+</script>
+<style scoped>
+/* .bottom-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+} */
+.ts >>> .el-input {
+  width: 80%;
+}
+.tsa >>> .el-input {
+  width: 40%;
+  margin-left: 3px;
+}
+.el-input--mini {
+  float: left;
+}
+</style>

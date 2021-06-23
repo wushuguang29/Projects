@@ -1,0 +1,174 @@
+<template>
+  <div>
+    <el-form
+      :model="formData"
+      ref="ruleForm"
+      :rules="rules"
+      class="demo-form-inline"
+      label-width="110px"
+      :disabled="isLook"
+    >
+  <el-row>
+        <el-col :span="24">
+          <el-form-item label="标识" prop="identification" :rules="{
+               required: true, message: '不能为空', trigger: 'blur'
+              }">
+            <el-input type="number" 
+              v-model="formData.identification"
+            ></el-input>
+          </el-form-item>
+        </el-col>
+   </el-row>
+   <el-row>
+        <el-col :span="24">
+          <el-form-item label="问题关键字" prop="title" :rules="{
+               required: true, message: '不能为空', trigger: 'blur'
+              }">
+            <el-input
+              v-model="formData.title"
+            ></el-input>
+          </el-form-item>
+        </el-col>
+   </el-row>
+      <el-row>
+         <el-col :span="24">
+          <el-form-item label="回复内容" prop="return_message" :rules="{
+               required: true, message: '不能为空', trigger: 'blur'
+              }" >
+            <el-input v-model="formData.return_message" style="height:60px" palceholder="请输入提示">
+            </el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
+    </el-form>
+
+   
+    <div class="bottom-btn">
+      <el-button @click="handleConfirm" type="primary" v-if="!isLook"
+        >保存</el-button
+      >
+      <el-button @click="cancel">取消</el-button>
+    </div>
+  </div>
+</template>
+<script>
+import { getList,create,update,deleteData } from "@/api/Response";
+
+import { mapActions } from "vuex";
+import { getBaseConfig } from "@/utils/common";
+export default {
+    name: "Bulk",
+  props: {
+    editStatus: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    isLook: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    rowData: {
+      type: Object,
+    },
+  },
+  
+    data(){
+        return{
+            formData: {},
+           
+             rules: {
+        content: [{ required: true, message: "请选择领域", trigger: "blur" }],
+      },
+        }
+    },
+    methods:{
+      handleAddConfirm: function(){
+       this.$refs["ruleForm"].validate(async (valid) => {
+        if (valid) {
+          //  this.formData.serial_number=this.formData.question[0].serial_number;
+          // params.question_title=this.formData.question[0].question_title;
+          // params.option=JSON.stringify(this.formData.option);
+          //   params.question=JSON.stringify(this.formData.question);
+          const { code, msg } = await create(this.formData);
+          if (code == 0) {
+            this.$message({
+              message: msg,
+              type: "success",
+              duration: 3 * 1000,
+            });
+            this.loading = false;
+            this.$parent.$emit("updateList");
+            this.$parent.$emit("handleClose", false);
+          } else {
+            this.loading = false;
+            this.$message({
+              message: msg,
+              type: "error",
+              duration: 3 * 1000,
+            });
+          }
+        } else {
+          // this.$message({
+          //     message: "填写信息格式错误！",
+          //     type: "error",
+          //     duration: 3 * 1000
+          // })
+        }
+      });
+      },
+       handleEditConfirm: function () {
+        
+       this.$refs["ruleForm"].validate(async (valid) => {
+          if (valid) {
+        
+        
+             const { code, msg } = await update(this.formData);
+             if (code == 0) {
+            this.$message({
+              message: msg,
+              type: "success",
+              duration: 3 * 1000,
+            });
+            this.loading = false;
+            this.$parent.$emit("updateList");
+            this.$parent.$emit("handleClose", false);
+          } else {
+            this.loading = false;
+            this.$message({
+              message: msg,
+              type: "error",
+              duration: 3 * 1000,
+            });
+          }
+          }else {
+
+          }
+       })
+       },
+          cancel() {
+      this.$emit("handleClose");
+    },
+        handleConfirm(){
+          if (this.editStatus) {
+        console.log("进入");
+        this.handleEditConfirm();
+      } else {
+        console.log("进入2");
+        this.handleAddConfirm();
+      }
+        },
+        contentChange(e){
+           console.log("选中",e)
+        }
+    },
+     created() {
+       console.log("rowData",this.rowData)
+       if(this.editStatus){
+          this.formData={...this.rowData}
+       }
+      
+     }
+}
+</script>

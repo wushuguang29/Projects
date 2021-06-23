@@ -1,0 +1,368 @@
+<template>
+	<view class="body">
+		<view class="uni-div" v-if="!flag">
+			<view  class="uni-div2">
+				<p class="uni_p"><image src="../../../static/no_data.png" style="width: 100%;height: 100%;"></image></p>
+				<p>暂无数据</p>
+			</view>
+		</view>
+		
+		<view  class="uni-div" >
+			<view class="uni_img">
+			
+			</view>
+			<view class="tan-xf" >
+				<u-form-item label="订阅" label-width="180">
+				<u-input v-model="form.app_user_member"  type="select" @click="change" placeholder="请选择订阅人"/>
+				<u-select v-model="show" mode="single-column" :list="list" @confirm="confirm"></u-select>
+				</u-form-item>
+			</view>
+			<view class="xiabanbufen"  v-if="type">
+				<view class="uni_checkbox" v-for="(res,index) in maleLike" :key="index">
+				      <h3 style="text-align: center;">{{res.domain}}</h3>
+								<checkbox-group class="content-class" @change="chooseMaleLike($event,res.index)">
+								        <label class="item" v-for="(item, index) in res.side" :key="index" >
+								          <checkbox :value="item.side"></checkbox>
+								          <text class="item-text">{{item.side}}</text>
+								        </label>
+								      </checkbox-group>
+				</view>
+			</view>
+			
+			
+			<view class="xiabanbufen"  v-if="!type">
+				<view style="width:100%;visibility:inherit;padding-top: 32%;">
+				<view style="width: 45%;height: 10rem;margin: 0 auto;text-align: center;">
+					<image src="../../../static/no_data.png"  style="width: 100%;height: 100%;"></image>
+					<view>暂无数据</view>
+				</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	
+</template>
+
+<script>
+	import img from '../../../static/my_bg.png'
+	export default {
+		data() {
+			return {
+			maleLike: [	],
+			currentArr: [], // 当前用户想要的选项，最大为5
+			oldArr: [], // 上一次的返回值
+			hasPass: false, // 用户之前是否选择过，是为true
+			show: false,
+			form:{},
+			type:false,
+			list: [],
+				flag:true,
+				img
+			}
+			},
+			onLoad:function(option){
+				// this.$ajax.get({
+				// 	url: '/api/AppUserMember/getMemberInfo',
+				// 	param: {},
+				// 	header: {
+				// 		'Content-Type':'application/json;charset=UTF-8',
+				// 		'x-requested-with':"XMLHttpRequest"
+				// 	},
+				// }).then((res) => {
+				// 	let arry={};
+					
+					
+				//     res.data.data.forEach((Element)=>{
+				// 		arry.label=Element.name;
+				// 		arry.value=Element.id.toString();
+				// 		console.log("arrrr",this.list)
+				// 	    this.list.push(arry);
+				// 	})
+				// 	// this.list=res.data.data;
+				// 	console.log("list",this.list)
+				// }) 
+				
+			},
+			onShow:function(option){
+				//       console.log("option",option);
+				// let list = []
+				// 		this.$ajax.get({
+				// 			url: '/api/AppUserMember/getMemberInfo',
+				// 			param: {},
+				// 			header: {
+				// 				'Content-Type':'application/json;charset=UTF-8',
+				// 				'x-requested-with':"XMLHttpRequest"
+				// 			},
+				// 		}).then((res) => {
+							
+							 
+							
+				// 		    res.data.data.forEach((Element)=>{
+				// 				let arry={};
+				// 				arry.label=Element.name;
+				// 				arry.value=Math.random() + ""
+				// 				console.log("arrrr",arry)
+				// 			    list.push(arry);
+								
+				// 			})
+				// 			// this.list=res.data.data;
+				// 			// console.log("list",this.list)
+				// 		}) 
+						
+				// 			this.list = list
+			},
+			async created(){
+				// this.list = [
+				// 	{
+				// 		label: "123123",
+				// 		value: "5"
+				// 	}
+				// ]
+			this.form.app_user_member_id=uni.getStorageSync('memberType');
+			console.log("id",this.form.app_user_member_id)
+					const {data: {data}} = await this.$ajax.get({
+								url: '/api/AppUserMember/getMemberInfo',
+								param: {
+									storeUrl:"/pages/views/EvaluationCenter/CenterIndex"
+								},
+								header: {
+									'Content-Type':'application/json;charset=UTF-8',
+									'x-requested-with':"XMLHttpRequest"
+								},
+							})
+				   
+						
+					
+						 console.log("看",data)
+						 // if()
+						 data.forEach(item => {
+						 	let obj = {}
+						 	obj.label = item.name
+						 	obj.value = item.id + ""
+						 	this.list.push(obj)
+						 })
+						 console.log("this",this.list)
+					this.form.app_user_member_id=uni.getStorageSync('memberType');
+					console.log("id",this.form.app_user_member_id,this.list)
+					 this.list.forEach((item,index)=>{
+						if(item.value==this.form.app_user_member_id){
+							this.form.app_user_member=item.label
+						} 
+					 })
+					this.$ajax.get({
+						url: '/api/Evaluating/getMemberSideList',
+						param: {
+								app_user_member_id:this.form.app_user_member_id,
+								},
+						header: {
+								'Content-Type':'application/json;charset=UTF-8',
+								'x-requested-with':"XMLHttpRequest"
+								},
+					}).then(res=>{
+					let data=res.data.data;
+					if(data.length==0){
+						
+						this.type=false;
+						console.log("1",this.type);
+					}else{
+						
+						this.type=true;
+						console.log("2",this.type)
+						data.forEach(item=>{
+							item.side.forEach(long=>{
+								long.isChecked=false;
+								long.domain=item.domain
+							});
+							// data.side.forEach(ma=>{
+							// 	ma.domain=item.domain;
+							// });
+						})
+					}
+						
+						
+					 
+						this.maleLike=data;
+						  console.log("maleLike",this.maleLike)
+					})	
+					
+				
+			},
+			
+			methods:{
+				chooseMaleLike(e,f){
+					console.log("fff",f,e)
+				let side=e.detail.value.toString();
+				console.log("evalue",e.detail.value.toString())
+				console.log("获取得值",e,this.form.app_user_member_id,side);
+				uni.setStorageSync('memberType', this.form.app_user_member_id);
+				    // let url = '/pages/views/EvaluationCenter/questionBank'
+				            // let param = {
+				            //     type:this.form.app_user_member,
+				            //     side: side
+				            // }
+				            // this.$navTo.togo(url,param)
+							 uni.reLaunch({ url:'/pages/views/EvaluationCenter/questionBank?type='+this.form.app_user_member_id+'&&side='+side+'&&domain='+f})
+							
+				},
+				change(){
+				
+			            if(this.list.length==0){
+			            	uni.showToast({
+			            	title: '用户没有成员,请先添加成员',
+			            	icon: 'none'
+			            	});
+			            	 uni.reLaunch({ url:'/pages/views/member/memberTable'})
+			            }
+					
+						this.$nextTick(() => (this.show = true))
+						
+				},
+				confirm(e) {
+								console.log("龙",e);
+								this.form.app_user_member=e[0].label;
+								this.form.app_user_member_id=e[0].value;
+								console.log("app_user_member",this.form.app_user_member_id);
+								this.$ajax.get({
+									url: '/api/Evaluating/getMemberSideList',
+									param: {
+											app_user_member_id:this.form.app_user_member_id,
+											},
+									header: {
+											'Content-Type':'application/json;charset=UTF-8',
+											'x-requested-with':"XMLHttpRequest"
+											},
+								}).then(res=>{
+								let data=res.data.data;
+								if(data.length==0){
+									
+									this.type=false;
+									console.log("1",this.type);
+								}else{
+									
+									this.type=true;
+									console.log("2",this.type)
+									data.forEach(item=>{
+										item.side.forEach(long=>{
+											long.isChecked=false;
+											long.domain=item.domain
+										});
+										// data.side.forEach(ma=>{
+										// 	ma.domain=item.domain;
+										// });
+									})
+								}
+									
+									
+								 
+									this.maleLike=data;
+									  console.log("maleLike",this.maleLike)
+								})
+								
+									
+							},
+							
+							
+			}
+			
+			}
+</script>
+
+<style>
+	.xiabanbufen{
+		height: 37rem;
+	}
+	.content-class {
+	        width: 90%;
+	        margin: 20upx auto;
+	        display: flex;
+	        flex-flow: row wrap;
+	        justify-content: space-between;
+	        
+	      
+	      }
+	.footer {
+		color: #fff;
+		line-height: 100rpx;
+		flex: 0 0 100rpx;
+		/* 不放大不缩小固定100rpx */
+	}
+	/* 心理 */
+	.uni_checkbox{
+		    margin: 19% 0 0 5%;
+		    border: solid 10rpx #f8f8f8;
+		    border-radius: 25rpx;
+		    width: 90%;
+	}
+	.item {
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+	  width: 30%;
+	  height: 60upx;
+	  font-size: 28upx;
+	  line-height: 60upx;
+	  border-radius: 30upx;
+	  margin-bottom: 20upx;
+	  text-align: center;
+	  box-sizing: border-box;
+	  border: 1upx solid #47C3A8;
+	  background-color: #47c3a8;
+	      color: #ffffff;
+	}
+	.item checkbox {
+	  display: none;
+	}
+	.on {
+	  border: none;
+	  background-color: #47C3A8;
+	  color: #fff;
+	}
+/* 	界面 */
+	.uni-form-item, .uni-column{
+		    margin: 4% 0% 0% 26%;
+	}
+	.tan-xf{
+			display: flex;
+			border: 0.1rem solid #f5f5f5;
+			    position: absolute;
+			    padding: 0rem;
+			    margin: -4% 0 0 5%;
+			    width: 90%;
+			    height: 4rem;
+			    background-color: #fff;
+				    border-radius: 6px;
+	-moz-border-radius:25px;
+	padding: 0 0 0 10%;
+		}
+	.uni_img{
+		background-image: url(../../../static/bg.png);
+		background-size: 100% 100%;
+		  
+		    background-repeat: no-repeat;
+		    height: 6rem;
+	}
+	.uni_p{
+		    width: 35%;
+		    height: 14rem;
+		    margin: 50% 0 0 32%;
+		    position: 1;
+	}
+	.uni-div{
+		width: 100%;
+		  
+			height: 100%;
+	}
+	.uni-div2{
+		height: 100%;
+		    width: 100%;
+	}
+	.body{
+		width: 100vw;
+		    height: 100vh;
+	
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+</style>

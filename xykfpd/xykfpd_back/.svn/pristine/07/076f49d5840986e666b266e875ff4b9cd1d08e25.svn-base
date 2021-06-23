@@ -1,0 +1,554 @@
+<?php
+
+namespace app\index\controller;
+
+use KoubeiMemberDataIsvCreateRequest;
+use think\Controller;
+use think\Db;
+
+/**
+ * 统计分析
+ * @package app\api\controller
+ */
+class StatisticalAnalysis extends Controller
+{
+    /**
+     * 获取统计列表
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-18 16:48:39
+     * @return void
+     */
+    public function getList()
+    {
+        $side               = input('side');
+        $affiliated_disease = input('affiliated_disease');
+        $begin              = input('begin');
+        $end                = input('end');
+        $dataWhere = [];
+        $headWhere = [];
+        
+        $sideArr = [];
+        if(!empty($side)){
+            $sideArr = explode(',',$side);
+            $dataWhere[] = ['e.side','IN',$sideArr];
+            $headWhere[] = ['side','IN',$sideArr];
+        }
+        if(!empty($affiliated_disease)){
+            $dataWhere[] = ['aum.affiliated_disease','EQ',$affiliated_disease];
+        }
+
+        if(!empty($begin) && empty($end)){
+            $dataWhere[] =['e.evaluating_date','EGT',$begin];
+        }
+
+        if(empty($begin) && !empty($end)){
+            $dataWhere[] =['e.evaluating_date','ELT',$end];
+        }
+
+        if(!empty($begin) && !empty($end)){
+            $dataWhere[] = ['e.evaluating_date','BETWEEN',[$begin,$end]];
+        }
+        $headData = $this->getHead($headWhere);
+        $bodyData = $this->getData($dataWhere);
+        $data = $this->buildShowData($headData['comparisonStandard'], $bodyData);
+        return msgReturn(0,[
+            'head' => $headData['headData'],
+            'body' => $data
+        ]);
+    }
+
+    /**
+     * 获取头部信息
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-18 17:16:47
+     * @param [type] $where
+     * @return void
+     */
+    public function getHead($where)
+    {
+        $questions = db('questions')
+            ->where($where)
+            ->field([
+                'id',
+                'domain',
+                'side',
+                'identification_code',
+                'question_type',
+                'serial_number',
+                'question_title',
+            ])
+            ->order('domain,side,serial_number')
+            ->select();
+        foreach ($questions as $key => $value) {
+            $questions[$key]['domain_name'] = config('config.DOMAIN')[$value['domain']];
+            $option = Db::table('questions_option')->where('questions_id', $value['id'])->order('index')->select();
+            $questions[$key]['option'] = $option;
+            $questions[$key]['code'] = $value['identification_code'] . $value['serial_number'];
+        }
+
+        $data = [];
+        foreach ($questions as $k => $v) {
+            if (!isset($data[$v['domain_name']])) {
+                $data[$v['domain_name']] = [];
+            }
+            if (!isset($data[$v['domain_name']][$v['side']])) {
+                $data[$v['domain_name']][$v['side']] = [];
+            }
+            if (!isset($data[$v['domain_name']][$v['side']][$v['code']])) {
+                $data[$v['domain_name']][$v['side']][$v['code']] = ['id' => $v['id'], 'option' => []];
+                if ($v['question_type'] == 2) {
+                    foreach ($v['option'] as $kk => $vv) {
+                        array_push($data[$v['domain_name']][$v['side']][$v['code']]['option'], $vv['index']);
+                    }
+                }
+            }
+        }
+        $i = 0;
+        $headData = [
+            [
+                'id' => $i++,
+                'label' => '姓名',
+                'prop' => 'name',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '年龄',
+                'prop' => 'age',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '性别',
+                'prop' => 'sex',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '文化程度',
+                'prop' => 'degree_education',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '婚姻状况',
+                'prop' => 'marital_condition',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '子女状况',
+                'prop' => 'children_condition',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '所属疾病',
+                'prop' => 'affiliated_disease',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '所患疾病',
+                'prop' => 'critical_disease',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '身体状况',
+                'prop' => 'physical_condition',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '居住环境',
+                'prop' => 'living_condition',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '医保类型',
+                'prop' => 'health_insurance_type',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '经济来源',
+                'prop' => 'source_finance',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '手机号',
+                'prop' => 'phone',
+                'children' => [],
+            ],
+            [
+                'id' => $i++,
+                'label' => '邮箱',
+                'prop' => 'email',
+                'children' => [],
+            ]
+        ];
+        $x = count($headData);
+        $comparisonStandard = [];
+        foreach ($data as $hk => $hv) { //一级
+            $headData[$x] = [
+                'id' => $i++,
+                'label' => $hk,
+                'prop' => '',
+                'children' => [],
+            ];
+            if (!empty($hv)) {
+                foreach ($hv as $hvk => $hvv) { //二级
+                    $level2  = [
+                        'id' => $i++,
+                        'label' => $hvk,
+                        'prop' => '',
+                        'children' => []
+                    ];
+
+                    if (!empty($hvv)) {
+                        foreach ($hvv as $hvvk => $hvvv) { //三级
+                            $level3 = [
+                                'id' => $i++,
+                                'label' => $hvvk,
+                                'prop' => '',
+                                'children' => []
+                            ];
+                            if (!empty($hvvv['option'])) {
+                                foreach ($hvvv['option'] as $ok => $ov) { //四级
+                                    $level4 = [
+                                        'id' => $i++,
+                                        'label' => $ov,
+                                        'prop' => $hvvk . $ov,
+                                    ];
+                                    array_push($level3['children'], $level4);
+                                    $comparisonStandard[] = [
+                                        'question_id' => $hvvv['id'],
+                                        'prop' => $hvvk . $ov,
+                                        'option' => $ov,
+                                    ];
+                                }
+                            } else {
+                                $level3['prop'] = $hvvk;
+                                $comparisonStandard[] = [
+                                    'question_id' => $hvvv['id'],
+                                    'prop' => $hvvk,
+                                    'option' => '',
+                                ];
+                            }
+                            array_push($level2['children'], $level3);
+                        }
+                        $evaluating_date = 'evaluating_date'.$i++;
+                        $evaluating_how_long = 'evaluating_how_long'.$i++;
+                        array_push($level2['children'],[
+                            'id' => $i++,
+                            'label' => '评测日期',
+                            'prop' => $evaluating_date,
+                        ]);
+                        $comparisonStandard[] = [
+                            'question_id' => $hvk,
+                            'prop' => $evaluating_date,
+                            'option' => 'date',
+                        ];
+                        array_push($level2['children'],[
+                            'id' => $i++,
+                            'label' => '评测时间',
+                            'prop' => $evaluating_how_long,
+                        ]);
+                        $comparisonStandard[] = [
+                            'question_id' => $hvk,
+                            'prop' => $evaluating_how_long,
+                            'option' => 'time',
+                        ];
+                    }
+
+                    array_push($headData[$x]['children'], $level2);
+                }
+            }
+            $x++;
+        }
+        return [
+            'comparisonStandard' => $comparisonStandard, //头部比对标准
+            'headData' => $headData,
+        ];
+    }
+
+    /**
+     * 获取数据
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-18 15:14:50
+     * @return void
+     */
+    public function getData($where)
+    {
+        $start      = input('start') ? input('start') : 0;
+        $limit      = input('limit') ? input('limit') : 25;
+        $evaluating = db('evaluating')->alias('e')
+            ->join('app_user_member aum', 'aum.id = e.app_user_member_id')
+            ->where($where)
+            ->field([
+                'e.id',
+                'e.app_user_member_id',
+                'e.domain',
+                'e.side',
+                'e.evaluating_date',
+                'e.evaluating_finish_time',
+                'aum.name',
+                'aum.age',
+                'aum.sex',
+                'aum.degree_education',
+                'aum.marital_condition',
+                'aum.children_condition',
+                'aum.affiliated_disease',
+                'aum.critical_disease',
+                'aum.physical_condition',
+                'aum.living_condition',
+                'aum.health_insurance_type',
+                'aum.source_finance',
+                'aum.phone',
+                'aum.email',
+                'evaluating_how_long'
+            ])
+            ->limit($start, $limit)
+            ->select();
+        $db = db('evaluating_question_detail')->alias('eqd')
+            ->join('questions q', 'q.id = eqd.questions_id');
+        foreach ($evaluating as $key => $value) {
+            $db->option('where', []);
+            $detail = $db
+                ->where('evaluating_id', $value['id'])
+                ->field([
+                    'eqd.id',
+                    'eqd.evaluating_id',
+                    'eqd.questions_id',
+                    'eqd.domain',
+                    'eqd.side',
+                    'eqd.question_title',
+                    'eqd.option_detail',
+                    'eqd.answer',
+                    'eqd.score',
+                    'q.question_type'
+                ])->select();
+            $evaluating[$key]['detail'] = $detail;
+        }
+        $memberData = [];
+        foreach ($evaluating as $k => $v) {
+            if (empty($memberData)) {
+                $memberData[] = [
+                    'id' => $v['app_user_member_id'],
+                    'name' => $v['name'],
+                    'age'  => $v['age'],
+                    'sex'  => $v['sex'],
+                    'agdegree_educatione'  => $v['degree_education'],
+                    'marital_condition'    => $v['marital_condition'],
+                    'children_condition'   => $v['children_condition'],
+                    'affiliated_disease'   => $v['affiliated_disease'],
+                    'critical_disease'     => $v['critical_disease'],
+                    'physical_condition'   => $v['physical_condition'],
+                    'living_condition'     => $v['living_condition'],
+                    'health_insurance_type'  => $v['health_insurance_type'],
+                    'source_finance'       => $v['source_finance'],
+                    'phone'                 => $v['phone'],
+                    'email'                 => $v['email'],
+                    'children' => [
+                        [
+                            'side' => $v['side'],
+                            'e_id' => $v['id'],
+                            'detail' => $v,
+                        ]
+                    ]
+                ];
+            } else {
+                $memberData = $this->diGui($memberData, $v, $memberData);
+            }
+        }
+        return $memberData;
+    }
+
+    /**
+     * 队规构建数据
+     * 
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-18 15:11:45
+     * @param [type] $memberData
+     * @param [type] $v
+     * @param [type] $result
+     * @return void
+     */
+    public function diGui($memberData, $v, $result = array())
+    {
+        foreach ($memberData as $mk => $mv) {
+            //不存在这个用户
+            if ($mv['id'] !== $v['app_user_member_id']) {
+                //查看后面是否存在用户
+                if (!in_array($v['app_user_member_id'], array_column($result, 'id'))) {
+                    $result[] = [
+                        'id' => $v['app_user_member_id'],
+                        'name' => $v['name'],
+                        'age'  => $v['age'],
+                        'sex'  => $v['sex'],
+                        'agdegree_educatione'  => $v['degree_education'],
+                        'marital_condition'    => $v['marital_condition'],
+                        'children_condition'   => $v['children_condition'],
+                        'affiliated_disease'   => $v['affiliated_disease'],
+                        'critical_disease'     => $v['critical_disease'],
+                        'physical_condition'   => $v['physical_condition'],
+                        'living_condition'     => $v['living_condition'],
+                        'health_insurance_type'  => $v['health_insurance_type'],
+                        'source_finance'       => $v['source_finance'],
+                        'phone'                 => $v['phone'],
+                        'email'                 => $v['email'],
+                        'children' => [
+                            [
+                                'side' => $v['side'],
+                                'e_id' => $v['id'],
+                                'detail' => $v,
+                            ]
+                        ]
+                    ];
+                    return $result;
+                }
+            } else { //存在这个用户
+                //查看这个用户是否包含了这个方面
+                if (!in_array($v['side'], array_column($mv['children'], 'side'))) {
+                    $result[$mk]['children'][] = [
+                        'side' => $v['side'],
+                        'e_id' => $v['id'],
+                        'detail' => $v,
+                    ];
+                    return $result;
+                } else { //如果包含
+                    $copyMemberData = $result;
+                    foreach ($copyMemberData as $kk => $vv) {
+                        if ($v['app_user_member_id'] != $vv['id']) {
+                            unset($copyMemberData[$kk]);
+                            continue;
+                        }
+                        foreach ($vv['children'] as $ck => $cv) {
+                            if ($v['app_user_member_id'] == $vv['id'] && $cv['side'] == $v['side']) {
+                                unset($copyMemberData[$kk]);
+                                break;
+                            }
+                        }
+                    }
+                    unset($copyMemberData[$mk]);
+                    if (empty($copyMemberData)) {
+                        $result[] = [
+                            'id' => $v['app_user_member_id'],
+                            'name' => $v['name'],
+                            'age'  => $v['age'],
+                            'sex'  => $v['sex'],
+                            'agdegree_educatione'  => $v['degree_education'],
+                            'marital_condition'    => $v['marital_condition'],
+                            'children_condition'   => $v['children_condition'],
+                            'affiliated_disease'   => $v['affiliated_disease'],
+                            'critical_disease'     => $v['critical_disease'],
+                            'physical_condition'   => $v['physical_condition'],
+                            'living_condition'     => $v['living_condition'],
+                            'health_insurance_type'  => $v['health_insurance_type'],
+                            'source_finance'       => $v['source_finance'],
+                            'phone'                 => $v['phone'],
+                            'email'                 => $v['email'],
+                            'children' => [
+                                [
+                                    'side' => $v['side'],
+                                    'e_id' => $v['id'],
+                                    'detail' => $v,
+                                ]
+                            ]
+                        ];
+                        return $result;
+                    }
+                    return $this->diGui($copyMemberData, $v, $result);
+                }
+            }
+        }
+    }
+
+    /**
+     * 构建展示数据
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-18 15:17:45
+     * @param [type] $comparisonStandard
+     * @param [type] $data
+     * @return void
+     */
+    public function buildShowData($comparisonStandard, $data)
+    {
+        $showData = [];
+        $config = config('config.'); //取配置
+        foreach ($data as $k => $v) {
+            $detail = [];
+            $detail['name'] = $v['name']; //名称
+            $detail['age']  = $v['age']; //年龄
+            $detail['sex']  = $config['SEX'][$v['sex']]; //性别
+            $detail['agdegree_educatione']  = $config['DEGREE_EDUCATION'][$v['agdegree_educatione']]; //文化程度
+            $detail['marital_condition']    = $config['MARITAL_CONDITION'][$v['marital_condition']]; //婚姻状况
+            $detail['children_condition']   = $config['CHILDREN_EDUCATION'][$v['children_condition']]; //子女状况
+            $detail['affiliated_disease']   = $config['AFFILIATED_DISEASE'][$v['affiliated_disease']]; //所属疾病
+            $detail['critical_disease']     = $v['critical_disease']; //所患疾病
+            $detail['physical_condition']   = $config['PHYSICAL_CONDITION'][$v['physical_condition']]; //身体状况
+            $detail['living_condition']     = $config['LIVING_CONDITION'][$v['living_condition']]; //居住环境
+            $detail['health_insurance_type'] = $config['HEALTH_INSURANCE_TYPE'][$v['health_insurance_type']]; //医保类型
+            $detail['source_finance']       = $config['SOURCE_FINANCE'][$v['source_finance']]; //经济来源
+            $detail['phone'] = $v['phone']; //手机号
+            $detail['email'] = $v['email']; //邮箱
+            foreach ($v['children'] as $ck => $cv) { //方面
+                foreach ($cv['detail']['detail'] as $dk => $dv) { //方面详情
+                    foreach ($comparisonStandard as $key => $value) {
+                        if($cv['detail']['side'] == $value['question_id']){
+                            if($value['option'] == 'date'){
+                                if ($cv['detail']['evaluating_date'] == '0000-00-00') {
+                                    $cv['detail']['evaluating_date'] = '';
+                                }
+                                $detail[$value['prop']] = $cv['detail']['evaluating_date'];
+                            }else if($value['option'] == 'time'){
+                                //转为时分秒格式
+                                if (!empty($cv['detail']['evaluating_how_long'])) {
+                                    $hour = floor($cv['detail']['evaluating_how_long'] / 3600);
+                                    $minute = floor(($cv['detail']['evaluating_how_long'] - 3600 * $hour) / 60);
+                                    $second = floor((($cv['detail']['evaluating_how_long'] - 3600 * $hour) - 60 * $minute) % 60);
+                                    $result = $hour.'小时'.$minute.'分钟'.$second.'秒';
+                                    $detail[$value['prop']] = $result;
+                                } else {
+                                    $detail[$value['prop']] = '';
+                                }
+                            }
+                        }
+                        if ($value['question_id'] == $dv['questions_id']) { //判断头部问题ID和答题ID是否一致
+                            //判断单选还是多选
+                            if ($dv['question_type'] == 1) { //单选直接显示分数
+                                $detail[$value['prop']] = intval($dv['score']);
+                            }else{//多选
+                                //题目选项
+                                $multipleChoice = json_decode($dv['option_detail'],true);
+                                //选择的答案
+                                $answer = explode(',',$dv['answer']);
+                                if(in_array($value['option'],$answer)){
+                                    foreach($multipleChoice as $mk => $mv){
+                                        if($value['option'] == $mv['index'] && in_array($mv['index'],$answer)){
+                                            $detail[$value['prop']] = $mv['score'];
+                                            break;
+                                        }
+                                    }
+                                }else{
+                                    $detail[$value['prop']] = 0;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            array_push($showData, $detail);
+        }
+        return $showData;
+    }
+}

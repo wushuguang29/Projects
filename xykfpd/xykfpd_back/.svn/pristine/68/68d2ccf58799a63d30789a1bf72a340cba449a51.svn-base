@@ -1,0 +1,2178 @@
+---------------------------------------------------------------
+
+[2020-04-03T09:18:56+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.838118s] [吞吐率：1.19req/s] [内存消耗：3,904.48kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------623900497483222402889604',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6dd137e4-cda2-4b9e-8d74-67c7be15b7b1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.045631s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.014446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.023778s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'delete_time' in field list is ambiguous[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\db\Connection.php:687]
+---------------------------------------------------------------
+
+[2020-04-03T09:19:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.113702s] [吞吐率：8.79req/s] [内存消耗：3,904.35kb] [文件加载：125]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------313662926440695194057113',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '9b5afbde-85a9-4510-93ac-8eb08b823bd4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021074s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.017087s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.006984s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'us.delete_time' in 'on clause'[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\db\Connection.php:687]
+---------------------------------------------------------------
+
+[2020-04-03T09:20:00+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.208815s] [吞吐率：4.79req/s] [内存消耗：3,912.91kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------626501401808632936623398',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '99835186-88ed-4f50-88d2-57e265a584f6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012906s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.006843s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.006881s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `r`.`delete_time` IS NULL [ RunTime:0.005438s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames` FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `r`.`delete_time` IS NULL  AND `r`.`delete_time` IS NULL LIMIT 0,25 [ RunTime:0.006187s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:23:11+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=lhsoft&password=123456
+[运行时间：1.772141s] [吞吐率：0.56req/s] [内存消耗：3,914.55kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------308743420065687389208461',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8f9bcfda-786e-4fcb-9539-6ab0eaf5574d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017428s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.007395s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.007072s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:23:29+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.213832s] [吞吐率：4.68req/s] [内存消耗：2,416.73kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '78bf843e-2948-449e-aa11-59f89721c830',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:24:06+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=lhsoft&password=123456&captcha_code=qzsH&captcha_key=captcha_nGy3KL48P14Xw4N
+[运行时间：0.106884s] [吞吐率：9.36req/s] [内存消耗：3,914.77kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------632749189232798903162084',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '20136aba-88fc-42a3-9499-eb5841878302',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+  'captcha_code' => 'qzsH',
+  'captcha_key' => 'captcha_nGy3KL48P14Xw4N',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024457s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.008596s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.007389s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:24:08+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=lhsoft&password=123456&captcha_code=qzsH&captcha_key=captcha_nGy3KL48P14Xw4N
+[运行时间：0.092398s] [吞吐率：10.82req/s] [内存消耗：3,914.77kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------114166854199810446385664',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'df5ba817-c8a1-41cc-838d-642d4b67fde4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+  'captcha_code' => 'qzsH',
+  'captcha_key' => 'captcha_nGy3KL48P14Xw4N',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011814s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.008656s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.020233s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:24:16+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.162246s] [吞吐率：6.16req/s] [内存消耗：2,416.73kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4edac661-0932-4782-b399-46a6436e352f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:24:31+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=lhsoft&password=123456&captcha_code=pbsG&captcha_key=captcha_RAHzTKOKatgnKrt
+[运行时间：0.099951s] [吞吐率：10.00req/s] [内存消耗：3,914.79kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------704715709937539935667143',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e71cdf62-58f7-4456-9a79-411fd76e26c2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+  'captcha_code' => 'pbsG',
+  'captcha_key' => 'captcha_RAHzTKOKatgnKrt',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011616s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.011611s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.011067s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:24:32+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=lhsoft&password=123456&captcha_code=pbsG&captcha_key=captcha_RAHzTKOKatgnKrt
+[运行时间：0.112779s] [吞吐率：8.87req/s] [内存消耗：3,914.77kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------195726437176226010668588',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '107f015b-bd99-42a1-8078-1ab43b3507f9',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+  'captcha_code' => 'pbsG',
+  'captcha_key' => 'captcha_RAHzTKOKatgnKrt',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022205s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.007522s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.006070s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:26:13+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=lhsoft&password=123456&captcha_code=pbsG&captcha_key=captcha_RAHzTKOKatgnKrt
+[运行时间：0.437917s] [吞吐率：2.28req/s] [内存消耗：4,021.40kb] [文件加载：141]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '547',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------647746899926166659804976',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8f5f5853-76dd-4824-abe1-d3c3591982ba',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'lhsoft',
+  'password' => '123456',
+  'captcha_code' => 'pbsG',
+  'captcha_key' => 'captcha_RAHzTKOKatgnKrt',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021846s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.008221s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.007141s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.009863s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'lhsoft'  AND `users`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.006430s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = 5  WHERE  `id` = 1  AND `users`.`delete_time` IS NULL [ RunTime:0.015180s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:26:35+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.078357s] [吞吐率：12.76req/s] [内存消耗：2,459.41kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8283bcc8-1c39-4a37-b11e-4fd6547ee25c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:27:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.115999s] [吞吐率：8.62req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f396b719-302c-48fc-8800-f1c1dc2b5dec',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:28:40+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.063085s] [吞吐率：15.85req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '30b7f28f-5748-49c0-b3f6-48c38ec33c3f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:28:55+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.051517s] [吞吐率：19.41req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f3842348-54f7-43d0-8fcd-de1baed70d45',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:29:22+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.047372s] [吞吐率：21.11req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'e17d06a9-e7ff-43f1-9e67-da2e1016a714',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:29:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.078378s] [吞吐率：12.76req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '19a76409-b52a-4e91-9fa8-7108aa6f859f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:29:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.049345s] [吞吐率：20.27req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '545b14ec-6a42-46aa-9e03-f31320b7ba2b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:29:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.044261s] [吞吐率：22.59req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'fb516795-f5cd-4e88-843e-a77e0ed3da6a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:29:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.047225s] [吞吐率：21.18req/s] [内存消耗：2,371.13kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c848bd69-5b6a-49d2-9b52-94a4b5e868ae',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:29:47+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.051987s] [吞吐率：19.24req/s] [内存消耗：2,369.41kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c3dc428f-fea4-41d1-a0ed-e869ed3baaf8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:29:48+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.044607s] [吞吐率：22.42req/s] [内存消耗：2,369.41kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0412bc9d-02bd-4b09-83d4-770ef5d33499',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:31:07+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.066730s] [吞吐率：14.99req/s] [内存消耗：2,461.93kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'cfef2450-c4bd-44c4-9561-9b353d82e42a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:31:31+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.051437s] [吞吐率：19.44req/s] [内存消耗：2,462.43kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '175794cd-4644-4a9f-9d41-17d0875f5d72',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:32:10+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.062200s] [吞吐率：16.08req/s] [内存消耗：2,463.05kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '11d9a0fe-576a-426e-9194-ffe8313e9633',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:32:12+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.052081s] [吞吐率：19.20req/s] [内存消耗：2,463.05kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7da38bd6-58e3-4e26-8c27-0c98850cc24f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:32:12+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.072047s] [吞吐率：13.88req/s] [内存消耗：2,463.05kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b2a89728-9b6f-4c00-bad7-1af635d518ba',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:32:13+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.047625s] [吞吐率：21.00req/s] [内存消耗：2,463.05kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f4f70421-a948-47cf-a11e-2c2f76001456',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:38:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Login/logout
+[运行时间：0.072834s] [吞吐率：13.73req/s] [内存消耗：2,461.44kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '04183b79-a20b-418b-a4f0-5bc294ba5bec',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+  'authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOjEsImF1ZCI6IiIsImV4cCI6MTU4NTg3NzIzMywiaWF0IjoxNTg1ODc3MTczLCJpc3MiOiIiLCJqdGkiOiI3OGRlYzEzNTcwOGE5ZWRiODQxYTAzZDk4ZjJiZmYwMSIsIm5iZiI6MTU4NTg3NzE3Mywic3ViIjoiIn0.QYMdUoBi5CZ9H9Io17moto_4h5lvVAkdH2JdZHOjrhCOurzSiEuXIQKuY1HOs1e5tS9Y4xTEuPEl6KyVNpnv5XZafBJzkz_j27zDiDWDfbZFND_pJ7KakJ2iEGeSZb5m_zglXSnXxP89H0qdJ9PrYvAHKC6jyLQPx6pJFzZdo3WON_2qTKoccLVqLk3hdzIfY2hCA5btbrNnf86q9Emy6_9LReQppSJm7f1KcAYix1XaCQJLApJRFzm5dZ8YQqzCxO8dQzLIOsTM1GsHt87HgqH5BxwRPBLyUwr7ZM7R0Ko77TcnFEgHYnBto_f8AjVo4qPndfNzKWXrbMvKd88Rqg',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T09:53:20+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList?name=ag
+[运行时间：0.141767s] [吞吐率：7.05req/s] [内存消耗：3,923.85kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------540091827988964886299687',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f8c9bac0-2642-47f8-9357-7b9d2a6f762e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'ag',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.031956s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.008493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.005892s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%ag%'  AND `r`.`delete_time` IS NULL [ RunTime:0.009079s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames` FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%ag%'  AND `r`.`delete_time` IS NULL  AND `r`.`delete_time` IS NULL LIMIT 0,25 [ RunTime:0.009418s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:53:33+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList?name=%E8%B6%85%E7%BA%A7
+[运行时间：0.132821s] [吞吐率：7.53req/s] [内存消耗：3,924.16kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------021437065181875901738985',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'f848e9ad-6f9e-4dc6-bfa9-899aea31879f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'name' => '超级',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.028794s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.008739s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.007561s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%超级%'  AND `r`.`delete_time` IS NULL [ RunTime:0.008054s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames` FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%超级%'  AND `r`.`delete_time` IS NULL  AND `r`.`delete_time` IS NULL LIMIT 0,25 [ RunTime:0.007274s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:55:59+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList?id=1
+[运行时间：0.163386s] [吞吐率：6.12req/s] [内存消耗：3,925.51kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------437408831179360003382498',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6b36b4bf-563f-4595-85c0-5dce184d94e6',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.028390s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.007709s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.010587s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%%'  AND `id` = 1  AND `r`.`delete_time` IS NULL [ RunTime:0.010912s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames` FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%%'  AND `id` = 1  AND `r`.`delete_time` IS NULL  AND `r`.`delete_time` IS NULL LIMIT 0,25 [ RunTime:0.007507s ]
+---------------------------------------------------------------
+
+[2020-04-03T09:56:05+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList?id=3
+[运行时间：0.099910s] [吞吐率：10.01req/s] [内存消耗：3,925.50kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------435099802407272482783031',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2c50ee10-18c2-487a-a5b4-f667ecc8b47d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010049s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.010785s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.007396s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%%'  AND `id` = 3  AND `r`.`delete_time` IS NULL [ RunTime:0.009984s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames` FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%%'  AND `id` = 3  AND `r`.`delete_time` IS NULL  AND `r`.`delete_time` IS NULL LIMIT 0,25 [ RunTime:0.005972s ]
+---------------------------------------------------------------
+
+[2020-04-03T10:11:12+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.454336s] [吞吐率：2.20req/s] [内存消耗：3,907.16kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------123922797741732764478237',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '67f95946-68b1-4da3-9d02-29f2688db875',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.181194s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.068234s ]
+[ error ] [0]致命错误: Function name must be a string[E:\phpStudy\WWW\lhsoft_back\application\common\model\RoleModel.php:43]
+---------------------------------------------------------------
+
+[2020-04-03T10:11:26+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.323542s] [吞吐率：3.09req/s] [内存消耗：3,922.73kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------852822105441934525203672',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '4af872b2-731d-4d45-9c51-768786e192e8',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.070876s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.038920s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.129340s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames` FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `name` LIKE '%%'  AND `id` IS NULL  AND `r`.`delete_time` IS NULL [ RunTime:0.015798s ]
+---------------------------------------------------------------
+
+[2020-04-03T10:17:01+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/role/getList
+[运行时间：0.397781s] [吞吐率：2.51req/s] [内存消耗：3,920.11kb] [文件加载：121]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '300',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------600430334831966326372638',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '39899efa-867e-4993-a0e8-2e6c4cee7a3f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.227826s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users_role` [ RunTime:0.036911s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `role` [ RunTime:0.009280s ]
+[ sql ] [ SQL ] SELECT `r`.`id`,`r`.`name`,`r`.`remark`,`r`.`create_time`,`us`.`usernames` FROM `role` `r` LEFT JOIN (SELECT GROUP_CONCAT(u.username) AS usernames,`role_id`,NULL AS delete_time FROM `users_role` `ur` INNER JOIN `users` `u` ON `u`.`id`=ur.users_id AND ISNULL(u.delete_time) WHERE  `ur`.`delete_time` IS NULL GROUP BY `ur`.`role_id`) `us` ON `us`.`role_id`=r.id AND ISNULL(us.delete_time) WHERE  `r`.`delete_time` IS NULL [ RunTime:0.047830s ]
+---------------------------------------------------------------
+
+[2020-04-03T10:54:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/Index/test
+[运行时间：1.710061s] [吞吐率：0.58req/s] [内存消耗：1,900.43kb] [文件加载：93]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-04-03T10:55:30+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.052730s] [吞吐率：18.96req/s] [内存消耗：2,249.98kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'aa432e29-6080-47eb-a1f9-d1c740da8fb2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T10:56:12+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.042636s] [吞吐率：23.45req/s] [内存消耗：2,251.03kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6ccfa685-c986-4c18-8dee-6bbdd3961472',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T10:57:26+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.064601s] [吞吐率：15.48req/s] [内存消耗：2,251.09kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'afd1bacd-b7f7-406c-99aa-444efd269fb7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T10:59:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.054183s] [吞吐率：18.46req/s] [内存消耗：2,251.71kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dea7f64d-8e30-46ed-8334-cd4648d21ccb',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T11:13:33+08:00] ::1 GET localhost/lhsoft_back/public/
+[运行时间：0.065559s] [吞吐率：15.25req/s] [内存消耗：1,902.13kb] [文件加载：93]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-04-03T13:27:25+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.065654s] [吞吐率：15.23req/s] [内存消耗：2,252.89kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c6170311-d208-433a-a1af-5e23b55da9e2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T13:27:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.039559s] [吞吐率：25.28req/s] [内存消耗：2,252.52kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7c0e4798-9cd3-427a-8dbf-409b948d15ac',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T13:28:11+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/index/test
+[运行时间：0.052183s] [吞吐率：19.16req/s] [内存消耗：2,253.39kb] [文件加载：101]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c3f80aea-3df7-4703-8473-422a4887f65f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T14:40:30+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：1.823911s] [吞吐率：0.55req/s] [内存消耗：2,490.75kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'ba14bc89-e16f-4b0b-81e0-f83794ab458a',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T14:40:57+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=xuming&password=123456&captcha_code=O2Oe&captcha_key=captcha_xYW1gFDTqM9WA85
+[运行时间：0.041151s] [吞吐率：24.30req/s] [内存消耗：1,910.47kb] [文件加载：93]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2020-04-03T14:41:53+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=xuming&password=123456&captcha_code=O2Oe&captcha_key=captcha_xYW1gFDTqM9WA85
+[运行时间：0.384145s] [吞吐率：2.60req/s] [内存消耗：3,895.41kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/login',
+  'route' => 'index/Login/login',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '640',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------585215966402963886087938',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'cd370ce6-04fc-407c-99a7-aedc1938c2d2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'xuming',
+  'password' => '123456',
+  'captcha_code' => 'O2Oe',
+  'captcha_key' => 'captcha_xYW1gFDTqM9WA85',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012058s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002489s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.002338s ]
+---------------------------------------------------------------
+
+[2020-04-03T14:43:24+08:00] 127.0.0.1 POST 127.0.0.1/lhsoft_back/public/index/login/login?login_type=1&username=xuming&password=123456&captcha_code=O2Oe&captcha_key=captcha_xYW1gFDTqM9WA85
+[运行时间：0.192668s] [吞吐率：5.19req/s] [内存消耗：4,002.06kb] [文件加载：140]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/login',
+  'route' => 'index/Login/login',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-length' => '640',
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'content-type' => 'multipart/form-data; boundary=--------------------------301558611780620328320506',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '0f7c8ec5-9244-4bc7-9f50-44d09d31ddd1',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+  'login_type' => '1',
+  'username' => 'xuming',
+  'password' => '123456',
+  'captcha_code' => 'O2Oe',
+  'captcha_key' => 'captcha_xYW1gFDTqM9WA85',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011960s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002020s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `name` = 'ACCOUNT_CAPTCHA'  AND `configuration`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001730s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.002022s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `account` = 'xuming'  AND `users`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.001594s ]
+[ sql ] [ SQL ] UPDATE `users`  SET `remain` = 5  WHERE  `id` = 2  AND `users`.`delete_time` IS NULL [ RunTime:0.008030s ]
+---------------------------------------------------------------
+
+[2020-04-03T15:50:24+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：1.942919s] [吞吐率：0.51req/s] [内存消耗：3,621.45kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'd221cfbf-c89c-4fc1-9fce-39429557130f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011710s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002523s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.002024s ]
+[ error ] [8]未定义变量: config_value[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Configuration.php:143]
+---------------------------------------------------------------
+
+[2020-04-03T15:51:17+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.073222s] [吞吐率：13.66req/s] [内存消耗：3,483.70kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6bfedb85-9357-43aa-83a2-f83360d5482c',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012831s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001805s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001676s ]
+---------------------------------------------------------------
+
+[2020-04-03T15:56:06+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.097367s] [吞吐率：10.27req/s] [内存消耗：3,621.77kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5435e4b4-0c78-4d55-ac69-b5400ac7fd7f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012248s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002595s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.002059s ]
+[ error ] [2]md5() expects parameter 1 to be string, array given[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Configuration.php:202]
+---------------------------------------------------------------
+
+[2020-04-03T15:59:16+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.088129s] [吞吐率：11.35req/s] [内存消耗：3,621.83kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '735368fa-12a5-41b4-9322-6b53e493799e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011917s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002316s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001999s ]
+[ error ] [2]base64_encode() expects parameter 1 to be string, array given[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Configuration.php:202]
+---------------------------------------------------------------
+
+[2020-04-03T16:02:36+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.089426s] [吞吐率：11.18req/s] [内存消耗：3,483.88kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'dd0a2620-fa0c-4c51-959e-1c04cd727098',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012242s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002358s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001884s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:12:30+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.090248s] [吞吐率：11.08req/s] [内存消耗：3,621.83kb] [文件加载：115]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '2ce1ad06-62eb-4463-9669-e449de14f584',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011394s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001982s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001827s ]
+[ error ] [2]json_decode() expects parameter 1 to be string, array given[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Configuration.php:201]
+---------------------------------------------------------------
+
+[2020-04-03T16:12:53+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.067944s] [吞吐率：14.72req/s] [内存消耗：3,624.42kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6d6a97b3-01c6-46e7-98eb-7784568fb70e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012236s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002031s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001931s ]
+[ error ] [2]Use of undefined constant ture - assumed 'ture' (this will throw an Error in a future version of PHP)[E:\phpStudy\WWW\lhsoft_back\application\index\controller\Configuration.php:203]
+---------------------------------------------------------------
+
+[2020-04-03T16:13:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.065690s] [吞吐率：15.22req/s] [内存消耗：3,508.26kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '63cd4bf2-157a-4073-9242-a8263e7a0502',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011911s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002211s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.002060s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:13:41+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.069199s] [吞吐率：14.45req/s] [内存消耗：3,508.24kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '49f6b2c0-17a7-47bf-8836-7d6ad89bd085',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012741s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001960s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001768s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:14:10+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.082304s] [吞吐率：12.15req/s] [内存消耗：3,508.24kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '39534077-1d76-4a04-9770-4f8c73234d69',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013047s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001823s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001699s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:14:33+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.105144s] [吞吐率：9.51req/s] [内存消耗：3,508.26kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '222a4573-ed70-468a-b7b0-6e936302522d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011976s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001951s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001820s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:14:59+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.070888s] [吞吐率：14.11req/s] [内存消耗：3,508.25kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '214454d9-6c2f-4ff3-845f-3f60d1328ee4',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011830s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002032s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001754s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:15:32+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.083108s] [吞吐率：12.03req/s] [内存消耗：3,508.30kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b35a4e93-0747-4d3d-835b-31635c9850ce',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012807s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001892s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001743s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:19+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.075879s] [吞吐率：13.18req/s] [内存消耗：3,508.29kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7db4ca64-1ea0-49b0-9159-9dc296a2f892',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002373s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002076s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001884s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:21+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.067732s] [吞吐率：14.76req/s] [内存消耗：3,508.27kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'd72f794d-ec42-41a5-9e76-78deaa6380cd',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012345s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002227s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.003026s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:22+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.066038s] [吞吐率：15.14req/s] [内存消耗：3,508.29kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'd8d6f3d0-767f-4dde-8e6b-14853dbfa326',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002535s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002150s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001761s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:23+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.068897s] [吞吐率：14.51req/s] [内存消耗：3,508.27kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8c834b91-7440-4281-8334-189cb970d12d',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011724s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001808s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:29+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.074161s] [吞吐率：13.48req/s] [内存消耗：3,508.26kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '051c096d-fd86-41b4-872e-91a93325544e',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013501s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002083s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001908s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:46+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.089915s] [吞吐率：11.12req/s] [内存消耗：3,508.26kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7787ed30-c1b8-4c19-a327-b2d790eccc2f',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012235s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001992s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001770s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:47+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.063518s] [吞吐率：15.74req/s] [内存消耗：3,508.24kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'c9e3b386-b4cb-4b48-84d5-74d801e205f3',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011676s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002116s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001863s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:48+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.075344s] [吞吐率：13.27req/s] [内存消耗：3,508.26kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '5917cc9c-c019-4e82-b528-a460058f0b82',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011143s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002267s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001851s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:49+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.061634s] [吞吐率：16.22req/s] [内存消耗：3,508.26kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '667b8de6-eb2c-48ed-a7df-eacede1a5224',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011486s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002249s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001868s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:49+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.059491s] [吞吐率：16.81req/s] [内存消耗：3,508.24kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '690ba783-1d63-4c5d-8113-083bfb6284e2',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011912s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002356s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001930s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:49+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.060511s] [吞吐率：16.53req/s] [内存消耗：3,508.24kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '6fc318c8-9240-4232-9a92-c549eacaa589',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012052s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002469s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.002666s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:17:50+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.060430s] [吞吐率：16.55req/s] [内存消耗：3,508.26kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '072ed102-42ae-4e87-ba73-64a2559e9130',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012373s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002420s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.002131s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:24:43+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.084611s] [吞吐率：11.82req/s] [内存消耗：3,508.24kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '8c890607-9919-4973-92ea-afe9ac868b4b',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012158s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002230s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.002035s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:25:16+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.071061s] [吞吐率：14.07req/s] [内存消耗：3,508.24kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '055f692d-28fe-499e-8494-4543c2db9587',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012681s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001859s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001685s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:27:47+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.090445s] [吞吐率：11.06req/s] [内存消耗：3,485.07kb] [文件加载：110]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'b7c66ad8-51d0-4cc8-bfdc-5c7ac24753dc',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011906s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.001978s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001806s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:28:02+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.073992s] [吞吐率：13.51req/s] [内存消耗：3,506.63kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '046ba268-9a10-4023-bffd-f5995e37a0a7',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002859s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002362s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.001949s ]
+---------------------------------------------------------------
+
+[2020-04-03T16:51:51+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/login/getCaptcha
+[运行时间：0.184324s] [吞吐率：5.43req/s] [内存消耗：2,496.28kb] [文件加载：109]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/login/getCaptcha',
+  'route' => 'index/Login/getCaptcha',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => '7f98a843-c8eb-4fd0-b144-91e7f6206900',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-04-03T17:09:44+08:00] 127.0.0.1 GET 127.0.0.1/lhsoft_back/public/index/config/getConfig
+[运行时间：0.102519s] [吞吐率：9.75req/s] [内存消耗：3,507.31kb] [文件加载：111]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/config/getConfig',
+  'route' => 'index/Configuration/getConfig',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=sepjimh6h39h2gpdm6eddo9pd1',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate, br',
+  'host' => '127.0.0.1',
+  'postman-token' => 'a13f86d1-722a-4214-b439-7a61ccb397c5',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.24.0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012541s ] mysql:host=192.168.0.210;port=3306;dbname=lhsoft_base;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `configuration` [ RunTime:0.002432s ]
+[ sql ] [ SQL ] SELECT * FROM `configuration` WHERE  `status` = 1  AND `configuration`.`delete_time` IS NULL [ RunTime:0.002346s ]

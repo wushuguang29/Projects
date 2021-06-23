@@ -1,0 +1,45 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 17:16:15
+ * @LastEditTime: 2021-02-25 10:50:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\route\api.php
+ */
+
+
+//登录
+Route::get('api/Login/login','api/Login/login');
+// 发送手机验证码
+Route::get('index/login/sendCode', 'app\common\service\Sms@sendVerificationCode');
+//手机号绑定
+Route::post('api/Login/phoneBind','api/Login/phoneBind')->middleware(['AppJWTAuthAndRefresh']);
+Route::get('alipayAuth','api/Login/alipayAuth');
+
+Route::group('api', function(){
+    //用户管理
+    Route::get('AppUsers/getUserInfo','api/AppUsers/getUserInfo');//用户信息
+    Route::post('AppUsers/changeName','api/AppUsers/changeName');//修改用户名
+    Route::post('AppUsers/changePhone','api/AppUsers/changePhone');//修改手机号
+    Route::post('AppUsers/upload','api/AppUsers/upload');//上传头像
+    //成员管理
+    Route::get('AppUserMember/getMemberInfo','api/AppUserMember/getMemberInfo');//成员信息【订阅人】
+    Route::post('AppUserMember/add','api/AppUserMember/add');//添加成员
+    Route::post('AppUserMember/edit','api/AppUserMember/edit');//编辑成员
+    Route::get('AppUserMember/browse','api/AppUserMember/browse');//预览成员
+    //订阅中心
+    Route::get('AppUserMember/getSideList','api/AppUserMember/getSideList');//获取领域下方面列表
+    Route::post('AppUserMember/subscribe','api/AppUserMember/subscribe');//订阅
+    //评测中心
+    Route::get('Evaluating/getMemberSideList','api/Evaluating/getMemberSideList');//获取订阅人订阅的领域方面
+    Route::get('Evaluating/getQuestionsList','api/Evaluating/getQuestionsList');//获取题库
+    Route::post('Evaluating/evaluate','api/Evaluating/evaluate');//评测
+    //评测信息
+    Route::get('Evaluating/getAssessorList','api/Evaluating/getAssessorList');//评测人员
+    Route::get('Evaluating/getEvaluateRecord','api/Evaluating/getEvaluateRecord');//评测记录
+    //在线资源
+    Route::get('Folder/getList','api/Folder/getList');//文件夹列表
+    Route::get('Folder/getFileList','api/Folder/getFileList');//文件列表
+    Route::get('Folder/browseFile','api/Folder/browseFile');//文件预览
+})->middleware(['AppJWTAuthAndRefresh','PhoneAuthVerify']);

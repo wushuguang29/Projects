@@ -1,0 +1,165 @@
+<template>
+	<view style="background-color: #f9f9f9;min-height: 46rem;">
+		<view style="width: 100%;background-color: #FFFFFF;">
+			<view class="uni_flex" v-for="(item,index) in myData" @click="Preview(item)" :key="index">
+			<view style="    width: 24%;text-align: center;">
+				<u-icon name="file-text" color="#47D3E0" size="60"></u-icon>
+			</view>
+			<view class="uni_font"><h1>{{item.name}}</h1></view>
+			<view style="    margin: 10rpx auto;">
+				<u-icon name="arrow-right" color="#C0C0C0" size="36" ></u-icon>
+			</view>
+			</view>
+		</view>
+		
+	</view>
+	
+</template>
+
+<script>
+	import config from '../../../api/config.js'
+	export default {
+		data(){
+			return{
+				myData:{},
+				path:"",
+				src:""
+			}
+		},
+		onLoad: function (option) { 
+			console.log("option",option);
+			this.myData=option
+		},
+		onShow:function() {
+			console.log("config.host",config.host)
+			this.$ajax.get({
+						url: '/api/Folder/getFileList',
+						//文件夹ID
+						param: {
+							id:this.myData.type
+						},
+						header: {
+							'Content-Type':'application/json;charset=UTF-8',
+							'x-requested-with':"XMLHttpRequest"
+						},
+					}).then((res) => {
+						console.log("res",res)
+						this.myData= res.data.data.data;
+						
+					   
+						
+					}) 
+		},
+		created() {
+			
+		},
+		methods:{
+			 isAssetTypeAnImage:function(ext) {
+			  return [
+			 'doc', 'xls', 'ppt', 'pdf', 'docx', 'xlsx', 'pptx'].
+			  indexOf(ext.toLowerCase()) !== -1;
+			},
+			isAssetTypeAnImages:function(ext) {
+			  return [
+			 'jpeg', 'gif', 'jpg', 'png', 'bmp', 'pic',].
+			  indexOf(ext.toLowerCase()) !== -1;
+			},
+			Preview(e){
+				console.log("e",e)
+				this.$ajax.get({
+							url: '/api/Folder/browseFile',
+							// 文件ID
+							param: {
+								id:e.id
+							},
+							header: {
+								'Content-Type':'application/json;charset=UTF-8',
+								'x-requested-with':"XMLHttpRequest"
+							},
+						}).then((res) => {
+							console.log("res",res)
+							// this.path= res.data.data.path;
+							// console.log("11",this.path)
+							
+							//文件路径
+							let path=res.data.data.path
+							//获取最后一个.的位置
+							var index= path.lastIndexOf(".");
+							//获取后缀
+							var ext = path.substr(index+1);
+							//输出结果
+							console.log("ext",ext);
+							console.log("该文件是否为文件：" + this.isAssetTypeAnImage(ext));
+							if(this.isAssetTypeAnImage(ext)){
+								uni.downloadFile({
+								  // url: 'https://example.com/somefile.pdf',
+															 url:config.host+"/uploads/"+path,
+								  success: function (res) {
+																 console.log("path",path)
+								    var filePath = res.tempFilePath; // blob地址
+								    uni.openDocument({
+																   
+								      // filePath:"http://192.168.0.24/xyxm/app/xykfpd_back/public/uploads/"+path,
+																 filePath:filePath,
+								      success: function (res) {
+								        console.log('打开文档成功',res);
+								      }
+								    });
+								  }
+								});
+							}else if(this.isAssetTypeAnImages(ext)){
+								let i=[];
+								i.push(config.host+"/uploads/"+path);
+								console.log("i",i);
+								uni.previewImage({
+											current:0, //预览图片的下标
+											urls:i //预览图片的地址，必须要数组形式，如果不是数组形式就转换成数组形式就可以
+										})
+							}else{
+								let video=config.host+"/uploads/"+path
+								console.log("video",video)
+							     uni.navigateTo({
+							                    url: '/pages/views/member/Video?url='+video,
+							                });
+
+								
+								
+								// test: function () {
+								//             var self = this;
+								//             uni.chooseVideo({
+								//                 count: 1,
+								//                 sourceType: ['camera', 'album'],
+								//                 success: function (res) {
+								//                     self.src = res.tempFilePath;
+								//                 }
+								//             });
+								//         }
+							}
+						   
+							
+						}) 
+				
+			}
+		}
+	}
+</script>
+
+<style>
+	.uni_font{
+		font-size: 37rpx;
+		 width: 65%;
+		text-align: justify;
+		font-family: SourceHanSansCN-Normal;
+		font-weight:550;
+		word-wrap:break-word;
+		word-break:break-all; 
+		overflow: hidden;
+	}
+	.uni_flex{
+		    width: 100%;
+		    display: flex;
+		    border-bottom: 5rpx solid #c0c0c0;
+		    height: 5rem;
+		    padding: 6% 0 0 0;
+	}
+</style>

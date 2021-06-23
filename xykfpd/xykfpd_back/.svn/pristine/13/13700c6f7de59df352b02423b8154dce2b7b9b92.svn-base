@@ -1,0 +1,1006 @@
+---------------------------------------------------------------
+
+[2020-03-23T16:09:07+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test
+[ error ] [0]Must have token
+---------------------------------------------------------------
+
+[2020-03-23T16:09:33+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test
+[ error ] [0]Must have token
+---------------------------------------------------------------
+
+[2020-03-23T16:13:05+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test
+[ error ] [0]Must have token
+---------------------------------------------------------------
+
+[2020-03-23T16:13:26+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTA5OTcsImlhdCI6MTU4NDk1MDkzNywiaXNzIjoiIiwianRpIjoiNzllMTY0ZTZhNzg5ZWEzZjFjM2UzYTEyZTkyZjg2NGIiLCJuYmYiOjE1ODQ5NTA5MzcsInN1YiI6IiJ9.CM6aEV1tNrRTMugQipe3Ri8Flnw2UOAwvRlMAuiWwSc
+[ error ] [0]The token is expired.
+---------------------------------------------------------------
+
+[2020-03-23T16:13:37+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTA5OTcsImlhdCI6MTU4NDk1MDkzNywiaXNzIjoiIiwianRpIjoiNzllMTY0ZTZhNzg5ZWEzZjFjM2UzYTEyZTkyZjg2NGIiLCJuYmYiOjE1ODQ5NTA5MzcsInN1YiI6IiJ9.CM6aEV1tNrRTMugQipe3Ri8Flnw2UOAwvRlMAuiWwSc
+[ error ] [0]The token is expired.
+---------------------------------------------------------------
+
+[2020-03-23T16:13:57+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=%27eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTA5OTcsImlhdCI6MTU4NDk1MDkzNywiaXNzIjoiIiwianRpIjoiNzllMTY0ZTZhNzg5ZWEzZjFjM2UzYTEyZTkyZjg2NGIiLCJuYmYiOjE1ODQ5NTA5MzcsInN1YiI6IiJ9.CM6aEV1tNrRTMugQipe3Ri8Flnw2UOAwvRlMAuiWwSc%27
+[ error ] [0]Token Signature could not be verified.
+---------------------------------------------------------------
+
+[2020-03-23T16:26:07+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=%27eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTA5OTcsImlhdCI6MTU4NDk1MDkzNywiaXNzIjoiIiwianRpIjoiNzllMTY0ZTZhNzg5ZWEzZjFjM2UzYTEyZTkyZjg2NGIiLCJuYmYiOjE1ODQ5NTA5MzcsInN1YiI6IiJ9.CM6aEV1tNrRTMugQipe3Ri8Flnw2UOAwvRlMAuiWwSc%27
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'
+---------------------------------------------------------------
+
+[2020-03-23T16:26:09+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=%27eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTA5OTcsImlhdCI6MTU4NDk1MDkzNywiaXNzIjoiIiwianRpIjoiNzllMTY0ZTZhNzg5ZWEzZjFjM2UzYTEyZTkyZjg2NGIiLCJuYmYiOjE1ODQ5NTA5MzcsInN1YiI6IiJ9.CM6aEV1tNrRTMugQipe3Ri8Flnw2UOAwvRlMAuiWwSc%27
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'
+---------------------------------------------------------------
+
+[2020-03-23T16:26:13+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'
+---------------------------------------------------------------
+
+[2020-03-23T16:26:15+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'
+---------------------------------------------------------------
+
+[2020-03-23T16:26:16+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'
+---------------------------------------------------------------
+
+[2020-03-23T16:26:16+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'
+---------------------------------------------------------------
+
+[2020-03-23T16:27:51+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'
+---------------------------------------------------------------
+
+[2020-03-23T16:28:07+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.039957s] [吞吐率：25.03req/s] [内存消耗：1,431.77kb] [文件加载：77]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ error ] [0]语法解析错误: syntax error, unexpected ';', expecting ']'[E:\phpStudy\WWW\lhsoft_back\route\route.php:19]
+---------------------------------------------------------------
+
+[2020-03-23T16:28:21+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.048081s] [吞吐率：20.80req/s] [内存消耗：1,770.54kb] [文件加载：86]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ error ] [2]array_shift() expects parameter 1 to be array, object given[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\route\RuleGroup.php:472]
+---------------------------------------------------------------
+
+[2020-03-23T16:29:01+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.029166s] [吞吐率：34.29req/s] [内存消耗：1,770.55kb] [文件加载：86]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ error ] [2]array_shift() expects parameter 1 to be array, object given[E:\phpStudy\WWW\lhsoft_back\thinkphp\library\think\route\RuleGroup.php:472]
+---------------------------------------------------------------
+
+[2020-03-23T16:31:12+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.037466s] [吞吐率：26.69req/s] [内存消耗：1,431.74kb] [文件加载：77]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ error ] [0]语法解析错误: syntax error, unexpected ','[E:\phpStudy\WWW\lhsoft_back\route\route.php:19]
+---------------------------------------------------------------
+
+[2020-03-23T16:31:20+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.043646s] [吞吐率：22.91req/s] [内存消耗：2,286.15kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:31:48+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test
+[运行时间：0.060505s] [吞吐率：16.53req/s] [内存消耗：2,258.21kb] [文件加载：100]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\JWT.php:66]
+---------------------------------------------------------------
+
+[2020-03-23T16:32:14+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTIzNDAsImlhdCI6MTU4NDk1MjI4MCwiaXNzIjoiIiwianRpIjoiMTc3MTk1ZDg4M2UxODg0ZDEwZjZlMjk1ZjJiOTVmNmYiLCJuYmYiOjE1ODQ5NTIyODAsInN1YiI6IiJ9.PeCCUlh0pY5Z58fg5nqp_MJJrN0ykNOUR0SghhDwEQ0
+[运行时间：0.046663s] [吞吐率：21.43req/s] [内存消耗：2,333.95kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTIzNDAsImlhdCI6MTU4NDk1MjI4MCwiaXNzIjoiIiwianRpIjoiMTc3MTk1ZDg4M2UxODg0ZDEwZjZlMjk1ZjJiOTVmNmYiLCJuYmYiOjE1ODQ5NTIyODAsInN1YiI6IiJ9.PeCCUlh0pY5Z58fg5nqp_MJJrN0ykNOUR0SghhDwEQ0',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:34:00+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTIzNDAsImlhdCI6MTU4NDk1MjI4MCwiaXNzIjoiIiwianRpIjoiMTc3MTk1ZDg4M2UxODg0ZDEwZjZlMjk1ZjJiOTVmNmYiLCJuYmYiOjE1ODQ5NTIyODAsInN1YiI6IiJ9.PeCCUlh0pY5Z58fg5nqp_MJJrN0ykNOUR0SghhDwEQ0
+[运行时间：0.074528s] [吞吐率：13.42req/s] [内存消耗：2,394.63kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTIzNDAsImlhdCI6MTU4NDk1MjI4MCwiaXNzIjoiIiwianRpIjoiMTc3MTk1ZDg4M2UxODg0ZDEwZjZlMjk1ZjJiOTVmNmYiLCJuYmYiOjE1ODQ5NTIyODAsInN1YiI6IiJ9.PeCCUlh0pY5Z58fg5nqp_MJJrN0ykNOUR0SghhDwEQ0',
+)
+[ error ] [0]The token is expired.[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\claim\Expiration.php:15]
+---------------------------------------------------------------
+
+[2020-03-23T16:37:09+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.057137s] [吞吐率：17.50req/s] [内存消耗：2,285.77kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:37:12+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.038926s] [吞吐率：25.69req/s] [内存消耗：2,285.77kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:37:24+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA
+[运行时间：0.049051s] [吞吐率：20.39req/s] [内存消耗：2,333.57kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:37:34+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test
+[运行时间：0.043431s] [吞吐率：23.03req/s] [内存消耗：2,258.21kb] [文件加载：100]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\JWT.php:66]
+---------------------------------------------------------------
+
+[2020-03-23T16:38:15+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA
+[运行时间：0.041647s] [吞吐率：24.01req/s] [内存消耗：2,262.71kb] [文件加载：102]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => '?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA',
+)
+[ error ] [0]Could not decode token: Error while decoding to JSON: Malformed UTF-8 characters, possibly incorrectly encoded[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\provider\JWT\Lcobucci.php:73]
+---------------------------------------------------------------
+
+[2020-03-23T16:38:31+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test??token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA
+[运行时间：0.047647s] [吞吐率：20.99req/s] [内存消耗：2,259.30kb] [文件加载：100]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  '?token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA',
+)
+[ error ] [0]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\JWT.php:66]
+---------------------------------------------------------------
+
+[2020-03-23T16:38:39+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA
+[运行时间：0.046965s] [吞吐率：21.29req/s] [内存消耗：2,394.23kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'middleware' => 
+    array (
+      0 => 'thans\\jwt\\middleware\\JWTAuth::class',
+    ),
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA',
+)
+[ error ] [0]The token is expired.[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\claim\Expiration.php:15]
+---------------------------------------------------------------
+
+[2020-03-23T16:39:05+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA
+[运行时间：0.041579s] [吞吐率：24.05req/s] [内存消耗：2,390.13kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI2OTIsImlhdCI6MTU4NDk1MjYzMiwiaXNzIjoiIiwianRpIjoiMGYwOWI2OWFlN2I5ZjUyNmVjYmFkOGE5ZDc3OGMwZDUiLCJuYmYiOjE1ODQ5NTI2MzIsInN1YiI6IiJ9.biACLxddmkZhsJUhBwqjCSrg_DVNhd-CX3K2txIKrPA',
+)
+[ error ] [0]The token is expired.[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\claim\Expiration.php:15]
+---------------------------------------------------------------
+
+[2020-03-23T16:39:13+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test
+[运行时间：0.060444s] [吞吐率：16.54req/s] [内存消耗：2,253.47kb] [文件加载：99]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]Must have token[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\JWT.php:66]
+---------------------------------------------------------------
+
+[2020-03-23T16:39:21+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.045593s] [吞吐率：21.93req/s] [内存消耗：2,285.15kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:39:52+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI4MjEsImlhdCI6MTU4NDk1Mjc2MSwiaXNzIjoiIiwianRpIjoiOWZmNjkyZTEzYzk4NThiZTRiYWE2N2ZlN2ZlMTA0OGYiLCJuYmYiOjE1ODQ5NTI3NjEsInN1YiI6IiJ9.9It5_ZrGqBLkALv40B4cJ44EOybkTQ4EmuD7Tv3TBNw
+[运行时间：0.051980s] [吞吐率：19.24req/s] [内存消耗：2,263.73kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTI4MjEsImlhdCI6MTU4NDk1Mjc2MSwiaXNzIjoiIiwianRpIjoiOWZmNjkyZTEzYzk4NThiZTRiYWE2N2ZlN2ZlMTA0OGYiLCJuYmYiOjE1ODQ5NTI3NjEsInN1YiI6IiJ9.9It5_ZrGqBLkALv40B4cJ44EOybkTQ4EmuD7Tv3TBNw',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:07+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.071938s] [吞吐率：13.90req/s] [内存消耗：2,285.22kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:27+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.045462s] [吞吐率：22.00req/s] [内存消耗：2,263.80kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:32+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.038753s] [吞吐率：25.80req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:33+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.039077s] [吞吐率：25.59req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:34+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.039269s] [吞吐率：25.47req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:34+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.039772s] [吞吐率：25.14req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:35+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.040937s] [吞吐率：24.43req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:35+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.040334s] [吞吐率：24.79req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:35+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.039558s] [吞吐率：25.28req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:35+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.040949s] [吞吐率：24.42req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:43:40+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.039167s] [吞吐率：25.53req/s] [内存消耗：2,264.44kb] [文件加载：118]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:44:29+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk
+[运行时间：0.042087s] [吞吐率：23.76req/s] [内存消耗：2,390.20kb] [文件加载：122]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'index/Index/test',
+  'route' => 'index/Index/test',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMwNDcsImlhdCI6MTU4NDk1Mjk4NywiaXNzIjoiIiwianRpIjoiYjBlM2ZiZGY1MTIxZTRiZmU4NTFlZmQxOTM2NmNiZmUiLCJuYmYiOjE1ODQ5NTI5ODcsInN1YiI6IiJ9.m_ZMVXCub8VuwBzs0yMHvfnKlkNwgA_s6gGwh3agKzk',
+)
+[ error ] [0]The token is expired.[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\claim\Expiration.php:15]
+---------------------------------------------------------------
+
+[2020-03-23T16:48:12+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.063532s] [吞吐率：15.74req/s] [内存消耗：2,283.38kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:48:18+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMzNTIsImlhdCI6MTU4NDk1MzI5MiwiaXNzIjoiIiwianRpIjoiNzIwNTRjYjg3MzA1ZTkxYmU4ZGE4NzA1M2Y5YzdmZTEiLCJuYmYiOjE1ODQ5NTMyOTIsInN1YiI6IiJ9.Fwb_Tv6Yt3DYlcRPuUONNxG7Iwfv_a9nrwHfIci9vb8
+[运行时间：0.040114s] [吞吐率：24.93req/s] [内存消耗：2,351.66kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMzNTIsImlhdCI6MTU4NDk1MzI5MiwiaXNzIjoiIiwianRpIjoiNzIwNTRjYjg3MzA1ZTkxYmU4ZGE4NzA1M2Y5YzdmZTEiLCJuYmYiOjE1ODQ5NTMyOTIsInN1YiI6IiJ9.Fwb_Tv6Yt3DYlcRPuUONNxG7Iwfv_a9nrwHfIci9vb8',
+)
+---------------------------------------------------------------
+
+[2020-03-23T16:51:07+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMzNTIsImlhdCI6MTU4NDk1MzI5MiwiaXNzIjoiIiwianRpIjoiNzIwNTRjYjg3MzA1ZTkxYmU4ZGE4NzA1M2Y5YzdmZTEiLCJuYmYiOjE1ODQ5NTMyOTIsInN1YiI6IiJ9.Fwb_Tv6Yt3DYlcRPuUONNxG7Iwfv_a9nrwHfIci9vb8
+[运行时间：0.068159s] [吞吐率：14.67req/s] [内存消耗：2,413.81kb] [文件加载：123]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTMzNTIsImlhdCI6MTU4NDk1MzI5MiwiaXNzIjoiIiwianRpIjoiNzIwNTRjYjg3MzA1ZTkxYmU4ZGE4NzA1M2Y5YzdmZTEiLCJuYmYiOjE1ODQ5NTMyOTIsInN1YiI6IiJ9.Fwb_Tv6Yt3DYlcRPuUONNxG7Iwfv_a9nrwHfIci9vb8',
+)
+[ error ] [0]The token is expired.[E:\phpStudy\WWW\lhsoft_back\vendor\thans\tp-jwt-auth\src\claim\Expiration.php:15]
+---------------------------------------------------------------
+
+[2020-03-23T17:01:41+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.064458s] [吞吐率：15.51req/s] [内存消耗：2,283.38kb] [文件加载：116]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T17:01:50+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTQxNjEsImlhdCI6MTU4NDk1NDEwMSwiaXNzIjoiIiwianRpIjoiMDIyMGQ4ZjFmNjliYzM2MzE1MDJkNWVhNTBhZmU0NTgiLCJuYmYiOjE1ODQ5NTQxMDEsInN1YiI6IiJ9.UOXqxH0XGfM5oPJzLZdKBHrLK4Ujgl0vx4pMsd90GJM
+[运行时间：0.045410s] [吞吐率：22.02req/s] [内存消耗：2,351.66kb] [文件加载：119]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJleHAiOjE1ODQ5NTQxNjEsImlhdCI6MTU4NDk1NDEwMSwiaXNzIjoiIiwianRpIjoiMDIyMGQ4ZjFmNjliYzM2MzE1MDJkNWVhNTBhZmU0NTgiLCJuYmYiOjE1ODQ5NTQxMDEsInN1YiI6IiJ9.UOXqxH0XGfM5oPJzLZdKBHrLK4Ujgl0vx4pMsd90GJM',
+)
+---------------------------------------------------------------
+
+[2020-03-23T17:02:45+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/index
+[运行时间：0.047790s] [吞吐率：20.92req/s] [内存消耗：2,285.88kb] [文件加载：117]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-23T17:02:52+08:00] 127.0.0.1 GET www.lhsoft.com/index/Index/test?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg0OTU0MjI1LCJpYXQiOjE1ODQ5NTQxNjUsImlzcyI6IiIsImp0aSI6IjllZGI0MTRlYzk3YTE2YzJlMDZiYWM1YzViMmQ3NDUxIiwibmJmIjoxNTg0OTU0MTY1LCJzdWIiOiIifQ.Sk0c3z-L5a94yLpoQFKxMeSwKL8wa4lqCYpsWhKravs
+[运行时间：0.040347s] [吞吐率：24.78req/s] [内存消耗：2,353.80kb] [文件加载：120]
+[ info ] [ LANG ] E:\phpStudy\WWW\lhsoft_back\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_6c99a7c7b5430345db7be49c3c775978=1556500090,1556508851,1557711304,1557821551; Hm_lvt_a13d6fcbfac74a5d8f3a03855caa9cd9=1556500090,1556508852,1557711304,1557821551; pgv_pvi=8627291136; pgv_si=s9518828544',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.lhsoft.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEyMzQ1NiwiYXVkIjoiIiwiZXhwIjoxNTg0OTU0MjI1LCJpYXQiOjE1ODQ5NTQxNjUsImlzcyI6IiIsImp0aSI6IjllZGI0MTRlYzk3YTE2YzJlMDZiYWM1YzViMmQ3NDUxIiwibmJmIjoxNTg0OTU0MTY1LCJzdWIiOiIifQ.Sk0c3z-L5a94yLpoQFKxMeSwKL8wa4lqCYpsWhKravs',
+)

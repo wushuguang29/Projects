@@ -1,0 +1,49 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 13:42:50
+ * @LastEditTime: 2020-12-22 13:58:15
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\config\config.php
+ */
+return [
+    'SEX'            => [//性别
+        1 => '男',
+        2 => '女',
+    ],
+
+    'ACCOUNT_STATUS' => [//账号状态
+        1 => '启用',
+        2 => '禁用',
+    ],
+
+    'WORKING_STATUS'  => [//在职状态
+        1 => '在职',
+        2 => '离职',
+    ],
+
+    'IS_STATUS' => [
+        1 => '是',
+        2 => '否',
+    ],
+
+    //系统配置
+    'CONFIG_TYPE'=>[
+      1=>'数字',
+      2=>'字符',
+      3=>'文本',
+      4=>'数组',
+      5=>'枚举'
+    ],
+    'CONFIG_GROUP'=>[
+      1=>'系统配置',
+      2=>'数据库配置',
+      3=>'附件上传配置'
+    ],
+    'CONFIG_SCOPE'=>[
+      1=>'前端',
+      2=>'后端',
+      3=>'所有'
+    ],
+  ];

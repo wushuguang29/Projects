@@ -1,0 +1,241 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-23 09:57:47
+ * @LastEditTime: 2021-02-22 09:47:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\application\index\controller\Index.php
+ */
+namespace app\index\controller;
+
+use think\Controller;
+use think\Db;
+
+class Index extends Controller
+{
+    /**
+     * 重定向到公司官网
+     * @return \think\response\Redirect
+     * @author Zhang zw
+     * @date 2020/12/2 13:48
+     */
+    public function index(): \think\response\Redirect
+    {
+        return redirect('https://www.lhsoft.net/');
+    }
+
+    /**
+     * 工作桌面
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-29 15:28:53
+     * @return void
+     */
+    public function desktop(){
+        $summary = $this->evaluatingSummary();
+        $domain = $this->domainRanking();
+        $side = $this->sideRanking();
+        $monthSummary = $this->getMonthSummary();
+        $data = [
+            'summary' => $summary,
+            'domain' => $domain,
+            'side' => $side,
+            'monthSummary' => $monthSummary,
+        ];
+        return msgReturn('0',$data);
+    }
+
+    /**
+     * 获取每月评测人数/次数汇总
+     *
+     * @return void
+     */
+    public function getMonthSummary()
+    {
+        ## 往前11个月第一天到当前日期,包含本月,共12个月
+        $begin   = date('Y-m-01', strtotime('-11 month')); //往前11个月第一天
+        $end     = date('Y-m-d'); //当前日期
+        
+        $where[] = ['e.create_time', 'BETWEEN', [$begin.' 00:00:00', $end.' 23:59:59']];
+        $numberSql = db('evaluating')
+            ->field([
+                'count(DISTINCT app_user_member_id) AS evaluating_population_number',
+                'count(id) AS evaluating_number',
+                "DATE_FORMAT(create_time, '%Y-%m') AS create_time",
+                '0 AS delete_time',
+            ])
+            ->where('evaluating_status', 1)
+            ->group("DATE_FORMAT(create_time, '%Y-%m')")
+            ->fetchSql(true)
+            ->select();
+        $data = Db::table('evaluating')->alias('e')
+            ->join(['('.$numberSql.')' => 'ns'],"ns.create_time = DATE_FORMAT(e.create_time, '%Y-%m')")
+            ->field([
+                "DATE_FORMAT(e.create_time, '%Y-%m') AS month", //月份
+                'ns.evaluating_population_number', //评测人数
+                'ns.evaluating_number', //评测次数
+            ])
+            ->where($where)
+            ->where('e.evaluating_status', 1)
+            ->group("DATE_FORMAT(e.create_time, '%Y-%m')")
+            ->order("e.create_time ASC")
+            ->select();
+        $interval = \DateInterval::createFromDateString('1 month');
+        $start    = new \DateTime($begin);
+        $over      = new \DateTime($end);
+        $period   = new \DatePeriod($start, $interval, $over);
+        $allMonth = [];
+        foreach ($period as $dt) {
+            // echo $dt->format("Y-m") . "<br>\n";
+            array_push($allMonth,$dt->format('Y-m'));
+        }
+        // $data = [
+        //     [
+        //         'month' =>'2020-04',
+        //         'evaluating_population_number' =>1,
+        //         'evaluating_number' =>2
+        //     ],
+        //     [
+        //         'month' =>'2021-02',
+        //         'evaluating_population_number' =>3,
+        //         'evaluating_number' =>3
+        //     ]
+
+        // ];
+        $allData = [];
+        $evaluatingMonth = array_column($data,'month');
+        foreach ($allMonth as $key => $value) {
+            if(in_array($value,$evaluatingMonth)){
+                foreach ($data as $k => $v) {
+                    if($value == $v['month']){
+                        array_push($allData,$v);
+                        break;
+                    }
+                }
+            }else{
+                $a = ['month' =>$value,
+                'evaluating_population_number' => 0,
+                'evaluating_number' =>0];
+                array_push($allData,$a);
+            }
+            
+        }
+        // dump($period);die;
+
+        return $allData;
+    }
+    /**
+     * 评测汇总
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-29 15:33:20
+     * @return void
+     */
+    public function evaluatingSummary(){
+        //用户数量
+        $userNumber = 0;
+        //评测人数
+        $evaluatingPopuNumber = 0;
+        //评测数
+        $evaluatingNumber = 0;
+        $userNumber = Db::table('app_users')->count();
+        $evaluatingPopuNumber = Db::table('evaluating')->where('evaluating_status', 1)->group('app_user_member_id')->count();
+        $evaluatingNumber = Db::table('evaluating')->where('evaluating_status', 1)->count();
+
+        $data = [
+            'userNumber' => $userNumber,
+            'evaluatingPopuNumber' => $evaluatingPopuNumber,
+            'evaluatingNumber' => $evaluatingNumber,
+        ];
+        return $data;
+    }
+    /**
+     *领域排名
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-29 15:31:06
+     * @return void
+     */
+    public function domainRanking(){
+        $domain = config('config.DOMAIN');
+        $evaluatingTotalNumber = db('evaluating')->where('evaluating_status', 1)->count();
+        $numberSql = db('evaluating')
+            ->field([
+                'count(DISTINCT app_user_member_id) AS evaluating_population_number',
+                'domain',
+                '0 AS delete_time',
+                'count(id) AS evaluating_number'
+            ])
+            ->where('evaluating_status', 1)
+            ->group('domain')
+            ->fetchSql(true)
+            ->select();
+        
+        $data = db('evaluating')->alias('e')
+            ->join(['('.$numberSql.')' => 'ns'],'ns.domain = e.domain')
+            ->field([
+                'ns.evaluating_population_number',
+                'ns.evaluating_number',
+                'e.domain',
+            ])
+            ->group('domain')
+            ->order('ns.evaluating_number DESC')
+            ->where('e.evaluating_status', 1)
+            ->limit(4)
+            ->select();
+        $i = 1;
+        foreach($data AS $key => $value){
+            $data[$key]['domain_str'] = $domain[$value['domain']];
+            $data[$key]['ratio'] = round($value['evaluating_number'] / $evaluatingTotalNumber * 100 ,2);
+            $data[$key]['id'] = $i;
+            $i ++;
+        }
+        return $data;
+    }
+    /**
+     * 方面排名
+     *
+     * @Author Soultaker 461770336@qq.com
+     * @DateTime 2021-01-29 15:30:20
+     * @return void
+     */
+    public function sideRanking(){
+        $evaluatingTotalNumber = db('evaluating')->where('evaluating_status', 1)->count();
+        $numberSql = db('evaluating')
+            ->field([
+                'count(DISTINCT app_user_member_id) AS evaluating_population_number',
+                'side',
+                '0 AS delete_time',
+                'count(id) AS evaluating_number'
+            ])
+            ->where('evaluating_status', 1)
+            ->group('side')
+            ->fetchSql(true)
+            ->select();
+        
+        $data = db('evaluating')->alias('e')
+            ->join(['('.$numberSql.')' => 'ns'],'ns.side = e.side')
+            ->field([
+                'ns.evaluating_population_number',
+                'ns.evaluating_number',
+                'e.side',
+            ])
+            ->group('side')
+            ->order('ns.evaluating_number DESC')
+            ->where('e.evaluating_status', 1)
+            ->limit(4)
+            ->select();
+        $i = 1;
+        foreach($data AS $key => $value){
+            $data[$key]['ratio'] = round($value['evaluating_number'] / $evaluatingTotalNumber * 100 ,2);
+            $data[$key]['id'] = $i;
+            $i ++;
+        }
+        return $data;
+    }
+
+    public function test(){
+       
+    }
+}

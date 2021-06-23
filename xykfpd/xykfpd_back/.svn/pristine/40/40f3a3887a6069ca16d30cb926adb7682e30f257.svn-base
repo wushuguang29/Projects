@@ -1,0 +1,13 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 17:16:15
+ * @LastEditTime: 2020-12-22 17:30:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\route\api.php
+ */
+
+
+//登录
+Route::get('api/Login/login','api/Login/login');

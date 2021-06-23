@@ -1,0 +1,163 @@
+<?php
+
+
+namespace service\jwt;
+
+use InvalidArgumentException;
+use Lcobucci\JWT\Parser;
+use Lcobucci\JWT\Token;
+use think\Request;
+
+/**
+ * token解析
+ * @package service\jwt
+ * @author Zhang zw
+ * @date 2020/9/22 14:43
+ */
+class ParserToken
+{
+    private $request;
+
+    private $parser;
+
+    private $chain = [
+        'authHeader', 'param', 'cookie',
+    ];
+
+    private $header = 'authorization';
+
+    private $prefix = 'bearer';
+
+    private $key = 'token';
+
+    /**
+     * ParserToken constructor.
+     * @param Request $request
+     * @param Parser $parser
+     */
+    public function __construct(Request $request, Parser $parser)
+    {
+        $this->request = $request;
+
+        $this->parser = $parser;
+    }
+
+    /**
+     * 获取token
+     * @return Token|string
+     * @author Zhang zw
+     * @date 2020/9/24 11:13
+     */
+    public function parseToken()
+    {
+        $token = '';
+        foreach ($this->chain AS $parser) {
+            if ($response = $this->$parser()) {
+                $token = $this->parser->parse((string) $response);
+            }
+        }
+
+        if (empty($token)) {
+            throw new InvalidArgumentException('缺少Token参数',40003);
+        }
+
+        return $token;
+    }
+
+    /**
+     * 获取CSRFToken
+     * @return array|Token|string
+     * @author Zhang zw
+     * @date 2020/9/22 15:14
+     */
+    public function CSRFTokenHeader()
+    {
+        return $this->request->header('X-CSRF-TOKEN');
+    }
+
+    /**
+     * 从请求头获取token
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/22 18:37
+     */
+    public function authHeader()
+    {
+        $header = $this->request->header($this->header);
+        if ($header && preg_match('/'.$this->prefix.'\s*(\S+)\b/i', $header, $matches)) {
+            return $matches[1];
+        }
+    }
+
+    /**
+     * 从请求参数中获取token
+     * @return array|mixed|null
+     * @author Zhang zw
+     * @date 2020/9/22 18:36
+     */
+    public function param()
+    {
+        return $this->request->param($this->key);
+    }
+
+    /**
+     * 从cookie中获取token
+     * @return mixed
+     * @author Zhang zw
+     * @date 2020/9/22 18:36
+     */
+    public function cookie()
+    {
+        return \think\facade\Cookie::get($this->key);
+    }
+
+    /**
+     * @notes
+     * @param $key
+     * @return $this
+     * @author Zhang zw
+     * @date 2020/9/22 18:36
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+
+        return $this;
+    }
+
+    /**
+     * @notes
+     * @return string
+     * @author Zhang zw
+     * @date 2020/9/22 18:36
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * @notes
+     * @param $header
+     * @return $this
+     * @author Zhang zw
+     * @date 2020/9/22 18:36
+     */
+    public function setHeader($header)
+    {
+        $this->header = $header;
+
+        return $this;
+    }
+
+    /**
+     * @notes
+     * @return string
+     * @author Zhang zw
+     * @date 2020/9/22 18:36
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+}

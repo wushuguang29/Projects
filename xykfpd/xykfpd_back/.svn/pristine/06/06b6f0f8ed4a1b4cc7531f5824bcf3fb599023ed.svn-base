@@ -1,0 +1,4 @@
+<?php
+//000000000000
+ exit();?>
+think_serialize:a:3:{s:5:"force";i:1;s:12:"destroy_time";i:1607073484;s:10:"if_refresh";i:0;}

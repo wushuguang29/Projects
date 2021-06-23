@@ -1,0 +1,50 @@
+<?php
+/*
+ * @Author: your name
+ * @Date: 2020-12-22 13:42:50
+ * @LastEditTime: 2021-01-21 11:28:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \xykfpd_back\application\http\middleware\Competence.php
+ */
+
+namespace app\http\middleware;
+
+use app\common\model\AccessPermissionModel;
+use app\common\model\ResourceModel;
+use app\common\model\UsersModel;
+use app\common\model\UsersRegionModel;
+use think\Exception;
+use think\facade\Response;
+
+/**
+ * 访问权限中间件
+ * @package app\http\middleware
+ */
+class Competence
+{
+    public function handle($request, \Closure $next)
+    {
+        // 超级管理员直接跳过权限判断
+        if (USER_ARR['is_root'] !== 1) {
+
+            // 判断是否拥有访问权限
+            $accessPermissionModel = new AccessPermissionModel;
+
+            $user_permission = $accessPermissionModel->getUserUltimatelyHaveResources(USER_ID);
+            //上级ID
+            $resourceModel = new ResourceModel;
+
+            $superior_id = $resourceModel->getSuperiorResourceId($user_permission);
+
+            $user_permission = array_unique(array_merge($user_permission,$superior_id));
+            
+            $hidden = $resourceModel->where('id',RESOURCES_ID)->value('hidden');
+            if (!in_array(RESOURCES_ID, $user_permission, true) && $hidden == 2) {
+                throw new Exception('没有访问权限', 42010);
+            }
+        }
+
+        return $next($request);
+    }
+}
