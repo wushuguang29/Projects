@@ -22,5 +22,5 @@ git clone githup项目地址：将项目从远程仓库克隆到本地仓库[版本库]
 git status：查看修改的文件
 git add .：添加提交文件到暂存区
 git commit -m "日志信息"：提交到本地仓库[版本库]
-git pull：更新本地文件
+git pull：查看哪些文件被修改过
 git push：将代码提交到远程仓库
