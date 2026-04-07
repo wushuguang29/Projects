@@ -10,7 +10,7 @@
     "serve:vue": "vue-cli-service build --target lib  --name  [dist/vue.esm.js]"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.6.4",
     "cos-js-sdk-v5": "^1.1.5",
